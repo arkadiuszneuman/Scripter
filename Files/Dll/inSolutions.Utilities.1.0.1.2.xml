@@ -1,0 +1,2367 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Utilities.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="F:inSolutions.Utilities.About.View.Frm_About.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.About.View.Frm_About.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.About.View.Frm_About.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Administration.Utilities.Cl_Utilities.cnsCancelQuestion">
+            <summary>
+            Czy na pewno anulować?
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.Administration.Frm_BaseAdministration">
+            <summary>
+            Forma bazowa okna administracji
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.#ctor">
+            <summary>
+            Dla designera
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.Cancel">
+            <summary>
+            Przyciśnięcie przycisku anuluj lub zamknięcie formy.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Administration.Frm_BaseAdministration.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Administration.Frm_BaseAdministration.AdministrationVisible">
+            <summary>
+            Wskazuje czy zakładka "Administracja" jest widoczna. Wyłączyć w przypadku np. dodaków Navireo.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.AppearanceManager.Cl_AppearanceManager">
+            <summary>
+            Zarządzanie wyglądem obiektów interfejsu użytkownika.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.AppearanceManager.Cl_AppearanceManager.SetAppearance(DevExpress.Utils.AppearanceObject,inSolutions.Utilities.AppearanceManager.E_AppearancePreset)">
+            <summary>
+            Ustawienie predefionwanego koloru obiektu.
+            </summary>
+            <param name="vrpAppearance">Obiekt przechowujący dane dotyczące wyglądu kontrolki.</param>
+            <param name="vrpPreset"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.AppearanceManager.Cl_AppearanceManager.SetAppearance(DevExpress.Utils.AppearanceObject,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Ustawienia wyglądu obiektu kontrolki.
+            </summary>
+            <param name="vrpAppearance">Obiekt przechowujący dane dotyczące wyglądu kontrolki.</param>
+            <param name="vrpBackColor">Kolor tła.</param>
+            <param name="vrpBackColor2">Kolor tła 2.</param>
+            <param name="vrpForeColor">Kolor pierwszego planu</param>
+        </member>
+        <member name="T:inSolutions.Utilities.AppearanceManager.E_AppearancePreset">
+            <summary>
+            Predefiniowany zbiór kolorów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.Gold">
+            <summary>
+            Złoty (Goldenrod -> Gold, White)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.Green">
+            <summary>
+            Zielony (DarkGreen -> LimeGreen, White)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.Red">
+            <summary>
+            Czerwony (DarkRed -> Red, White)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.LightRed">
+            <summary>
+            Jasny czerwony (White -> LightPink, Black)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.Yellow">
+            <summary>
+            Jasny żółty (White -> Yellow, Black)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.LightYellow">
+            <summary>
+            Żółty (White -> LightYellow, Black)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.LighGreen">
+            <summary>
+            Jasny zielony (White -> LightGreen, Black)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.AppearanceManager.E_AppearancePreset.LightBlue">
+            <summary>
+            Jasny niebieski (White -> SkyBlue, Black)
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ApplicationMethods.RunAsAdministrator(System.String)">
+            <summary>
+            Uruchamia program z opcją administratora, a także wskazuje czy uruchomić aplikację ponownie jeżeli jest to konieczne.
+            </summary>
+            <param name="vrpApplicationFileName">Scieżka do aplikacji.</param>
+            <returns>True - aplikacja nie była uruchomiona z opcją administratora i musi być uruchomiona ponownie. False - Aplikacja była uruchomiona z opcją administratora i nie musi być uruchomiona poniwnie.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ApplicationMethods.RunAsAdministrator">
+            <summary>
+            Uruchamia program z opcją administratora, a także wskazuje czy uruchomić aplikację ponownie jeżeli jest to konieczne.
+            </summary>
+            <returns>True - aplikacja nie była uruchomiona z opcją administratora i musi być uruchomiona ponownie. False - Aplikacja była uruchomiona z opcją administratora i nie musi być uruchomiona poniwnie.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_Connection.ConvertConnString(InsERT.Navireo,System.Boolean)">
+            <summary>
+            Wyciągnięcie elementów ciągu połączenia potrzebnych do utworzenia nowego połączenia SqlConnection.
+            </summary>
+            <param name="vrpNavireo">Obiekt Navireo</param>
+            <param name="vrpMultipleActiveResultSets">Czy włączyć opcję MultipleActiveResultSets</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_Connection.ConvertConnString(InsERT.Navireo)">
+            <summary>
+            Wyciągnięcie elementów ciągu połączenia potrzebnych do utworzenia nowego połączenia SqlConnection z włączoną opcją MultipleActiveResultSets.
+            </summary>
+            <param name="vrpNavireo">Obiekt Navireo</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_GridManager.Export(DevExpress.XtraGrid.GridControl,System.Boolean)">
+            <summary>
+            Eksportuje dane z grida
+            </summary>
+            <param name="vrpGrid">Kontorlka Grida (grc)</param>
+            <param name="vrpPrint">Określa czy eksport ma pokazać raport, czy eksportować od razu do CSV</param>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsAddress">
+            <summary>
+            Adres producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsEmail">
+            <summary>
+            Adres email producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsFax">
+            <summary>
+            Numer faksu producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsName">
+            <summary>
+            Nazwa producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsPhone1">
+            <summary>
+            Numer telefonu producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsPhone2">
+            <summary>
+            Alternatywny numer telefonu producenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_Manufacturer.vrsWWW">
+            <summary>
+            Adres WWW producenta
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.Cl_ProgramMessages">
+            <summary>
+            Klasa służąca do wyświetlania komunikatów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.#ctor(inSolutions.Utilities.I_ProgramName)">
+            <summary>
+            Klasa służąca do wyświetlania komunikatów.
+            </summary>
+            <param name="vrpProgramName">Klasa implementująca I_ProgramName (np. klasa implementująca I_Common).</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Message(System.String,System.Windows.Forms.MessageBoxIcon)">
+            <summary>
+            Wyświetlenie wiadomości o podanej teści posiadająca wskazaną ikonę.
+            </summary>
+            <param name="vrpMessage">Treść wiadomości.</param>
+            <param name="vrpIcon">Ikona.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Message(System.String)">
+            <summary>
+            Wyświetlenie standardowej wiadomości o podanej teści.
+            </summary>
+            <param name="vrpMessage">Treść wiadomości.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Error(System.String)">
+            <summary>
+            Wyświetlenie standardowego komunikatu błędu o podanej treści.
+            </summary>
+            <param name="vrpMessage">Treść błędu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Warning(System.String)">
+            <summary>
+            Wyświetlenie standardowego ostrzeżenia o podanej treści.
+            </summary>
+            <param name="vrpMessage">Treść ostrzeżenia.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Question(System.String)">
+            <summary>
+            Wyświetlenie standardowego pytania o podanej treśći.
+            </summary>
+            <param name="vrpMessage">Treść pytania.</param>
+            <returns>True - wybranie klawisza tak, False - wybranie klawisza nie.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ProgramMessages.Question(System.String,System.Windows.Forms.MessageBoxIcon)">
+            <summary>
+            Wyświetlenie pytania o podanej treśći i wskazanej ikonie..
+            </summary>
+            <param name="vrpMessage">Treść pytania.</param>
+            <param name="vrpIcon">Ikona.</param>
+            <returns>True - wybranie klawisza tak, False - wybranie klawisza nie.</returns>
+        </member>
+        <member name="T:inSolutions.Utilities.Cl_ProgramProperties">
+            <summary>
+            Parametry programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsProgramName">
+            <summary>
+            Nazwa programu (wyświetlana m.in. na pasku tytułu)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsProgramId">
+            <summary>
+            Id programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsUserId">
+            <summary>
+            Id użytkownika.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsUserName">
+            <summary>
+            Nazwa użytkownika.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsUserPassword">
+            <summary>
+            Hasło uzytkownika.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsUserNameSub">
+            <summary>
+            Nazwa użytkownika.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsUserPasswordSub">
+            <summary>
+            Hasło użytkownika (zaszyfrowane przy logowaniu przez Sferę.).
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsVersion">
+            <summary>
+            Wersja aplikacji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsFiles">
+            <summary>
+            Pliki (skrypty) aplikacji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsProgramLicenseName">
+            <summary>
+            Nazwa licencji aplikacji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsConfigFile">
+            <summary>
+            Plik konfiguracyjny aplikacji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsConnectionString">
+            <summary>
+            Ciąg połączenia
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsConnection">
+            <summary>
+            Połączenie z bazą.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsSfera">
+            <summary>
+            Czy program wykorzystuje Sferę.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsNavireo">
+            <summary>
+            Obiekt Navireo.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsSubiekt">
+            <summary>
+            Obiekt Subiekta.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsRemeberHistory">
+            <summary>
+            Czy pamiętać historię ostatnio otwartych modułów(UC) w aplikacji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsMaxHistoryPositions">
+            <summary>
+            Maksymalna liczba zapamiętanych pozycji w historii.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsEditableMenu">
+            <summary>
+            Czy menu aplikacji może być edytowane przez użytkownika.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_ProgramProperties.vrsInsertSystem">
+            <summary>
+            System programu InsERT na którym pracuje aplikacja.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Extensions.Cl_Extensions.SetPreset(DevExpress.Utils.AppearanceObject,inSolutions.Utilities.AppearanceManager.E_AppearancePreset)">
+            <summary>
+            Ustawienie predefiniowanego koloru obiektu.
+            </summary>
+            <param name="vrpObject">Obiekt przechowujący dane dotyczące wyglądu kontrolki.</param>
+            <param name="vrpPreste">Predefionwany zbiór kolorów.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Extensions.Cl_Extensions.SetColor(DevExpress.Utils.AppearanceObject,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Ustawnienie koloru obiektu.
+            </summary>
+            <param name="vrpObject">Obiekt przechowujący dane dotyczące wyglądu kontrolki.</param>
+            <param name="vrpBackColor">Kolor tła.</param>
+            <param name="vrpBackColor2">Kolor tła 2.</param>
+            <param name="vrpForeColor">Kolor pierwszego planu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Cl_PanelHistoryManager.IsControlInHistory(System.Int32)">
+            <summary>
+            Sprawdza czy kontrolka o podanej nazwie znajduje się w historii.
+            </summary>
+            <param name="vrpModuleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Cl_PanelHistoryManager.GetPanel(System.Int32)">
+            <summary>
+            Zwraca panel z historii na podstawie Id modułu który reprezentuje.
+            </summary>
+            <param name="vrpPanelName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Cl_PanelHistoryManager.SaveInHistory(inSolutions.Utilities.FormManager.UC_Panel)">
+            <summary>
+            Zapisanie panelu w historii.
+            </summary>
+            <param name="vrpControl"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.ShowNext">
+            <summary>
+            Wyświetl następny panel z historii.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.ShowPrevious">
+            <summary>
+            Wyświetl poprzedni panel z historii.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.ShowControl(inSolutions.Utilities.MenuManager.Interface.I_Module)">
+            <summary>
+            Wykonanie odpowiedniej akcji wyświetlenia kontrolki na podstawie jej typu.
+            </summary>
+            <param name="vrpModule"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.GetPositionInHistory">
+            <summary>
+            Zwraca pozycje panelu w historii.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.AddModuleEvent">
+            <summary>
+            Podpięcie zdarzeń kliknięć na przyciski reprezentujące moduły i moduły podrzędne.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.GetClickedModule(System.Object)">
+            <summary>
+            Pobiera moduł który został wybrany.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.ShowControl(DevExpress.XtraEditors.IDXControl)">
+            <summary>
+            Wyświetla wskazaną formę, a w przypadku UC podpina go do głównego panelu.
+            </summary>
+            <param name="vrpControl"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.AddPanel(DevExpress.XtraEditors.IDXControl,System.Boolean)">
+            <summary>
+            Podpina panel do formy głównej.
+            </summary>
+            <param name="vrpControl"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.ClearMainPanel">
+            <summary>
+            Usuwa elementy z głównego panelu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_PanelManager.MergeToolbars(System.Boolean)">
+            <summary>
+            Podpina lub odpina pozycje paska narzędzi obiektu UC_Panel do formy głównej.
+            </summary>
+            <param name="vrpMerge">Określa czy podpiąć/odpiąć pozyjce paska narzędzi.</param>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Interface.I_Administration">
+            <summary>
+            Interfejs implementujący niestandardowe okno administracyjne.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Interface.I_BaseForm">
+            <summary>
+            Interfejs który ma implementować forma główna dodatku.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Interface.I_BasePanel">
+            <summary>
+            Bazowy panel szkieletu. Przechouje informacje o module.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Interface.I_Panel">
+            <summary>
+            Interfejs panelu aplikacji.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Interface.I_SaveModule">
+            <summary>
+            Interfejs wykorzystywany do zapisywania wariantów modułów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_SaveModule.SaveModule">
+            <summary>
+            Zapisuje nowy wariant modułu lub edytuje istniejący wariant.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_SaveModule.CheckNameAvaliability(System.String)">
+            <summary>
+            Sprawdzamy czy istnieje już moduł o podanej nazwie.
+            </summary>
+            <param name="vrpName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_SaveModule.ExistDefaultModule">
+            <summary>
+            Sprawdza czy istnieje moduł domyślny dla programu.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_SaveModule.ExistDefaultForModule">
+            <summary>
+            Sprawdza czy istnieje moduł podrzędny domyślny dla modułu głównego.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_Panel.RestoreModuleFromData(DevExpress.Utils.Serializing.ISupportXtraSerializer)">
+            <summary>
+            Przywraca wygląd formy dla konretnego modułu.
+            </summary>
+            <param name="vrpGrid"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_Panel.GetModuleFilters(DevExpress.XtraEditors.GroupControl)">
+            <summary>
+            Zapisuje dane filtrów mieszczących się na wybranej grupie.
+            </summary>
+            <param name="vrpGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_Panel.GetModuleLayout(DevExpress.Utils.Serializing.ISupportXtraSerializer)">
+            <summary>
+            Zapisuje ustawienia gridu.
+            </summary>
+            <param name="vrpGrid">Wybrany grid (GridView, PivotGridControl)</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Presenter.ClP_Panel.RestoreFiltersData(System.Xml.Linq.XElement)">
+            <summary>
+            Przywraca ustawienia filtrów dla konkretnego modułu.
+            UWAGA: Kolejność w istrukcji warunkowej if ma znaczenie (ze względu na dziedziczenie).
+            </summary>
+            <param name="vrpFilters"></param>
+        </member>
+        <member name="T:inSolutions.Utilities.FormManager.Presenter.Cl_Strings">
+            <summary>
+            Ciągi 
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Presenter.Cl_Strings.cnsLayout">
+            <summary>
+            "Layout".
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsPanelInterfaceError">
+            <summary>
+            "Panel musi implementować interfejs I_Panel."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsRestartAfterSavingModule">
+            <summary>
+            "Wariant został zapisany. Aby zmiany były widoczne należy ponownie uruchomić aplikację. Czy uruchomić program ponownie?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsSaveWarningQuestion">
+            <summary>
+            "Zapisać wariant pomimo osrzeżeń?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsConnectionError">
+            <summary>
+            "Nastąpił błąd połączenia z bazą danych.\r\nCzy ponownie wybrać podmiot?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsDefaultExists">
+            <summary>
+            "Istnieje już domyślny moduł. Domyślny moduł zostanie zastąpiony."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Utilities.Cl_Utilities.cnsDefaultForModuleExists">
+            <summary>
+            "Moduł nadrzędny posiada już domyślny moduł. Domyślny moduł zostanie zastąpiony."
+            </summary>
+        </member>
+        <member name="T:E_PositionInHistory">
+            <summary>
+            Pozycja panelu w historii.
+            </summary>
+        </member>
+        <member name="F:E_PositionInHistory.First">
+            <summary>
+            Panel jest pierwszy na liście oraz lista ma więcej niż jedną pozycję.
+            </summary>
+        </member>
+        <member name="F:E_PositionInHistory.Middle">
+            <summary>
+            Panel znajduje się w środku listy.
+            </summary>
+        </member>
+        <member name="F:E_PositionInHistory.Last">
+            <summary>
+            Panel jest ostatni na liście oraz lista ma więcej niż jedną pozycję.
+            </summary>
+        </member>
+        <member name="F:E_PositionInHistory.SinglePosition">
+            <summary>
+            Panel jest jedyną pozycją w historii.
+            </summary>
+        </member>
+        <member name="F:E_PositionInHistory.Unknown">
+            <summary>
+            Nie ustalono pozycji panelu w historii.
+            </summary>
+        </member>
+        <member name="T:FormManager.Utilities.E_SaveVariant">
+            <summary>
+            Typ zapisu wariantu
+            </summary>
+        </member>
+        <member name="F:FormManager.Utilities.E_SaveVariant.Save">
+            <summary>
+            Zapis obecnego wariantu
+            </summary>
+        </member>
+        <member name="F:FormManager.Utilities.E_SaveVariant.SaveAs">
+            <summary>
+            Zapis nowego wariantu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            Przechwycenie wciśnięcia przycisku F5
+            </summary>
+            <param name="msg"></param>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.Initialize(inSolutions.Utilities.I_Common)">
+            <summary>
+            Inicjalizuje obiekty. Do edcyji
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.CreateMenu">
+            <summary>
+            Tworzy menu główne zawierające główne menu nawigacyjne oraz rozwijene menu dodatkowe.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.AddImages(DevExpress.Utils.ImageCollection,DevExpress.Utils.ImageCollection)">
+            <summary>
+            Dodaje ikony do pasków nawigacyjnych.
+            </summary>
+            <param name="vrpMainNavBarImages"></param>
+            <param name="vrpSecondNavBarImages"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.LoadAdministrationSettings">
+            <summary>
+            Ładowanie ustawień programu. 
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SetBaseData">
+            <summary>
+            ładuje dane potrzebne przy uruchamianiu programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SetDefaultAttributes">
+            <summary>
+            Ustawia domyśle atrybuty programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.InitConnection">
+            <summary>
+            Inicjalizacja połączenia z bazą.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.LoadProgram">
+            <summary>
+            Ładowanie programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SetLoggedUserText">
+            <summary>
+            Ustawia nazwę zalogowanego użytkownika na pasku statusu formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SelectDatabase">
+            <summary>
+            Wybór bazy danych programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.AddDefaultPanel">
+            <summary>
+            Podpina domyślny panel do formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.CheckAddedControl(System.Windows.Forms.Control)">
+            <summary>
+            Sprawdza jaka forma została podpięta do głownego panelu i ustawia odpowiednie opcje.
+            </summary>
+            <param name="vrpControl"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SetFormName">
+            <summary>
+            Ustawia nazwę formy jeszcze przed podpięciem Panelu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.HideButtons">
+            <summary>
+            Ukrywa przyciski na pasku narzędziowym gdy żaden moduł nie jest załadowany.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.Export">
+            <summary>
+            Eksportuj zawartość wyświetlanego panelu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.Save(FormManager.Utilities.E_SaveVariant)">
+            <summary>
+            Zapisuje nowy wariant modułu lub obecnie wybrany wariant.
+            </summary>
+            <param name="vrpSaveType">Określa czy zapisany będzie nowy wariant(SaveAs) czy obecnie wybrany wariant(Save).</param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.RefreshPanel">
+            <summary>
+            Odśwież dane na wybranym panelu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.AddAdministrationGroup">
+            <summary>
+            Dodaje grupę administracji do menu nawigacyjnego.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.MenuArrangement">
+            <summary>
+            Wyświetla formę do zarządzania wyglądem menu aplikacji.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.CheckPositionInHistory">
+            <summary>
+            Sprawdza pozycje w historii i na jej podstawie ustawia stany przycisków Wstecz/Dalej.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.SetHistoryButtonsState(System.Boolean,System.Boolean)">
+            <summary>
+            Włącza lub wyłącza przyciski Dalej/Wstecz.
+            </summary>
+            <param name="vrpEnablePrev"></param>
+            <param name="vrpEnableNext"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.About">
+            <summary>
+            Ładowanie formy "O programie".
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.InitializeSphere">
+            <summary>
+            Inicjalizacja sfery.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.Frm_BaseForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.Frm_BaseForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.Frm_BaseForm.MainPanel">
+            <summary>
+            Główny panel formy bazowej.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.Frm_BaseForm.SplashImage">
+            <summary>
+            Splash programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.View.Frm_SaveModule.vrcPanel">
+            <summary>
+            Obecnie otwarty panel.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.View.Frm_SaveModule.vrcImages">
+            <summary>
+            Lista dostępnych ikonek.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.View.Frm_SaveModule.vrcSaveType">
+            <summary>
+            Typ zapisu wariantu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.View.Frm_SaveModule.vrcModuleList">
+            <summary>
+            Lista modułów dla obecnego użytkownika.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.FillForm">
+            <summary>
+            Wypełnienie formy danymi modułu lub wariantu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.Save">
+            <summary>
+            Zapis wariantu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.FillEntity(inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Wypałnia dane modułu danymi z formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.SaveModule">
+            <summary>
+            Zapisuje dane modułu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.ValidateControls">
+            <summary>
+            Sprawdza poprawnośc wprowadzonych danych.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.View.Frm_SaveModule.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.View.Frm_SaveModule.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.View.Frm_SaveModule.Module">
+            <summary>
+            Obecnie otwarty moduł.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.View.Frm_SaveModule.NewModule">
+            <summary>
+            Nowo powstały moduł (zapisz jako).
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.View.Frm_SaveModule.SaveType">
+            
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.View.Frm_SaveModule.ModuleList">
+            <summary>
+            Lista modułów dla wariantu menu użytkownika.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.View.Frm_SaveModule.ProgramId">
+            <summary>
+            Id programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.UC_Panel.GetModuleData(System.Boolean,System.Boolean)">
+            <summary>
+            Pobiera dane modułu.
+            </summary>
+            <param name="vrpGetFilterData">Czy pobierać dane filtrów</param>
+            <param name="vrpGetModuleData">Czy pobierać dane layoutu</param>
+            <returns>Dokument XML zawierający dane modułu.</returns>
+        </member>
+        <member name="F:inSolutions.Utilities.FormManager.UC_Panel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.UC_Panel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.FormManager.UC_Panel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.UC_Panel.IsBeingRestored">
+            <summary>
+            Wskazuje czy forma jest aktualnie przywracana do oryginalnego stanu na podstawie danych modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.UC_Panel.ShowRecodrsCount">
+            <summary>
+            Wskazuje czy w formie widoczne będzie pole Liczba rekordów.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.FormManager.UC_Panel.ShowExportButton">
+            <summary>
+            Wskazuje czy w programie widoczny będzie przycisk "Eksportuj".
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.ProgramLicenseName">
+            <summary>
+            Nazwa licencji programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.ProgramId">
+            <summary>
+            Ientyfikator programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.ProgramVersion">
+            <summary>
+            Wersja programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.Files">
+            <summary>
+            Lista plików SQL.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.ConfigFile">
+            <summary>
+            Scieżka do pliku konfiguracyjnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.Sfera">
+            <summary>
+            Czy wykorzystywana jest sfera.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.RememberHistory">
+            <summary>
+            Czy pamiętać historię ostatnio przeglądanych zakładek.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.MaxHistoryPositions">
+            <summary>
+            Liczba zakładek w historii.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.EditableMenu">
+            <summary>
+            Czy menu jest edytowalne.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.I_Common.InsertSystem">
+            <summary>
+            System z jakiego korzystamy.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.Cl_License">
+            <summary>
+            Klasa odpowiadająca za zarządzanie licencjami dla standardowych dodatków.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.License.Cl_LicenseBase">
+            <summary>
+            Bazowa klasa służaca do zarządzania licencjami.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcLicenseName">
+            <summary>
+            Nazwa licencji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcSwitchLicense">
+            <summary>
+            Zamień plik licencji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcLicenseFile">
+            <summary>
+            Plik licencji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcVatNumber">
+            <summary>
+            NIP podmiotu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcCompanyName">
+            <summary>
+            Nazwa firmy.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcNumberOfLicenses">
+            <summary>
+            Liczba stanowisk.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcPrivliges">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcVersion">
+            <summary>
+            Wersja programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcErrorCode">
+            <summary>
+            Kod błędu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcConnect">
+            <summary>
+            Ustawiana gdy podłączamy ponownie program do Subiekta (zły NIP licencji lub zły ciąg połączenia)
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.License.Cl_LicenseBase.vrcCommon">
+            <summary>
+            Ustawienia programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.SwitchLicenseFile(System.Boolean,System.Boolean)">
+            <summary>
+            Wczytuje nowy plik licencji.
+            </summary>
+            <param name="vrpRestart"></param>
+            <param name="vrpConnect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.SwitchLicenseFile(System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Wczytuje nowy plik licencji.
+            </summary>
+            <param name="vrpRestart">Czy uruchomić program ponownie.</param>
+            <param name="vrpConnect">Czy podłączamy program ponownie do Subiekta(zły NIP lub ConnectionString)</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.GetLicenseFile">
+            <summary>
+            Pozwala na ręczne wybranie pliku licencji.
+            </summary>
+            <returns>Scieżka do pliku licencji.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.GetLicenseFile(System.String)">
+            <summary>
+            Pozwala na ręczne wybranie pliku licencji.
+            </summary>
+            <param name="vrpProgramName">Nazwa programu</param>
+            <returns>Scieżka do pliku licencji.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.GetVatNumberConnectionString">
+            <summary>
+            Pobiera numer NIP podmiotu.
+            </summary>
+            <returns>Numer NIP.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_LicenseBase.GetVatNumberConnection">
+            <summary>
+            Pobiera numer NIP podmiotu.
+            </summary>
+            <returns>Numer NIP.</returns>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.Demo">
+            <summary>
+            Wskazuje czy licencja wystawiona jest na wersję demonstracyjną.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.VatNumber">
+            <summary>
+            Numer NIP podmiotu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.CompanyName">
+            <summary>
+            Nazwa firmy.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.NumberOfLicenses">
+            <summary>
+            Liczba stanowisk.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.Privliges">
+            <summary>
+            (Linia modułów)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.Version">
+            <summary>
+            Wersja programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.License.Cl_LicenseBase.ErrorCode">
+            <summary>
+            Kod błędu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_License.Verification">
+            <summary>
+            Weryfikacja pliku licencji.
+            </summary>
+            <returns>0 - licencja prawidłowa.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_License.CheckLicense">
+            <summary>
+            Sprawdza plik licencji.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Utilities.Cl_LicenseNavireo">
+            <summary>
+            Klasa odpowiadająca za zarządzanie licencjami dla dodatków Navireo.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_LicenseNavireo.Verification">
+            <summary>
+            Weryfikacja pliku licencji.
+            </summary>
+            <returns>0 - licencja prawidłowa.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_LicenseNavireo.LicenseExists">
+            <summary>
+            Sprawdza czy licencja istnieje.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_LicenseNavireo.GetLicense">
+            <summary>
+            Pobiera licencję z bazy danych.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_LicenseNavireo.CheckLicense">
+            <summary>
+            Sprawdza plik licencji.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.License.Cl_ErrorMessages.GetWrongVersionError(System.String)">
+            <summary>
+            Zwraca błąd w formacie "Licencja nie jest wystawiona dla bieżącej wersji programu {Nazwa Programu}."
+            </summary>
+            <param name="vrpProgramName">Nazwa programu.</param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Utilities.Loader.Cl_Loader">
+            <summary>
+            Klasa wykonująca metody do wczytywania i zapisywania. Wyświetla pasek przetwazania
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Loader.Cl_Loader.vrcWorker">
+            <summary>
+            Worker zdarzeń
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Loader.Cl_Loader.vrcWynik">
+            <summary>
+            Wynik operacji
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Loader.Cl_Loader.vrcPrzetwazanieOkno">
+            <summary>
+            Okno przetwazania
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Cl_Loader.#ctor(inSolutions.Utilities.Loader.Execute,System.String)">
+            <summary>
+            Inicjalizuje obiekt
+            </summary>
+            <param name="vrpPrzetwazanie"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Cl_Loader.vrcWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Wykonuje operacje wczytywanie lub zapisywania
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Cl_Loader.vrcWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Zwraca wynik przetwazania i zamyka okno
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:inSolutions.Utilities.Loader.Frm_Loader">
+            <summary>
+            Okno z progresbarem
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Frm_Loader.#ctor">
+            <summary>
+            Inicjalizacj okna
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Loader.Frm_Loader.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Frm_Loader.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Loader.Frm_Loader.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Loader.Frm_Loader.Tekst">
+            <summary>
+            Tekst wyświetlany nad progresbarem
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Login.Presenter.ClP_Login.LoadSubiektUserList">
+            <summary>
+            Ładuje listę użytkowników programu Subiekt.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Login.Presenter.ClP_Login.LoginWithSfera(inSolutions.Utilities.Login.Entity.ClE_User,System.String)">
+            <summary>
+            Logowanie do prgramu przy użyciu Sfery.
+            </summary>
+            <param name="vrpUser">Uzytkownik na którego się logujemy</param>
+            <param name="vrpPassword">Wpisane hasło</param>
+            <returns>Czy logowanie się powiodło.</returns>
+        </member>
+        <member name="F:inSolutions.Utilities.Login.Frm_Login.vrcSfera">
+            <summary>
+            Określa czy do logowania wykorzystywana jest Sfera.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Login.Frm_Login.vrcLoginAttempts">
+            <summary>
+            Ilość prób logowania.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Login.Frm_Login.vrcPresenter">
+            <summary>
+            Prezenter formy logowania.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Login.Frm_Login.#ctor(System.Boolean,System.Drawing.Icon)">
+            <summary>
+            Konstruktor formy logowania.
+            </summary>
+            <param name="vrpSfera">
+            Określa czy logowanie odbywa się przy pomocy Sfery.
+            True - Lista użytkowników pochodzi z programu Subiekt.
+            False - Lista pochodzi z 
+            </param>
+        </member>
+        <member name="F:inSolutions.Utilities.Login.Frm_Login.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Login.Frm_Login.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Login.Frm_Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.MenuManager.Business.ClM_Modules">
+            <summary>
+            Klasa zarządzająca modułami i podmodułami. Umożliwia ładowanie ich z bazy jak oraz edycję.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.ModulesGet(System.Int32,System.Int32)">
+            <summary>
+            Pobieranie listy modułów danego programu(z uwzględnieniem wariantów).
+            </summary>
+            <param name="vrpProgramId">Id programu</param>
+            <param name="vrpUserId">Id użytkownika</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.ModuleSave(inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Zapisuje moduł do bazy danych
+            </summary>
+            <param name="vrpModule">Obiekt modułu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.ModuleOrderSave(inSolutions.Utilities.MenuManager.Entity.ClE_Module,System.Int32)">
+            <summary>
+            Zapis pozycji danego modułu.
+            </summary>
+            <param name="vrp_Module">Moduł do zapisu</param>
+            <param name="vrpVariantUserId">Id użytkownika dla wariantu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.ModulesGet(System.Int32)">
+            <summary>
+            Poranie listy wszytskich modułów programu (niezależnie od dostępnych w danym wariancie). Wykorzystywane przy sprawdzaniu dostępności nazwy modułu.
+            </summary>
+            <param name="vrpProgramId">Id programu</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModulesGet(System.String,System.Int32,System.Int32)">
+            <summary>
+            Pobranie listy modułów danego programu(z uwzględnieniem wariantów)
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia z bazą danych</param>
+            <param name="vrpProgramId">Id programu</param>
+            <param name="vrpUserId">Id użytkownika</param>
+            <returns>Lista modułów programu</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModulesGet(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32)">
+            <summary>
+            Pobranie listy modułów danego programu(z uwzględnieniem wariantów)
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych</param>
+            <param name="vrpProgramId">Id programu</param>
+            <param name="vrpUserId">Id użytkownika</param>
+            <returns>Lista modułów programu</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModuleSave(System.String,inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Zapisuje moduł do bazy danych
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia z bazą danych</param>
+            <param name="vrp_Module">Obiekt modułu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModuleSave(System.Data.SqlClient.SqlConnection,inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Zapisuje moduł do bazy danych
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych</param>
+            <param name="vrp_Module">Obiekt modułu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModuleOrderSave(System.String,inSolutions.Utilities.MenuManager.Entity.ClE_Module,System.Int32)">
+            <summary>
+            Zapis pozycji danego modułu.
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia z bazą danych</param>
+            <param name="vrp_Module">Moduł do zapisu</param>
+            <param name="vrpVariantUserId">Id użytkownika dla wariantu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModuleOrderSave(System.Data.SqlClient.SqlConnection,inSolutions.Utilities.MenuManager.Entity.ClE_Module,System.Int32)">
+            <summary>
+            Zapis pozycji danego modułu.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych</param>
+            <param name="vrp_Module">Moduł do zapisu</param>
+            <param name="vrpVariantUserId">Id użytkownika dla wariantu</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModulesNamesGet(System.String,System.Int32)">
+            <summary>
+            Poranie listy wszytskich modułów programu (niezależnie od dostępnych w danym wariancie). Wykorzystywane przy sprawdzaniu dostępności nazwy modułu.
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia.</param>
+            <param name="vrpProgramId">Id programu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.sp_men_ModulesNamesGet(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Poranie listy wszytskich modułów programu (niezależnie od dostępnych w danym wariancie). Wykorzystywane przy sprawdzaniu dostępności nazwy modułu.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia.</param>
+            <param name="vrpProgramId">Id programu.</param>
+            <returns></returns>
+        </member>
+        <member name="F:inSolutions.Utilities.Cl_MenuManager.vrcNavigationBar">
+            <summary>
+            Menu boczne zawierające moduły lub moduły podrzędne.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.CreateMenu(DevExpress.XtraNavBar.NavBarControl,DevExpress.XtraNavBar.NavBarControl,DevExpress.XtraBars.Bar)">
+            <summary>
+            Tworzy menu programu posiadające dwa obiekty menu bocznego oraz górny pasek zadań. 
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.GetModules(E_GetModuleType)">
+            <summary>
+            Zwraca wszytskie moduły z listy o podanym typie.
+            </summary>
+            <param name="vrpType">Typ modułu jaki chcemy pobrać</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.LoadModulesData">
+            <summary>
+            Tworzy listę grup, modułów oraz modułów podrzędnych programu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.CreateToolBar(DevExpress.XtraBars.Bar)">
+            <summary>
+            Wypełnia toolbar wg grup.
+            </summary>
+            <param name="vrpToolbar">Obiekt reprezentujący menu górne programu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.AddToolbarItems(DevExpress.XtraBars.BarSubItem,inSolutions.Utilities.MenuManager.Utilities.Cl_Group)">
+            <summary>
+            Wypełnienie grup modułami.
+            </summary>
+            <param name="vrpBarSubItem"></param>
+            <param name="vrpGroup"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.AddToolbarItems(DevExpress.XtraBars.BarSubItem,inSolutions.Utilities.MenuManager.Utilities.Cl_Module)">
+            <summary>
+            Wypełnienie modułów modułami podrzędnymi.
+            </summary>
+            <param name="vrpBarSubItem"></param>
+            <param name="vrpModule"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.CreateSideNavigationMenu(DevExpress.XtraNavBar.NavBarControl,DevExpress.XtraNavBar.NavBarControl)">
+            <summary>
+            Wypełnia menu nawigacyjne programu.
+            </summary>
+            <param name="vrpMainNavBar">Menu boczne programu.</param>
+            <param name="vrpExpandedNavBar">Dodatkowe menu boczne programu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.AddGroupItems(inSolutions.Utilities.MenuManager.Utilities.Cl_Group,DevExpress.XtraNavBar.NavBarControl)">
+            <summary>
+            Dodaje przyciski modułów do odpowiedniej grupy.
+            </summary>
+            <param name="vrpGroup">Grupa modułów.</param>
+            <param name="vrpMainNavBar">Główne menu nawigacyjne programu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.CreateExpandedNavBarGroup(inSolutions.Utilities.MenuManager.Utilities.Cl_Module)">
+            <summary>
+            Wypełnia dodatkowe menu nawigacyjne programu wg podanego modułu.
+            </summary>
+            <param name="vrpModule">Moduł programu.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.ShowExpandedBar(DevExpress.XtraNavBar.NavBarItem)">
+            <summary>
+            Wyświetla dodatkowe menu nawigacyjne programu powiązane z wybranym modułem.
+            </summary>
+            <param name="vrpType">Element głównego menu nawigacyjnego reprezentujący moduł.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.ExpandedNavBar_NavDragDrop(System.Object,DevExpress.XtraNavBar.ViewInfo.NavBarDragDropEventArgs)">
+            <summary>
+            Implementacja operacji drag and drop na nav barze.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.SaveModulesOrder(System.Collections.Generic.List{inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule})">
+            <summary>
+            Zapis kolejności modułów wybranej poprzez przestawianie elementów NavBara.
+            </summary>
+            <param name="vrlModules"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.GetModules(System.Int32)">
+            <summary>
+            Pobiera listę modułów dla obecnego użytkownika.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_MenuManager.CreateVariantUserMenu(System.Int32)">
+            <summary>
+            Sprawdza czy dla obecnego użytkownika istnieje wariant układu menu. Jeśli nie, tworzy nowy wariant menu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Presenter.ClP_MenuManager.LoadModulesData">
+            <summary>
+            Pobiera dane modułów z bazy danych dla wybranego użytkownika.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Presenter.ClP_MenuManager.SaveModulesData">
+            <summary>
+            Usuwa wybrane moduły.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.MenuManager.Entity.ClE_Module">
+            <summary>
+            Encja modułu programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Id">
+            <summary>
+            Id modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Name">
+            <summary>
+            Nazwa modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Description">
+            <summary>
+            Opis modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Type">
+            <summary>
+            Typ modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.ParentId">
+            <summary>
+            Rodzic modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.ControlName">
+            <summary>
+            Nazwa kontrolki reprezentującej moduł.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.SQL">
+            <summary>
+            Nazwa pliku SQL powiązanego z modułem.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Data">
+            <summary>
+            Dane dodatkowe modułu (konfiguracja).
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Icon">
+            <summary>
+            Id ikony modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Position">
+            <summary>
+            Pozycja modułu w menu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.ProgramId">
+            <summary>
+            Id programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.EditingUserId">
+            <summary>
+            Edytował.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Insert">
+            <summary>
+            Pole nieużywane - do usunięcia.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Edit">
+            <summary>
+            Czy obiekt był edytowany.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Delete">
+            <summary>
+            Czy obiekt był usunięty.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Avaliable">
+            <summary>
+            Czy moduł jest dostępny.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.OrderObjectId">
+            <summary>
+            Id obiektu przechowywującego informację o pozycji modułu na liście.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.Default">
+            <summary>
+            Określa czy moduł jest domyślny dla programu (otwierany przy starcie).
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.DefaultForModule">
+            <summary>
+            Określa czy moduł podrzędny jest domyślny dla modułu (przy kliknięciu na moduł otwierany jest ten moduł podrzęny). 
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Entity.ClE_Module.VariantUserId">
+            <summary>
+            Id użytkowika danego wariantu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_AssemblyInfo.GetAssemblyData">
+            <summary>
+            Zwraca dane biblioteki.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Group.vrcModules">
+            <summary>
+            Lista modułów danej grupy
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Group.vrcNavBarGroup">
+            <summary>
+            Obiekt NavBarGroup reprezentujący grupę modułów .
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Group.AddModules(System.Collections.Generic.List{inSolutions.Utilities.MenuManager.Entity.ClE_Module})">
+            <summary>
+            Dodaje moduły do listy na podstawie zbioru encji modułów
+            </summary>
+            <param name="vrpList"></param>
+        </member>
+        <member name="T:inSolutions.Utilities.MenuManager.Utilities.Cl_Module">
+            <summary>
+            Klasa reprezentująca moduł programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.vrcSubmodules">
+            <summary>
+            Lista modułów podrzędnych danemu modułowi.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.vrcNavElement">
+            <summary>
+            Element głównego menu bocznego reprezentujący moduł.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.vrcNavBarGroup">
+            <summary>
+            Grupa reprezentująca moduł .
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.CreateControl">
+            <summary>
+            Tworzy obiekt IDXControl reprezentujący dany moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.AddSubmodules(System.Collections.Generic.List{inSolutions.Utilities.MenuManager.Entity.ClE_Module})">
+            <summary>
+            Dodaje moduły podrzędne do listy na podstawie zbioru encji modułu podrzędnych modułu
+            </summary>
+            <param name="vrpList"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.SetControlData(DevExpress.XtraEditors.IDXControl)">
+            <summary>
+            Ustawia podstawowe informacje dla obiektu UC_Panel
+            </summary>
+            <param name="vrpControl"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.GetControlName">
+            <summary>
+            Zwraca nazwę kontrolki reprezentującej moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.GetModuleId">
+            <summary>
+            Zwraca nazwę modułu.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.BarSubItem_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Zwraca typ kontrolki reprezentującej moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.Submodules">
+            <summary>
+            Moduły podrzędne dla wybranego modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.Module">
+            <summary>
+            Encja wybranego modułu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.Default">
+            <summary>
+            Określa czy moduł jest domyślny dla programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Module.Type">
+            <summary>
+            Typ modułu
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.vrcNavElement">
+            <summary>
+            Element menu reprezentujący moduł podrzędny.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.CreateControl">
+            <summary>
+            Tworzy obiekt IDXControl reprezentujący dany moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.GetControlName">
+            <summary>
+            Zwraca nazwę kontrolki reprezentującej moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.GetModuleId">
+            <summary>
+            Zwraca nazwę modułu.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.NavBarItem_LinkClicked(System.Object,DevExpress.XtraNavBar.NavBarLinkEventArgs)">
+            <summary>
+            Zwraca typ kontrolki reprezentującej moduł.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.NavigationLink">
+            <summary>
+            Przycisk na pasku nawigacyjnym reprezentujący moduł podrzędny.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.Submodule">
+            <summary>
+            Encja wybranego modułu podrzędnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.Default">
+            <summary>
+            Określa czy moduł podrzędny jest domyślny dla programu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.MenuManager.Utilities.Cl_Submodule.Type">
+            <summary>
+            Typ modułu
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsConstructorParameterNumberError">
+            <summary>
+            "Brak konstruktora o podanej liczbie parametrów."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsCancelQuestion">
+            <summary>
+            "Czy na pewno anulować zapis?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsSaveModuleNameError">
+            <summary>
+            "Proszę podać nazwę."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsChangeUserQuestion">
+            <summary>
+            "Niezapisane zmiany zostaną utracone. Zmienić użytkownika?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsCloseMenuManagerQuestion">
+            <summary>
+            "Niezapisane zmiany zostaną utracone. Czy na pewno zamknąc to okno?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsRestartQuestion">
+            <summary>
+            "Aby zmiany były widoczne należy ponownie uruchomić aplikację. Czy uruchomić program ponownie?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsNewModuleVariant">
+            <summary>
+            "Nowy wariant modułu"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsModuleVariant">
+            <summary>
+            "Wariant modułu"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsSaveVariantAs">
+            <summary>
+            "Zapisz jako"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsSaveVariant">
+            <summary>
+            "Zapisz"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsModuleNameDuplicated">
+            <summary>
+            "Podana nazwa jest już zajęta. Proszę podać nową nazwę."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.Utilities.Cl_Utilities.vrsNoDefaultModuleWarning">
+            <summary>
+            "Nie wybrano modłu domyślnego. Czy kontynuować zapis?"
+            </summary>
+        </member>
+        <member name="T:E_ControlType">
+            <summary>
+            Typ kontrolki.
+            </summary>
+        </member>
+        <member name="T:E_GetModuleType">
+            <summary>
+            Rodzaj modułu jaki chcemy pobrać z listy modułów.
+            </summary>
+        </member>
+        <member name="F:E_GetModuleType.Any">
+            <summary>
+            Dowolny (moduły i moduły podrzędne)
+            </summary>
+        </member>
+        <member name="F:E_GetModuleType.Module">
+            <summary>
+            Moduł
+            </summary>
+        </member>
+        <member name="F:E_GetModuleType.Submodule">
+            <summary>
+            Moduł podrzędny
+            </summary>
+        </member>
+        <member name="T:E_ModuleType">
+            <summary>
+            Typ modułu.
+            </summary>
+        </member>
+        <member name="F:E_ModuleType.Group">
+            <summary>
+            Grupa
+            </summary>
+        </member>
+        <member name="F:E_ModuleType.Module">
+            <summary>
+            Moduł 
+            </summary>
+        </member>
+        <member name="F:E_ModuleType.Submodule">
+            <summary>
+            Moduł podrzędny (wariant)
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.GetModuleFromNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            Zwraca dane modułu na podstawie wskazego elementu drzewa.
+            </summary>
+            <param name="vrpNode">Element drzewa reprezentujący moduł.</param>
+            <returns>Dane modułu.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.FillForm(inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Wypałnia dane modułu na formie.
+            </summary>
+            <param name="vrpModule"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.CheckDiffereces(inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Sprawdza czy pojedynczy element został edytowany
+            </summary>
+            <param name="vrpModule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.SaveToEntity(inSolutions.Utilities.MenuManager.Entity.ClE_Module)">
+            <summary>
+            Zapis danych podanych na formie do obiektu modułu oraz obiektu drzewa.
+            </summary>
+            <param name="vrpModule"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.ValidateControls">
+            <summary>
+            Sprawdzenie poprawności kontrolek.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.LoadUserData">
+            <summary>
+            Ładowanie danych użytkowników.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.LoadModuleData">
+            <summary>
+            Ładowanie danych modułów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.SaveModulePosition">
+            <summary>
+            Zapis kolejności modułów w bazie.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.Save">
+            <summary>
+            Wykonuje operacje zapisu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.frmTreeView_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Event odpowiedzialny za pzerzucanie elementów drzewa.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.MenuManager.View.Frm_MenuManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Parameter.ClM_Parameter.LoadParameter(System.Int32,System.String)">
+            <summary>
+            Zwraca parametr wg nazwy i id programu. Wymaga obsłużenia klasy Cl_Connection.
+            </summary>
+            <param name="vrpPrId"></param>
+            <param name="vrpName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Parameter.ClM_Parameter.UpdateParameter(inSolutions.Utilities.Parameter.ClE_Parameter)">
+            <summary>
+            Aktualizuje parametr. Wymaga obsłużenia klasy Cl_Connection.
+            </summary>
+            <param name="vrpParameter"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.Parameter.ClM_Parameter.LoadParameters(System.Data.SqlClient.SqlConnection,System.Int32,System.String)">
+            <summary>
+            Metoda ładuje wszystkie występujące w bazie parametry w zależności od parametrów
+            </summary>
+            <param name="vrpConnection">Połączenie</param>
+            <param name="vrpPrId">ID programu</param>
+            <param name="vrpName">Nazwa parametru do załadowania</param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Utilities.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.realvista_text_switch_windows_32">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.realvista_webdesign_comparison_chart_32">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.realvista_webdesign_comparison_chart_48">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.SzkieletAplikacji">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Properties.Resources.UtilitiesName">
+            <summary>
+              Looks up a localized string similar to inSolutions.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_ResourceProvider.GetMessageDescription(System.String,System.String)">
+            <summary>
+            Get string from resource file
+            </summary>
+            <param name="vrpCode">Message name</param>
+            <param name="vrpResourceFile">Resource file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Security.Cl_DataEncryption.DecryptFile(System.String)">
+            <summary>
+            Deszyfruje dane z pliku.
+            </summary>
+            <param name="vrpFile">Scieżka do pliku który należy odszyfrować.</param>
+            <returns>Zawartość odszyfrowanego pliku.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Security.Cl_DataEncryption.DecryptText(System.String)">
+            <summary>
+            Deszyfruje ciąg znakowy.
+            </summary>
+            <param name="vrpTextToDecrypt">Ciąg znakowy który należy odszyfrować.</param>
+            <returns>Odszyfrowana treść.</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Security.Cl_DataEncryption.EncryptText(System.String)">
+            <summary>
+            Szyfruje ciąg znakowy
+            </summary>
+            <param name="vrpTextToEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Security.Cl_DataEncryption.EncryptConnectionString(System.Boolean)">
+            <summary>
+            Szyfruje lub deszyfruje element connectionStrings w pliku konfiguracyjnym.
+            </summary>
+            <param name="vrpEncrypt">Określa czy szyfrować czy deszyfrować informacje. True - szyfruj; False - deszyfruj.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Cl_DatabaseSelection.SelectDatabase(System.Boolean,System.Boolean,E_InsertSystem,System.String,System.Boolean)">
+            <summary>
+            Wybór podmiotu (bazy danych).
+            </summary>
+            <param name="vrpStart">Określa czy ustawienia do bazy danych będą definiowane od nowa. False - pokazuje domyślnie bieżące ustawienia połączenia</param>
+            <param name="vrpRestartApplication">Określa czy program będzie uruchomiony ponownie po wyborze bazy danych</param>
+            <param name="vrpSystem">Określa system, którego bazy mają być widoczne</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Cl_DatabaseSelection.SelectDatabase(System.Boolean,System.Boolean)">
+            <summary>
+            Wybór podmiotu (bazy danych).
+            </summary>
+            <param name="vrpStart">Określa czy ustawienia do bazy danych będą definiowane od nowa. False - pokazuje domyślnie bieżące ustawienia połączenia</param>
+            <param name="vrpRestartApplication">Określa czy program będzie uruchomiony ponownie po wyborze bazy danych</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Cl_DatabaseSelection.SelectDatabaseOrLicense">
+            <summary>
+            Pokazuje okno, w którym użytkwonik może zdecydować, czy wczyta nową licencję, czy wybierze ponownie bazę danych
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.Cl_DatabaseSelection.ProgramIcon">
+            <summary>
+            Ikona programu wyświetlana przy wyborze bazy danych..
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Presenter.ClP_SelectDatabase.Load">
+            <summary>
+            Ładowanie danych
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Presenter.ClP_SelectDatabase.Connect">
+            <summary>
+            Nawiązuje połączenie z serwerem.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Presenter.ClP_SelectDatabase.GetCustomSqlFiles(System.String)">
+            <summary>
+            Wczytanie niestandardowych plików SQL przypisanych do modułów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Presenter.ClP_SelectDatabase.ExecuteSqlFiles(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Wykonuje polecenia zawarte w plikach SQL.
+            </summary>
+            <param name="vrpConnection"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.Presenter.ClP_SelectDatabase.SelectSubiektFile">
+            <summary>
+            Ręczne wybranie pliku Subiekt.xml.
+            </summary>
+            <returns>Scieżka do pliku Subiekt.xml.</returns>
+        </member>
+        <member name="T:inSolutions.Utilities.SelectDatabase.View.UC_Connect">
+            <summary>
+            Panel pozwalający na wybranie nowej bazy danych(podmiotu) lub licencji programu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.SelectDatabase.View.UC_Connect.vrcRestart">
+            <summary>
+            Czy forma będzie uruchomiona ponownie.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_Connect.ChangeDatabase">
+            <summary>
+            Wybór bazy danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_Connect.LoadLicenseFile">
+            <summary>
+            Wybór licencji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.SelectDatabase.View.UC_Connect.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_Connect.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_Connect.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.UC_Connect.Restart">
+            <summary>
+            Czy forma będzie uruchomiona ponownie.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo">
+            <summary>
+            Wświetla funkcje administracyjne dla navireo
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo.LoadLicenseFile">
+            <summary>
+            Wybór licencji.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.UC_ConnectNavireo.Restart">
+            <summary>
+            Czy forma będzie uruchomiona ponownie.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.SI">
+            <summary>
+            FS
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.WT">
+            <summary>
+            MM
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.WR">
+            <summary>
+            PZ
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.WS">
+            <summary>
+            WZ
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.GRN">
+            <summary>
+            PW
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.GIN">
+            <summary>
+            RW
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.SO">
+            <summary>
+            ZK
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.PO">
+            <summary>
+            ZD
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Sphere.Utilities.E_SphereDocumentType.BoS">
+            <summary>
+            Paragon
+            </summary>
+        </member>
+        <member name="T:E_InsertSystem">
+            <summary>
+            System programu InsERT
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.SelectDatabase.View.Frm_Connect.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_Connect.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_Connect.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase">
+            <summary>
+            Wybór bazy danych programu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.#ctor(System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean,System.Boolean,E_InsertSystem)">
+            <summary>
+            Wybór bazy danych.
+            </summary>
+            <param name="vrpSQLFiles">Pliki SQL do wykonania.</param>
+            <param name="vrpConfigFile">Plik konfiguracyjny.</param>
+            <param name="vrpConnectionString">Ciąg połączenia.</param>
+            <param name="vrpStart">Czy program jest uruchamiany pierwszy raz.</param>
+            <param name="vrpRestartAplication">Czy uruchomić aplikację ponownie.</param>
+            <param name="vrpSystem">System z którego korzystamy.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.#ctor(System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean,System.Boolean,E_InsertSystem,System.Drawing.Icon,System.String,System.Boolean)">
+            <summary>
+            Wybór bazy danych.
+            </summary>
+            <param name="vrpSQLFiles">Pliki SQL do wykonania.</param>
+            <param name="vrpConfigFile">Plik konfiguracyjny.</param>
+            <param name="vrpConnectionString">Ciąg połączenia.</param>
+            <param name="vrpStart">Czy program jest uruchamiany pierwszy raz.</param>
+            <param name="vrpRestartAplication">Czy uruchomić aplikację ponownie.</param>
+            <param name="vrpSystem">System z którego korzystamy.</param>
+            <param name="vrpIcon">Ikona na pasku zadań.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.EnableForm(System.Boolean)">
+            <summary>
+            Zezwala lub blokuje możliwośc korzystania z formy.
+            </summary>
+            <param name="vrlEnable"></param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.ValidateInput">
+            <summary>
+            Sprawdza dane podane w formie.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.BackgroundWorkerCompleted">
+            <summary>
+            Po próbie połączenia z bazą danych wykonuje odpowiednie akcje.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.DatabasesDataSource">
+            <summary>
+            Bazy danych.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.SQLFiles">
+            <summary>
+            Plili SQL.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.ConfigFile">
+            <summary>
+            Plik konfiguracyjny.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.ConnectionString">
+            <summary>
+            Ciąg połączenia z serwerem.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.Start">
+            <summary>
+            Czy program jest uruchamiany pierwszy raz.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.InsertSystem">
+            <summary>
+            System na którym pracujemy.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.RestartAplication">
+            <summary>
+            Czy aplikacja będzie uruchomiona ponownie.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.ServerText">
+            <summary>
+            Pole nazwa serwera 
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.UserText">
+            <summary>
+            Pole użytkownika
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.SelectDatabase.View.Frm_SelectDatabase.UserPassword">
+            <summary>
+            Hasło.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:inSolutions.Utilities.Sphere.Cl_Sphere.Polacz(System.String,System.String,System.String,E_InsertSystem)" -->
+        <member name="M:inSolutions.Utilities.Sphere.Cl_Sphere.Disconnect">
+            <summary>
+            Zamyka połączenie ze Sferą
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Sphere.Cl_Sphere.SuDokumentyManager">
+            <summary>
+            Zwraca obiekt SuDokumentyManager (po jego wykorzystaniu należy go zwolnić)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Sphere.Cl_Sphere.Subiekt">
+            <summary>
+            Zwraca obiekt Subiekta/Sfery
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.Sphere.Cl_Sphere.Navireo">
+            <summary>
+            Zwraca obiekt Navireo.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Utilities.Splash.Frm_Splash.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Splash.Frm_Splash.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Utilities.Splash.Frm_Splash.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.Cl_DatabaseManager">
+            <summary>
+            Manager bazy danych - użyteczne metody dla bazy danych
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_DatabaseManager.#ctor">
+            <summary>
+            Manager bazy danych - użyteczne metody dla bazy danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_DatabaseManager.#ctor(System.String)">
+            <summary>
+            Manager bazy danych - użyteczne metody dla bazy danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_DatabaseManager.IsTableExists(System.String)">
+            <summary>
+            Sprawdza czy tabela przekazana w parametrze istnieje w bazie danych.
+            </summary>
+            <param name="vrpTableName">Tabela, ktorej nazwe sprawdzać</param>
+            <returns>True jeśli tabela istnieje, false jeśli nie istnieje</returns>
+        </member>
+        <member name="M:inSolutions.Utilities.Cl_DatabaseManager.CheckValueExistsInDatabase(System.String,System.String,System.Object,System.Int32[])">
+            <summary>
+            Sprawdza czy podana wartość istnieje w bazie danych (zwraca liczbę wierszy posiadających tę wartość).
+            </summary>
+            <param name="vrpTableName">Nazwa tabeli, w której sprawdzamy istnienie wartości</param>
+            <param name="vrpColumnName">Nazwa kolumny, w której sprawdzamy istnienie wartości</param>
+            <param name="vrpValue">Wartość, którą sprawdzamy czy istnieje</param>
+            <param name="vrpIgnoredIds">Ignorowane pozycje z danym ID w wybranej tabeli (zazwyczaj może to być ID aktualnego obiektu) - 
+            standardowo ID encji, która jest sprawdzana</param>
+            <returns>Zwraca liczbę wierszy posiadających tę wartość</returns>
+        </member>
+    </members>
+</doc>

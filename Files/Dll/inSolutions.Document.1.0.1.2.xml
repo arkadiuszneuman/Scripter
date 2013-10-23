@@ -1,0 +1,895 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Document.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="T:inSolutions.Document.Business.ClM_Document">
+            <summary>
+            Klasa zawierająca metody komunikujące się z bazą danych
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.DocumentLoad(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            
+            </summary>
+            <param name="vrpConnetcion"></param>
+            <param name="prefilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.DocumentLoad(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.DocumentLoad">
+            <summary>
+            Pobiera wszystkie dokumenty
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.DocumentLoad(System.Data.SqlClient.SqlConnection,inSolutions.Document.Utilities.Cl_DocumentFilter)">
+            <summary>
+            
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpDocumentFilter"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.DocumentLoad(System.String,inSolutions.Document.Utilities.Cl_DocumentFilter)">
+            <summary>
+            
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpDocumentFilter"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetWarehouse(inSolutions.Document.Entity.ClE_Document)">
+            <summary>
+            Pobiera magazyw w zależności od dokumentu
+            </summary>
+            <param name="vrpDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetPayer(inSolutions.Document.Entity.ClE_Document)">
+            <summary>
+            Pobiera kontrahenta w zależności od wybranego dokumentu
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetPayer(System.Collections.Generic.IEnumerable{inSolutions.Document.Entity.ClE_Document})">
+            <summary>
+            Przypsuje płatnika dla przekazanych dokumentów
+            </summary>
+            <param name="vrpDocuments"></param>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetWarehouse(System.Collections.Generic.IEnumerable{inSolutions.Document.Entity.ClE_Document})">
+            <summary>
+            Pobiera przypisany magazyn do dokumentu
+            </summary>
+            <param name="vrpDocuments"></param>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetRecipient(inSolutions.Document.Entity.ClE_Document)">
+            <summary>
+            Przypisuje odbiorce dla konkretnego dokumentu
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetRecipient(System.Collections.Generic.List{inSolutions.Document.Entity.ClE_Document})">
+            <summary>
+            Pobiera odbiorce dla przekazanych dokumentów
+            </summary>
+            <param name="vrpDocuments"></param>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetClient(System.Collections.Generic.List{inSolutions.Document.Entity.ClE_Document})">
+            <summary>
+            Przypisuje klienta dla przekazanych dokumentów z tabeli adr_Historia
+            </summary>
+            <param name="vrpDocuments"></param>
+        </member>
+        <member name="T:inSolutions.Document.Business.Cl_DefinableDocument">
+            <summary>
+            Dokument definiowalny
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Business.Cl_DefinableDocument.#ctor(System.String)">
+            <summary>
+            Dokument definiowalny
+            </summary>
+            <param name="vrpAbbreviation">Skrót dokumentu definiowalnego</param>
+        </member>
+        <member name="P:inSolutions.Document.Business.Cl_DefinableDocument.Abbreviation">
+            <summary>
+            Skrót
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Business.Cl_DefinableDocument.Id">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Id">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Type">
+            <summary>
+            Typ dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Subtype">
+            <summary>
+            Podtyp dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.WarehouseId">
+            <summary>
+            Magazyn
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Number">
+            <summary>
+            Numer
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.FullNumber">
+            <summary>
+            Numer pełny
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.RelatedDocumentId">
+            <summary>
+            Id dokumentu powiązanego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.RelatedDocumentFullNumber">
+            <summary>
+            Numer pełny dokumentu powiązanego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.PayerId">
+            <summary>
+            Identyfikator kontrahenta. Płatnik, znajduje się na dokumentach kasowych i rozrachunkach.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.RecipientId">
+            <summary>
+            Identyfikator odbiorcy towaru; występuje na FS i FZ, KFS i KFZ; jest przepisywany na automatyczne dok. magazynowe. Dla MM oznacza identyfikator magazynu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.AddressHistoryId">
+            <summary>
+            Identyfikator historycznych danych adresowych odbiorcy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Issued">
+            <summary>
+            Osoba wystawiająca dokument
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Received">
+            <summary>
+            Osoba odbierająca
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.WarehouseValue">
+            <summary>
+            Wartość magazynowa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.NetValue">
+            <summary>
+            Wartość netto
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.VATValue">
+            <summary>
+            Wartość VAT
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.GrossValue">
+            <summary>
+            Wartość brutto
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Currency">
+            <summary>
+            Waluta
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Notes">
+            <summary>
+            Uwagi
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Title">
+            <summary>
+            Tytuł
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.City">
+            <summary>
+            Miejsce wystawienia dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Date">
+            <summary>
+            Data wystawienia dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.TypeEnum">
+            <summary>
+            Typ dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.SubtypeEnum">
+            <summary>
+            Podtyp dokumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Customer">
+            <summary>
+            Kontrhenr
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Warehouse">
+            <summary>
+            Magazyn
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Payer">
+            <summary>
+            Płatnik
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Recipient">
+            <summary>
+            Odbiorca
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.Client">
+            <summary>
+            Klient
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Document.StatusEnum">
+            <summary>
+            Status dokumentu
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Utilities.Cl_DocumentFilter">
+            <summary>
+            Klasa filtru
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DocumentId">
+            <summary>
+            Dokument id
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateFrom">
+            <summary>
+            Data wystawienia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateTo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Type">
+            <summary>
+            Lista typów
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Warehouse">
+            <summary>
+            Lista magazynów
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Id">
+            <summary>
+            Unikalny identyfikator pozycji dokumentu	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.DocumentPositionId">
+            <summary>
+            Identyfikator pozycji dokumentu modyfikowanej przez tę pozycję (Korekty oraz FS, FZ powstałe z przekształcenia)	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Mark">
+            <summary>
+            1 - ilość dodatnia, -1 - ilość ujemna	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Status">
+            <summary>
+            Status pozycji dokumentu, 0 - pozycja normalna, 1 - pozycja korektowa, 2 - pozycja po korekcie	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.SalesDocumentId">
+            <summary>
+            Identyfikator dokumentu handlowego (FS,RS,PA,PI...)	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehouseDocumentId">
+            <summary>
+            Identyfikator dokumentu magazynowego (WZ, PZ, PW,RW,MM)	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.ProductId">
+            <summary>
+            Identyfikator towaru dla pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.ProductKindId">
+            <summary>
+            Rodzaj towaru dla pozycji (TW_TOWAR=1,TW_USLUGA=2,TW_OPAKOWANIE=4,TW_KOMPLET=8)	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Description">
+            <summary>
+            Opis pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.SalesDocumentNo">
+            <summary>
+            Liczba porzadkowa pozycji na dokumencie handlowym	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehouseDocumentNo">
+            <summary>
+            Liczba porzadkowa pozycji na dokumencie magazynowym	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Quantity">
+            <summary>
+            Ilosc towaru w wybranej jednostce na pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehouseQuantity">
+            <summary>
+            /Ilość towaru w jednostce podstawowej towaru	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.UoM">
+            <summary>
+            Wybrana jednostka miary dla towaru na pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehousePrice">
+            <summary>
+            Cena magazynowa pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.CurrencyPrice">
+            <summary>
+            Cena walutowa netto lub brutto w zaleznosci od dokumentu	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.NetPrice">
+            <summary>
+            Cena netto pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.GrossPrice">
+            <summary>
+            Cena brutto pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Discount">
+            <summary>
+            Rabat od ceny (nett, jesli dokument liczony jest według netto, od ceny brutto, gdy jesli liczony według brutto	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehouseValue">
+            <summary>
+            Wartość magazynowa pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.NetValue">
+            <summary>
+            Wartość netto pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.VatValue">
+            <summary>
+            Wartość VAT pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.GrossValue">
+            <summary>
+            Wartość brutto pozycji	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.VatId">
+            <summary>
+            Identyfikator stawki VAT z tabeli sl_StawkaVAT	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.VatPercent">
+            <summary>
+            Procent stawki VAT	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.Term">
+            <summary>
+            Termin ważności pozycji, przenoszony do tabeli dok_magruch	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.WarehouseId">
+            <summary>
+            zarezerwowane na przyszlosc, nie nalezy go używać	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.SerialNumber">
+            <summary>
+            Numer seryjny towaru	
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_Position.CategoryId">
+            <summary>
+            Kategoria pozycji dokumentu	
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Properties.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Properties.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Properties.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Properties.Resource.Document">
+            <summary>
+              Looks up a localized string similar to inSolutions.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Properties.Resource.LoadingDocuments">
+            <summary>
+              Looks up a localized string similar to Wczytywanie dokumentów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Utilities.E_Status">
+            <summary>
+            Statusy dokumentów
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.Withdraw">
+            <summary>
+            Wycofany
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.Executed">
+            <summary>
+            Wykonany
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.Cancelled">
+            <summary>
+            Unieważniony
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.Delayed">
+            <summary>
+            Odłożony
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.DeliveredMM">
+            <summary>
+            MM wydany
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.OrderNotExecuted">
+            <summary>
+            Zamówienie nie zrealizowane
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.OrderNotExecutedWithoutReserwation">
+            <summary>
+            zamówienie nie zrealizowane bez rezerwacji
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.OrderNotExecutedWithReserwation">
+            <summary>
+            zamówienie nie zrealizowane z rezerwacją
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.Utilities.E_Status.OrderExecuted">
+            <summary>
+            zamówienie zrealizowany
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Utilities.E_StatusEx">
+            <summary>
+            Rozszerzony status dokumentu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,inSolutions.Document.Utilities.E_Type[])">
+            <summary>
+            Forma wyświetlająca listę dokumentów w zależności od parametrów
+            </summary>
+            <param name="vrpChoose">Czy możliwy wybór</param>
+            <param name="vrpTypes">Typy dokumentów</param>
+        </member>
+        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,System.Boolean,inSolutions.Document.Utilities.E_Type[])">
+            <summary>
+            Forma wyświetlająca listę dokumentów w zależności od parametrów
+            </summary>
+            <param name="vrpMultiselect">Możliwy wybór kilku dokumentów</param>
+            <param name="vrpChoose">Czy mozliwy wybór</param>
+            <param name="vrpTypes">Typy dokumentów</param>
+        </member>
+        <member name="F:inSolutions.Document.View.Frm_Document.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.View.Frm_Document.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Document.View.Frm_Document.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.Frm_Document.SelectedObject">
+            <summary>
+            Wybrany dokument
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.Frm_Document.SelectedObjects">
+            <summary>
+            Wybrane dokumenty
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.Frm_Document.DateFrom">
+            <summary>
+            Data wystawienia od
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.Frm_Document.DateTo">
+            <summary>
+            Data wystawienia do
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.Frm_Document.Warehouses">
+            <summary>
+            Id magazynów
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.View.UC_Document">
+            <summary>
+            Wyświetla liste dokumentów
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.View.UC_Document.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.View.UC_Document.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Document.View.UC_Document.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.UC_Document.Prefilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.UC_Document.Types">
+            <summary>
+            Typ doumentu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.UC_Document.Warehouses">
+            <summary>
+            ID magazynów
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.UC_Document.DateFrom">
+            <summary>
+            Data wystawienia od
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.View.UC_Document.DateTo">
+            <summary>
+            Data wystawienia od
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocument.SourceDocuments">
+            <summary>
+            Dokumenty źródłowe.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocument.DueDate">
+            <summary>
+            Termin realizacji
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateSalesOrder(System.Int32)">
+            <summary>
+            Tworzy dokument ZK
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateDefinableDocument(System.Int32,System.Int32)">
+            <summary>
+            Tworzy dokument definiowalny
+            </summary>
+            <param name="vrpDefinableDocumentId"></param>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.ShowDocument(System.Int32,System.Boolean)">
+            <summary>
+            Wyświetl dokument o podanym Id.
+            </summary>
+            <param name="vrpDocumentId">Id dokumentu.</param>
+            <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.ShowDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
+            <summary>
+            Wyświetl wskazany dokument.
+            </summary>
+            <param name="vrpDocumentId">Obiekt dokumentu.</param>
+            <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.AddPositionToDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Int32)">
+            <summary>
+            Dodaje pozycję do dokumentu
+            </summary>
+            <param name="vrpDocument"></param>
+            <param name="vrpSystemProductId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.RemovePositionFromDocument(inSolutions.SystemInterfaces.Document.I_Document,inSolutions.SystemInterfaces.Document.I_DocumentPosition)">
+            <summary>
+            Usuwa pozycję dokumentu.
+            </summary>
+            <param name="vrpDocument">Dokument z którego usuwamy pozycję.</param>
+            <param name="vrpPosition">Pozycja do usunięcia.</param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.LoadDocument(System.Int32)">
+            <summary>
+            Wczytuje dokument
+            </summary>
+            <param name="vrpDocumentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.LoadDocument(System.Object)">
+            <summary>
+            Wczytuje dokument dokumentu
+            </summary>
+            <param name="vrpDocument">Obiekt dokumentu którego dane chcemy załadować (Typ InsERT.SuDokument)</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.SaveDocument(inSolutions.SystemInterfaces.Document.I_Document)">
+            <summary>
+            Zapisuje dokument
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.SimulationSaveDocument(inSolutions.SystemInterfaces.Document.I_Document)">
+            <summary>
+            Symuluje zapis dokumentu
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.DeleteDocument(inSolutions.SystemInterfaces.Document.I_Document)">
+            <summary>
+            Usuwa dokument
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.Dispose(System.Boolean)">
+            <summary>
+            Zwalnia zasoby fabryki oraz wszystkich jej dokumentów
+            </summary>
+            <param name="vrpDisposing"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.Dispose">
+            <summary>
+            Zwalnia zasoby fabryki oraz wszystkich jej dokumentów
+            </summary>
+            <param name="vrpDisposing"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.Finalize">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreatePucharseOrder(System.Int32)">
+            <summary>
+            Tworzy dokument ZD
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateWarehouseShipment(System.Int32)">
+            <summary>
+            Tworzy dokument WZ
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateSalesInvoice(System.Int32)">
+            <summary>
+            Tworzy dokument FS
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateBillOfSale(System.Int32)">
+            <summary>
+            Tworzy Paragon
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateNamedBillOfSale(System.Int32)">
+            <summary>
+            Tworzy paragon imienny
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.BasedOnAnotherDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Int32)">
+            <summary>
+            Tworzy dokument na podstawie innego dokumentu
+            </summary>
+            <param name="vrlChildDocument"></param>
+            <param name="vrpBaseDocumentId"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateWarehouseReceipt(System.Int32)">
+            <summary>
+            Tworzy dokument WZ
+            </summary>
+            <param name="vrpWarehouseId">Id magazynu, na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentPosition.IsDisposableService">
+            <summary>
+            Czy pozycja jest usługą jednorazową.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentPosition.DisposableServiceName">
+            <summary>
+            Nazwa usługi jednorazowej.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentPosition.No">
+            <summary>
+            L.p.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Wrapper.SalesChance.Cl_SferaOffer">
+            <summary>
+            Oferta szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaOffer.#ctor(InsERT.Oferta)">
+            <summary>
+            Oferta szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaOffer.Positions">
+            <summary>
+            Pozycje oferty szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaOffer.Offer">
+            <summary>
+            Obiekt oferty szansy sprzedaży programu InsERT.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance">
+            <summary>
+            Szansa sprzedaży.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.#ctor(InsERT.SzansaSprzedazy)">
+            <summary>
+            Szansa sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.SalesChance">
+            <summary>
+            Obiekt szansy sprzedaży programu InsERT.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.Id">
+            <summary>
+            Identyfikator.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.Offer">
+            <summary>
+            Oferta.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory">
+            <summary>
+            Fabryka szans sprzedaży systemu InsERT.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.#ctor">
+            <summary>
+            Fabryka szans sprzedaży systemu InsERT.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.CreateSalesChance">
+            <summary>
+            Dodaj szansę sprzedaży.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.LoadSalesChance(System.Int32)">
+            <summary>
+            Załadowanie szansy sprzedaży o podanym identyfikatorze.
+            </summary>
+            <param name="vrpSalesChanceId">Identyfikator szansy sprzedaży.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.LoadSalesChance(System.Object)">
+            <summary>
+            Załadowanie danych szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChanceId">Obiekt szansy sprzedaży.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.SaveSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance)">
+            <summary>
+            Zapisanie szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży do zapisu.</param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.AddPositionToSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance,System.Int32)">
+            <summary>
+            Dodanie pozycji do szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży do której dodajemy pozycję.</param>
+            <param name="vrpSystemProductId">Identyfikator towaru dla pozycji.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory.RemovePositionFromSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance,inSolutions.SystemInterfaces.Document.I_DocumentPosition)">
+            <summary>
+            Usunięcie pozycji z szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży z której usuwamy pozycję.</param>
+            <param name="vrpPosition">Pozycja do usunięcia.</param>
+        </member>
+    </members>
+</doc>

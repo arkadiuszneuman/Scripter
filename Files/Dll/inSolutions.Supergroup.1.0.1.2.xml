@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Supergroup.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_SupergroupGet(System.String)">
+            <summary>
+            Pobranie nadgrup towarowych.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_SupergroupGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobranie nadgrup towarowych.
+            </summary>
+            <param name="vrpConnection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_CategoryGet(System.String,System.Int32)">
+            <summary>
+            Pobranie grup towarowych należących do wybranej nadgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpSupergroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_CategoryGet(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Pobranie grup towarowych należących do wybranej nadgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpSupergroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_SupergroupSave(System.String,inSolutions.Supergroup.Entity.ClE_Spergroup,System.Int32,System.String)">
+            <summary>
+            Zapisanie danych nadgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Supergroup"></param>
+            <param name="vrpUserId"></param>
+            <param name="vrpUserName"></param>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_SupergroupSave(System.Data.SqlClient.SqlConnection,inSolutions.Supergroup.Entity.ClE_Spergroup,System.Int32,System.String)">
+            <summary>
+            Zapisanie danych nadgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_Supergroup"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_CategorySave(System.String,inSolutions.Supergroup.Entity.ClE_Category,System.Int32,System.String)">
+            <summary>
+            Zapisanie danych grupy towarowej należącej do nadgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Category"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.ClM_Supergroup.sp_cat_CategorySave(System.Data.SqlClient.SqlConnection,inSolutions.Supergroup.Entity.ClE_Category,System.Int32,System.String)">
+            <summary>
+            Zapisanie danych grupy towarowej należącej do nadgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_Category"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Supergroup.Business.Cl_SupergroupManager.EditSupergroups">
+            <summary>
+            Otwiera okno edycji nadgrup.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Supergroup.Entity.ClE_Category">
+            <summary>
+            Zawiera informacje o grupach towarowych i ich powiązaniach z grupami nadrzędnymi.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Supergroup.Entity.ClE_Spergroup">
+            <summary>
+            Nadgrupa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Entity.ClE_Spergroup.Id">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Entity.ClE_Spergroup.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Entity.ClE_Spergroup.Description">
+            <summary>
+            Opis
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Entity.ClE_Spergroup.Edit">
+            <summary>
+            Edytowany
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Entity.ClE_Spergroup.Delete">
+            <summary>
+            Usunięty
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.Presenter.ClP_SelectProductCategory.LoadProductGroups">
+            <summary>
+            Ładuje grupy towarów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.Presenter.ClP_SupergroupData.SaveSupergroupData">
+            <summary>
+            Zapisanie danych nadgrupy.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Supergroup.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Supergroup.Properties.Resources.Supergroup">
+            <summary>
+              Looks up a localized string similar to Nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.SelectGroups">
+            <summary>
+            Dodaje wybrane grupy produktów do listy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.LoadProductGroups">
+            <summary>
+            Ładowanie grup towarów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.UpdateList">
+            <summary>
+            Aktualizuje listę towarów wg listy z edytowanej nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.Cancel">
+            <summary>
+            Potwierdzenie anulowania.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Supergroup.View.Frm_SelectProductCategory.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SelectProductCategory.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.FillForm">
+            <summary>
+            Wypełnia dane nadgrupy na formie.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.LoadData">
+            <summary>
+            Ładuje grupy towarowe wchodzące w skład nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.DeleteGroup">
+            <summary>
+            Usuń grupy towarowe z nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.AddGroups">
+            <summary>
+            Dodaj grupy towarowe do nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.FillEntity">
+            <summary>
+            Wypełnia encję danymi z formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.SaveSupergroup">
+            <summary>
+            Zapisz dane nadgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.ValidateControls">
+            <summary>
+            Sprawdza poprawność danych na formie.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.Cancel">
+            <summary>
+            Potwierdzenie anulowania.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Supergroup.View.Frm_SupergroupData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_SupergroupData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.LoadData">
+            <summary>
+            Ładuje listę nadgrup.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.EditSupergroup">
+            <summary>
+            Edytuj grupę nadrzędną
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.AddSupergroup">
+            <summary>
+            Dodaj nową grupę nadrzędną.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.DeleteSupergroup">
+            <summary>
+            Usuń grupę nadrzędną.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Supergroup.View.Frm_Supergroups.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Supergroup.View.Frm_Supergroups.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

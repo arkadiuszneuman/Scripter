@@ -1,0 +1,726 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Subgroup.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupGet">
+            <summary>
+            Pobiera listę podgrup.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerAttributeGet(System.Int32)">
+            <summary>
+            Pobiera listę atrybutów podgrupy.
+            </summary>
+            <param name="vrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupSave(inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisuje dane podgrupy.
+            </summary>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupAttributeSave(inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy.
+            </summary>
+            <param name="vrpSubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.InvalidProductGet">
+            <summary>
+            Pobiera listę produktów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupGet(System.String)">
+            <summary>
+            Pobranie listy podgrup
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobranie listy podgrup
+            </summary>
+            <param name="vrpConnection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerAttributeGet(System.String,System.Int32)">
+            <summary>
+            Pobranie listy cech.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpvrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerAttributeGet(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Pobranie listy cech.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpvrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupSave(System.String,inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupSave(System.Data.SqlClient.SqlConnection,inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupAttributeSave(System.Data.SqlClient.SqlConnection,inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_SubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.CustomerSubgroupAttributeSave(System.String,inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_SubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.InvalidCustomerGet(System.String)">
+            <summary>
+            Pobiera listę produktów posiadających kilka cech z jednej podgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_CustomerSubgroup.InvalidCustomerGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobiera listę produktów posiadających kilka cech z jednej podgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupGet">
+            <summary>
+            Pobiera listę podgrup.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductAttributeGet(System.Int32)">
+            <summary>
+            Pobiera listę atrybutów podgrupy.
+            </summary>
+            <param name="vrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupSave(inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisuje dane podgrupy.
+            </summary>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupAttributeSave(inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy.
+            </summary>
+            <param name="vrpSubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.InvalidProductGet">
+            <summary>
+            Pobiera listę produktów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupGet(System.String)">
+            <summary>
+            Pobranie listy podgrup
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobranie listy podgrup
+            </summary>
+            <param name="vrpConnection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductAttributeGet(System.String,System.Int32)">
+            <summary>
+            Pobranie listy cech.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpvrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductAttributeGet(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Pobranie listy cech.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpvrpSubgroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupSave(System.String,inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupSave(System.Data.SqlClient.SqlConnection,inSolutions.Subgroup.Entity.ClE_Subgroup)">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_Subgroup"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupAttributeSave(System.Data.SqlClient.SqlConnection,inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_SubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.ProductSubgroupAttributeSave(System.String,inSolutions.Subgroup.Entity.ClE_SubgroupAttribute)">
+            <summary>
+            Zapis cechy podgrupy
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_SubgroupAttribute"></param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.InvalidProductGet(System.String)">
+            <summary>
+            Pobiera listę produktów posiadających kilka cech z jednej podgrupy.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Business.ClM_ProductSubgroup.InvalidProductGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobiera listę produktów posiadających kilka cech z jednej podgrupy.
+            </summary>
+            <param name="vrpConnection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Subgroup.Cl_SubgroupManager">
+            <summary>
+            Zarządzanie podgrupami.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.EditProductSubgroups">
+            <summary>
+            Edycja podgrup towarowych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.EditCustomerSubgroups">
+            <summary>
+            Edycja podgrup kontrahentów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.GetInvalidProducts(System.Boolean)">
+            <summary>
+            Wyświetla listę produktów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            Jeżeli w programie wykorzystywana jest Sfera, istnieje możliwośc edycji tych towarów.
+            </summary>
+            <param name="vrpSfera">Wksazuje czy w programie wykorzystywana jest sfera</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.GetInvalidProducts">
+            <summary>
+            Wyświetla listę produktów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            Jeżeli w programie wykorzystywana jest Sfera, istnieje możliwośc edycji tych towarów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.GetInvalidCustomers(System.Boolean)">
+            <summary>
+            Wyświetla listę kontrahentów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            Jeżeli w programie wykorzystywana jest Sfera, istnieje możliwośc edycji tych towarów.
+            </summary>
+            <param name="vrpSfera">Wksazuje czy w programie wykorzystywana jest sfera</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.GetInvalidCustomers">
+            <summary>
+            Wyświetla listę kontrahentów które posiadają przypisaną więcej niż jedną cechę z jednej podgrupy.
+            Jeżeli w programie wykorzystywana jest Sfera, istnieje możliwośc edycji tych towarów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.ProductSubgroupsGet">
+            <summary>
+            Zwraca listę podgrup towarowych.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Cl_SubgroupManager.CustomerSubgroupsGet">
+            <summary>
+            Zwraca listę podgrup kontrahentów.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Subgroup.Entity.ClE_Object">
+            <summary>
+            Produkt lub towar.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Object.Id">
+            <summary>
+            Identyfikator.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Object.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Object.Symbol">
+            <summary>
+            Symbol.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute">
+            <summary>
+            Zawiera powiązanie pomiędzy cechą oraz podgrupą.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute.AttributeId">
+            <summary>
+            Id cechy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute.AttributeName">
+            <summary>
+            Nazwa cechy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute.Description">
+            <summary>
+            Opis
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute.SubgroupId">
+            <summary>
+            Id podgrupy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_SubgroupAttribute.Delete">
+            <summary>
+            Usunięto
+            </summary>
+        </member>
+        <member name="T:inSolutions.Subgroup.Entity.ClE_Subgroup">
+            <summary>
+            Podgrupa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Subgroup.Id">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Subgroup.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Subgroup.Status">
+            <summary>
+            Status aktywności.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Entity.ClE_Subgroup.Description">
+            <summary>
+            Opis
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_Subgroup.LoadSubgroupData">
+            <summary>
+            Pobranie listy cech należących do podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_Subgroup.SaveSubgroup">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_Subgroup.IsNameDuplicated">
+            <summary>
+            Sprawdza czy nazwa podgrupy sie powtarza.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_Subgroup.IsDescriptionDuplicated">
+            <summary>
+            Sprawdza czy opisy się nie powtarzają.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_CustomerSubgroup.IsNameDuplicated">
+            <summary>
+            Sprawdza czy nazwa podgrupy się powtarza.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_CustomerSubgroup.SaveSubgroup">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_CustomerSubgroup.LoadSubgroupData">
+            <summary>
+            Pobranie listy cech należących do podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_Subgroups.LoadSubgroups">
+            <summary>
+            Ładowanie danych podgrup.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_CustomerSubgroups.LoadSubgroups">
+            <summary>
+            Ładowanie danych podgrup.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_InvalidObjects.LoadInvalidObjects">
+            <summary>
+            Pobiera produkty lub kontrahentów posiadających przypisane nieprawdiłowe cechy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_ProductSubgroup.IsNameDuplicated">
+            <summary>
+            Sprawdza czy nazwa podgrupy się powtarza.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_ProductSubgroup.SaveSubgroup">
+            <summary>
+            Zapisanie danych podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_ProductSubgroup.LoadSubgroupData">
+            <summary>
+            Pobranie listy cech należących do podgrupy.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Subgroup.Presenter.ClP_ProductSubgroups">
+            <summary>
+            Podgrupy produktów
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.Presenter.ClP_ProductSubgroups.LoadSubgroups">
+            <summary>
+            Ładowanie danych podgrup.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Subgroup.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.Resources.Subgroups">
+            <summary>
+              Looks up a localized string similar to Podgrupy.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsNewSubgroup" -->
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsRewriteSubgroup">
+            <summary>
+            "Pozycja/pozycje są przypisane do innych nadgrup. Przepisać pozycje do wybranej nadgrupy?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsCancelQuestion">
+            <summary>
+            "Czy na pewno chcesz anulować?"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsProductSubgroups">
+            <summary>
+            Podgrupy towarowe
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsCustomerSubgroups">
+            <summary>
+            Podgrupy kontrahentów
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsProducts">
+            <summary>
+            Produkty
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsCustomers">
+            <summary>
+            Kontrahenci
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsProductsGroup">
+            <summary>
+            "Lista produktów posiadających przypisane nieprawdiłowe cechy"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_Utilities.cnsCustomersGroup">
+            <summary>
+            "Lista kontrahentów posiadających przypisane nieprawdiłowe cechy"
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_ErrorText.cnsNameError">
+            <summary>
+            "Należy podać nazwę podgrupy."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_ErrorText.cnsDuplicatedNameError">
+            <summary>
+            "Należy podać nazwę podgrupy."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_ErrorText.cnsNoPositionsSelectedError">
+            <summary>
+            "Brak wybranych pozycji."
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.Cl_ErrorText.cnsNoDescriptionError">
+            <summary>
+            "Pole "Opis" nie może być puste.";
+            </summary>
+        </member>
+        <member name="T:inSolutions.Subgroup.Utilities.E_ObjectType">
+            <summary>
+            Typ obiektu wykorzystującego mechanizm podgrup.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.E_ObjectType.Product">
+            <summary>
+            Produkt.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.Utilities.E_ObjectType.Customer">
+            <summary>
+            Customer.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroups.LoadData">
+            <summary>
+            Ładowanie danych podgrup.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroups.EditSubgroup">
+            <summary>
+            Edycja podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroups.SetFormName">
+            <summary>
+            Ustawia nazwę formy.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.View.Frm_Subgroups.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroups.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroups.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroups.SubgroupDataSource">
+            <summary>
+            Lista podgrup
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroups.Presenter">
+            <summary>
+            Obiekt prezentera.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.View.Frm_CustomerSubgroups.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_CustomerSubgroups.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_CustomerSubgroups.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.LoadData">
+            <summary>
+            Pobranie danych prodktów z bazy danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.EditProduct">
+            <summary>
+            Edycja produktu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.EditCustomer">
+            <summary>
+            Odycja kontrahenta.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.EditObject">
+            <summary>
+            Edycja obiektu w zależności od jego typu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.SetFormText">
+            <summary>
+            Ustawienie wyświetlanej nazwy formy i kontrolek.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.View.Frm_InvalidObjects.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_InvalidObjects.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_InvalidObjects.Objects">
+            <summary>
+            Lista produktów posiadających przypisane nieprawidłowe cechy.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_InvalidObjects.ObjectType">
+            <summary>
+            Typ obiektu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Subgroup.View.Frm_ProductSubgroups.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_ProductSubgroups.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_ProductSubgroups.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.LoadData">
+            <summary>
+            Ładowanie danych podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.DeleteAttribute">
+            <summary>
+            Usunięcie cechy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.AddProductAttribute">
+            <summary>
+            Dodanie cech do podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.AddCustomerSubgroup">
+            <summary>
+            Dodanie cech do podgrupy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.FillEntity">
+            <summary>
+            Wypełnienie encji danymi.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.SaveSubgroup">
+            <summary>
+            Zapis podgrupy
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.ValidateControls">
+            <summary>
+            Sprawdza poprawność danych na formie.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.grvAttributes_InvalidValueException(System.Object,DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs)">
+            <summary>
+            Wyświetla błąd na gridzie.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:inSolutions.Subgroup.View.Frm_Subgroup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Subgroup.View.Frm_Subgroup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroup.Subgroup">
+            <summary>
+            Podgrupa.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroup.AttributeDataSource">
+            <summary>
+            Lista powiązanych cech.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroup.ListToSave">
+            <summary>
+            Lista do zapisania.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Subgroup.View.Frm_Subgroup.Presenter">
+            <summary>
+            Obiekt prezentera.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Translation.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Translation.Business.ClM_Language.CheckLanguageSymbol(System.Data.SqlClient.SqlConnection,System.Int32,System.String)">
+            <summary>
+            Checks the language symbol.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+            <param name="vrpSymbol">The VRP symbol.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.Business.ClM_Language.GetLanguageList(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Lists the language.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.Business.ClM_Language.SaveLanguage(System.Data.SqlClient.SqlConnection,inSolutions.Translation.Entity.ClE_Language)">
+            <summary>
+            Saves the language.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguage">The VRP language.</param>
+        </member>
+        <member name="M:inSolutions.Translation.Business.ClM_Language.DeleteLanguage(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Deletes the language.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Translation.Business.ClM_DictionaryValueTranslation.DeleteValueTranslation(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Deletes the language.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguageId">The VRP id.</param>
+        </member>
+        <member name="P:inSolutions.Translation.Interface.I_LanguageList.LanguageDataSource">
+            <summary>
+            Sets the language data source.
+            </summary>
+            <value>
+            The language data source.
+            </value>
+        </member>
+        <member name="P:inSolutions.Translation.Interface.I_LanguageList.SelectedLanguage">
+            <summary>
+            Gets the selected language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_LanguageList.#ctor(inSolutions.Translation.Interface.I_LanguageList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Translation.Presenter.ClP_LanguageList"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_LanguageList.LoadLanguageDataSource">
+            <summary>
+            Loads the language data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_LanguageList.DeleteLanguage">
+            <summary>
+            Deletes the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_LanguageSave.CheckLanguageSymbol(System.Int32,System.String)">
+            <summary>
+            Checks the language symbol.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_LanguageSave.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_Translation.#ctor(inSolutions.Translation.Interface.I_Translation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Translation.Presenter.ClP_Translation"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Translation.Presenter.ClP_Translation.LoadLanguageDataSource">
+            <summary>
+            Loads language data source.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Translation.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Properties.Resources.Translation">
+            <summary>
+              Looks up a localized string similar to Tłumaczenia.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.Utilities.Resource.Cl_ResourceProvider.GetMessageDescription(System.String,System.String)">
+            <summary>
+            Get string from resource file
+            </summary>
+            <param name="vrpCode">Message name</param>
+            <param name="vrpResourceFile">Resource file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.LanguageDeleteQuestion">
+            <summary>
+              Looks up a localized string similar to Czy na pewno usunąć wybrany język i wszystkie do niego tłumaczenia?.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.LanguageInUse">
+            <summary>
+              Looks up a localized string similar to Nie można usunąć języka, który jest w użyciu..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.LanguageProtected">
+            <summary>
+              Looks up a localized string similar to Wybrany język jest chroniony i nie można go edytować oraz usuwać..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageList.LanguageList.NoLanguageSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać język..
+            </summary>
+        </member>
+        <member name="T:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave.NoNameProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać nazwę..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave.NoSymbolProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać symbol..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.LanguageSave.LanguageSave.NoUniqueSymbol">
+            <summary>
+              Looks up a localized string similar to Podany symbol jest zajęty..
+            </summary>
+        </member>
+        <member name="T:inSolutions.Translation.Utilities.Resource.Translation.Translation">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.Translation.Translation.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.Translation.Translation.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.Utilities.Resource.Translation.Translation.NoAllTranslationsProvided">
+            <summary>
+              Looks up a localized string similar to Nie podano wszystkich tłumaczeń. Czy zapisać mimo to?.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.#ctor(inSolutions.Translation.Entity.ClE_Language)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Translation.View.Dictionary.Frm_LanguageSave"/> class.
+            </summary>
+            <param name="vrpLanguage">The VRP language.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.Fill">
+            <summary>
+            Fills this instance.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.RewriteToEntity">
+            <summary>
+            Rewrites to entity.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.ValidateControls">
+            <summary>
+            Validates the controls.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.Frm_LanguageSave_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the Frm_LanguageSave control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnSave control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.btnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnCancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.View.Dictionary.Frm_LanguageSave.Language">
+            <summary>
+            Gets the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.GetSelectedLanguage">
+            <summary>
+            Gets the selected language.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.AddLanguage">
+            <summary>
+            Adds the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.EditLanguage">
+            <summary>
+            Edits the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.DeleteLanguage">
+            <summary>
+            Deletes the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.LoadDataSource">
+            <summary>
+            Loads the data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.btnAdd_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnAdd control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.btnEdit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnEdit control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.btnDelete_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnDelete control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.UC_LanguageLise_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the UC_LanguageLise control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.grcLanguage_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles the MouseDoubleClick event of the grid control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:inSolutions.Translation.View.Dictionary.UC_LanguageList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.Dictionary.UC_LanguageList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Translation.View.Dictionary.UC_LanguageList.LanguageDataSource">
+            <summary>
+            Sets the language data source.
+            </summary>
+            <value>
+            The language data source.
+            </value>
+        </member>
+        <member name="P:inSolutions.Translation.View.Dictionary.UC_LanguageList.SelectedLanguage">
+            <summary>
+            Gets the selected language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.UC_Translation.ValidateControls">
+            <summary>
+            Validates the controls.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Translation.View.UC_Translation.SetTranslationDataSource(System.Collections.Generic.List{inSolutions.Translation.Entity.ClE_Translation})">
+            <summary>
+            Sets the a translation data source.
+            </summary>
+            <value>
+            The translation data source.
+            </value>
+        </member>
+        <member name="M:inSolutions.Translation.View.UC_Translation.GetTranslationDataSource">
+            <summary>
+            Gets translation data source.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Translation.View.UC_Translation.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Translation.View.UC_Translation.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Translation.View.UC_Translation.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

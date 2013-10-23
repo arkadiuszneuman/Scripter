@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Product.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(inSolutions.Product.Utilities.Cl_ProductFiltr)">
+            <summary>
+            Pobiera towary o dowolnym statusie i podanym filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(inSolutions.Product.Utilities.Cl_ProductFiltr,inSolutions.Product.Utilities.E_Status)">
+            <summary>
+            Pobiera towary o podanym statusie i filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(System.String,inSolutions.Product.Utilities.Cl_ProductFiltr)">
+            <summary>
+            Pobiera towary o dowolnym statusie i podanym filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(System.Data.SqlClient.SqlConnection,inSolutions.Product.Utilities.Cl_ProductFiltr)">
+            <summary>
+            Pobiera towary o dowolnym statusie i podanym filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(System.String,inSolutions.Product.Utilities.Cl_ProductFiltr,inSolutions.Product.Utilities.E_Status)">
+            <summary>
+            Pobiera towary o podanym statusie i  filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(System.Data.SqlClient.SqlConnection,inSolutions.Product.Utilities.Cl_ProductFiltr,inSolutions.Product.Utilities.E_Status)">
+            <summary>
+            Pobiera towary o podanym statusie i  filtrze. 
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpProductFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_ProductImage.MainImageLoad(System.Int32)">
+            <summary>
+            Ładuje encję obrazu głównego produktu
+            </summary>
+            <param name="vrpProductId">ID produktu, którego obraz(y) załadować</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:inSolutions.Product.Business.ClM_ProductImage.AddionalImagesLoad(System.Int32)" -->
+        <member name="M:inSolutions.Product.Business.ClM_ProductImage.ImageLoad(System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            Ładuje encje obrazów produktu
+            </summary>
+            <param name="vrpProductId">ID produktu, którego obraz(y) załadować</param>
+            <param name="vrpIsMain">Określa czy ładować tylko obraz produktu głównego (0 - tylko niegłowne, 1 - tylko obraz główny, null - wszystkie)</param>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Product.Business.Entity.ClE_Product.MainImage">
+            <summary>
+            Ładuje (tylko za pierwszym użyciem) i zwraca główny obraz
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Business.Entity.ClE_Product.AddinalImages">
+            <summary>
+            Ładuje (tylko za pierwszym użyciem) i zwraca dodatkowe obrazy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Interface.I_Products.Prefilter">
+            <summary>
+            Filtr towarów (filtrowanie na poziomie bazy danych)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Interface.I_Products.Filter">
+            <summary>
+            Filtr towarów (filtrowanie na poziomie pobranych danych)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.ProductLookUpEdit.Entity.ClE_ProductLookUp.Id">
+            <summary>
+            Identfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.ProductLookUpEdit.Entity.ClE_ProductLookUp.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.ProductLookUpEdit.Entity.ClE_ProductLookUp.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.ProductLookUpEdit.Entity.ClE_ProductLookUp.Description">
+            <summary>
+            Opis
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.F2KeyPressed">
+            <summary>
+            Akcja po wciśnięciu klawisza F2 (opcjonalne, domyślnie OpenFormList).
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.LoadPopupListData">
+            <summary>
+            Załadowanie listy wartości do wyświetlenia
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.LoadValue(System.Int32)">
+            <summary>
+            Załadowanie pojedynczej wartości
+            </summary>
+            <param name="vrpId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.OpenFormList">
+            <summary>
+            Otwarcie listy obiektów zewnętrznych
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.AddColumns">
+            <summary>
+            Dodanie kolumn do grida.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.GetIdProperty">
+            <summary>
+            Wskazanie Property które przechowuje wartość
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.GetDisplayProperty">
+            <summary>
+            Wskazanie Property które jest wyświetlane
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:inSolutions.Product.ProductLookUpEdit.View.Cl_ProductLookUpEdit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.View.Cl_ProductLookUpEdit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.ProductLookUpEdit.View.Cl_ProductLookUpEdit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Product.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Properties.Resources.LoadingProducts">
+            <summary>
+              Looks up a localized string similar to Wczytywanie towarów.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.Properties.Resources.Product">
+            <summary>
+              Looks up a localized string similar to Towary.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Product.Utilities.E_Status">
+            <summary>
+            Status towaru
+            </summary>
+        </member>
+        <member name="F:inSolutions.Product.Utilities.E_Status.Active">
+            <summary>
+            Aktywny
+            </summary>
+        </member>
+        <member name="F:inSolutions.Product.Utilities.E_Status.Blocked">
+            <summary>
+            Zablokowany
+            </summary>
+        </member>
+        <member name="F:inSolutions.Product.Utilities.E_Status.Any">
+            <summary>
+            Wszystkie towary
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_AttributeSelect.#ctor(System.Boolean,System.Boolean)">
+             <summary>
+            Konstruktor wymaga wykorzystania Cl_Connection.
+             </summary>
+             <param name="vrpIsMultiselect"></param>
+             <param name="vrpIsAny"></param>
+        </member>
+        <member name="F:inSolutions.Product.View.Frm_AttributeSelect.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_AttributeSelect.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_AttributeSelect.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean)">
+            <summary>
+            Okno z listą towarów
+            </summary>
+            <param name="vrpChoose">Czy opcja wyboru jest dostępna</param>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Okno z listą towarów
+            </summary>
+            <param name="vrpChoose">Czy opcja wyboru jest dostępna</param>
+            <param name="vrpMultiselect">Czy opcja multiwyboru jest dostępna, dostępne tylko gdy vrpChoose == true</param>
+        </member>
+        <member name="F:inSolutions.Product.View.Frm_Products.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_Products.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_Products.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.View.Frm_Products.SelectedObject">
+            <summary>
+            Wybrany towar
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.View.Frm_Products.SelectedObjects">
+            <summary>
+            Wybrane towary
+            </summary>
+        </member>
+        <member name="F:inSolutions.Product.View.Frm_ProductSelect.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_ProductSelect.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.View.Frm_ProductSelect.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Product.View.Frm_ProductSelect.Status">
+            <summary>
+            Status towaru.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Product.View.UC_Products.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.View.UC_Products.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.View.UC_Products.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

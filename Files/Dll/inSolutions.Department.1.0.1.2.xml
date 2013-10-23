@@ -1,0 +1,601 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Department.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Department.Business.ClM_ContactDetails.sp_dep_ContactDetailsGet(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Pobranie danych teleadresowych obiektu.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpId">Id danych teleadresowych.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpObjectType">Typ obiektu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_ContactDetails.sp_dep_ContactDetailsGet(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Pobranie danych teleadresowych obiektu.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpId">Id danych teleadresowych.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpObjectType">Typ obiektu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_ContactDetails.sp_dep_ContactDetailsSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_ContactDetails,System.Int32,System.String)">
+            <summary>
+            Zapusuje dane teleadresowe obiektu.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_ContactDetails">Dane teleadresowe.</param>
+            <param name="vrpUserId">Id użytkownika wykonującego operację zapisu.</param>
+            <param name="vrpUserName">Nazwa użytkownika wykonującego operację zapisu.</param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_ContactDetails.sp_dep_ContactDetailsSave(System.String,inSolutions.Department.Entity.ClE_ContactDetails,System.Int32,System.String)">
+            <summary>
+            Zapusuje dane teleadresowe obiektu.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_ContactDetails">Dane teleadresowe.</param>
+            <param name="vrpUserId">Id użytkownika wykonującego operację zapisu.</param>
+            <param name="vrpUserName">Nazwa użytkownika wykonującego operację zapisu.</param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentSave(System.String,inSolutions.Department.Entity.ClE_Department,System.Int32,System.String)">
+            <summary>
+            Zapisuje dane oddziału.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Department"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_Department,System.Int32,System.String)">
+            <summary>
+            Zapisuje dane oddziału.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_Department"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.String,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+            <summary>
+            Zapisuje dane magazynów oddziałów.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_DepartmentData"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+            <summary>
+            Zapisuje dane magazynów oddziałów.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_DepartmentData"></param>
+            <param name="vrpUserId"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_WarehouseListGet(System.String,System.Int32)">
+            <summary>
+            Lista magazynów oddziału.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpDepartmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_WarehouseListGet(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Lista magazynów oddziału.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpDepartmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Warehouse.sp_dep_WarehouseSave(System.String,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+            <summary>
+            Zapisuje informacje o typie magazynu.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrp_Warehouse"></param>
+            <param name="vrpUserId"></param>
+            <param name="vrpUserName"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_Warehouse.sp_dep_WarehouseSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+            <summary>
+            Zapisuje informacje o typie magazynu.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_WarehouseType"></param>
+            <param name="vrpUserId"></param>
+            <param name="vrpUserName"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_WarehouseTypeGet(System.String)">
+            <summary>
+            Pobranie typów magazynów.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_WarehouseTypeGet(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Pobranie typów magazynów.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_WarehouseTypeSave(System.String,inSolutions.Department.Entity.ClE_WarehouseType,System.Int32,System.String)">
+            <summary>
+            Zapisuje typ magazynu.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_WarehouseType"></param>
+            <param name="vrpUserId"></param>
+            <param name="vrpUserName"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_WarehouseTypeSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_WarehouseType,System.Int32,System.String)">
+            <summary>
+            Zapisuje typ magazynu.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrp_WarehouseType"></param>
+            <param name="vrpUserId"></param>
+            <param name="vrpUserName"></param>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_IsWarehouseTypeAssigned(System.String,System.Int32)">
+            <summary>
+            Sprawdza czy typ magazynu jest przypisany do magazynu.
+            </summary>
+            <param name="vrpConnection">Ciąg połączenia.</param>
+            <param name="vrpWarehouseTypeId">Id typu magazynu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Business.ClM_WarehouseDictionary.sp_dep_IsWarehouseTypeAssigned(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Sprawdza czy typ magazynu jest przypisany do magazynu.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia.</param>
+            <param name="vrpWarehouseTypeId">Id typu magazynu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Cl_DepartmentManager.EditDepartments">
+            <summary>
+            Otwiera okno edycji oddziałów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Cl_DepartmentManager.EditWarehouseTypes">
+            <summary>
+            Otwiera okno do zarządzania słownikiem typów magazynów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Cl_DepartmentManager.EditWarehouses">
+            <summary>
+            Otwiera okno do zarządzania magazynami (Typy magazynów).
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Cl_DepartmentManager.GetWarehouseList(System.Int32)">
+            <summary>
+            Zwraca lsitę magazynów dla wybranego oddziału lub dowolnego oddziału.
+            </summary>
+            <param name="vrpDepartmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Cl_DepartmentManager.GetWarehouseTypeList">
+            <summary>
+            Pobiera listę typów magazynów.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Department.Entity.ClE_ContactDetails">
+            <summary>
+            Dane teleadresowe magazynu lub oddziału.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Entity.ClE_ContactDetails.Id">
+            <summary>
+            Identyfikator obiektu danych teleadresowych.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Entity.ClE_ContactDetails.ObjectId">
+            <summary>
+            Identyfikator oddziału lub magazynu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Entity.ClE_ContactDetails.ObjectType">
+            <summary>
+            Typ obiektu.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Department.Entity.ClE_Department">
+            <summary>
+            Obiekt reprezentujący oddział.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Department.Entity.ClE_Warehouse">
+            <summary>
+            Obiekt magazynu wykorzystywany w zarządzaniu oddziałami.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Department.Entity.ClE_WarehouseType">
+            <summary>
+            Obiekt reprezentujący typ magazynu (słownik definiowalny).
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.LoadDepartmentData">
+            <summary>
+            Ładuje dane magazynów należących do oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.SaveDepartment">
+            <summary>
+            Zapisuje dane magazynów należących do oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.SaveDepartmentNavireo">
+            <summary>
+            Zapis danych dla Navireo.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.SaveDepartmentSubiekt">
+            <summary>
+            Zapis danych dla Subiekta.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.ContactDetailsLoad">
+            <summary>
+            Ładuje dane teleadresowe.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_DepartmentData.EditContactDetails">
+            <summary>
+            Edycja danych teleadresowych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseDictionary.LoadWarehouseDictionary">
+            <summary>
+            Ładowanie danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseDictionary.AddWarehouseType">
+            <summary>
+            Dodanie nowego typu magazynu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseDictionary.EditWarehouseType(inSolutions.Department.Entity.ClE_WarehouseType)">
+            <summary>
+            Edycja typu magazynu.
+            </summary>
+            <param name="vrpWarehouseType"></param>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseDictionary.IsWarehouseTypeAssigned(System.Int32)">
+            <summary>
+            Sprawdza czy typ magazynu jest przypisany do magazynu.
+            </summary>
+            <param name="vrpWarehouseTypeId">Id typu magazynu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseDictionary.DeleteWarehouseType(inSolutions.Department.Entity.ClE_WarehouseType)">
+            <summary>
+            Usunięcie typu magazynu.
+            </summary>
+            <param name="vrpWarehouseType"></param>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseList.LoadWarehouseList">
+            <summary>
+            Ładuje listę magazynów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseList.LoadWarehouseTypes">
+            <summary>
+            Ładuje typy magazynów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Presenter.ClP_WarehouseList.SaveWarehouses">
+            <summary>
+            Zapis magazynów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Department.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Department.Properties.Resources.Department">
+            <summary>
+              Looks up a localized string similar to Oddziały.
+            </summary>
+        </member>
+        <member name="T:E_ObjectType">
+            <summary>
+            Typ obiektu (oddział lub magazyn).
+            </summary>
+        </member>
+        <member name="F:E_ObjectType.Department">
+            <summary>
+            Oddział (0).
+            </summary>
+        </member>
+        <member name="F:E_ObjectType.Warehouse">
+            <summary>
+            Magazyn (1).
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_ContactDetails.FillForm">
+            <summary>
+            Wypałnia formę danymi.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_ContactDetails.FillEntity">
+            <summary>
+            Aktualizuje encję danych na podstawie formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_ContactDetails.Save">
+            <summary>
+            Zapisuje dane teleadresowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.View.Frm_ContactDetails.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_ContactDetails.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_ContactDetails.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.FillForm">
+            <summary>
+            Wypełnia dane oddziału na formie.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.LoadData">
+            <summary>
+            Ładuje magazyny wchodzące w skład oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.AddWarehouse">
+            <summary>
+            Dodanie magazynu do oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.RemoveWarehouse">
+            <summary>
+            Usunięcie magazynu z oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.FillEntity">
+            <summary>
+            Wypełnia encję oddziału danymi z formy.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.SaveDepartment">
+            <summary>
+            Zapis oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.ValidateControls">
+            <summary>
+            Sprawdza poprawność danych na formie.
+            </summary>
+            <returns>true - dane są poprawne, false - dane są niepoprawne</returns>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.Cancel">
+            <summary>
+            Potwierdzenie anulowania.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.EditContactData">
+            <summary>
+            Edytuje dane kontaktowe oddziału.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.Frm_DepartmentData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.Frm_DepartmentData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.LoadData">
+            <summary>
+            Ładuje listę nadgrup.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.EditDepartment">
+            <summary>
+            Edycja danych oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.DeleteDepartment">
+            <summary>
+            Usunięcie oddziału.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.AddDepartment">
+            <summary>
+            Dodanie nowego oddziału.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.Frm_Departments.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.Frm_Departments.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_SelectWarehouse.Cancel">
+            <summary>
+            Potwierdzenie anulowania.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.Frm_SelectWarehouse.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.Frm_SelectWarehouse.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.Frm_SelectWarehouse.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.LoadData">
+            <summary>
+            Załadowanie danych typów magazynów.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.Add">
+            <summary>
+            Dodanie nowego typu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.Edit">
+            <summary>
+            Edycja istniejącego typu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.Delete">
+            <summary>
+            Usunięcie istniejącego typu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.View.Frm_WarehouseDictionary.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseDictionary.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseList.LoadData">
+            <summary>
+            Ładowanie danych.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Department.View.Frm_WarehouseList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Department.View.Frm_WarehouseType">
+            <summary>
+            Edycja obiektu słownikowego reprezentującego typ magazynu.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.FillForm">
+            <summary>
+            Wypełnia formę danymi.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.SaveToEntity">
+            <summary>
+            Przepisuje dane z formy do encji.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.Save">
+            <summary>
+            Próba zapisu danych.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.ValidateData">
+            <summary>
+            Sprawdza poprawność danych na formie.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.IsSymbolUsed">
+            <summary>
+            Sprawdza czy podany symbol jest już w użyciu.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.IsNameUsed">
+            <summary>
+            Sprawdza czy podana nazwa jest już w użyciu.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:inSolutions.Department.View.Frm_WarehouseType.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Department.View.Frm_WarehouseType.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

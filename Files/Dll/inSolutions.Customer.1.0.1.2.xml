@@ -1,0 +1,505 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Customer.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="T:inSolutions.Customer.Business.Entity.ClE_AddresHistory">
+            <summary>
+            Dane z tabeli adr_Historia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.Id">
+            <summary>
+            Identyfikator historii adresu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.AddressId">
+            <summary>
+            Identyfikator adresu, który jest historiowany
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.ObjectName">
+            <summary>
+            Nazwa obiektu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.ObjectFullName">
+            <summary>
+            Pełna nazwa obiektu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.PhoneNumber">
+            <summary>
+            Numer telefonu podstawowego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.FaxNumber">
+            <summary>
+            Numer faksu podstawowego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.Street">
+            <summary>
+            Ulica
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.HouseNumber">
+            <summary>
+            Numer domu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.ApartmentNumber">
+            <summary>
+            Numer mieszkania
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.Address">
+            <summary>
+            Adres
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.PostCode">
+            <summary>
+            Kod pocztowy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.City">
+            <summary>
+            Miejscowość
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.RegionId">
+            <summary>
+            Identyfikator województwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.CountryId">
+            <summary>
+            Identyfikator państwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.VAT">
+            <summary>
+            NIP
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.PostOffice">
+            <summary>
+            Poczta
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.Commune">
+            <summary>
+            Gmina
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.County">
+            <summary>
+            Powiat
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.PostOfficeBox">
+            <summary>
+            Skrytka pocztowa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.CommuneId">
+            <summary>
+            Identyfikator gminy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_AddresHistory.VersionId">
+            <summary>
+            Identyfikator wersji zmian adresu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(inSolutions.Customer.Business.Entity.ClE_CustomerFiltr)">
+            <summary>
+            Załadowanie kontrahentów o dowolnym statusie i podanym filtrze dla wybranego wcześniej typu połączenia z bazą.
+            </summary>
+            <param name="vrpCustomerFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(inSolutions.Customer.Business.Entity.ClE_CustomerFiltr,inSolutions.Customer.Utilities.E_Status)">
+            <summary>
+            Załadowanie kontrahentów o podanym statusie i podanym filtrze dla wybranego wcześniej typu połączenia z bazą.
+            </summary>
+            <param name="vrpCustomerFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(System.Data.SqlClient.SqlConnection,inSolutions.Customer.Business.Entity.ClE_CustomerFiltr)">
+            <summary>
+            Wybiera kontrahentów o statusie dowolny i podanym filtrze.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpCustomerFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(System.String,inSolutions.Customer.Business.Entity.ClE_CustomerFiltr)">
+            <summary>
+            Wybiera kontrahentów o statusie dowolny i podanym filtrze.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpCustomerFiltr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(System.Data.SqlClient.SqlConnection,inSolutions.Customer.Business.Entity.ClE_CustomerFiltr,inSolutions.Customer.Utilities.E_Status)">
+            <summary>
+            Wybiera kontrahentów o podanym statusie i filtrze.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpCustomerFiltr"></param>
+            <param name="vrpStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadCustomer(System.String,inSolutions.Customer.Business.Entity.ClE_CustomerFiltr,inSolutions.Customer.Utilities.E_Status)">
+            <summary>
+            Wybiera kontrahentów o podanym statusie i filtrze.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpCustomerFiltr"></param>
+            <param name="vrpStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadAddressHistory(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32)">
+            <summary>
+            Wybiera konkretny adres historyczny lub zbiór dla konkretnego obiektu
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpAddressHistoryId">Identyfikator konkretnego adresu</param>
+            <param name="vrpObjectId"> Identyfikator obiektu</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadAddressHistory(System.String,System.Int32,System.Int32)">
+            <summary>
+            Wybiera konkretny adres historyczny lub zbiór dla konkretnego obiektu
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpAddressHistoryId">Identyfikator konkretnego adresu</param>
+            <param name="vrpObjectId"> Identyfikator obiektu</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.Business.Cl_CustomerManager.LoadAddressHistory(System.Int32,System.Int32)">
+            <summary>
+            Wybiera konkretny adres historyczny lub zbiór dla konkretnego obiektu
+            </summary>
+            <param name="vrpAddressHistoryId">Identyfikator konkretnego adresu</param>
+            <param name="vrpObjectId"> Identyfikator obiektu</param>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Customer.Business.Entity.ClE_CustomerFiltr.Disposable">
+            <summary>
+            Jednorazowy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.CustomerLookUpEdit.Entity.ClE_CustomerLookUp.Id">
+            <summary>
+            Identfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.CustomerLookUpEdit.Entity.ClE_CustomerLookUp.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.CustomerLookUpEdit.Entity.ClE_CustomerLookUp.Symbol">
+            <summary>
+            Symbol
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.CustomerLookUpEdit.Entity.ClE_CustomerLookUp.Description">
+            <summary>
+            Opis
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.CustomerLookUpEdit.Entity.ClE_CustomerLookUp.Street">
+            <summary>
+            Ulica
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.F2KeyPressed">
+            <summary>
+            Akcja po wciśnięciu klawisza F2 (opcjonalne, domyślnie OpenFormList).
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.LoadPopupListData">
+            <summary>
+            Załadowanie listy wartości do wyświetlenia
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.LoadValue(System.Int32)">
+            <summary>
+            Załadowanie pojedynczej wartości
+            </summary>
+            <param name="vrpId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.OpenFormList">
+            <summary>
+            Otwarcie listy obiektów zewnętrznych
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.AddColumns">
+            <summary>
+            Dodanie kolumn do grida.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.GetIdProperty">
+            <summary>
+            Wskazanie Property które przechowuje wartość
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.GetDisplayProperty">
+            <summary>
+            Wskazanie Property które jest wyświetlane
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.GetLookupText(inSolutions.Customer.Business.Entity.ClE_Customer)">
+            <summary>
+            Formatuje tekst w taki sposób, aby odwzorowywał ten z encji lookup'a.
+            </summary>
+            <param name="vrpCustomer"></param>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Customer.Interface.I_Customers.Prefilter">
+            <summary>
+            Filtr kontrahentów (filtrowanie na poziomie bazy danych)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Interface.I_Customers.Filter">
+            <summary>
+            Filtr kontrahentów (filtrowanie na poziomie pobranych danych)
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.Presenter.ClP_SelectAttribute.LoadAttributes">
+            <summary>
+            Załadowanie cech kontrahentów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Customer.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Properties.Resources.Customer">
+            <summary>
+              Looks up a localized string similar to inSolutions.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.Properties.Resources.LoadingCustomers">
+            <summary>
+              Looks up a localized string similar to Wczytywanie kontrahentów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Customer.Utilities.E_Status">
+            <summary>
+            Typ kontrahenta wg aktywności
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_Status.Active">
+            <summary>
+            Aktywni
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_Status.Blocked">
+            <summary>
+            Zablokowani
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_Status.Any">
+            <summary>
+            Wszyscy kontrahenci
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.CustomerLookUpEdit.View.Cl_CustomerLookUpEdit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.View.Cl_CustomerLookUpEdit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Customer.CustomerLookUpEdit.View.Cl_CustomerLookUpEdit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.View.Frm_CustomerChoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_CustomerChoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_CustomerChoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.CustomerDataSource">
+            <summary>
+            Lista kontrahentów.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.GroupDataSource">
+            <summary>
+            Lista grup
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.AttributeDataSource">
+            <summary>
+            Lista cech.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.SelectedCustomer">
+            <summary>
+            Wybrany kontrahent
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.SelectedCustomers">
+            <summary>
+            Wybrani kontrahenci.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.CustomerFiltr">
+            <summary>
+            Filtr kontrahenta
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_CustomerChoice.Status">
+            <summary>
+            Status kontrahenta.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_Customers.#ctor(System.Boolean)">
+            <summary>
+            Okno zawierające listę kontrahentów
+            </summary>
+            <param name="vrpChoose">Czy włączona jest obcja wyboru</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_Customers.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Okno zawierające listę kontrahentów
+            </summary>
+            <param name="vrpChoose">Czy włączona jest obcja wyboru</param>
+            <param name="vrpMultiSelect">Czy włączona jest obcja multiwyboru, dostępne tylko gdy vrpChoose == true</param>
+        </member>
+        <member name="F:inSolutions.Customer.View.Frm_Customers.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_Customers.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_Customers.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_Customers.SelectedObject">
+            <summary>
+            Wybrany kontrahent
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_Customers.SelectedObjects">
+            <summary>
+            Wybrani kontrahenci
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_SelectAttribute.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Wybór cech kontrahenta.
+            </summary>
+            <param name="vrpMultiselect">Czy umożliwiać multiwybór.</param>
+            <param name="vrpAny">Czy wyświetlać cechę '(Dowolna)'</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_SelectAttribute.LoadData">
+            <summary>
+            Załadowanie cech kontrahentów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.View.Frm_SelectAttribute.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_SelectAttribute.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_SelectAttribute.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_SelectAttribute.SelectedAttributes">
+            <summary>
+            Zaznaczone cechy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_SelectAttribute.AttributeDataSource">
+            <summary>
+            Lista cech kontrahentów.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Customer.View.Frm_SelectAttribute.Any">
+            <summary>
+            Czy wyświetlać cechę '(Dowolna)'
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.View.UC_Customers.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Customer.View.UC_Customers.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.UC_Customers.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

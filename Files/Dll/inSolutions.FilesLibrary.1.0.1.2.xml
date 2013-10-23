@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.FilesLibrary.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="P:inSolutions.FilesLibrary.Interface.I_File.FileTypeDictionary">
+            <summary>
+            Sets the file type dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Interface.I_File.FileTypeDataSource">
+            <summary>
+            Sets the file type data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Interface.I_File.File">
+            <summary>
+            Sets the file.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.Presenter.ClP_File.#ctor(inSolutions.FilesLibrary.Interface.I_File)">
+            <summary>
+            Initializes a new instance of the <see cref="!:ClP_ValueList"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.Presenter.ClP_File.LoadFileTypeDictionary">
+            <summary>
+            Loads the dictionary.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.Presenter.ClP_File.LoadFileTypeDataSource">
+            <summary>
+            Loads the values data source.
+            </summary>
+        </member>
+        <member name="T:inSolutions.FilesLibrary.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Properties.Resources.FilesLibrary">
+            <summary>
+              Looks up a localized string similar to Obsługa plików.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Properties.Resources.realvista_general_file_24">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.Utilities.Resource.Cl_ResourceProvider.GetMessageDescription(System.String,System.String)">
+            <summary>
+            Get string from resource file
+            </summary>
+            <param name="vrpCode">Message name</param>
+            <param name="vrpResourceFile">Resource file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.FilesLibrary.Utilities.Resource.FileImageList.FileImageList">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImageList.FileImageList.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImageList.FileImageList.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImageList.FileImageList.NoObjectFileSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać zdjęcie..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImageList.FileImageList.QuestionFileDelete">
+            <summary>
+              Looks up a localized string similar to Czy na pewno usunąć wybrane zdjęcie?.
+            </summary>
+        </member>
+        <member name="T:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.DeleteFileQuestion">
+            <summary>
+              Looks up a localized string similar to Czy na pewnu usunąć zjęcie?.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.FileSize">
+            <summary>
+              Looks up a localized string similar to Zbyt duży rozmiar obrazu. Rozmiar obrazu powinien być mniejszy niż 5MB..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.NoFileAdded">
+            <summary>
+              Looks up a localized string similar to Należy wprowadzić zdjęcie..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileImage.FileImage.NoFileTypeSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać typ zdjęcia..
+            </summary>
+        </member>
+        <member name="T:inSolutions.FilesLibrary.Utilities.Resource.FileList.FileList">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileList.FileList.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileList.FileList.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileList.FileList.NoObjectFileSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać plik..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.FileList.FileList.QuestionFileDelete">
+            <summary>
+              Looks up a localized string similar to Czy na pewno usunąć wybrany plik?.
+            </summary>
+        </member>
+        <member name="T:inSolutions.FilesLibrary.Utilities.Resource.File.File">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.File.File.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.File.File.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.File.File.NoFileAdded">
+            <summary>
+              Looks up a localized string similar to Należy wybrać plik..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.File.File.NoFileName">
+            <summary>
+              Looks up a localized string similar to Należy podać nazwę pliku..
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.Utilities.Resource.File.File.NoFileTypeSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać typ pliku..
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.Frm_File.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.Frm_File.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.Frm_File.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.Frm_Image.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.Frm_Image.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.Frm_Image.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.UC_File.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_File.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_File.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_File.FileTypeDictionary">
+            <summary>
+            Sets the file type dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_File.FileTypeDataSource">
+            <summary>
+            Sets the file type data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_File.File">
+            <summary>
+            Sets the file.
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.UC_FileList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_FileList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_FileList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_FileList.FileTypeDictionary">
+            <summary>
+            Sets the file type dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_FileList.FileTypeDataSource">
+            <summary>
+            Sets the file type data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_FileList.File">
+            <summary>
+            Sets the file.
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.UC_Image.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_Image.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_Image.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_Image.FileTypeDictionary">
+            <summary>
+            Sets the file type dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_Image.FileTypeDataSource">
+            <summary>
+            Sets the file type data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_Image.File">
+            <summary>
+            Sets the file.
+            </summary>
+        </member>
+        <member name="F:inSolutions.FilesLibrary.View.UC_ImageList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_ImageList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.FilesLibrary.View.UC_ImageList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_ImageList.FileTypeDictionary">
+            <summary>
+            Sets the file type dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_ImageList.FileTypeDataSource">
+            <summary>
+            Sets the file type data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.FilesLibrary.View.UC_ImageList.File">
+            <summary>
+            Sets the file.
+            </summary>
+        </member>
+    </members>
+</doc>

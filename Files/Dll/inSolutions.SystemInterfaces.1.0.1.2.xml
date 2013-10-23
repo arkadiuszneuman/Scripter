@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.SystemInterfaces.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="T:inSolutions.SystemInterfaces.Document.E_DocumentStatus">
+            <summary>
+            Status dokumentu określający jego ruch magazynowy
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.DelayedWarehouseMovement">
+            <summary>
+            Odłożony skutek magazynowy
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.CallWarehouseMovement">
+            <summary>
+            Wywołany skutek magazynowy
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.WithoutReservation">
+            <summary>
+            Bez rezerwacji (ZK i ZD)
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.Reserved">
+            <summary>
+            Zarezerwowany (ZK i ZD)
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.Realized">
+            <summary>
+            Zrealizowany (ZK i ZD)
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentStatus.WithdrawedWarehouseMovement">
+            <summary>
+            Wycofany skutek magazynowy
+            </summary>
+        </member>
+        <member name="T:inSolutions.SystemInterfaces.Document.E_DocumentType">
+            <summary>
+            Typ dokumentu
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.WT">
+            <summary>
+            MM - przesunięcie międzymagazynowe
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.GRN">
+            <summary>
+            PW - przyjęcie wewnętrzne
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.GIN">
+            <summary>
+            RW - rozchód wewnętrzny
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.PO">
+            <summary>
+            ZD - zamówienie do dostawcy
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.SO">
+            <summary>
+            ZK - zamówienie od klienta
+            </summary>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateSalesOrder(System.Int32)">
+            <summary>
+            Tworzy dokument ZK
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreatePucharseOrder(System.Int32)">
+            <summary>
+            Tworzy dokument ZD
+            </summary>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateWarehouseShipment(System.Int32)">
+            <summary>
+            Tworzy dokument WZ
+            </summary>
+            <param name="vrpWarehouseId">ID magazynu, na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateSalesInvoice(System.Int32)">
+            <summary>
+            Tworzy dokument FS
+            </summary>
+            <param name="vrpWarehouseId">Id magazynu na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateBillOfSale(System.Int32)">
+            <summary>
+            Tworzy paragon
+            </summary>
+            <param name="vrpWarehouseId">Id magazynu, na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateNamedBillOfSale(System.Int32)">
+            <summary>
+            Tworzy paragon imienny
+            </summary>
+            <param name="vrpWarehouseId">Id magazynu, na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateWarehouseReceipt(System.Int32)">
+            <summary>
+            Tworzy dokument PZ
+            </summary>
+            <param name="vrpWarehouseId">Id magazynu, na jaki będzie wygenerowany dokument</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateDefinableDocument(System.Int32,System.Int32)">
+            <summary>
+            Tworzy dokument definiowalny
+            </summary>
+            <param name="vrpDefinableDocumentId"></param>
+            <param name="vrpWarehouseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.AddPositionToDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Int32)">
+            <summary>
+            Dodaje pozycję do dokumentu
+            </summary>
+            <param name="vrpDocument">Dokument, do którego dodać pozycję</param>
+            <param name="vrpSystemProductId">ID towaru, który chcemy dodać do dokumentu</param>
+            <returns>Zwraca dodaną pozycję</returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.BasedOnAnotherDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Int32)">
+            <summary>
+            Przekazany dokument jest tworzony na podstawie innego dokumentu
+            </summary>
+            <param name="vrlChildDocument">Dokument, do którego dane będą przepisane</param>
+            <param name="vrpBaseDocumentId">Bazowy dokument</param>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.RemovePositionFromDocument(inSolutions.SystemInterfaces.Document.I_Document,inSolutions.SystemInterfaces.Document.I_DocumentPosition)">
+            <summary>
+            Usuwa pozycję dokumentu.
+            </summary>
+            <param name="vrpDocument">Dokument z którego usuwamy pozycję.</param>
+            <param name="vrpPosition">Pozycja do usunięcia.</param>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.LoadDocument(System.Object)">
+            <summary>
+            Załadowanie danych dokumentu.
+            </summary>
+            <param name="vrpDocument">Obiekt dokumentu którego dane chcemy załadoawć.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.ShowDocument(System.Int32,System.Boolean)">
+            <summary>
+            Wyświetl dokument o podanym Id.
+            </summary>
+            <param name="vrpDocumentId">Id dokumentu.</param>
+            <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.ShowDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
+            <summary>
+            Wyświetl wskazany dokument.
+            </summary>
+            <param name="vrpDocumentId">Obiekt dokumentu.</param>
+            <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.DueDate">
+            <summary>
+            Termin realizacji.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.SourceDocuments">
+            <summary>
+            Dokumenty źródłowe.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.Id">
+            <summary>
+            ID pozycji
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.SystemProductId">
+            <summary>
+            ID towaru
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.IsDisposableService">
+            <summary>
+            Usługa jednorazowa.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.DisposableServiceName">
+            <summary>
+            Nazwa usługi jednorazowej.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.No">
+            <summary>
+            L.p.
+            </summary>
+        </member>
+        <member name="T:inSolutions.SystemInterfaces.SalesChance.I_Offer">
+            <summary>
+            Oferta szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.SalesChance.I_Offer.Positions">
+            <summary>
+            Pozycje oferty.
+            </summary>
+        </member>
+        <member name="T:inSolutions.SystemInterfaces.SalesChance.I_SalesChance">
+            <summary>
+            Szansa sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.SalesChance.I_SalesChance.Id">
+            <summary>
+            Identyfikator szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.SalesChance.I_SalesChance.Offer">
+            <summary>
+            Oferta szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="T:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory">
+            <summary>
+            Fabryka szans sprzedaży.
+            </summary>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.CreateSalesChance">
+            <summary>
+            Dodaj szansę sprzedaży.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.LoadSalesChance(System.Int32)">
+            <summary>
+            Załadowanie szansy sprzedaży o podanym identyfikatorze.
+            </summary>
+            <param name="vrpSalesChanceId">Identyfikator szansy sprzedaży.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.LoadSalesChance(System.Object)">
+            <summary>
+            Załadowanie szansy sprzedaży.
+            </summary>
+            <param name="I_SalesChance">Szansa sprzedaży dla której mamy załadować dane.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.SaveSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance)">
+            <summary>
+            Zapisanie szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży do zapisu.</param>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.AddPositionToSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance,System.Int32)">
+            <summary>
+            Dodanie pozycji do szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży do której dodajemy pozycję.</param>
+            <param name="vrpSystemProductId">Identyfikator towaru dla pozycji.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory.RemovePositionFromSalesChance(inSolutions.SystemInterfaces.SalesChance.I_SalesChance,inSolutions.SystemInterfaces.Document.I_DocumentPosition)">
+            <summary>
+            Usunięcie pozycji z szansy sprzedaży.
+            </summary>
+            <param name="vrpSalesChance">Szansa sprzedaży.</param>
+            <param name="vrpPosition">Pozycja do usunięcia.</param>
+        </member>
+    </members>
+</doc>

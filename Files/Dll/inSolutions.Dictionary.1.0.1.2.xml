@@ -1,0 +1,890 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inSolutions.Dictionary.1.0.1.2</name>
+    </assembly>
+    <members>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionary(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.Int32)">
+            <summary>
+            Gets the dictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.GetDictionaryList(System.String,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.Int32)">
+            <summary>
+            Gets list of dictionary.
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.SaveDictionary(inSolutions.Dictionary.Entity.ClE_Dictionary,System.Int32)">
+            <summary>
+            Saves the dictionary.
+            </summary>
+            <param name="vrpDictionary"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.SaveDictionary(System.String,inSolutions.Dictionary.Entity.ClE_Dictionary,System.Int32)">
+            <summary>
+            Saves the dictionary.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpDictionary"></param>
+            <param name="vrpProgramId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.SaveDictionary(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Entity.ClE_Dictionary,System.Int32)">
+            <summary>
+            Saves the dictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguage">The VRP dictionary.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.DeleteDictionary(System.Int32)">
+            <summary>
+            Deletes the dictionary.
+            </summary>
+            <param name="vrpId"></param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.DeleteDictionary(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Deletes the dictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.DeleteDictionary(System.String,System.Int32)">
+            <summary>
+            Deletes the dictionary.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpId"></param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.CheckDictionarySymbol(System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.String)">
+            <summary>
+            Checks the dictionary symbol.
+            </summary>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpSymbol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.CheckDictionarySymbol(System.String,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.String)">
+            <summary>
+            Checks the dictionary symbol.
+            </summary>
+            <param name="vrpConnectionString"></param>
+            <param name="vrpDictionaryId"></param>
+            <param name="vrpDictionaryType"></param>
+            <param name="vrpSymbol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Dictionary.CheckDictionarySymbol(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.String)">
+            <summary>
+            Checks the dictionary symbol.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpDictionaryId">The VRP dictionary id.</param>
+            <param name="vrpDictionaryType">The VRP dictionary type.</param>
+            <param name="vrpSymbol">The VRP symbol.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionary.GetObjectDictionaryList(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.ObjectType)">
+            <summary>
+            Gets the ObjectDictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpObjectId">Model id</param>
+            <param name="vrlObjectType">Object type</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionary.SaveObjectDictionary(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Entity.ClE_ObjectDictionary)">
+            <summary>
+            Saves the ObjectDictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguage">The VRP ObjectDictionary.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionary.DeleteObjectDictionary(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Deletes the ObjectDictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionary.DeleteObjectDictionary(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Deletes the ObjectDictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionaryValue.GetObjectDictionaryValueList(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.ObjectType,inSolutions.Dictionary.Utilities.DictionaryType)">
+            <summary>
+            Gets the ObjectDictionaryValue.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionaryValue.SaveObjectDictionaryValue(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Entity.ClE_ObjectDictionaryValue)">
+            <summary>
+            Saves the ObjectDictionaryValue.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguage">The VRP ObjectDictionaryValue.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionaryValue.DeleteObjectDictionaryValue(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Deletes the ObjectDictionaryValue.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_ObjectDictionaryValue.DeleteObjectDictionaryValue(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Deletes the ObjectDictionaryValue.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.GetDictionaryRelationList(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Gets list of relations.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.SaveDictionaryRelations(System.Data.SqlClient.SqlConnection,System.Collections.Generic.List{inSolutions.Dictionary.Entity.ClE_Relation},System.Collections.Generic.List{inSolutions.Dictionary.Entity.ClE_Relation})">
+            <summary>
+            Saves relations.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpRelation">The VRP list of relations.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.SaveDictionaryRelation(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,inSolutions.Dictionary.Entity.ClE_Relation)">
+            <summary>
+            Saves the relation.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpRelation">The VRP relation.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.DeleteDictionaryRelation(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Delete the relation.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP relation.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.GetValueRelation(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Gets list of relations.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.SaveValueRelations(System.Data.SqlClient.SqlConnection,System.Collections.Generic.List{inSolutions.Dictionary.Entity.ClE_Relation},System.Collections.Generic.List{inSolutions.Dictionary.Entity.ClE_Relation})">
+            <summary>
+            Saves relations.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpRelation">The VRP list of relations.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.SaveValueRelation(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,inSolutions.Dictionary.Entity.ClE_Relation)">
+            <summary>
+            Saves the relation.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpRelation">The VRP relation.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Relation.DeleteValueRelation(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Delete the relation.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP relation.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.GetValue(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.GetValueList(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Gets list of values.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.GetDictionaryValueList(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Utilities.DictionaryType,System.Boolean)">
+            <summary>
+            Gets list of values assigned to dictionary.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.SaveValue(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Entity.ClE_Value)">
+            <summary>
+            Saves the value.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpLanguage">The VRP dictionary.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.SaveDictionaryValue(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32,System.Int32)">
+            <summary>
+            Saves the dictionary value.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpDictionaryId">The VRP dictionary id.</param>
+            <param name="vrpValueId">The VRP value id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.DeleteValue(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Deletes the value.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.DeleteDictionaryValue(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32,System.Int32)">
+            <summary>
+            Deletes the value.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpId">The VRP id.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Business.ClM_Value.CheckValueSymbol(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32,System.String)">
+            <summary>
+            Checks the language symbol.
+            </summary>
+            <param name="vrpConnection">The VRP connection.</param>
+            <param name="vrpDictionaryId">The VRP dictionary id.</param>
+            <param name="vrpValueId">The VRP value id.</param>
+            <param name="vrpSymbol">The VRP symbol.</param>
+            <returns></returns>
+        </member>
+        <member name="P:inSolutions.Dictionary.Entity.ClE_Value.Text1">
+            <summary>
+            Text 1 - color argb as int
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_DictionaryList.DictionaryDataSource">
+            <summary>
+            Sets the dictionary data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_DictionaryList.SelectedDictionary">
+            <summary>
+            Gets the selected dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_DictionaryList.DictionaryType">
+            <summary>
+            Gets the dictionary type.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_DictionarySave.Dictionary">
+            <summary>
+            Instance of dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueList.ValueDataSource">
+            <summary>
+            Sets the dictionary value data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueList.SelectedValue">
+            <summary>
+            Gets the selected dictionary value.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueList.DictionaryType">
+            <summary>
+            Gets the dictionary type.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueList.Dictionary">
+            <summary>
+            Gets the dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueSave.Value">
+            <summary>
+            Instance of dictionary value.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Interface.I_ValueSave.Dictionary">
+            <summary>
+            Instance of dictionary.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionaryList.#ctor(inSolutions.Dictionary.Interface.I_DictionaryList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Dictionary.Presenter.ClP_DictionaryList"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionaryList.LoadDictionaryDataSource">
+            <summary>
+            Loads the values data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionaryList.DeleteDictionary">
+            <summary>
+            Deletes the value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionaryList.SetValues">
+            <summary>
+            Opening form to set values for the dictionary
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionarySave.#ctor(inSolutions.Dictionary.Interface.I_DictionarySave)">
+            <summary>
+            Initializes a new instance of the <see cref="!:ClP_ValueValue"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_DictionarySave.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueList.#ctor(inSolutions.Dictionary.Interface.I_ValueList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Dictionary.Presenter.ClP_ValueList"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueList.LoadValueDataSource">
+            <summary>
+            Loads the values data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueList.DeleteValue">
+            <summary>
+            Deletes the value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueList.GetDictionary">
+            <summary>
+            Gets the dictionary of specific type
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueSave.#ctor(inSolutions.Dictionary.Interface.I_ValueSave)">
+            <summary>
+            Initializes a new instance of the <see cref="!:ClP_ValueValue"/> class.
+            </summary>
+            <param name="vrpView">The VRP view.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueSave.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Presenter.ClP_ValueSave.LoadTranslationDataSource">
+            <summary>
+            Loads value translation data source.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Properties.Resources.Dictionary">
+            <summary>
+              Looks up a localized string similar to Słowniki.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Utilities.Resource.Cl_ResourceProvider.GetMessageDescription(System.String,System.String)">
+            <summary>
+            Get string from resource file
+            </summary>
+            <param name="vrpCode">Message name</param>
+            <param name="vrpResourceFile">Resource file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList.DictionaryDeleteQuestion">
+            <summary>
+              Looks up a localized string similar to Czy na pewno usunąć wybrany słownik?.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList.DictionaryInUse">
+            <summary>
+              Looks up a localized string similar to Nie można usunąć słownika, który jest używany..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionaryList.DictionaryList.NoDictionarySelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać słownik..
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave.NoNameProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać nazwę..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave.NoSymbolProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać symbol..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.DictionarySave.DictionarySave.NoUniqueSymbol">
+            <summary>
+              Looks up a localized string similar to Podany symbol jest zajęty..
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList.NoValueSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać wartość..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList.ValueDeleteQuestion">
+            <summary>
+              Looks up a localized string similar to Czy na pewno usunąć wybraną wartość?.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueList.ValueList.ValueInUse">
+            <summary>
+              Looks up a localized string similar to Nie można usunąć wartości, która jest w użyciu..
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.NoCustomerSelected">
+            <summary>
+              Looks up a localized string similar to Należy wybrać producenta marki..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.NoNameProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać nazwę..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.NoSymbolProvided">
+            <summary>
+              Looks up a localized string similar to Należy podać symbol..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.NoUniqueSymbol">
+            <summary>
+              Looks up a localized string similar to Podany symbol jest zajęty..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.ProductSymbolChanging">
+            <summary>
+              Looks up a localized string similar to Zostaną wygenerowane nowe symbole wszystkim powiązanym towarom..
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Utilities.Resource.ValueSave.ValueSave.SymbolChangeQuestion">
+             <summary>
+               Looks up a localized string similar to Zmiana symbolu spowoduje przy zapisie wygenerownie nowych symboli wszystkim powiązanym towarom.
+            Czy na pewno chcesz zmienic symbol?.
+             </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Cl_DictionaryLookUpEdit.ProgramId">
+            <summary>
+            ID programu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Cl_DictionaryLookUpEdit.DictionaryType">
+            <summary>
+            Typ słownika (kolumna xd_type z tabeli tb_dic_Dictionary
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.View.Dictionary.Frm_DictionarySave.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_DictionarySave.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_DictionarySave.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.Frm_DictionarySave.Dictionary">
+            <summary>
+            Instance of dictionary.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.View.Dictionary.Frm_ValueList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.#ctor(inSolutions.Dictionary.Entity.ClE_Dictionary,inSolutions.Dictionary.Entity.ClE_Value)">
+            <summary>
+            Initializes a new instance of the <see cref="T:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave"/> class.
+            </summary>
+            <param name="vrpDictionary">The VRP dictionary.</param>
+            <param name="vrpDictionaryValue">The VRP value.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.RewriteToEntity">
+            <summary>
+            Rewrites to entity.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.Value">
+            <summary>
+            Gets the dictionary value.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.Frm_ValueSave.Dictionary">
+            <summary>
+            Instance of dictionary.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.AddDictionary">
+            <summary>
+            Adds the dictionary value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.EditDictionary">
+            <summary>
+            Edits the dictionary value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.DeleteDictionary">
+            <summary>
+            Deletes the language.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.SetValues">
+            <summary>
+            Allows to select values for the dictionary
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.LoadDataSource">
+            <summary>
+            Loads the data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.btnAdd_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnAdd control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.btnEdit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnEdit control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.btnDelete_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnDelete control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.btnSetValue_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnSelectValue control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.UC_DictionaryList_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the UC_LanguageLise control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.grcDictionary_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles the MouseDoubleClick event of the grid control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.DictionaryDataSource">
+            <summary>
+            Sets the dictionary value data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.SelectedDictionary">
+            <summary>
+            Gets the selected dictionary.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_DictionaryList.DictionaryType">
+            <summary>
+            Type of the dictionary.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.GetSelectedValue">
+            <summary>
+            Gets the selected value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.AddValue">
+            <summary>
+            Adds the value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.EditValue">
+            <summary>
+            Edits the value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.DeleteValue">
+            <summary>
+            Deletes the value.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.LoadDataSource">
+            <summary>
+            Loads the data source.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.btnAdd_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnAdd control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.btnEdit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnEdit control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.btnDelete_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the btnDelete control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.UC_DictionaryValueList_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the UC_LanguageLise control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.grcDictionaryValue_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles the MouseDoubleClick event of the grid control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:inSolutions.Dictionary.View.Dictionary.UC_ValueList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.View.Dictionary.UC_ValueList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_ValueList.ValueDataSource">
+            <summary>
+            Sets the dictionary value data source.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_ValueList.SelectedValue">
+            <summary>
+            Gets the selected dictionary value.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.View.Dictionary.UC_ValueList.DictionaryType">
+            <summary>
+            Type of the dictionary.
+            </summary>
+        </member>
+    </members>
+</doc>
