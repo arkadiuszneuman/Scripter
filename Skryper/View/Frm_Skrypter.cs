@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
 using Microsoft.SqlServer.Management.Smo;
+using Skryper.Presenter;
+using Skryper.Interface;
 
 namespace Skryper.View
 {
-    public partial class Frm_Skrypter : Form,I_Database
+    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter
     {
-        #region Private fields
-
-        private readonly ClP_Scirpter vrcPresenter;
-
-        #endregion
-
         #region Constructor
 
         public Frm_Skrypter()
         {
             InitializeComponent();
-            vrcPresenter = new ClP_Scirpter(this);
+            vrcPresenter = new ClP_Skrypter(this);
         }
 
         #endregion
@@ -28,7 +24,7 @@ namespace Skryper.View
         {
             if (!string.IsNullOrEmpty(frtxtServerName.Text))
             {
-                vrcPresenter.ConnectToServer();
+                Presenter.ConnectToServer();
 
                 vruTables.Server = Server;
                 vruStorageProcedure.Server = Server;
@@ -68,38 +64,14 @@ namespace Skryper.View
         }
 
 
-
+        public ClP_Skrypter Presenter
+        {
+            get
+            {
+                return this.vrcPresenter as ClP_Skrypter;
+            }
+        }
         #endregion
 
-    }
-
-    internal class ClP_Scirpter
-    {
-        private readonly I_Database vrcView;
-
-        public ClP_Scirpter(I_Database vrpView)
-        {
-            vrcView = vrpView;
-        }
-
-        public void ConnectToServer()
-        {
-            vrcView.Server = new Server(vrcView.ServerName);
-            vrcView.ServerStatus = vrcView.Server.Status.ToString();
-        }
-
-    }
-
-    public interface I_Database
-    {
-        DatabaseCollection DatabaseDatasource { get; set; }
-
-        Database Database { get;}
-
-        Server Server { set; get; }
-
-        string ServerName { get; }
-
-        string ServerStatus { set;}
     }
 }
