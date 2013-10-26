@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cl_ProgramMessages.cs" />
     <Compile Include="Interface\I_Scripter.cs" />
     <Compile Include="Presenter\ClP_Skrypter.cs" />
     <Compile Include="Presenter\ClP_Smo.cs" />

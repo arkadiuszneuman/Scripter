@@ -17,5 +17,7 @@ namespace Skryper.Interface
         string ServerName { get; }
 
         string ServerStatus { set; }
+
+        IEnumerable<string> DatabaseList { get; set; }
     }
 }

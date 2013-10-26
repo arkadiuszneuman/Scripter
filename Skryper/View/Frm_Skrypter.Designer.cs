@@ -156,12 +156,7 @@
             this.frtxtDatabase.Name = "frtxtDatabase";
             this.frtxtDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.frtxtDatabase.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Symbol", "Symbol", 44, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Nazwa", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.frtxtDatabase.Properties.DisplayMember = "Name";
             this.frtxtDatabase.Properties.NullText = "Wybierz bazę danych";
-            this.frtxtDatabase.Properties.ValueMember = "Id";
             this.frtxtDatabase.Size = new System.Drawing.Size(200, 20);
             this.frtxtDatabase.TabIndex = 7;
             // 
