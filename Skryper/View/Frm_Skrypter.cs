@@ -81,7 +81,7 @@ namespace Skryper.View
         }
 
 
-        public ClP_Skrypter Presenter
+        public new ClP_Skrypter Presenter
         {
             get
             {

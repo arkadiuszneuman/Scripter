@@ -173,7 +173,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "Frm_Skrypter";
-            this.Text = "Frm_Skrypter";
+            this.Text = "Skrypter";
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnSave, 0);
             this.Controls.SetChildIndex(this.xtraTabControl1, 0);
