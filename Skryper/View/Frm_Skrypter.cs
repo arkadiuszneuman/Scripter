@@ -6,6 +6,7 @@ using Skryper.Interface;
 using System.Collections.Generic;
 using inSolutions.Controls.Loader.Utilities;
 using Microsoft.SqlServer.Management.Common;
+using Skryper.Utilities;
 
 namespace Skryper.View
 {
@@ -25,7 +26,7 @@ namespace Skryper.View
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            Cl_Loader vrlLoader = new Cl_Loader(Cl_ProgramMessages.ProgramMessages, (l) =>
+            Cl_Loader vrlLoader = new Cl_Loader(Cl_Messages.ProgramMessages, (l) =>
                 {
                     try
                     {
@@ -44,7 +45,7 @@ namespace Skryper.View
                     }
                     catch (ConnectionFailureException)
                     {
-                        Cl_ProgramMessages.ProgramMessages.Error("Nie można połączyć się z serwerem.");
+                        Cl_Messages.ProgramMessages.Error("Nie można połączyć się z serwerem.");
                     }
                 });
 

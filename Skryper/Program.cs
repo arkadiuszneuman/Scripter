@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Skryper.View;
+using Skryper.Utilities;
 
 namespace Skryper
 {
@@ -24,7 +25,7 @@ namespace Skryper
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            Cl_ProgramMessages.ProgramMessages.Error(e.Exception.Message);
+            Cl_Messages.ProgramMessages.Error(e.Exception.Message);
         }
     }
 }

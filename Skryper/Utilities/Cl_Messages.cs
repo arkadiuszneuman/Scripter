@@ -2,9 +2,9 @@
 
 namespace Skryper.Utilities
 {
-    public class Cl_ProgramMessages : inSolutions.Utilities.Cl_ProgramMessages
+    public class Cl_Messages : inSolutions.Utilities.Cl_ProgramMessages
     {
-        private static Cl_ProgramMessages vrcProgramMessages;
+        private static Cl_Messages vrcProgramMessages;
 
         private class Cl_ProgramName : I_ProgramName
         {
@@ -14,18 +14,18 @@ namespace Skryper.Utilities
             }
         }
 
-        public Cl_ProgramMessages()
+        public Cl_Messages()
             : base(new Cl_ProgramName())
         {
         }
 
-        public static Cl_ProgramMessages ProgramMessages
+        public static Cl_Messages ProgramMessages
         {
             get
             {
                 if (vrcProgramMessages == null)
                 {
-                    vrcProgramMessages = new Cl_ProgramMessages();
+                    vrcProgramMessages = new Cl_Messages();
                 }
 
                 return vrcProgramMessages;
