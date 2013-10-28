@@ -9,7 +9,7 @@ namespace Skryper.Utilities
 {
     public class Cl_Config
     {
-        public readonly string ConfigPath = Application.ExecutablePath + "\\config.conf";
+        public readonly string ConfigPath = Application.StartupPath + "\\config.conf";
 
         private Cl_Config()
         {
