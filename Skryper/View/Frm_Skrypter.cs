@@ -36,6 +36,8 @@ namespace Skryper.View
 
                             vruTables.Server = Server;
                             vruStorageProcedure.Server = Server;
+
+                            
                             //vruTables.Database = Server.Databases["nowy"];
                             //vruStorageProcedure.Database = Server.Databases["nowy"];
 
@@ -113,6 +115,8 @@ namespace Skryper.View
         private void frtxtDatabase_EditValueChanged(object sender, EventArgs e)
         {
             Presenter.DatabaseChanged();
+
+            uC_DatabaseObjectList1.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
         }
 
 

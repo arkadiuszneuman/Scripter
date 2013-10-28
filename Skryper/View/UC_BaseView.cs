@@ -46,7 +46,6 @@ namespace Skryper.View
 
             Scripter vrlScripter = new Scripter(Server);
             List<SqlSmoObject> vrlObjects = new List<SqlSmoObject>();
-            
 
             ScriptingOptions vrlOptions = new ScriptingOptions();
             vrlOptions.NoIdentities = frbitNoIdentities.Checked;
@@ -66,7 +65,7 @@ namespace Skryper.View
                vrlObjects.Add(vrlSmoObjects);
             }
 
-
+            
             var vrlResult = vrlScripter.EnumScript(vrlObjects.ToArray());
 
             frtxtScript.Text = string.Join(Environment.NewLine, vrlResult);

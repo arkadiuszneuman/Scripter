@@ -41,6 +41,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.frtxtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.frtxtDatabase = new DevExpress.XtraEditors.LookUpEdit();
+            this.uC_DatabaseObjectList1 = new Skryper.View.UC_DatabaseObjectList();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -64,7 +65,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 45);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(929, 434);
+            this.xtraTabControl1.Size = new System.Drawing.Size(624, 180);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -74,7 +75,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.vruTables);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(923, 406);
+            this.xtraTabPage1.Size = new System.Drawing.Size(618, 152);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // vruTables
@@ -85,14 +86,14 @@
             this.vruTables.Margin = new System.Windows.Forms.Padding(0);
             this.vruTables.Name = "vruTables";
             this.vruTables.Padding = new System.Windows.Forms.Padding(4);
-            this.vruTables.Size = new System.Drawing.Size(923, 406);
+            this.vruTables.Size = new System.Drawing.Size(618, 152);
             this.vruTables.TabIndex = 0;
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.vruStorageProcedure);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(923, 406);
+            this.xtraTabPage2.Size = new System.Drawing.Size(618, 152);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // vruStorageProcedure
@@ -103,7 +104,7 @@
             this.vruStorageProcedure.Margin = new System.Windows.Forms.Padding(0);
             this.vruStorageProcedure.Name = "vruStorageProcedure";
             this.vruStorageProcedure.Padding = new System.Windows.Forms.Padding(4);
-            this.vruStorageProcedure.Size = new System.Drawing.Size(923, 406);
+            this.vruStorageProcedure.Size = new System.Drawing.Size(618, 152);
             this.vruStorageProcedure.TabIndex = 0;
             // 
             // btnClose
@@ -161,12 +162,23 @@
             this.frtxtDatabase.TabIndex = 7;
             this.frtxtDatabase.EditValueChanged += new System.EventHandler(this.frtxtDatabase_EditValueChanged);
             // 
+            // uC_DatabaseObjectList1
+            // 
+            this.uC_DatabaseObjectList1.ButtonEditVisibility = false;
+            this.uC_DatabaseObjectList1.LoadDataSource = false;
+            this.uC_DatabaseObjectList1.Location = new System.Drawing.Point(53, 242);
+            this.uC_DatabaseObjectList1.Name = "uC_DatabaseObjectList1";
+            this.uC_DatabaseObjectList1.Size = new System.Drawing.Size(379, 285);
+            this.uC_DatabaseObjectList1.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
+            this.uC_DatabaseObjectList1.TabIndex = 8;
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1033, 556);
+            this.Controls.Add(this.uC_DatabaseObjectList1);
             this.Controls.Add(this.frtxtDatabase);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnConnect);
@@ -183,6 +195,7 @@
             this.Controls.SetChildIndex(this.btnConnect, 0);
             this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.Controls.SetChildIndex(this.frtxtDatabase, 0);
+            this.Controls.SetChildIndex(this.uC_DatabaseObjectList1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -211,5 +224,6 @@
         private UC_TableView vruTables;
         private UC_StorageProcedureView vruStorageProcedure;
         private DevExpress.XtraEditors.LookUpEdit frtxtDatabase;
+        private UC_DatabaseObjectList uC_DatabaseObjectList1;
     }
 }
