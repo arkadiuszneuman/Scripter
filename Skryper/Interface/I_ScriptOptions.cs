@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Skryper.View
+namespace Skryper.Interface
 {
     public interface I_ScriptOptions
     {
