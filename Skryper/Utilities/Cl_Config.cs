@@ -11,15 +11,19 @@ namespace Skryper.Utilities
     {
         public readonly string ConfigPath = Application.ExecutablePath + "\\config.conf";
 
+        private Cl_Config()
+        {
+        }
+
         public void SaveConfig()
         {
             using (StreamWriter vrlStream = new StreamWriter(ConfigPath))
             {
-                vrlStream.Write(Connection + ";" + Database);
+                vrlStream.Write(ServerName + ";" + Database);
             }
         }
 
-        public void LoadConfig()
+        public void ReloadConfig()
         {
             if (File.Exists(ConfigPath))
             {
@@ -33,13 +37,21 @@ namespace Skryper.Utilities
                         throw new ArgumentException("Nieprawdłowy plik config.");
                     }
 
-                    Connection = vrlSplitted[0];
+                    ServerName = vrlSplitted[0];
                     Database = vrlSplitted[1];
                 }
             }
         }
 
-        public string Connection { get; set; }
+        public static Cl_Config LoadConfig()
+        {
+            Cl_Config config = new Cl_Config();
+            config.ReloadConfig();
+
+            return config;
+        }
+
+        public string ServerName { get; set; }
         public string Database { get; set; }
     }
 }

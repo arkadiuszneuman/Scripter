@@ -1,6 +1,7 @@
 ﻿using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
+using Skryper.Utilities;
 using Skryper.View;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
+        Cl_Config config;
+
         public ClP_Skrypter(I_Scripter vrpView)
             : base(vrpView)
         {
@@ -34,24 +37,18 @@ namespace Skryper.Presenter
 
         private void LoadLastDatabase()
         {
-            string vrlServer = View.ServerName;
-            string vrlDatabase = View.SelectedDatabase;
+            config = Cl_Config.LoadConfig();
 
-            using (StreamReader vrlStream = new StreamReader(Application.ExecutablePath + "\\config.conf"))
-            {
-                vrlStream.Read(vrlServer + ";" + vrlDatabase);
-            }
+            View.ServerName = config.ServerName;
+            View.SelectedDatabase = config.Database;
         }
 
         private void SaveLastDatabase()
         {
-            string vrlServer = View.ServerName;
-            string vrlDatabase = View.SelectedDatabase;
+            config.ServerName = View.ServerName;
+            config.Database = View.SelectedDatabase;
 
-            using (StreamWriter vrlStream = new StreamWriter(Application.ExecutablePath + "\\config.conf"))
-            {
-                vrlStream.Write(vrlServer + ";" + vrlDatabase);
-            }
+            config.SaveConfig();
         }
 
         private void LoadDatabases()
