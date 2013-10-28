@@ -137,7 +137,7 @@ namespace Skryper.View
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
-            memoEdit1.Text = string.Join(Environment.NewLine, gen.Generate(uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)).ToArray());
+            memoEdit1.Text = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)).ToArray());
         }
     }
 }

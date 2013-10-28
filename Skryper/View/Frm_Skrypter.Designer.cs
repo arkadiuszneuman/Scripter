@@ -207,6 +207,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "Frm_Skrypter";
+            this.ShowInTaskbar = true;
             this.Text = "Skrypter";
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnSave, 0);
