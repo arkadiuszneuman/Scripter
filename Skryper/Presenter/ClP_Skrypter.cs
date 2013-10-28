@@ -61,7 +61,7 @@ namespace Skryper.Presenter
 
         private void LoadDatabases()
         {
-            var server = new Microsoft.SqlServer.Management.Smo.Server(View.ServerName);
+            var server = new Server(View.ServerName);
 
             Database[] databases = new Database[server.Databases.Count];
             server.Databases.CopyTo(databases, 0);
