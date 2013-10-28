@@ -40,11 +40,14 @@ namespace Skryper.Presenter
         {
             config = Cl_Config.LoadConfig();
 
-            View.ServerName = config.ServerName;
-            ConnectToServer();
-            if (View.DatabaseList.Contains(config.Database))
+            if (!string.IsNullOrEmpty(config.ServerName))
             {
-                View.SelectedDatabase = config.Database;
+                View.ServerName = config.ServerName;
+                ConnectToServer();
+                if (View.DatabaseList.Contains(config.Database))
+                {
+                    View.SelectedDatabase = config.Database;
+                }
             }
         }
 

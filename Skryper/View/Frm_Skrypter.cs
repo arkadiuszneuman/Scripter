@@ -64,6 +64,10 @@ namespace Skryper.View
             {
                 return this.frtxtServerName.Text;
             }
+            set
+            {
+                this.frtxtServerName.Text = value;
+            }
         }
 
         public string ServerStatus
@@ -113,7 +117,14 @@ namespace Skryper.View
 
         public string SelectedDatabase
         {
-            get { return Convert.ToString(this.frtxtDatabase.EditValue); }
+            get 
+            { 
+                return Convert.ToString(this.frtxtDatabase.EditValue); 
+            }
+            set
+            {
+                this.frtxtDatabase.EditValue = value;
+            }
         }
     }
 }
