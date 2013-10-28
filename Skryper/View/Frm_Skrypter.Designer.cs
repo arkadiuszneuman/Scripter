@@ -42,6 +42,8 @@
             this.frtxtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.frtxtDatabase = new DevExpress.XtraEditors.LookUpEdit();
             this.uC_DatabaseObjectList1 = new Skryper.View.UC_DatabaseObjectList();
+            this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
+            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtDatabase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -172,12 +175,30 @@
             this.uC_DatabaseObjectList1.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
             this.uC_DatabaseObjectList1.TabIndex = 8;
             // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(398, 242);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.TabIndex = 9;
+            this.btnGenerate.Text = "Generuj";
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // memoEdit1
+            // 
+            this.memoEdit1.Location = new System.Drawing.Point(438, 271);
+            this.memoEdit1.Name = "memoEdit1";
+            this.memoEdit1.Size = new System.Drawing.Size(541, 227);
+            this.memoEdit1.TabIndex = 10;
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1033, 556);
+            this.Controls.Add(this.memoEdit1);
+            this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.uC_DatabaseObjectList1);
             this.Controls.Add(this.frtxtDatabase);
             this.Controls.Add(this.statusStrip1);
@@ -196,6 +217,8 @@
             this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.Controls.SetChildIndex(this.frtxtDatabase, 0);
             this.Controls.SetChildIndex(this.uC_DatabaseObjectList1, 0);
+            this.Controls.SetChildIndex(this.btnGenerate, 0);
+            this.Controls.SetChildIndex(this.memoEdit1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -205,6 +228,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtDatabase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +249,7 @@
         private UC_StorageProcedureView vruStorageProcedure;
         private DevExpress.XtraEditors.LookUpEdit frtxtDatabase;
         private UC_DatabaseObjectList uC_DatabaseObjectList1;
+        private DevExpress.XtraEditors.SimpleButton btnGenerate;
+        private DevExpress.XtraEditors.MemoEdit memoEdit1;
     }
 }

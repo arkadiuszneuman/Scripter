@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using inSolutions.Controls.Loader.Utilities;
 using Microsoft.SqlServer.Management.Common;
 using Skryper.Utilities;
+using Skryper.Utilities.ScriptGen;
+using System.Linq;
 
 namespace Skryper.View
 {
@@ -130,6 +132,12 @@ namespace Skryper.View
             {
                 this.frtxtDatabase.EditValue = value;
             }
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
+            memoEdit1.Text = string.Join(Environment.NewLine, gen.Generate(uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)).ToArray());
         }
     }
 }
