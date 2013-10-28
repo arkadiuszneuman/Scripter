@@ -4,8 +4,10 @@ using Skryper.Interface;
 using Skryper.View;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Skryper.Presenter
 {
@@ -30,6 +32,28 @@ namespace Skryper.Presenter
         {
         }
 
+        private void LoadLastDatabase()
+        {
+            string vrlServer = View.ServerName;
+            string vrlDatabase = View.SelectedDatabase;
+
+            using (StreamReader vrlStream = new StreamReader(Application.ExecutablePath + "\\config.conf"))
+            {
+                vrlStream.Read(vrlServer + ";" + vrlDatabase);
+            }
+        }
+
+        private void SaveLastDatabase()
+        {
+            string vrlServer = View.ServerName;
+            string vrlDatabase = View.SelectedDatabase;
+
+            using (StreamWriter vrlStream = new StreamWriter(Application.ExecutablePath + "\\config.conf"))
+            {
+                vrlStream.Write(vrlServer + ";" + vrlDatabase);
+            }
+        }
+
         private void LoadDatabases()
         {
             var server = new Microsoft.SqlServer.Management.Smo.Server(View.ServerName);
@@ -44,6 +68,14 @@ namespace Skryper.Presenter
             get
             {
                 return vrcView as I_Scripter;
+            }
+        }
+
+        public void DatabaseChanged()
+        {
+            if (!View.IsLoading)
+            {
+                SaveLastDatabase();
             }
         }
     }

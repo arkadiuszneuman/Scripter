@@ -8,10 +8,6 @@ namespace Skryper.Interface
 {
     public interface I_Scripter : inSolutions.Controls.BaseForms.Interface.I_EntityBaseForm
     {
-        DatabaseCollection DatabaseDatasource { get; set; }
-
-        Database Database { get; }
-
         Server Server { set; get; }
 
         string ServerName { get; }
@@ -19,5 +15,6 @@ namespace Skryper.Interface
         string ServerStatus { set; }
 
         IEnumerable<string> DatabaseList { get; set; }
+        string SelectedDatabase { get; }
     }
 }

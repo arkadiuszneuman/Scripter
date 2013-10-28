@@ -56,12 +56,7 @@ namespace Skryper.View
         #endregion
 
         #region Public properties
-
-        public Database Database { get; set; }
-
         public Server Server { get; set; }
-
-        public DatabaseCollection DatabaseDatasource { get; set; }
 
         public string ServerName
         {
@@ -90,8 +85,6 @@ namespace Skryper.View
         }
         #endregion
 
-
-
         public IEnumerable<string> DatabaseList
         {
             get
@@ -110,6 +103,17 @@ namespace Skryper.View
                     vrlAction();
                 }
             }
+        }
+
+        private void frtxtDatabase_EditValueChanged(object sender, EventArgs e)
+        {
+            Presenter.DatabaseChanged();
+        }
+
+
+        public string SelectedDatabase
+        {
+            get { return Convert.ToString(this.frtxtDatabase.EditValue); }
         }
     }
 }

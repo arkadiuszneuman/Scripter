@@ -13,7 +13,7 @@ namespace Skryper.View
     {
         public UC_TableView()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         public override void LoadDatasoure()

@@ -72,6 +72,7 @@
     <Compile Include="Presenter\ClP_Smo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Cl_Config.cs" />
     <Compile Include="View\Frm_Skrypter.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -159,6 +159,7 @@
             this.frtxtDatabase.Properties.NullText = "Wybierz bazę danych";
             this.frtxtDatabase.Size = new System.Drawing.Size(200, 20);
             this.frtxtDatabase.TabIndex = 7;
+            this.frtxtDatabase.EditValueChanged += new System.EventHandler(this.frtxtDatabase_EditValueChanged);
             // 
             // Frm_Skrypter
             // 
