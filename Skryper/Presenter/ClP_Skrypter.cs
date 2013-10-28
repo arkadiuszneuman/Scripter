@@ -23,6 +23,7 @@ namespace Skryper.Presenter
 
         public void ConnectToServer()
         {
+
             View.Server = new Server(View.ServerName);
 
             View.Server.ConnectionContext.ConnectTimeout = 2;

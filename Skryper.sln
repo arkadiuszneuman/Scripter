@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skryper", "Skryper\Skryper.csproj", "{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{1C2387AE-C29A-4F0C-8437-797E73F83B73}"
@@ -16,6 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dll", "Dll", "{76F3172D-43C
 		Files\Dll\inSolutions.Dictionary.1.0.1.2.xml = Files\Dll\inSolutions.Dictionary.1.0.1.2.xml
 		Files\Dll\inSolutions.Utilities.1.0.1.2.dll = Files\Dll\inSolutions.Utilities.1.0.1.2.dll
 		Files\Dll\inSolutions.Utilities.1.0.1.2.xml = Files\Dll\inSolutions.Utilities.1.0.1.2.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{58FE0EFB-0F18-4237-B9FB-EFAEA0B1670B}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Praca\Ikony\VISTA\jobsicons\vista_jobsicons_nuclear_engineer_24.png = D:\Praca\Ikony\VISTA\jobsicons\vista_jobsicons_nuclear_engineer_24.png
 	EndProjectSection
 EndProject
 Global
@@ -34,5 +37,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{76F3172D-43C0-40E6-8121-EC213765A842} = {1C2387AE-C29A-4F0C-8437-797E73F83B73}
+		{58FE0EFB-0F18-4237-B9FB-EFAEA0B1670B} = {1C2387AE-C29A-4F0C-8437-797E73F83B73}
 	EndGlobalSection
 EndGlobal
