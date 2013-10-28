@@ -26,7 +26,7 @@ namespace Skryper.View
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            Cl_Loader vrlLoader = new Cl_Loader(Cl_Messages.ProgramMessages, (l) =>
+            Cl_Loader vrlLoader = new Cl_Loader(Cl_Messages.Messages, (l) =>
                 {
                     try
                     {
@@ -45,7 +45,7 @@ namespace Skryper.View
                     }
                     catch (ConnectionFailureException)
                     {
-                        Cl_Messages.ProgramMessages.Error("Nie można połączyć się z serwerem.");
+                        Cl_Messages.Messages.Error("Nie można połączyć się z serwerem.");
                     }
                 });
 

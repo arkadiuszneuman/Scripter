@@ -25,7 +25,7 @@ namespace Skryper
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            Cl_Messages.ProgramMessages.Error(e.Exception.Message);
+            Cl_Messages.Messages.Error(e.Exception.Message);
         }
     }
 }

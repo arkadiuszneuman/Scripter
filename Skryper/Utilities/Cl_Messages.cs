@@ -19,7 +19,7 @@ namespace Skryper.Utilities
         {
         }
 
-        public static Cl_Messages ProgramMessages
+        public static Cl_Messages Messages
         {
             get
             {
