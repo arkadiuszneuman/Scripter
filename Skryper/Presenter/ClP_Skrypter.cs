@@ -14,7 +14,7 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
-        Cl_Config config;
+        private Cl_Config config;
 
         public ClP_Skrypter(I_Scripter vrpView)
             : base(vrpView)
@@ -24,7 +24,7 @@ namespace Skryper.Presenter
         public void ConnectToServer()
         {
             View.Server = new Server(View.ServerName);
-            //View.Server.Configuration.RemoteLoginTimeout
+
             View.Server.ConnectionContext.ConnectTimeout = 2;
             View.ServerStatus = View.Server.Status.ToString();
 
@@ -33,6 +33,7 @@ namespace Skryper.Presenter
 
         public override void LoadDataSources()
         {
+            LoadLastDatabase();
         }
 
         private void LoadLastDatabase()
@@ -40,7 +41,11 @@ namespace Skryper.Presenter
             config = Cl_Config.LoadConfig();
 
             View.ServerName = config.ServerName;
-            View.SelectedDatabase = config.Database;
+            ConnectToServer();
+            if (View.DatabaseList.Contains(config.Database))
+            {
+                View.SelectedDatabase = config.Database;
+            }
         }
 
         private void SaveLastDatabase()

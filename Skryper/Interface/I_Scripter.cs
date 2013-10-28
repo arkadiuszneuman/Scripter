@@ -10,11 +10,11 @@ namespace Skryper.Interface
     {
         Server Server { set; get; }
 
-        string ServerName { get; }
-
+        string ServerName { get; set; }
+        string SelectedDatabase { get; set; }
         string ServerStatus { set; }
 
         IEnumerable<string> DatabaseList { get; set; }
-        string SelectedDatabase { get; }
+        
     }
 }
