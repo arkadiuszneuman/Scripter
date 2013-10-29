@@ -120,6 +120,7 @@
     <Compile Include="Utilities\ScriptGen\Cl_DatabaseObject.cs" />
     <Compile Include="Utilities\ScriptGen\Cl_ScriptGen.cs" />
     <Compile Include="Utilities\ScriptGen\E_SmoObjectType.cs" />
+    <Compile Include="Utilities\ScriptGen\I_ScriptProgress.cs" />
     <Compile Include="View\Frm_DatabaseObjectList.cs">
       <SubType>Form</SubType>
     </Compile>

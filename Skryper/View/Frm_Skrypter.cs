@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace Skryper.View
 {
-    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter
+    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter, I_ScriptProgress
     {
         #region Constructor
 
@@ -134,11 +134,13 @@ namespace Skryper.View
             }
         }
 
+        private Cl_Loader vrcLoader;
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             string vrlString = string.Empty;
 
-            Cl_Loader vrlLoader = new Cl_Loader(l =>
+            vrcLoader = new Cl_Loader(l =>
                 {
                     Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
                     IEnumerable<Cl_DatabaseObject> SmoObjects =
@@ -148,13 +150,23 @@ namespace Skryper.View
                         .Union(uC_DatabaseObjectList4.DataSource)
                         .Union(uC_DatabaseObjectList5.DataSource);
 
-                    vrlString = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects, l).ToArray());
+                    vrlString = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects, this).ToArray());
 
                 });
 
-            vrlLoader.Execute("Generowanie skryptu...");
+            vrcLoader.Execute("Generowanie skryptu...");
 
             memoEdit1.Text = vrlString;
+        }
+
+        public void CreateProgress(int min, int max)
+        {
+            vrcLoader.CreateProgress(min, max);
+        }
+
+        public void ReportProgress(int vrpProgress)
+        {
+            vrcLoader.ReportProgress(vrpProgress);
         }
     }
 }

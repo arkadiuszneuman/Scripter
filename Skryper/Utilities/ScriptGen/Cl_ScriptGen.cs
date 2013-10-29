@@ -11,7 +11,7 @@ namespace Skryper.Utilities.ScriptGen
     {
         private string serverName, databaseName;
         private int current = 0;
-        private Cl_Loader vrcLoader;
+        private I_ScriptProgress vrcProgress;
 
         public Cl_ScriptGen(string server, string database)
         {
@@ -19,15 +19,15 @@ namespace Skryper.Utilities.ScriptGen
             this.databaseName = database;
         }
 
-        public IEnumerable<string> Generate(IEnumerable<Cl_DatabaseObject> vrpObject, Cl_Loader vrpLoader)
+        public IEnumerable<string> Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
         {
             Server server = new Server(serverName);
             Scripter scripter = new Scripter(server);
             scripter.ScriptingProgress += scripter_ScriptingProgress;
             var vrlArray = vrpObject.Select(o => o.SmoObject).ToArray();
 
-            vrpLoader.CreateProgress(0, vrpObject.Count() * 2);
-            vrcLoader = vrpLoader;
+            vrcProgress = vrpProgress;
+            vrcProgress.CreateProgress(0, vrpObject.Count() * 2);
 
             scripter.Options = GetDropOptions();
             IEnumerable<string> vrlReturn = scripter.EnumScript(vrlArray);
@@ -66,7 +66,7 @@ namespace Skryper.Utilities.ScriptGen
         private void scripter_ScriptingProgress(object sender, ProgressReportEventArgs e)
         {
             ++current;
-            vrcLoader.ReportProgress(current);
+            vrcProgress.ReportProgress(current);
         }
     }
 }
