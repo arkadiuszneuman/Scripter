@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Skryper.Utilities.ScriptGen
 {
@@ -33,10 +34,38 @@ namespace Skryper.Utilities.ScriptGen
             scripter.Options = GetOptions();
             vrlReturn = vrlReturn.Union(scripter.EnumScript(vrlArray));
 
-            return string.Join(Environment.NewLine + Environment.NewLine, vrlReturn.ToArray());
+            string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlReturn.ToArray());
+            vrlJoinedString = RemoveDropTables(vrlJoinedString);
+            vrlJoinedString = RemoveAnsiiAndQuotedIndentifier(vrlJoinedString);
+            vrlJoinedString = RemoveToManyReturns(vrlJoinedString);
+
+            return vrlJoinedString;
         }
 
+        private string RemoveToManyReturns(string vrlJoinedString)
+        {
+            return vrlJoinedString.Replace(Environment.NewLine + Environment.NewLine + Environment.NewLine, Environment.NewLine);
+        }
 
+        private string RemoveAnsiiAndQuotedIndentifier(string vrlJoinedString)
+        {
+            string pattern = "SET ANSI_NULLS.*\n";
+            string replacement = string.Empty;
+            Regex rgx = new Regex(pattern);
+            vrlJoinedString = rgx.Replace(vrlJoinedString, replacement);
+
+            pattern = "SET QUOTED_IDENTIFIER.*\n";
+            rgx = new Regex(pattern);
+            return rgx.Replace(vrlJoinedString, replacement);
+        }
+
+        private string RemoveDropTables(string vrlJoinedString)
+        {
+            string pattern = "IF.*\nDROP TABLE.*\n";
+            string replacement = string.Empty;
+            Regex rgx = new Regex(pattern);
+            return rgx.Replace(vrlJoinedString, replacement);
+        }
 
         private void CreateProgress(I_ScriptProgress vrpProgress, int vrpCount)
         {
@@ -61,6 +90,9 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.WithDependencies = false;
             vrlOptions.ExtendedProperties = true;
             vrlOptions.SchemaQualify = true;
+            vrlOptions.Indexes = true;
+            vrlOptions.DriIndexes = true;
+            vrlOptions.DriAllConstraints = true;
             return vrlOptions;
         }
 
