@@ -39,11 +39,14 @@ namespace Skryper.Presenter
 
                 if (vrfForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    foreach (var vrlObject in vrfForm.SelectedObjects)
+                    if (vrfForm.SelectedObjects != null)
                     {
-                        View.DataSource.Add(vrlObject as Cl_DatabaseObject);
+                        foreach (var vrlObject in vrfForm.SelectedObjects)
+                        {
+                            View.DataSource.Add(vrlObject as Cl_DatabaseObject);
+                        }
+                        return true;
                     }
-                    return true;
                 }
             }
 

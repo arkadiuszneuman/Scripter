@@ -136,15 +136,25 @@ namespace Skryper.View
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
-            IEnumerable<SqlSmoObject> SmoObjects =
-                uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)
-                .Union(uC_DatabaseObjectList2.DataSource.Select(o => o.SmoObject))
-                .Union(uC_DatabaseObjectList3.DataSource.Select(o => o.SmoObject))
-                .Union(uC_DatabaseObjectList4.DataSource.Select(o => o.SmoObject))
-                .Union(uC_DatabaseObjectList5.DataSource.Select(o => o.SmoObject));
+            string vrlString = string.Empty;
 
-            memoEdit1.Text = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects).ToArray());
+            Cl_Loader vrlLoader = new Cl_Loader(l =>
+                {
+                    Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
+                    IEnumerable<Cl_DatabaseObject> SmoObjects =
+                        uC_DatabaseObjectList1.DataSource
+                        .Union(uC_DatabaseObjectList2.DataSource)
+                        .Union(uC_DatabaseObjectList3.DataSource)
+                        .Union(uC_DatabaseObjectList4.DataSource)
+                        .Union(uC_DatabaseObjectList5.DataSource);
+
+                    vrlString = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects, l).ToArray());
+
+                });
+
+            vrlLoader.Execute("Generowanie skryptu...");
+
+            memoEdit1.Text = vrlString;
         }
     }
 }
