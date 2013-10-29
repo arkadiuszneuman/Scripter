@@ -4,6 +4,68 @@
         <name>inSolutions.Controls.1.0.1.2</name>
     </assembly>
     <members>
+        <member name="M:inSolutions.Controls.Administration.PropertyBinder.I_Bindable`1.Bind(`0,System.String)">
+            <summary>
+            Powiązuje daną kontrolkę z parameterem
+            </summary>
+            <param name="vrpControl">Kontrolka do powiązania</param>
+            <param name="vrpParameterName">Parametr do którego wartość kontrolki będzie przypisywana</param>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.PropertyBinder.I_Bindable`1.BindToControl">
+            <summary>
+            Przepisuje wartość parameteru zapisanego w obiekcie do kontrolki, domyślnie wywoływana w metodzie OnLoad()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.PropertyBinder.I_Bindable`1.BindToParameter">
+            <summary>
+            Przepisuje wartość kontrolki zawartej w obiekcie do parametru oraz zapisuje do bazy danych, domyślnie wywoływana w metodzie onSaving()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.PropertyBinder.Cl_ParameterBinder.Bind(System.Windows.Forms.Control,System.String)">
+            <summary>
+            Powiązuje daną kontrolkę z parameterem
+            </summary>
+            <param name="vrpControl">Kontrolka do powiązania</param>
+            <param name="vrpParameterName">Parametr do którego wartość kontrolki będzie przypisywana</param>
+            <param name="vrpProgramId">Program id parameteru </param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnClosing">
+            <summary>
+            Wywoływane podczas zamykania okienka. Nie robi nic, można przeciążyć.
+            </summary>
+            <returns>True jeśli zamknąć, false jeśli anulować zamykanie</returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnClosed">
+            <summary>
+            Wywoływane po zamknięciu (gdy metoda OnClosing zwróci true). Nie robi nic, można przeciążyć.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnSaving">
+            <summary>
+            Wywoływane po kliknięciu Zapisz. Nie robi nic, można przeciążyć.
+            </summary>
+            <returns>True jeśli pomyślnie zapisano</returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnSaved">
+            <summary>
+            Wywołane po poprawnym Zapisie (po zwróceniu true przez metode OnSaving)
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.Administration.View.Frm_BaseAdministration">
+            <summary>
+            Forma bazowa okna administracji
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.View.Frm_BaseForm">
+            <summary>
+            Standardowa forma posiadająca metody blokujące kontrolki i validujące dane.
+            <para>Po załadowaniu okienka następujące w kolejności metody są wywoływane (można je przeciążyć):</para>
+            <para>LoadDataSources() - ładuje za pomocą prezentera data source</para>
+            <para>InitControls() - inicjalizuje kontrolki</para>
+            </summary>
+        </member>
         <member name="M:inSolutions.Controls.BaseForms.Interface.I_BaseForm.BlockAllControls">
             <summary>
             Blokuje wszystkie kontrolki (wywołana metoda BlockAllControls z parametrem true)
@@ -28,222 +90,6 @@
         <member name="P:inSolutions.Controls.BaseForms.Interface.I_BaseForm.IsLoading">
             <summary>
              Określa, czy wykonywane są metody ładowania widoku. Po załadowaniu widoku (Frm_Load) zmienna ta jest ustawiana na false.
-            </summary>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnClosing">
-            <summary>
-            Wywoływane podczas zamykania okienka. Nie robi nic, można przeciążyć.
-            </summary>
-            <returns>True jeśli zamknąć, false jeśli anulować zamykanie</returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnClosed">
-            <summary>
-            Wywoływane po zamknięciu (gdy metoda OnClosing zwróci true). Nie robi nic, można przeciążyć.
-            </summary>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnSaving">
-            <summary>
-            Wywoływane po kliknięciu Zapisz. Nie robi nic, można przeciążyć.
-            </summary>
-            <returns>True jeśli pomyślnie zapisano</returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseForm.OnSaved">
-            <summary>
-            Wywołane po poprawnym Zapisie (po zwróceniu true przez metode OnSaving)
-            </summary>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.Presenter.ClP_BaseListForm">
-            <summary>
-            Presentery wykorzystywany w formie Frm_BaseForm - aby nie wyrzucał błędu o braku prezentera
-            </summary>
-        </member>
-        <member name="P:inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseFormGeneric`1.Entity">
-            <summary>
-            Encja obiektu
-            </summary>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControl(System.Windows.Forms.Control,System.Boolean)">
-            <summary>
-            Blokuje lub odblokowywuje wybraną kontrolkę.
-            </summary>
-            <param name="vrpControl">Kontrolka do zablokowania lub odblokowania</param>
-            <param name="vrpBlock">True jeśli zablokować kontrolki, false w przeciwnym wypadku</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControl(System.Windows.Forms.Control)">
-            <summary>
-            Blokuje wybraną kontrolkę.
-            </summary>
-            <param name="vrpControl">Kontrolka do zablokowania</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.UnblockControl(System.Windows.Forms.Control)">
-            <summary>
-            Odblokowywuje wybraną kontrolkę.
-            </summary>
-            <param name="vrpControl">Kontrolka odblokowania</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControls(System.Windows.Forms.Control.ControlCollection,System.Boolean)">
-            <summary>
-            Blokuje lub odblokowywuje wybrane kontrolki z przekazanej kolekcji kontrolek (nie licząc gridów, memeditów).
-            </summary>
-            <param name="vrpControls">Kolekcja kontrolek do zablokowania lub odblokowania</param>
-            <param name="vrpBlock">True jeśli zablokować kontrolki, false w przeciwnym wypadku</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControls(System.Windows.Forms.Control.ControlCollection)">
-            <summary>
-            Blokuje wybrane kontrolki z przekazanej kolekcji kontrolek.
-            </summary>
-            <param name="vrpControls">Kolekcja kontrolek do zablokowania</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.UnblockControls(System.Windows.Forms.Control.ControlCollection)">
-            <summary>
-            Odlbokowywuje wybrane kontrolki z przekazanej kolekcji kontrolek.
-            </summary>
-            <param name="vrpControls">Kolekcja kontrolek do zablokowania</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ControlEntityConnections.Cl_ControlEntityConnector.ConnectControlToObject(System.Object)">
-            <summary>
-            Przepisuje dane z kontrolki do encji
-            </summary>
-            <param name="vrpEntity">Encja, do której dane przepisać</param>
-            <returns>Zwraca true, jeśli wyskoczył error - komunikat</returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ControlEntityConnections.Cl_ControlEntityConnector.ConnectObjectToControl(System.Object)">
-            <summary>
-            Przepisuje właściwość z encji do kontrolki
-            </summary>
-            <param name="vrpEntity">Encja, z której przepisać właściwość do kontrolki</param>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ControlError`1.CheckAndSetError(System.Boolean,DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider)">
-            <summary>
-            Sprawdza i ustawia na providerze Errory
-            </summary>
-            <param name="vrpShowError">True, jeśli ma pokazywać MessageBoksa z błędem</param>
-            <param name="vrpErrorProvider">Provider, na którym ustawić error</param>
-            <returns>True, jeśli wystąpił błąd lub warning</returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ControlError`1.CanProvideError">
-            <summary>
-            Zwraca true, jeśli na danej kontrolce można ustawić Error ErrorProviderem
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider">
-            <summary>
-            Klasa odpowiedzialna za walidacje kontrolek
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.I_ErrorProvider`1.CheckErrors" -->
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.GetAllControlsWithWarnings">
-            <summary>
-            Pobiera wszystkie kontrolki z ostrzeżeniami
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.GetAllControlsWithErrors">
-            <summary>
-            Pobiera wszystkie kontrolki z błędami
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation,System.String,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
-            <summary>
-            Dodaje walidacje do kontrolki
-            </summary>
-            <param name="vrpControl">Walidowana kontrolka</param>
-            <param name="vrpValidation">Typ walidacji</param>
-            <param name="vrpErrorType">Typ błędu</param>
-            <param name="vrpValidationText">Test wyświetlany przy ikonie błędu</param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentException"></exception>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,System.Func{System.Boolean},System.String,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
-            <summary>
-            Dodaje walidacje do kontrolki
-            </summary>
-            <param name="vrpControl">Walidowana kontrolka</param>
-            <param name="vrpFunc">Walidacyjne wyrażenie lambda</param>
-            <param name="vrpErrorType">Typ błędu</param>
-            <param name="vrpValidationText">Test wyświetlany przy ikonie błędu</param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentException"></exception>
-        </member>
-        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,System.Func{System.Boolean},System.Func{System.String},inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
-            <summary>
-            Dodaje walidacje do kontrolki
-            </summary>
-            <param name="vrpControl">Walidowana kontrolka</param>
-            <param name="vrpFunc">Walidacyjne wyrażenie lambda</param>
-            <param name="vrpErrorType">Typ błędu</param>
-            <param name="vrpValidationFunction">Wyrażenie lambda dla wiadomości błędu</param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentException"></exception>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation">
-            <summary>
-            Typ walidacji (kontroli danych).
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.TextEmpty">
-            <summary>
-            Sprawdza, czy właściwość Text jest null lub pusta.
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueNullOrZero">
-            <summary>
-            Sprawdza czy właściwość EditValue jest null lub zero.
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueNull">
-            <summary>
-            Sprawdza czy właściwość EditValue jest null.
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueLessThanZero">
-            <summary>
-            Sprawdza czy właściwość EditValue jest mniejsze od zera
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueLessOrEqualsZero">
-            <summary>
-            Sprawdza czy właściwość EditValue jest mniejsza lub równa zero
-            </summary>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode">
-            <summary>
-            Określa typ wyświetlanych przycisków
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.SaveAndCancel">
-            <summary>
-            Przycisk zapisz i anuluj
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.CloseOnly">
-            <summary>
-            Tylko przycisk zamknij
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.OkAndCancel">
-            <summary>
-            Przycisk OK i Anuluj
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.ChooseAndCancel">
-            <summary>
-            Wybierz i Anuluj
-            </summary>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.Utilities.I_CustomBlockableControl">
-            <summary>
-            Określa kontrolkę, która ma inne niż domyślne blokowanie 
-            </summary>
-        </member>
-        <member name="T:inSolutions.Controls.BaseForms.View.Frm_BaseForm">
-            <summary>
-            Standardowa forma posiadająca metody blokujące kontrolki i validujące dane.
-            <para>Po załadowaniu okienka następujące w kolejności metody są wywoływane (można je przeciążyć):</para>
-            <para>LoadDataSources() - ładuje za pomocą prezentera data source</para>
-            <para>InitControls() - inicjalizuje kontrolki</para>
             </summary>
         </member>
         <member name="F:inSolutions.Controls.BaseForms.View.Frm_BaseForm.vrcPresenter">
@@ -449,9 +295,245 @@
             Obiekt prezentera
             </summary>
         </member>
+        <member name="F:inSolutions.Controls.Administration.View.Frm_BaseAdministration.vrcCommon">
+            <summary>
+            Common programu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.View.Frm_BaseAdministration.#ctor">
+            <summary>
+            Konstruktor dla designera
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.View.Frm_BaseAdministration.#ctor(inSolutions.Utilities.I_Common)">
+            <summary>
+            Forma zawierająca domyślne user controls do zmiany pliku licencji dla Navireo oraz zmiany licencji i bazy danych dla dodatków Subiekt
+            Forma rozpoznaje system na podstawie informacji zawartych w I_Common
+            Dodatkowo zawiera zaiplementowane metody do bindowania kontrolek z parametrami, dzięki czemu nie jest już wymagane 'ręczne wczytywanie i zapisywanie parametrów'
+            </summary>
+            <param name="vrpCommon">Common programu</param>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.View.Frm_BaseAdministration.Bind">
+            <summary>
+            Łaczy kontrolki z parameterami
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.Administration.View.Frm_BaseAdministration.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.View.Frm_BaseAdministration.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Controls.Administration.View.Frm_BaseAdministration.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Controls.Administration.View.Frm_BaseAdministration.ShowAdministration">
+            <summary>
+            Czy wyświetlać zakładkę administracji.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.Presenter.ClP_BaseListForm">
+            <summary>
+            Presentery wykorzystywany w formie Frm_BaseForm - aby nie wyrzucał błędu o braku prezentera
+            </summary>
+        </member>
+        <member name="P:inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseFormGeneric`1.Entity">
+            <summary>
+            Encja obiektu
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControl(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            Blokuje lub odblokowywuje wybraną kontrolkę.
+            </summary>
+            <param name="vrpControl">Kontrolka do zablokowania lub odblokowania</param>
+            <param name="vrpBlock">True jeśli zablokować kontrolki, false w przeciwnym wypadku</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControl(System.Windows.Forms.Control)">
+            <summary>
+            Blokuje wybraną kontrolkę.
+            </summary>
+            <param name="vrpControl">Kontrolka do zablokowania</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.UnblockControl(System.Windows.Forms.Control)">
+            <summary>
+            Odblokowywuje wybraną kontrolkę.
+            </summary>
+            <param name="vrpControl">Kontrolka odblokowania</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControls(System.Windows.Forms.Control.ControlCollection,System.Boolean)">
+            <summary>
+            Blokuje lub odblokowywuje wybrane kontrolki z przekazanej kolekcji kontrolek (nie licząc gridów, memeditów).
+            </summary>
+            <param name="vrpControls">Kolekcja kontrolek do zablokowania lub odblokowania</param>
+            <param name="vrpBlock">True jeśli zablokować kontrolki, false w przeciwnym wypadku</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.BlockControls(System.Windows.Forms.Control.ControlCollection)">
+            <summary>
+            Blokuje wybrane kontrolki z przekazanej kolekcji kontrolek.
+            </summary>
+            <param name="vrpControls">Kolekcja kontrolek do zablokowania</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.Cl_ControlsBlocker.UnblockControls(System.Windows.Forms.Control.ControlCollection)">
+            <summary>
+            Odlbokowywuje wybrane kontrolki z przekazanej kolekcji kontrolek.
+            </summary>
+            <param name="vrpControls">Kolekcja kontrolek do zablokowania</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ControlEntityConnections.Cl_ControlEntityConnector.ConnectControlToObject(System.Object)">
+            <summary>
+            Przepisuje dane z kontrolki do encji
+            </summary>
+            <param name="vrpEntity">Encja, do której dane przepisać</param>
+            <returns>Zwraca true, jeśli wyskoczył error - komunikat</returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ControlEntityConnections.Cl_ControlEntityConnector.ConnectObjectToControl(System.Object)">
+            <summary>
+            Przepisuje właściwość z encji do kontrolki
+            </summary>
+            <param name="vrpEntity">Encja, z której przepisać właściwość do kontrolki</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ControlError`1.CheckAndSetError(System.Boolean,DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider)">
+            <summary>
+            Sprawdza i ustawia na providerze Errory
+            </summary>
+            <param name="vrpShowError">True, jeśli ma pokazywać MessageBoksa z błędem</param>
+            <param name="vrpErrorProvider">Provider, na którym ustawić error</param>
+            <returns>True, jeśli wystąpił błąd lub warning</returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ControlError`1.CanProvideError">
+            <summary>
+            Zwraca true, jeśli na danej kontrolce można ustawić Error ErrorProviderem
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider">
+            <summary>
+            Klasa odpowiedzialna za walidacje kontrolek
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.I_ErrorProvider`1.CheckErrors" -->
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.GetAllControlsWithWarnings">
+            <summary>
+            Pobiera wszystkie kontrolki z ostrzeżeniami
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.GetAllControlsWithErrors">
+            <summary>
+            Pobiera wszystkie kontrolki z błędami
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation,System.String,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
+            <summary>
+            Dodaje walidacje do kontrolki
+            </summary>
+            <param name="vrpControl">Walidowana kontrolka</param>
+            <param name="vrpValidation">Typ walidacji</param>
+            <param name="vrpErrorType">Typ błędu</param>
+            <param name="vrpValidationText">Test wyświetlany przy ikonie błędu</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,System.Func{System.Boolean},System.String,inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
+            <summary>
+            Dodaje walidacje do kontrolki
+            </summary>
+            <param name="vrpControl">Walidowana kontrolka</param>
+            <param name="vrpFunc">Walidacyjne wyrażenie lambda</param>
+            <param name="vrpErrorType">Typ błędu</param>
+            <param name="vrpValidationText">Test wyświetlany przy ikonie błędu</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.Cl_ErrorProvider.AddValidation(System.Windows.Forms.Control,System.Func{System.Boolean},System.Func{System.String},inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_ErrorType)">
+            <summary>
+            Dodaje walidacje do kontrolki
+            </summary>
+            <param name="vrpControl">Walidowana kontrolka</param>
+            <param name="vrpFunc">Walidacyjne wyrażenie lambda</param>
+            <param name="vrpErrorType">Typ błędu</param>
+            <param name="vrpValidationFunction">Wyrażenie lambda dla wiadomości błędu</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation">
+            <summary>
+            Typ walidacji (kontroli danych).
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.TextEmpty">
+            <summary>
+            Sprawdza, czy właściwość Text jest null lub pusta.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueNullOrZero">
+            <summary>
+            Sprawdza czy właściwość EditValue jest null lub zero.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueNull">
+            <summary>
+            Sprawdza czy właściwość EditValue jest null.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueLessThanZero">
+            <summary>
+            Sprawdza czy właściwość EditValue jest mniejsze od zera
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.ErrorProvider.E_Validation.EditValueLessOrEqualsZero">
+            <summary>
+            Sprawdza czy właściwość EditValue jest mniejsza lub równa zero
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode">
+            <summary>
+            Określa typ wyświetlanych przycisków
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.SaveAndCancel">
+            <summary>
+            Przycisk zapisz i anuluj
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.CloseOnly">
+            <summary>
+            Tylko przycisk zamknij
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.OkAndCancel">
+            <summary>
+            Przycisk OK i Anuluj
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.Utilities.E_ButtonsMode.ChooseAndCancel">
+            <summary>
+            Wybierz i Anuluj
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.BaseForms.Utilities.I_CustomBlockableControl">
+            <summary>
+            Określa kontrolkę, która ma inne niż domyślne blokowanie 
+            </summary>
+        </member>
         <member name="F:inSolutions.Controls.BaseForms.View.Frm_BaseList.vrcObject">
             <summary>
             Zapamiętuje wybrany obiekt
+            </summary>
+        </member>
+        <member name="F:inSolutions.Controls.BaseForms.View.Frm_BaseList.vrcCommon">
+            <summary>
+            Common programu
             </summary>
         </member>
         <member name="F:inSolutions.Controls.BaseForms.View.Frm_BaseList.vrcChoose">
@@ -479,18 +561,6 @@
             Kontruktor dla Designera
             </summary>
         </member>
-        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(inSolutions.Controls.BaseForms.View.UC_BaseList,System.Boolean)">
-            <summary>
-            Forma odpowiedzialna za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów lub wyświetlenie okienka z wyborem obiektu.
-            <para>Metody GetCurrentId i GetCurrentObject zwracają odpowiednio Id i obiekt, który został jest aktualnie wybrany.</para>
-            <para>Właściwość SelectedId zwraca Id obiektu w przypadku formy do wyboru.</para>
-            <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
-            </summary>
-            <param name="vruList">UserControl listy, który będzie wyświetlony. Musi on być odziedziczony z UC_BaseList</param>
-            <param name="vrpChoose">Określa czy forma będzie formą tylko do wyboru.
-                <para>Forma do wyboru ukrywa przyciski usuń i edytuj, natomiast nazwa przycisku Zamknij zamieniona jest na Anuluj.</para>
-                <para>Forma, która nie będzie formą do wyboru ukrywa przycisk wybierz oraz nie zwraca identyfikatora wybranego obiektu poprzez właściwość ID</para></param>
-        </member>
         <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(inSolutions.Controls.BaseForms.View.UC_BaseList,System.Boolean,System.Boolean)">
             <summary>
             Forma odpowiedzialna za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów lub wyświetlenie okienka z wyborem obiektu.
@@ -498,13 +568,27 @@
             <para>Właściwość SelectedId zwraca Id obiektu w przypadku formy do wyboru.</para>
             <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
             </summary>
-            <param name="vruList">UserControl listy, który będzie wyświetlony. Musi on być odziedziczony z UC_BaseList</param>
+            <param name="vrpList">UserControl listy, który będzie wyświetlony. Musi on być odziedziczony z UC_BaseList</param>
             <param name="vrpChoose">Określa czy forma będzie formą tylko do wyboru.
                 <para>Forma do wyboru ukrywa przyciski usuń i edytuj, natomiast nazwa przycisku Zamknij zamieniona jest na Anuluj.</para>
                 <para>Forma, która nie będzie formą do wyboru ukrywa przycisk wybierz oraz nie zwraca identyfikatora wybranego obiektu poprzez właściwość ID</para></param>
             <param name="vrpMultiselect">Określa czy dostępna jest opcja multiwyboru</param>
         </member>
-        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(System.Collections.Generic.Dictionary{System.String,inSolutions.Controls.BaseForms.View.UC_BaseList},System.Boolean)">
+        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(inSolutions.Controls.BaseForms.View.UC_BaseList,System.Boolean,inSolutions.Utilities.I_Common,System.Boolean)">
+            <summary>
+            Forma odpowiedzialna za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów lub wyświetlenie okienka z wyborem obiektu.
+            <para>Metody GetCurrentId i GetCurrentObject zwracają odpowiednio Id i obiekt, który został jest aktualnie wybrany.</para>
+            <para>Właściwość SelectedId zwraca Id obiektu w przypadku formy do wyboru.</para>
+            <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
+            </summary>
+            <param name="vrpList">UserControl listy, który będzie wyświetlony. Musi on być odziedziczony z UC_BaseList</param>
+            <param name="vrpCommon">Common</param>
+            <param name="vrpChoose">Określa czy forma będzie formą tylko do wyboru.
+                <para>Forma do wyboru ukrywa przyciski usuń i edytuj, natomiast nazwa przycisku Zamknij zamieniona jest na Anuluj.</para>
+                <para>Forma, która nie będzie formą do wyboru ukrywa przycisk wybierz oraz nie zwraca identyfikatora wybranego obiektu poprzez właściwość ID</para></param>
+            <param name="vrpMultiselect">Określa czy dostępna jest opcja multiwyboru</param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(System.Collections.Generic.Dictionary{System.String,inSolutions.Controls.BaseForms.View.UC_BaseList},System.Boolean,System.Boolean)">
             <summary>
             Forma na wiele obiektów (będą wyświetlone w zakładkach).
             Forma odpowiedzialna za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów lub wyświetlenie okienka z wyborem obiektu.
@@ -515,12 +599,13 @@
             <para>Jeśli encja implementuje interfejs I_Duplicatable to automatycznie dodawny jest przycisk z powielaniem obiektu - nie trzeba nic implementować.</para>
             <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
             </summary>
-            <param name="vruList">UserControl listy, który będzie wyświetlony. Musi on być odziedziczony z UC_List</param>
+            <param name="vrpLists">UserControle listy, który będzią wyświetlone. Muszą on być odziedziczony z UC_List</param>
             <param name="vrpChoose">Określa czy forma będzie formą tylko do wyboru.
                 <para>Forma do wyboru ukrywa przyciski usuń i edytuj, natomiast nazwa przycisku zamknij zamieniona jest na Anuluj.</para>
                 <para>Forma, która nie będzie formą do wyboru ukrywa przycisk wybierz oraz nie zwraca identyfikatora wybranego obiektu poprzez właściwość ID</para></param>
+            <param name="vrpMultiselect">Określa czy dostępna jest opcja multiwyboru</param>   
         </member>
-        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(System.Collections.Generic.Dictionary{System.String,inSolutions.Controls.BaseForms.View.UC_BaseList},System.Boolean,System.Boolean)">
+        <member name="M:inSolutions.Controls.BaseForms.View.Frm_BaseList.#ctor(System.Collections.Generic.Dictionary{System.String,inSolutions.Controls.BaseForms.View.UC_BaseList},System.Boolean,inSolutions.Utilities.I_Common,System.Boolean)">
             <summary>
             Forma na wiele obiektów (będą wyświetlone w zakładkach).
             Forma odpowiedzialna za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów lub wyświetlenie okienka z wyborem obiektu.
@@ -744,7 +829,7 @@
         </member>
         <member name="M:inSolutions.Controls.BaseInstinctLookUp.Presenter.ClP_BaseInstinctLookUp`1.F2KeyPressed">
             <summary>
-            Akcja po wciśnięciu przycisku F2.
+            Akcja po wciśnięciu przycisku F2 (domyślnie wybór obiektu z listy).
             </summary>
         </member>
         <member name="T:inSolutions.Controls.BaseInstinctLookUp.Utilities.Cl_WorkerResults`1">
@@ -837,6 +922,12 @@
             <summary>
             Wstaw wartosć null.
             </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseInstinctLookUp.View.Cl_BaseInstinctLookUp`1.GetPresenter">
+            <summary>
+            Zwraca obiekt prezentera.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:inSolutions.Controls.BaseInstinctLookUp.View.Cl_BaseInstinctLookUp`1.ProcessKey(System.Windows.Forms.KeyEventArgs)">
             <summary>
@@ -945,6 +1036,15 @@
             </summary>
             <returns>Zwraca aktualnie zaznaczony obiekt (należy zrzutować)</returns>
         </member>
+        <member name="M:inSolutions.Controls.BaseForms.Interface.I_BaseList`1.SetCurrentObject``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Ustawia przekazany obiekt jako zaznaczony na liście
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="vrpObject">Obiekt, jaki ma być ustawiony</param>
+            <param name="selector">Pole z obiektu, jednoznacznie identyfikujące obiekt (np. e => e.Id)</param>
+        </member>
         <member name="M:inSolutions.Controls.BaseForms.Interface.I_BaseList`1.GetCurrentObjectFromMasterDetail">
             <summary>
             Pobiera zaznaczony obiekt z aktualnie wybranego GridView (Master-Detail).
@@ -975,6 +1075,28 @@
         <member name="P:inSolutions.Controls.BaseLookUp.View.Cl_BaseLookUpEdit`1.SelectedObject">
             <summary>
             Zwraca aktualnie wybraną encję
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:inSolutions.Controls.GridUtils.Cl_DragDrop`1.#ctor(DevExpress.XtraGrid.GridControl)" -->
+        <!-- Badly formed XML comment ignored for member "M:inSolutions.Controls.GridUtils.Cl_DragDrop`1.CreateDrag(System.Func{`0,System.Object})" -->
+        <member name="P:inSolutions.Controls.GridUtils.Cl_DragDrop`1.AllowDrag">
+            <summary>
+            Określa czy można przeciągać obiekty z danej kontrolki
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.GridUtils.Cl_ToolTip`1">
+            <summary>
+            Klasa pozwalająca na wyświetlanie tooltipów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Controls.Utilities.Scanner.KeyboardScanner.View.Cl_KeyboardScanner">
+            <summary>
+            TextEdit przygotowany dla czytnika kodów kreskowych
+            </summary>
+        </member>
+        <member name="E:inSolutions.Controls.Utilities.Scanner.KeyboardScanner.View.Cl_KeyboardScanner.CodeScanned">
+            <summary>
+            Event wywoływany jest po zczytaniu kodu kreskowego
             </summary>
         </member>
         <member name="F:inSolutions.Controls.Image.ImageControl.View.Cl_PictureEnlargeEdit.components">
@@ -1296,6 +1418,15 @@
             Metoda odpowiedzialna za wczytanie danych do BindingSourca (przypisz do bindingsource.DataSource listę encji do wyświetlenia)
             </summary>
         </member>
+        <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseListGeneric`1.SetCurrentObject``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Ustawia przekazany obiekt jako zaznaczony na liście
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="vrpObject">Obiekt, jaki ma być ustawiony</param>
+            <param name="selector">Pole z obiektu, jednoznacznie identyfikujące obiekt (np. e => e.Id)</param>
+        </member>
         <member name="M:inSolutions.Controls.BaseForms.Presenter.ClP_BaseListGeneric`1.GetDataSource">
             <summary>
             Zwraca nulla - potrzebna metoda do listy filtrującej
@@ -1370,21 +1501,6 @@
             Zapamiętuje rozmiar grid controla
             </summary>
         </member>
-        <member name="F:inSolutions.Controls.BaseForms.View.UC_BaseList.vrcBtnAddVisible">
-            <summary>
-            Określa stan wyświetlania buttona
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.View.UC_BaseList.vrcBtnEditVisible">
-            <summary>
-            Określa stan wyświetlania buttona
-            </summary>
-        </member>
-        <member name="F:inSolutions.Controls.BaseForms.View.UC_BaseList.vrcBtnRemoveVisible">
-            <summary>
-            Określa stan wyświetlania buttona
-            </summary>
-        </member>
         <member name="F:inSolutions.Controls.BaseForms.View.UC_BaseList.vrcFullGrid">
             <summary>
             Określa czy grid będzie powiększony na cały UC (zasłaniając przyciski)
@@ -1396,6 +1512,12 @@
             </summary>
         </member>
         <member name="M:inSolutions.Controls.BaseForms.View.UC_BaseList.#ctor">
+            <summary>
+            User control odpowiedzialny za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów.
+            <para>W konstruktorze zainicjować vrcPresenter dziedziczący po ClP_ListBase.</para>
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.View.UC_BaseList.#ctor(inSolutions.Utilities.I_Common)">
             <summary>
             User control odpowiedzialny za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów.
             <para>W konstruktorze zainicjować vrcPresenter dziedziczący po ClP_ListBase.</para>
@@ -1418,6 +1540,20 @@
             Ustawienie opcji multiwyboru
             </summary>
             <param name="vrpMultiSelect"></param>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.View.UC_BaseList.OnListDoubleClick">
+            <summary>
+            Wywołuje metodę OnEditClick.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.View.UC_BaseList.SetCurrentObject``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Ustawia przekazany obiekt jako zaznaczony na liście
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="vrpObject">Obiekt, jaki ma być ustawiony</param>
+            <param name="selector">Pole z obiektu, jednoznacznie identyfikujące obiekt (np. e => e.Id)</param>
         </member>
         <member name="F:inSolutions.Controls.BaseForms.View.UC_BaseList.components">
             <summary> 
@@ -1486,6 +1622,16 @@
             GridView - w celu modyfikacji ustawień grida poprzez UserControl
             </summary>
         </member>
+        <member name="P:inSolutions.Controls.BaseForms.View.UC_BaseList.IsVariantGrid">
+            <summary>
+            Określa czy grid jest gridem wariantowym
+            </summary>
+        </member>
+        <member name="P:inSolutions.Controls.BaseForms.View.UC_BaseList.ProgramId">
+            <summary>
+            Określa ProgramId grida
+            </summary>
+        </member>
         <member name="P:inSolutions.Controls.BaseForms.View.UC_BaseList.DisabledObjects">
             <summary>
             Lista zablokowanych obiektów w formie słownika (ID obiektu; błąd, który ma się wyświetlić w momencie wybrania tego obiektu)
@@ -1506,6 +1652,14 @@
             <summary>
             User control odpowiedzialny za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów.
             <para>W konstruktorze zainicjować vrcPresenter dziedziczący po ClP_EmptyList.</para>
+            <para>Jeśli encja implementuje interfejs I_Duplicatable to automatycznie dodawny jest przycisk z powielaniem obiektu - nie trzeba nic implementować.</para>
+            <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
+            </summary>
+        </member>
+        <member name="M:inSolutions.Controls.BaseForms.View.UC_FilterableBaseList.#ctor(inSolutions.Utilities.I_Common)">
+            <summary>
+            User control odpowiedzialny za wyświetlanie w okienku listy obiektów. Możliwość edycji i usuwania obiektów.
+            <para>W konstruktorze zainicjować vrcPresenter dziedziczący po ClP_ListBase.</para>
             <para>Jeśli encja implementuje interfejs I_Duplicatable to automatycznie dodawny jest przycisk z powielaniem obiektu - nie trzeba nic implementować.</para>
             <para>Obsłużone jest podwójne kliknięcie myszką - nie trzeba się tym zajmować.</para>
             </summary>

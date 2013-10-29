@@ -44,9 +44,39 @@
             Typ dokumentu
             </summary>
         </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.PI">
+            <summary>
+            FZ - faktura zakupu
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.SI">
+            <summary>
+            Fs - faktura zakupu
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.PR">
+            <summary>
+            KFZ - korekta faktury zakupu
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.PS">
+            <summary>
+            KFS - korekta faktury sprzedaży
+            </summary>
+        </member>
         <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.WT">
             <summary>
             MM - przesunięcie międzymagazynowe
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.WR">
+            <summary>
+            PZ- przyjęcie zewnętrzne
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.WS">
+            <summary>
+            WZ - wydanie zewnętrzne
             </summary>
         </member>
         <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.GRN">
@@ -59,6 +89,11 @@
             RW - rozchód wewnętrzny
             </summary>
         </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.RSR">
+            <summary>
+            ZW - zwrot sprzedaży detaliczenej 
+            </summary>
+        </member>
         <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.PO">
             <summary>
             ZD - zamówienie do dostawcy
@@ -67,6 +102,16 @@
         <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.SO">
             <summary>
             ZK - zamówienie od klienta
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.SR">
+            <summary>
+            PA - paragon
+            </summary>
+        </member>
+        <member name="F:inSolutions.SystemInterfaces.Document.E_DocumentType.ST">
+            <summary>
+            IW - inwentaryzacja
             </summary>
         </member>
         <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.CreateSalesOrder(System.Int32)">
@@ -161,7 +206,6 @@
             </summary>
             <param name="vrpDocumentId">Id dokumentu.</param>
             <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
-            <returns></returns>
         </member>
         <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.ShowDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
             <summary>
@@ -170,14 +214,51 @@
             <param name="vrpDocumentId">Obiekt dokumentu.</param>
             <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
         </member>
+        <member name="M:inSolutions.SystemInterfaces.Document.I_DocumentFactory.PrintDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
+            <summary>
+            Drukuje dokument.
+            </summary>
+            <param name="vrpDocument">Dokument, który wydrukować</param>
+            <param name="vrpShowUI">Określa czy wyświetlać UI przed wydrukiem</param>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.Id">
+            <summary>
+            Identyfikator.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.IssueDate">
+            <summary>
+            Data wystawienia.
+            </summary>
+        </member>
         <member name="P:inSolutions.SystemInterfaces.Document.I_Document.DueDate">
             <summary>
             Termin realizacji.
             </summary>
         </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.CategoryId">
+            <summary>
+            ID kategorii.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.Remarks">
+            <summary>
+            Uwagi.
+            </summary>
+        </member>
         <member name="P:inSolutions.SystemInterfaces.Document.I_Document.SourceDocuments">
             <summary>
             Dokumenty źródłowe.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.Positions">
+            <summary>
+            Pozycje dokumentu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_Document.OwnFields">
+            <summary>
+            Pola własne dokumentu.
             </summary>
         </member>
         <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.Id">
@@ -205,6 +286,36 @@
             L.p.
             </summary>
         </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.NetId">
+            <summary>
+            VatID
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.Document.I_DocumentPosition.OwnFields">
+            <summary>
+            Pola własne pozycji dokumentu.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.OwnField.I_OwnField.Id">
+            <summary>
+            Id pola własnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.OwnField.I_OwnField.Symbol">
+            <summary>
+            Nazwa pola własnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.OwnField.I_OwnField.IsRequired">
+            <summary>
+            Czy pole jest wymagane.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.OwnField.I_OwnField.Value">
+            <summary>
+            Wartość pola własnego dla obiektu.
+            </summary>
+        </member>
         <member name="T:inSolutions.SystemInterfaces.SalesChance.I_Offer">
             <summary>
             Oferta szansy sprzedaży.
@@ -228,6 +339,16 @@
         <member name="P:inSolutions.SystemInterfaces.SalesChance.I_SalesChance.Offer">
             <summary>
             Oferta szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.SalesChance.I_SalesChance.ScenarioId">
+            <summary>
+            Id wybranego scenariusza.
+            </summary>
+        </member>
+        <member name="P:inSolutions.SystemInterfaces.SalesChance.I_SalesChance.StageId">
+            <summary>
+            Id wybranego etapu.
             </summary>
         </member>
         <member name="T:inSolutions.SystemInterfaces.SalesChance.I_SalesChanceFactory">

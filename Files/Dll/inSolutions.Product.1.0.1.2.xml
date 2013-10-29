@@ -4,20 +4,42 @@
         <name>inSolutions.Product.1.0.1.2</name>
     </assembly>
     <members>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProductByBarcode(System.String)">
+            <summary>
+            Zwraca produkt na podstawie kodu kreskowego - sprawdza podstawowe jak i dodatkowe kody kreskowe.
+            </summary>
+            <param name="vrpBarcode">Kod kreskowy</param>
+            <returns>Produkt po kodzie kreskowym lub null jeśli produkt o podanym kodzie nie istnieje</returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProductByBarcode(System.String,System.String)">
+            <summary>
+            Zwraca produkt na podstawie kodu kreskowego - sprawdza podstawowe jak i dodatkowe kody kreskowe.
+            </summary>
+            <param name="vrpConnectionString">ConnectionString</param>
+            <param name="vrpBarcode">Kod kreskowy</param>
+            <returns>Produkt po kodzie kreskowym lub null jeśli produkt o podanym kodzie nie istnieje</returns>
+        </member>
+        <member name="M:inSolutions.Product.Business.ClM_Product.GetProductByBarcode(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Zwraca produkt na podstawie kodu kreskowego - sprawdza podstawowe jak i dodatkowe kody kreskowe.
+            </summary>
+            <param name="vrpConnection">Połączenie</param>
+            <param name="vrpBarcode">Kod kreskowy</param>
+            <returns>Produkt po kodzie kreskowym lub null jeśli produkt o podanym kodzie nie istnieje</returns>
+        </member>
         <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(inSolutions.Product.Utilities.Cl_ProductFiltr)">
             <summary>
             Pobiera towary o dowolnym statusie i podanym filtrze. 
             </summary>
-            <param name="vrpConnectionString"></param>
-            <param name="vrpProductFiltr"></param>
+            <param name="vrpFilter">Filtr</param>
             <returns></returns>
         </member>
         <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(inSolutions.Product.Utilities.Cl_ProductFiltr,inSolutions.Product.Utilities.E_Status)">
             <summary>
             Pobiera towary o podanym statusie i filtrze. 
             </summary>
-            <param name="vrpConnectionString"></param>
-            <param name="vrpProductFiltr"></param>
+            <param name="vrpFilter">Filtr</param>
+            <param name="vrpStatus">Status</param>
             <returns></returns>
         </member>
         <member name="M:inSolutions.Product.Business.ClM_Product.GetProduct(System.String,inSolutions.Product.Utilities.Cl_ProductFiltr)">
@@ -32,7 +54,7 @@
             <summary>
             Pobiera towary o dowolnym statusie i podanym filtrze. 
             </summary>
-            <param name="vrpConnectionString"></param>
+            <param name="vrpConnection"></param>
             <param name="vrpProductFiltr"></param>
             <returns></returns>
         </member>
@@ -73,7 +95,7 @@
             Ładuje (tylko za pierwszym użyciem) i zwraca główny obraz
             </summary>
         </member>
-        <member name="P:inSolutions.Product.Business.Entity.ClE_Product.AddinalImages">
+        <member name="P:inSolutions.Product.Business.Entity.ClE_Product.AddionalImages">
             <summary>
             Ładuje (tylko za pierwszym użyciem) i zwraca dodatkowe obrazy
             </summary>
@@ -106,11 +128,6 @@
         <member name="P:inSolutions.Product.ProductLookUpEdit.Entity.ClE_ProductLookUp.Description">
             <summary>
             Opis
-            </summary>
-        </member>
-        <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.F2KeyPressed">
-            <summary>
-            Akcja po wciśnięciu klawisza F2 (opcjonalne, domyślnie OpenFormList).
             </summary>
         </member>
         <member name="M:inSolutions.Product.ProductLookUpEdit.Presenter.ClP_ProductLookUpEdit.LoadPopupListData">
@@ -191,6 +208,23 @@
               Looks up a localized string similar to Towary.
             </summary>
         </member>
+        <member name="F:inSolutions.Product.UnitOfMeasureLookUp.View.Cl_UnitOfMeasureLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Product.UnitOfMeasureLookUp.View.Cl_UnitOfMeasureLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Product.UnitOfMeasureLookUp.View.Cl_UnitOfMeasureLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:inSolutions.Product.Utilities.E_Status">
             <summary>
             Status towaru
@@ -235,13 +269,14 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean)">
+        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean,System.Boolean)">
             <summary>
             Okno z listą towarów
             </summary>
             <param name="vrpChoose">Czy opcja wyboru jest dostępna</param>
+            <param name="vrpMultiselect">Czy opcja multiwyboru jest dostępna, dostępne tylko gdy vrpChoose == true</param>
         </member>
-        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean,System.Boolean)">
+        <member name="M:inSolutions.Product.View.Frm_Products.#ctor(System.Boolean,inSolutions.Utilities.I_Common,System.Boolean)">
             <summary>
             Okno z listą towarów
             </summary>

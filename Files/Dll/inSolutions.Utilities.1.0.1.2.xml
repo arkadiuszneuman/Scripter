@@ -26,39 +26,39 @@
             Czy na pewno anulować?
             </summary>
         </member>
-        <member name="T:inSolutions.Utilities.Administration.Frm_BaseAdministration">
+        <member name="T:inSolutions.Utilities.Administration.View.Frm_BaseAdministration">
             <summary>
             Forma bazowa okna administracji
             </summary>
         </member>
-        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.#ctor">
+        <member name="M:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.#ctor">
             <summary>
             Dla designera
             </summary>
         </member>
-        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.Cancel">
+        <member name="M:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.Cancel">
             <summary>
             Przyciśnięcie przycisku anuluj lub zamknięcie formy.
             </summary>
         </member>
-        <member name="F:inSolutions.Utilities.Administration.Frm_BaseAdministration.components">
+        <member name="F:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.Dispose(System.Boolean)">
+        <member name="M:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:inSolutions.Utilities.Administration.Frm_BaseAdministration.InitializeComponent">
+        <member name="M:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="P:inSolutions.Utilities.Administration.Frm_BaseAdministration.AdministrationVisible">
+        <member name="P:inSolutions.Utilities.Administration.View.Frm_BaseAdministration.AdministrationVisible">
             <summary>
             Wskazuje czy zakładka "Administracja" jest widoczna. Wyłączyć w przypadku np. dodaków Navireo.
             </summary>
@@ -354,6 +354,22 @@
             <summary>
             System programu InsERT na którym pracuje aplikacja.
             </summary>
+        </member>
+        <member name="T:inSolutions.Utilities.ExceptionHandler.Cl_StandardLog">
+            <summary>
+            Obsługuje wyjątek poprzez wyświetlenie ostrzeżenia/błędu (w zależności od typu exceptiona) oraz zapisuje informację do Loga Systemowego (EventLog)
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.ExceptionHandler.Cl_StandardLog.#ctor(inSolutions.Utilities.I_ProgramName,inSolutions.Utilities.Cl_ProgramMessages)">
+            <summary>
+            Obsługuje wyjątek poprzez wyświetlenie ostrzeżenia/błędu (w zależności od typu exceptiona) oraz zapisuje informację do Loga Systemowego (EventLog)
+            </summary>
+        </member>
+        <member name="M:inSolutions.Utilities.ExceptionHandler.Cl_StandardLog.HandleException(System.Exception)">
+            <summary>
+            Obsługuje wyjątek poprzez wyświetlenie ostrzeżenia/błędu (w zależności od typu exceptiona) oraz zapisuje informację do Loga Systemowego (EventLog)
+            </summary>
+            <param name="vrpException">Błąd do przechwycenia</param>
         </member>
         <member name="M:inSolutions.Utilities.Extensions.Cl_Extensions.SetPreset(DevExpress.Utils.AppearanceObject,inSolutions.Utilities.AppearanceManager.E_AppearancePreset)">
             <summary>
@@ -1279,8 +1295,8 @@
             <summary>
             Zapis pozycji danego modułu.
             </summary>
-            <param name="vrp_Module">Moduł do zapisu</param>
-            <param name="vrpVariantUserId">Id użytkownika dla wariantu</param>
+            <param name="vrpModule">Moduł do zapisu</param>
+            <param name="vrpVatiantUserId">Id użytkownika dla wariantu</param>
         </member>
         <member name="M:inSolutions.Utilities.MenuManager.Business.ClM_Modules.ModulesGet(System.Int32)">
             <summary>
@@ -1994,6 +2010,8 @@
             <param name="vrpStart">Określa czy ustawienia do bazy danych będą definiowane od nowa. False - pokazuje domyślnie bieżące ustawienia połączenia</param>
             <param name="vrpRestartApplication">Określa czy program będzie uruchomiony ponownie po wyborze bazy danych</param>
             <param name="vrpSystem">Określa system, którego bazy mają być widoczne</param>
+            <param name="vrpCustomNamespace">Własny namespace</param>
+            <param name="vrpExecuteCustomSql">Określa czy wywołać wykonywanie własnych skryptów</param>
         </member>
         <member name="M:inSolutions.Utilities.SelectDatabase.Cl_DatabaseSelection.SelectDatabase(System.Boolean,System.Boolean)">
             <summary>
@@ -2362,6 +2380,96 @@
             <param name="vrpIgnoredIds">Ignorowane pozycje z danym ID w wybranej tabeli (zazwyczaj może to być ID aktualnego obiektu) - 
             standardowo ID encji, która jest sprawdzana</param>
             <returns>Zwraca liczbę wierszy posiadających tę wartość</returns>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Identyfikator">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Surname">
+            <summary>
+            Nazwisko
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Name">
+            <summary>
+            Imię
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Login">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Password">
+            <summary>
+            Hasło (zaszyfrowane)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.CashRegisterId">
+            <summary>
+            ID kasy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.CashRegisterBlockade">
+            <summary>
+            Blokada kasy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.WarhouseId">
+            <summary>
+            ID magazynu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.RemoteWork">
+            <summary>
+            Praca zdalna
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.EmployeeId">
+            <summary>
+            ID pracownika
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.CompositionId">
+            <summary>
+            ID kompozycji
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.GroupId">
+            <summary>
+            ID grupy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.EMail">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.GaduGadu">
+            <summary>
+            GG
+            </summary>
+        </member>
+        <member name="P:inSolutions.Utilities.User.Entity.ClE_User.Skype">
+            <summary>
+            Skype
+            </summary>
         </member>
     </members>
 </doc>

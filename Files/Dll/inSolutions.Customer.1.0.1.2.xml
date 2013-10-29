@@ -223,11 +223,6 @@
             Ulica
             </summary>
         </member>
-        <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.F2KeyPressed">
-            <summary>
-            Akcja po wciśnięciu klawisza F2 (opcjonalne, domyślnie OpenFormList).
-            </summary>
-        </member>
         <member name="M:inSolutions.Customer.CustomerLookUpEdit.Presenter.ClP_CustomerLookUpEdit.LoadPopupListData">
             <summary>
             Załadowanie listy wartości do wyświetlenia
@@ -309,6 +304,36 @@
         <member name="P:inSolutions.Customer.Properties.Resources.LoadingCustomers">
             <summary>
               Looks up a localized string similar to Wczytywanie kontrahentów.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Customer.Utilities.E_CustomerKind">
+            <summary>
+            Rodzaj kontrahenta
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_CustomerKind.Unknown">
+            <summary>
+            Nieznany
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_CustomerKind.SupplierRecipient">
+            <summary>
+            Dost/odb
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_CustomerKind.Supplier">
+            <summary>
+            Dostawca
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_CustomerKind.Recipient">
+            <summary>
+            Odbiorca
+            </summary>
+        </member>
+        <member name="F:inSolutions.Customer.Utilities.E_CustomerKind.Other">
+            <summary>
+            Ani dostawca, ani odbiorca
             </summary>
         </member>
         <member name="T:inSolutions.Customer.Utilities.E_Status">
@@ -400,18 +425,20 @@
             Status kontrahenta.
             </summary>
         </member>
-        <member name="M:inSolutions.Customer.View.Frm_Customers.#ctor(System.Boolean)">
-            <summary>
-            Okno zawierające listę kontrahentów
-            </summary>
-            <param name="vrpChoose">Czy włączona jest obcja wyboru</param>
-        </member>
         <member name="M:inSolutions.Customer.View.Frm_Customers.#ctor(System.Boolean,System.Boolean)">
             <summary>
             Okno zawierające listę kontrahentów
             </summary>
             <param name="vrpChoose">Czy włączona jest obcja wyboru</param>
             <param name="vrpMultiSelect">Czy włączona jest obcja multiwyboru, dostępne tylko gdy vrpChoose == true</param>
+        </member>
+        <member name="M:inSolutions.Customer.View.Frm_Customers.#ctor(System.Boolean,inSolutions.Utilities.I_Common,System.Boolean)">
+            <summary>
+            Okno zawierające listę kontrahentów
+            </summary>
+            <param name="vrpChoose">Czy włączona jest obcja wyboru</param>
+            <param name="vrpMultiSelect">Czy włączona jest obcja multiwyboru, dostępne tylko gdy vrpChoose == true</param>
+            <param name="vrpCommon">Common</param>
         </member>
         <member name="F:inSolutions.Customer.View.Frm_Customers.components">
             <summary>

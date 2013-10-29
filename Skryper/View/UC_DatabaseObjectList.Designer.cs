@@ -59,6 +59,7 @@
             this.grvGridView.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
             this.grvGridView.OptionsMenu.ShowGroupSortSummaryItems = false;
             this.grvGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.grvGridView.OptionsSelection.MultiSelect = true;
             this.grvGridView.OptionsView.ShowAutoFilterRow = true;
             this.grvGridView.OptionsView.ShowGroupPanel = false;
             // 
@@ -86,6 +87,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UC_DatabaseObjectList";
+            this.Controls.SetChildIndex(this.layoutControl, 0);
+            this.Controls.SetChildIndex(this.grcGridControl, 0);
             ((System.ComponentModel.ISupportInitialize)(this.grcGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();

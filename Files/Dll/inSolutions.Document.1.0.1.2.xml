@@ -4,6 +4,44 @@
         <name>inSolutions.Document.1.0.1.2</name>
     </assembly>
     <members>
+        <member name="M:inSolutions.Document.Business.ClM_DefinableDocument.DocumentDefinableLoad(System.Data.SqlClient.SqlConnection,inSolutions.Document.Utilities.E_Type,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="vrpConnection"></param>
+            <param name="vrpDefinableBaseDocument">Typ dokumentu na podstawie którego został utworzony dokument definiowalny</param>
+            <param name="vrpDokId">ID dokumentu definiowalnego</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_DefinableDocument.DocumentDefinableLoad(System.String,inSolutions.Document.Utilities.E_Type,System.Int32)">
+            <summary>
+            Pobiera dokumenty definiowalne
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia</param>
+            <param name="vrpDefinableBaseDocument">Typ dokumentu na podstawie którego został utworzony dokument definiowalny</param>
+            <param name="vrpDokId">ID dokumentu definiowalnego</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_DefinableDocument.DocumentDefinableLoad(inSolutions.Document.Utilities.E_Type)">
+            <summary>
+            Pobiera dekumenty definiowalne o podanym typie bazowego dokumentu
+            </summary>
+            <param name="vrpDefinableBaseDocument">Typ dokumentu na podstawie którego został utworzony dokument definiowalny</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_DefinableDocument.DocumentDefinableLoad(System.Int32)">
+            <summary>
+            Pobiera definiowalny dokument od podanym Id
+            </summary>
+            <param name="vrpDokId">Id definiowalnego dokuemntu</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_DefinableDocument.DocumentDefinableLoad">
+            <summary>
+            Pobiera wszystkie definiowalne dokumenty
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:inSolutions.Document.Business.ClM_Document">
             <summary>
             Klasa zawierająca metody komunikujące się z bazą danych
@@ -79,17 +117,91 @@
             </summary>
             <param name="vrpDocument"></param>
         </member>
-        <member name="M:inSolutions.Document.Business.ClM_Document.GetRecipient(System.Collections.Generic.List{inSolutions.Document.Entity.ClE_Document})">
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetRecipient(System.Collections.Generic.IEnumerable{inSolutions.Document.Entity.ClE_Document})">
             <summary>
             Pobiera odbiorce dla przekazanych dokumentów
             </summary>
             <param name="vrpDocuments"></param>
         </member>
-        <member name="M:inSolutions.Document.Business.ClM_Document.GetClient(System.Collections.Generic.List{inSolutions.Document.Entity.ClE_Document})">
+        <member name="M:inSolutions.Document.Business.ClM_Document.GetClient(System.Collections.Generic.IEnumerable{inSolutions.Document.Entity.ClE_Document})">
             <summary>
             Przypisuje klienta dla przekazanych dokumentów z tabeli adr_Historia
             </summary>
             <param name="vrpDocuments"></param>
+        </member>
+        <member name="T:inSolutions.Document.Business.ClM_SalesChance">
+            <summary>
+            Szanse sprzedaży.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceLoad(System.Int32)">
+            <summary>
+            Pobranie szans sprzedaży.
+            </summary>
+            <param name="vrpSalesChanceId">Id szansy sprzedaży do pobrania. Gdy id = 0, pobranie wszystkich szans.</param>
+            <returns>Lista szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceLoad(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Pobranie szans sprzedaży.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych.</param>
+            <param name="vrpSalesChanceId">Id szansy sprzedaży do pobrania. Gdy id = 0, pobranie wszystkich szans.</param>
+            <returns>Lista szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceLoad(System.String,System.Int32)">
+            <summary>
+            Pobranie szans sprzedaży.
+            </summary>
+            <param name="vrpConnectionString">Obiekt ciągu połączenia z bazą danych.</param>
+            <param name="vrpSalesChanceId">Id szansy sprzedaży do pobrania. Gdy id = 0, pobranie wszystkich szans.</param>
+            <returns>Lista szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioLoad(System.Int32)">
+            <summary>
+            Pobranie scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpSalesChanceId">Id scenariusza. Id = 0, pobranie wszyskich scenariuszy.</param>
+            <returns>Lista scenariuszt szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioLoad(System.String,System.Int32)">
+            <summary>
+            Pobranie scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpConnectionString">Obiekt ciągu połączenia z bazą danych.</param>
+            <param name="vrpSalesChanceId">Id scenariusza. Id = 0, pobranie wszyskich scenariuszy.</param>
+            <returns>Lista scenariuszt szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioLoad(System.Data.SqlClient.SqlConnection,System.Int32)">
+            <summary>
+            Pobranie scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych.</param>
+            <param name="vrpSalesChanceScenarioId">Id scenariusza. Id = 0, pobranie wszyskich scenariuszy.</param>
+            <returns>Lista scenariuszt szans sprzedaży.</returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioStageLoad(System.Int32,System.Int32)">
+            <summary>
+            Pobranie etapów scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpStageId">Id etapu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioStageLoad(System.String,System.Int32,System.Int32)">
+            <summary>
+            Pobranie etapów scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpConnectionString">Obiekt ciągu połączenia z bazą danych.</param>
+            <param name="vrpStageId">Id etapu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Business.ClM_SalesChance.SalesChanceScenarioStageLoad(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32)">
+            <summary>
+            Pobranie etapów scenariuszy szans sprzedaży.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych.</param>
+            <param name="vrpStageId">Id etapu.</param>
+            <returns></returns>
         </member>
         <member name="T:inSolutions.Document.Business.Cl_DefinableDocument">
             <summary>
@@ -267,36 +379,6 @@
             Status dokumentu
             </summary>
         </member>
-        <member name="T:inSolutions.Document.Utilities.Cl_DocumentFilter">
-            <summary>
-            Klasa filtru
-            </summary>
-        </member>
-        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DocumentId">
-            <summary>
-            Dokument id
-            </summary>
-        </member>
-        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateFrom">
-            <summary>
-            Data wystawienia
-            </summary>
-        </member>
-        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateTo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Type">
-            <summary>
-            Lista typów
-            </summary>
-        </member>
-        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Warehouse">
-            <summary>
-            Lista magazynów
-            </summary>
-        </member>
         <member name="P:inSolutions.Document.Entity.ClE_Position.Id">
             <summary>
             Unikalny identyfikator pozycji dokumentu	
@@ -442,6 +524,352 @@
             Kategoria pozycji dokumentu	
             </summary>
         </member>
+        <member name="T:inSolutions.Document.Entity.ClE_SalesChance">
+            <summary>
+            Szansa sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.TransactionId">
+            <summary>
+            Id transakcji
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CustomerId">
+            <summary>
+            Id klienta
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.State">
+            <summary>
+            Stan
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.StatusDescription">
+            <summary>
+            Opis stanu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Scenario">
+            <summary>
+            Id scenariusza
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Stage">
+            <summary>
+            Id etapu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Acquired">
+            <summary>
+            Id pozyskania
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.OpenData">
+            <summary>
+            Data otwarcia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.PlannedCloseDate">
+            <summary>
+            Planowana data zamkniecia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CreateDate">
+            <summary>
+            Data utworzenia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CreateUserId">
+            <summary>
+            Kto utworzyl
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.ModificationDate">
+            <summary>
+            Data modyfikacji
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.ModificationUserId">
+            <summary>
+            Kto zmodyfikowal
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CloseDate">
+            <summary>
+            Data zamkniecia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CloseUserId">
+            <summary>
+            Kto zamknal
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Attendant">
+            <summary>
+            Opiekun
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CustomerSideAttendant">
+            <summary>
+            Opiekun od strony klienta, jego pracownik odpowiedzialny za szansę
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.OfferId">
+            <summary>
+            Id oferty
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.NetValue">
+            <summary>
+            Wartosc netto
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.GrossValue">
+            <summary>
+            Wartosc brutto
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.VATValue">
+            <summary>
+            Wartosc VAT
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Currency">
+            <summary>
+            Waluta
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.OrderType">
+            <summary>
+            Typ dokumenty zamowienia (1 ZK, 2 ZKZ)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.EndDocument">
+            <summary>
+            Typ dokumentu koncowego (2 FV, 3 FVZ, 5 RA, 6 PA, 7 PAI, 8 WZ, 9 WZV)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.OrderId">
+            <summary>
+            Id dokumentu zamowienia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.EndDocumentId">
+            <summary>
+            Id dokumentu koncowego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.OrderSymbol">
+            <summary>
+            Symbol dokumentu zamowienia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.EndDocumentSymbol">
+            <summary>
+            Symbol dokumentu koncowego
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.GroupId">
+            <summary>
+            Id grupy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.TransactionFailedId">
+            <summary>
+            Klucz obcy do słownika sl_CrmTransakcjaNieudana
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CustomValue">
+            <summary>
+            Wartosc ustawiona recznie
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.CurrencyExchange">
+            <summary>
+            Kurs waluty
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.DeliveryConditions">
+            <summary>
+            Warunki dostawy
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.PaymentConditions">
+            <summary>
+            Warunki płatoności
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.DocumentNotes">
+            <summary>
+            Uwagi na dokument
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.RealisationDate">
+            <summary>
+            Data realizacji
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.ShowInCalendar">
+            <summary>
+            Znacznik określający widoczność szansy w kalendarzu
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.Color">
+            <summary>
+            Kolor szansy w kalendarzu w formacie R,G,B gdzie składowe zapisane sa dziesiętnie i pochodzą z zakresu 0-255
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChance.PlannedCloseTime">
+            <summary>
+            Godzina planowanego zamknięcia: godziny * 60 + minuty, NULL = całodzienna
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Entity.ClE_SalesChanceScenario">
+            <summary>
+            Scenariusz szansy sprzedaży.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenario.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenario.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.Id">
+            <summary>
+            Identyfikator.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.Name">
+            <summary>
+            Nazwa
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.ScenarioId">
+            <summary>
+            Id scenariusza
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.Order">
+            <summary>
+            Kolejność
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.SuccessPercent">
+            <summary>
+            Procent ukończenia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.OrderDocument">
+            <summary>
+            Czy można wystawić dokument zamówienia na danym etapie
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Entity.ClE_SalesChanceScenarioStage.EndDocument">
+            <summary>
+            Czy można wystawić końcowy dokument na danym etapie
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.SalesChance.View.Cl_SalesChanceLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioStageLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioStageLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Document.SalesChance.View.Cl_SalesChanceScenarioStageLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Document.Utilities.Cl_DocumentFilter">
+            <summary>
+            Klasa filtru
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DocumentId">
+            <summary>
+            Dokument id
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateFrom">
+            <summary>
+            Data wystawienia
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.DateTo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Type">
+            <summary>
+            Lista typów
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Utilities.Cl_DocumentFilter.Warehouse">
+            <summary>
+            Lista magazynów
+            </summary>
+        </member>
         <member name="T:inSolutions.Document.Properties.Resource">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -523,14 +951,15 @@
             Rozszerzony status dokumentu
             </summary>
         </member>
-        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,inSolutions.Document.Utilities.E_Type[])">
+        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,System.Boolean,inSolutions.Document.Utilities.E_Type[])">
             <summary>
             Forma wyświetlająca listę dokumentów w zależności od parametrów
             </summary>
-            <param name="vrpChoose">Czy możliwy wybór</param>
+            <param name="vrpMultiselect">Możliwy wybór kilku dokumentów</param>
+            <param name="vrpChoose">Czy mozliwy wybór</param>
             <param name="vrpTypes">Typy dokumentów</param>
         </member>
-        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,System.Boolean,inSolutions.Document.Utilities.E_Type[])">
+        <member name="M:inSolutions.Document.View.Frm_Document.#ctor(System.Boolean,inSolutions.Utilities.I_Common,System.Boolean,inSolutions.Document.Utilities.E_Type[])">
             <summary>
             Forma wyświetlająca listę dokumentów w zależności od parametrów
             </summary>
@@ -637,6 +1066,16 @@
             Termin realizacji
             </summary>
         </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocument.WarehouseId">
+            <summary>
+            ID magazynu, na którym wystawiony jest dokument.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocument.FullNumber">
+            <summary>
+            Numer pełny dokumentu.
+            </summary>
+        </member>
         <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.CreateSalesOrder(System.Int32)">
             <summary>
             Tworzy dokument ZK
@@ -658,13 +1097,12 @@
             </summary>
             <param name="vrpDocumentId">Id dokumentu.</param>
             <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
-            <returns></returns>
         </member>
         <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.ShowDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
             <summary>
             Wyświetl wskazany dokument.
             </summary>
-            <param name="vrpDocumentId">Obiekt dokumentu.</param>
+            <param name="vrpDocument">Obiekt dokumentu.</param>
             <param name="vrpShowOnly">Czy dokument jest tylko wyświetlany(bez edycji).</param>
         </member>
         <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.AddPositionToDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Int32)">
@@ -780,6 +1218,39 @@
             <param name="vrpWarehouseId">Id magazynu, na jaki będzie wygenerowany dokument</param>
             <returns></returns>
         </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.GetDocumentOwnFields(inSolutions.Document.Wrapper.Document.Cl_SferaDocument,System.Boolean)">
+            <summary>
+            Załadowanie pól własnych.
+            </summary>
+            <param name="vrpDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.GetPositionsOwnFields(System.Collections.Generic.IEnumerable{inSolutions.SystemInterfaces.Document.I_DocumentPosition},inSolutions.Document.Wrapper.Business.Utilities.E_ExtendedOwnFieldType,System.Boolean)">
+            <summary>
+            Pobranie pól własnych pozycji dokumentu.
+            </summary>
+            <param name="?"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.GetPositionType(inSolutions.Document.Wrapper.Business.Utilities.E_ExtendedOwnFieldType)">
+            <summary>
+            Zwraca typ pola pozycji w zależności od typu pola dokumentu na którym ta pozycja występuje.
+            </summary>
+            <param name="vrpObjectType">Typ pola dokumentu.</param>
+            <returns>Typ pola pozycji</returns>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.SaveOwnFields(inSolutions.Document.Wrapper.Document.Cl_SferaDocument)">
+            <summary>
+            Zapisanie danych pól własnych dokumentu i pozycji.
+            </summary>
+            <param name="vrpDocument"></param>
+        </member>
+        <member name="M:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentFactory.PrintDocument(inSolutions.SystemInterfaces.Document.I_Document,System.Boolean)">
+            <summary>
+            Drukuje dokument.
+            </summary>
+            <param name="vrpDocument">Dokument, który wydrukować</param>
+            <param name="vrpShowUI">Określa czy wyświetlać UI przed wydrukiem</param>
+        </member>
         <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentPosition.IsDisposableService">
             <summary>
             Czy pozycja jest usługą jednorazową.
@@ -793,6 +1264,31 @@
         <member name="P:inSolutions.Document.Wrapper.Document.Cl_SferaDocumentPosition.No">
             <summary>
             L.p.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.OwnFields.Cl_SferaOwnField.Id">
+            <summary>
+            Id pola własnego z tabeli pw_Pole.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.OwnFields.Cl_SferaOwnField.Symbol">
+            <summary>
+            Nazwa pola własnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.OwnFields.Cl_SferaOwnField.IsRequired">
+            <summary>
+            Czy pole jest wymagane.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.OwnFields.Cl_SferaOwnField.Value">
+            <summary>
+            Wartość pola własnego.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.OwnFields.Cl_SferaOwnField.ValueChanged">
+            <summary>
+            Czy wartość została zmieniona.
             </summary>
         </member>
         <member name="T:inSolutions.Document.Wrapper.SalesChance.Cl_SferaOffer">
@@ -838,6 +1334,16 @@
         <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.Offer">
             <summary>
             Oferta.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.ScenarioId">
+            <summary>
+            Id wybranego scenariusza.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChance.StageId">
+            <summary>
+            Id wybranego etapu.
             </summary>
         </member>
         <member name="T:inSolutions.Document.Wrapper.SalesChance.Cl_SferaSalesChanceFactory">

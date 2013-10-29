@@ -64,19 +64,34 @@ namespace Skryper.Presenter
             Server server = new Server(serverName);
             Database database = server.Databases[databaseName];
 
-            List<Cl_DatabaseObject> databaseObjects = new List<Cl_DatabaseObject>();
+            IEnumerable<NamedSmoObject> vrlObjects = GetObjects(database);
 
-            switch (View.SmoObjectType)
+            List<Cl_DatabaseObject> databaseObjects = new List<Cl_DatabaseObject>();
+            foreach (NamedSmoObject smoObject in vrlObjects)
             {
-                case E_SmoObjectType.Table:
-                    foreach (Table smoObject in database.Tables)
-                    {
-                        databaseObjects.Add(new Cl_DatabaseObject() { SmoObject = smoObject });
-                    }
-                    break;
+                databaseObjects.Add(new Cl_DatabaseObject() { SmoObject = smoObject });
             }
 
             View.DataSource = databaseObjects;
+        }
+
+        private IEnumerable<NamedSmoObject> GetObjects(Database database)
+        {
+            switch (View.SmoObjectType)
+            {
+                case E_SmoObjectType.Table:
+                    return database.Tables.Cast<NamedSmoObject>();
+                case E_SmoObjectType.StoredProcedure:
+                    return database.StoredProcedures.Cast<NamedSmoObject>();
+                case E_SmoObjectType.Function:
+                    return database.UserDefinedFunctions.Cast<NamedSmoObject>();
+                case E_SmoObjectType.Trigger:
+                    return database.Triggers.Cast<NamedSmoObject>();
+                case E_SmoObjectType.View:
+                    return database.Views.Cast<NamedSmoObject>();
+                default:
+                    throw new ArgumentException("Nieobsłużone");
+            }
         }
 
         public void SetServer(string serverName, string database)

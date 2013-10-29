@@ -437,6 +437,624 @@
             Loads value translation data source.
             </summary>
         </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetFlags(inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Pobranie flag z podanej grupy.
+            </summary>
+            <param name="vrpFlagGroup">Wybrana grupa flag.</param>
+            <returns>Lista flag.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetFlags(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Podanie flag z podanej grupy przy wykorzystaniu wskazanego obiektu SqlConnection.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych.</param>
+            <param name="vrpFlagGroup">Wybrana grupa flag.</param>
+            <returns>Lista flag.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetFlags(System.String,inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Podanie flag z podanej grupy przy wykorzystaniu wskazanego ciągu połączenia z bazą danych.
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia z bazą danych.</param>
+            <param name="vrpFlagGroup">Wybrana grupa flag.</param>
+            <returns>Lista flag.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetObjectFlags(System.Int32,inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Pobranie flag Obiektu.
+            </summary>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagGroup">Grupa flag obiektu.</param>
+            <returns>Zbiór flag obiektu</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetObjectFlags(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Pobranie flag Obiektu.
+            </summary>
+            <param name="vrpConnection">Obiekt SqlConnection.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagGroup">Grupa flag obiektu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.GetObjectFlags(System.String,System.Int32,inSolutions.Dictionary.Flags.Utilities.E_FlagGroups)">
+            <summary>
+            Pobranie flag Obiektu.
+            </summary>
+            <param name="vrpConnectionString">Ciąg połączenia z bazą danych.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagGroup">Grupa flag obiektu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.ChangeFlag(System.Int32,System.Int32,System.String)">
+            <summary>
+            Zmiana flagi obiektu.
+             Metoda nie sprawdza czy typ obiektu którego Id podejemy może mieć przypisaną flagę o podanym Id, trzeba o to zadbać we własnym zakresie.
+            </summary>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagId">Id flagi.</param>
+            <returns>Czy zmiana flagi powiodła się.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.ChangeFlag(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Zmiana flagi obiektu.
+             Metoda nie sprawdza czy typ obiektu którego Id podejemy może mieć przypisaną flagę o podanym Id, trzeba o to zadbać we własnym zakresie.
+            </summary>
+            <param name="vrpConnectionString">Obiekt connectionstring.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagId">Id flagi.</param>
+            <returns>Czy zmiana flagi powiodła się.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.Business.ClM_Flags.ChangeFlag(System.Data.SqlClient.SqlConnection,System.Int32,System.Int32,System.String)">
+            <summary>
+            Zmiana flagi obiektu.
+             Metoda nie sprawdza czy typ obiektu którego Id podejemy może mieć przypisaną flagę o podanym Id, trzeba o to zadbać we własnym zakresie.
+            </summary>
+            <param name="vrpConnection">Obiekt SqlConnection.</param>
+            <param name="vrpObjectId">Id obiektu.</param>
+            <param name="vrpFlagId">Id flagi.</param>
+            <param name="vrpComment">Komentarz, domyślnie brak</param>
+            <returns>Czy zmiana flagi powiodła się.</returns>
+        </member>
+        <member name="T:inSolutions.Dictionary.Flags.Entity.ClE_Flag">
+            <summary>
+            Obiekt flagi.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.Id">
+            <summary>
+            Identyfikator.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.Number">
+            <summary>
+            Numer flagi, który wyznacza ikonę przypisaną do flagi.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.Title">
+            <summary>
+            Tytuł flagi.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.GroupId">
+            <summary>
+            Identyfikator grupy, do której należy flaga.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.Default">
+            <summary>
+            Czy flaga jest nadawana nowym obiektom.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.Entity.ClE_Flag.Comment">
+            <summary>
+            Komentarz przypisywany nowym obiektom, jeżeli dana flaga jest domyślna.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Flags.FlagsLookUp.Interface.I_FlagsLookUp.FlagGroup">
+            <summary>
+            Grupa z jakiej należy pobierać flagi.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.FlagsLookUp.View.Cl_FlagsLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.FlagsLookUp.View.Cl_FlagsLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Flags.FlagsLookUp.View.Cl_FlagsLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_ChangeFlagResult.Succeded">
+            <summary>
+            Operacja udana.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_ChangeFlagResult.ObjectNotFound">
+            <summary>
+            Nie odnaleziono podanego obiektu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_ChangeFlagResult.FlagError">
+            <summary>
+            Nie udało się pobrać flagi.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_ChangeFlagResult.FlagIsSet">
+            <summary>
+            Podana flaga jest już ustawiona.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups">
+            <summary>
+            Grupy flag w systemie insert.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Settlements">
+            <summary>
+            Rozrachunki.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Payments">
+            <summary>
+            Wypłaty.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.RachunkiDoUmowCP">
+            <summary>
+            Rachunki do umów CP.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SalesInvoices">
+            <summary>
+            Faktury sprzedaży.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SalesReturns">
+            <summary>
+            Korekty sprzedaży.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.RetailSales">
+            <summary>
+            Sprzedaż detaliczna.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.RetailReturns">
+            <summary>
+            Zwroty detaliczne.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SalesOrders">
+            <summary>
+            Zamówienia od klientów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.PurchaseOrders">
+            <summary>
+            Zamówienia do dostawców.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.PurchaseInvoice">
+            <summary>
+            Faktury zakupu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.PurchaseReturns">
+            <summary>
+            Korekty zakupu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.WarehouseShipments">
+            <summary>
+            Wydania magazynowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.WarehouseReceipt">
+            <summary>
+            Przyjęcia magazynowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Receipts">
+            <summary>
+            Dokumenty kasowe,
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.BankOperations">
+            <summary>
+            Opearacje bankowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Compensations">
+            <summary>
+            Kompensaty.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SpecialOffers">
+            <summary>
+            Promocje
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Customers">
+            <summary>
+            Kontrahenci
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Products">
+            <summary>
+            Towary i usługi.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Institutions">
+            <summary>
+            Instytucje.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Partners">
+            <summary>
+            Wspólnicy
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.FixedAssets">
+            <summary>
+            Środki trwałe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.TaxReturn">
+            <summary>
+            Deklaracje skarbowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.DeklaracjeZUS">
+            <summary>
+            Deklaracje ZUS.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.AccountPlan">
+            <summary>
+            Plan kont.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KartotekiPowiazane">
+            <summary>
+            Kartoteki powiązane.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.DekretacjaIKsiegowanie">
+            <summary>
+            Dekretacja i księgowanie.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.VATSales">
+            <summary>
+            Ewidencja VAT sprzedaży.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.VATPurchases">
+            <summary>
+            Ewidencja VAT zakupu.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.FixedAssetsOperations">
+            <summary>
+            Operacje na środkach trwałych.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SchematyImportuIDekretacji">
+            <summary>
+            Schematy importu i dekretacji
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EwidencjaOsobowa">
+            ImportAndAccountAssignmentSchemes
+             <summary>
+             Ewidencja osobowa.
+             </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EmploymentContracts">
+            <summary>
+            Umowy o pracę.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.CivilLawAgreements">
+            <summary>
+            Umowy cywilnoprawne.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EwidencaAkordow">
+            <summary>
+            Ewidencja akordów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EwidencjaProwizji">
+            <summary>
+            Ewidencja prowizji
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EwidencjaNaliczenIPotracen">
+            <summary>
+            Ewidencja naliczeń i potrąceń.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.ZFSS">
+            <summary>
+            ZFSŚ
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SkladnikiPlacowe">
+            <summary>
+            Składniki płacowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.ZestawyPlacowe">
+            <summary>
+            Zestawy płacowe
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.DefinicjeListyPlac">
+            <summary>
+            Definicje listy płac.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Calendars">
+            <summary>
+            Kalendarze.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Dzialania">
+            <summary>
+            Działania.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.SalesChances">
+            <summary>
+            Szanse sprzedaży.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.EwidencjaPotracenKomorniczych">
+            <summary>
+            Ewidencja potrąceń komorniczych
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.DocumentsLibrary">
+            <summary>
+            Biblioteka dokumentów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Zlecenia">
+            <summary>
+            Zlecenia.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KartyKosztowWynagrodzen">
+            <summary>
+            Karty kosztów wynagrodzeń.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Inwentaryzacja">
+            <summary>
+            Inwentaryzacja.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KorektyKosztow">
+            <summary>
+            Korekty kosztów.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KPiR">
+            <summary>
+            KPiR
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.NotyKorygujace">
+            <summary>
+            Noty korygujące.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.AutomatyKsiegowe">
+            <summary>
+            Automaty księgowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.WyciagiBankowe">
+            <summary>
+            Wyciągi bankowe.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.FakturyWewnetrzne">
+            <summary>
+            Faktury wewnętrzne
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Messages">
+            <summary>
+            Wiadomości.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.RaportKasowy">
+            <summary>
+            Raport kasowy.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KorektyKosztowDostawy">
+            <summary>
+            Korekty kosztów dostawy.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.KorektyFakturWewnetrznych">
+            <summary>
+            Korekty faktur wewnętrznych.
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Flags.Utilities.E_FlagGroups.Rozliczenia">
+            <summary>
+            Rozliczenia.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.ExtendedOwnField.Manager.ClM_ExtendedOwnField.ExtendedFieldValueGet(System.Int32,inSolutions.Dictionary.ExtendedOwnField.Entity.ClE_ExtendedOwnField)">
+            <summary>
+            Pobiera wartość pola własnego dla ID obiektu przekazanego w parametrze
+            </summary>
+            <param name="vrpId">ID obiektu, dla którego chcemy znaleźć pole własne</param>
+            <param name="vrpExtendedField">Pole własne wczytane metodą ExtendedFieldGet</param>
+            <returns>Wartość wpisaną w pole własne</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.ExtendedOwnField.Manager.ClM_ExtendedOwnField.ExtendedFieldValueGet(System.String,System.Int32,inSolutions.Dictionary.ExtendedOwnField.Entity.ClE_ExtendedOwnField)">
+            <summary>
+            Pobiera wartość pola własnego dla ID obiektu przekazanego w parametrze
+            </summary>
+            <param name="vrpConnectionString">ConnectionString</param>
+            <param name="vrpId">ID obiektu, dla którego chcemy znaleźć pole własne</param>
+            <param name="vrpExtendedField">Pole własne wczytane metodą ExtendedFieldGet</param>
+            <returns>Wartość wpisaną w pole własne</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.ExtendedOwnField.Manager.ClM_ExtendedOwnField.ExtendedFieldValueGet(System.Data.SqlClient.SqlConnection,System.Int32,inSolutions.Dictionary.ExtendedOwnField.Entity.ClE_ExtendedOwnField)">
+            <summary>
+            Pobiera wartość pola własnego dla ID obiektu przekazanego w parametrze
+            </summary>
+            <param name="vrpConnection">Połączenie</param>
+            <param name="vrpId">ID obiektu, dla którego chcemy znaleźć pole własne</param>
+            <param name="vrpExtendedField">Pole własne wczytane metodą ExtendedFieldGet</param>
+            <returns>Wartość wpisaną w pole własne</returns>
+        </member>
+        <member name="P:inSolutions.Dictionary.ExtendedOwnField.View.Cl_ExtendedOwnFieldLookUpEdit.ObjectType">
+            <summary>
+            Wyświetlane będą pola rozszerzone wybranego obiektu
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Payment.Business.ClM_Payment">
+            <summary>
+            Manager płatnośći.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Payment.Business.ClM_Payment.PaymentTypeList(inSolutions.Dictionary.Payment.Utilities.E_PaymentType)">
+            <summary>
+            Pobranie listy płatności ze słownika systemu InsERT.
+            </summary>
+            <param name="vrpPaymentType">Typ płatności</param>
+            <returns>Lista typów płatności.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Payment.Business.ClM_Payment.PaymentTypeList(System.String,inSolutions.Dictionary.Payment.Utilities.E_PaymentType)">
+            <summary>
+            Pobranie listy płatności ze słownika systemu InsERT.
+            </summary>
+            <param name="vrpConnection">Obiekt ciągu połączenia z bazą danych.</param>
+            <param name="vrpPaymentType">Typ płatności</param>
+            <returns>Lista typów płatności.</returns>
+        </member>
+        <member name="M:inSolutions.Dictionary.Payment.Business.ClM_Payment.PaymentTypeList(System.Data.SqlClient.SqlConnection,inSolutions.Dictionary.Payment.Utilities.E_PaymentType)">
+            <summary>
+            Pobranie listy płatności ze słownika systemu InsERT.
+            </summary>
+            <param name="vrpConnection">Obiekt połączenia z bazą danych.</param>
+            <param name="vrpPaymentType">Typ płatności</param>
+            <returns>Lista typów płatności.</returns>
+        </member>
+        <member name="T:inSolutions.Dictionary.Payment.Entity.ClE_Payment">
+            <summary>
+            Forma płatności
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.Name">
+            <summary>
+            Nazwa fromy płatności
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.Id">
+            <summary>
+            Identyfikator
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.DueDate">
+            <summary>
+            Termin
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.Type">
+            <summary>
+            Typ płatności.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.TypeEnum">
+            <summary>
+            Typ płatności.
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.BankAccountId">
+            <summary>
+            Id rachunku bankowego (Karta przy zakupie)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.AuthorizationCenterId">
+            <summary>
+            Id centrum autoryzacji (Karta przy sprzedaży)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.CreditInstitutionId">
+            <summary>
+            Id instytucji kredytowej
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Entity.ClE_Payment.MainCard">
+            <summary>
+            Główna karta (osobne dla sprzedaży i zakupów)
+            </summary>
+        </member>
+        <member name="P:inSolutions.Dictionary.Payment.Interface.I_PaymentLookUp.PaymentType">
+            <summary>
+            Typ płatności.
+            </summary>
+        </member>
+        <member name="T:inSolutions.Dictionary.Payment.Utilities.E_PaymentType">
+            <summary>
+            Typ formy płatnośći
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Payment.Utilities.E_PaymentType.Posponed">
+            <summary>
+            Płatność odroczona
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Payment.Utilities.E_PaymentType.CardSale">
+            <summary>
+            Płatność kartą przy sprzedaży 
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Payment.Utilities.E_PaymentType.CardPurchase">
+            <summary>
+            Płatność kartą przy zakupie
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Payment.Utilities.E_PaymentType.Credit">
+            <summary>
+            Płatności kredytowe
+            </summary>
+        </member>
+        <member name="F:inSolutions.Dictionary.Payment.View.Cl_PaymentLookUp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inSolutions.Dictionary.Payment.View.Cl_PaymentLookUp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inSolutions.Dictionary.Payment.View.Cl_PaymentLookUp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:inSolutions.Dictionary.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.

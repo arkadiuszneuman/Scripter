@@ -58,7 +58,7 @@
             <param name="vrp_Department"></param>
             <param name="vrpUserId"></param>
         </member>
-        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.String,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.String,inSolutions.Department.Utilities.I_DepartmentWarehouse,System.Int32,System.String)">
             <summary>
             Zapisuje dane magazynów oddziałów.
             </summary>
@@ -66,7 +66,7 @@
             <param name="vrp_DepartmentData"></param>
             <param name="vrpUserId"></param>
         </member>
-        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Entity.ClE_Warehouse,System.Int32,System.String)">
+        <member name="M:inSolutions.Department.Business.ClM_Department.sp_dep_DepartmentDataSave(System.Data.SqlClient.SqlConnection,inSolutions.Department.Utilities.I_DepartmentWarehouse,System.Int32,System.String)">
             <summary>
             Zapisuje dane magazynów oddziałów.
             </summary>
@@ -361,123 +361,118 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.FillForm">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.FillForm">
             <summary>
             Wypełnia dane oddziału na formie.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.LoadData">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.LoadData">
             <summary>
             Ładuje magazyny wchodzące w skład oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.AddWarehouse">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.AddWarehouse">
             <summary>
             Dodanie magazynu do oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.RemoveWarehouse">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.RemoveWarehouse">
             <summary>
             Usunięcie magazynu z oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.FillEntity">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.FillEntity">
             <summary>
             Wypełnia encję oddziału danymi z formy.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.SaveDepartment">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.SaveDepartment">
             <summary>
             Zapis oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.ValidateControls">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.ValidateControls">
             <summary>
             Sprawdza poprawność danych na formie.
             </summary>
             <returns>true - dane są poprawne, false - dane są niepoprawne</returns>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.Cancel">
-            <summary>
-            Potwierdzenie anulowania.
-            </summary>
-        </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.EditContactData">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.EditContactData">
             <summary>
             Edytuje dane kontaktowe oddziału.
             </summary>
         </member>
-        <member name="F:inSolutions.Department.Frm_DepartmentData.components">
+        <member name="F:inSolutions.Department.View.Frm_DepartmentData.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.Dispose(System.Boolean)">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:inSolutions.Department.Frm_DepartmentData.InitializeComponent">
+        <member name="M:inSolutions.Department.View.Frm_DepartmentData.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.LoadData">
+        <member name="M:inSolutions.Department.View.Frm_Departments.LoadData">
             <summary>
             Ładuje listę nadgrup.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.EditDepartment">
+        <member name="M:inSolutions.Department.View.Frm_Departments.EditDepartment">
             <summary>
             Edycja danych oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.DeleteDepartment">
+        <member name="M:inSolutions.Department.View.Frm_Departments.DeleteDepartment">
             <summary>
             Usunięcie oddziału.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.AddDepartment">
+        <member name="M:inSolutions.Department.View.Frm_Departments.AddDepartment">
             <summary>
             Dodanie nowego oddziału.
             </summary>
         </member>
-        <member name="F:inSolutions.Department.Frm_Departments.components">
+        <member name="F:inSolutions.Department.View.Frm_Departments.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.Dispose(System.Boolean)">
+        <member name="M:inSolutions.Department.View.Frm_Departments.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:inSolutions.Department.Frm_Departments.InitializeComponent">
+        <member name="M:inSolutions.Department.View.Frm_Departments.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_SelectWarehouse.Cancel">
+        <member name="M:inSolutions.Department.View.Frm_SelectWarehouse.Cancel">
             <summary>
             Potwierdzenie anulowania.
             </summary>
         </member>
-        <member name="F:inSolutions.Department.Frm_SelectWarehouse.components">
+        <member name="F:inSolutions.Department.View.Frm_SelectWarehouse.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:inSolutions.Department.Frm_SelectWarehouse.Dispose(System.Boolean)">
+        <member name="M:inSolutions.Department.View.Frm_SelectWarehouse.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:inSolutions.Department.Frm_SelectWarehouse.InitializeComponent">
+        <member name="M:inSolutions.Department.View.Frm_SelectWarehouse.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

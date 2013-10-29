@@ -36,10 +36,6 @@ namespace Skryper.View
                         {
                             Presenter.ConnectToServer();
 
-                            vruTables.Server = Server;
-                            vruStorageProcedure.Server = Server;
-
-                            
                             //vruTables.Database = Server.Databases["nowy"];
                             //vruStorageProcedure.Database = Server.Databases["nowy"];
 
@@ -119,14 +115,18 @@ namespace Skryper.View
             Presenter.DatabaseChanged();
 
             uC_DatabaseObjectList1.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            uC_DatabaseObjectList2.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            uC_DatabaseObjectList3.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            uC_DatabaseObjectList4.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            uC_DatabaseObjectList5.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
         }
 
 
         public string SelectedDatabase
         {
-            get 
-            { 
-                return Convert.ToString(this.frtxtDatabase.EditValue); 
+            get
+            {
+                return Convert.ToString(this.frtxtDatabase.EditValue);
             }
             set
             {
@@ -137,7 +137,14 @@ namespace Skryper.View
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
-            memoEdit1.Text = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)).ToArray());
+            IEnumerable<SqlSmoObject> SmoObjects =
+                uC_DatabaseObjectList1.DataSource.Select(o => o.SmoObject)
+                .Union(uC_DatabaseObjectList2.DataSource.Select(o => o.SmoObject))
+                .Union(uC_DatabaseObjectList3.DataSource.Select(o => o.SmoObject))
+                .Union(uC_DatabaseObjectList4.DataSource.Select(o => o.SmoObject))
+                .Union(uC_DatabaseObjectList5.DataSource.Select(o => o.SmoObject));
+
+            memoEdit1.Text = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects).ToArray());
         }
     }
 }
