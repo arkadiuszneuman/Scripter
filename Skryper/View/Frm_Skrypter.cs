@@ -150,7 +150,7 @@ namespace Skryper.View
                         .Union(uC_DatabaseObjectList4.DataSource)
                         .Union(uC_DatabaseObjectList5.DataSource);
 
-                    vrlString = string.Join(Environment.NewLine + Environment.NewLine, gen.Generate(SmoObjects, this).ToArray());
+                    vrlString = gen.Generate(SmoObjects, this);
 
                 });
 

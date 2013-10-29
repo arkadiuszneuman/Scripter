@@ -19,24 +19,33 @@ namespace Skryper.Utilities.ScriptGen
             this.databaseName = database;
         }
 
-        public IEnumerable<string> Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
+        public string Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
         {
             Server server = new Server(serverName);
             Scripter scripter = new Scripter(server);
             scripter.ScriptingProgress += scripter_ScriptingProgress;
             var vrlArray = vrpObject.Select(o => o.SmoObject).ToArray();
 
-            vrcProgress = vrpProgress;
-            vrcProgress.CreateProgress(0, vrpObject.Count() * 2);
+            CreateProgress(vrpProgress, vrpObject.Count() * 2);
 
             scripter.Options = GetDropOptions();
             IEnumerable<string> vrlReturn = scripter.EnumScript(vrlArray);
             scripter.Options = GetOptions();
             vrlReturn = vrlReturn.Union(scripter.EnumScript(vrlArray));
 
-            return vrlReturn;
+            return string.Join(Environment.NewLine + Environment.NewLine, vrlReturn.ToArray());
         }
 
+
+
+        private void CreateProgress(I_ScriptProgress vrpProgress, int vrpCount)
+        {
+            if (vrpProgress != null)
+            {
+                vrcProgress = vrpProgress;
+                vrcProgress.CreateProgress(0, vrpCount);
+            }
+        }
 
         private ScriptingOptions GetOptions()
         {
@@ -46,7 +55,6 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.ContinueScriptingOnError = false;
             vrlOptions.IncludeDatabaseContext = false;
             vrlOptions.ScriptData = false;
-            //vrlOptions.ScriptDrops = true;
             vrlOptions.Triggers = false;
             vrlOptions.ScriptSchema = true;
             vrlOptions.IncludeHeaders = false;
@@ -65,8 +73,11 @@ namespace Skryper.Utilities.ScriptGen
 
         private void scripter_ScriptingProgress(object sender, ProgressReportEventArgs e)
         {
-            ++current;
-            vrcProgress.ReportProgress(current);
+            if (vrcProgress != null)
+            {
+                ++current;
+                vrcProgress.ReportProgress(current);
+            }
         }
     }
 }
