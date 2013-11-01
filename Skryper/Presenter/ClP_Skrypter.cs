@@ -84,5 +84,10 @@ namespace Skryper.Presenter
                 SaveLastDatabase();
             }
         }
+
+        public void ChooseSln()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

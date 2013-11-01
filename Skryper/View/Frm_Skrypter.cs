@@ -168,5 +168,22 @@ namespace Skryper.View
         {
             vrcLoader.ReportProgress(vrpProgress);
         }
+
+        private void btnChooseSln_Click(object sender, EventArgs e)
+        {
+            Presenter.ChooseSln();
+        }
+
+        public string SlnPath
+        {
+            get
+            {
+                return this.frtxtSlnPath.Text;
+            }
+            set
+            {
+                this.frtxtSlnPath.Text = value;
+            }
+        }
     }
 }

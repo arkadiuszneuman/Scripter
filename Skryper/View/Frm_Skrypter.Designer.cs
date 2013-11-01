@@ -38,15 +38,19 @@
             this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.uC_DatabaseObjectList1 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.uC_DatabaseObjectList2 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.uC_DatabaseObjectList3 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.uC_DatabaseObjectList4 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.uC_DatabaseObjectList5 = new Skryper.View.UC_DatabaseObjectList();
-            this.uC_DatabaseObjectList4 = new Skryper.View.UC_DatabaseObjectList();
-            this.uC_DatabaseObjectList3 = new Skryper.View.UC_DatabaseObjectList();
-            this.uC_DatabaseObjectList2 = new Skryper.View.UC_DatabaseObjectList();
-            this.uC_DatabaseObjectList1 = new Skryper.View.UC_DatabaseObjectList();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
+            this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -62,6 +66,9 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -143,6 +150,17 @@
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Tabele";
             // 
+            // uC_DatabaseObjectList1
+            // 
+            this.uC_DatabaseObjectList1.ButtonEditVisibility = false;
+            this.uC_DatabaseObjectList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_DatabaseObjectList1.LoadDataSource = false;
+            this.uC_DatabaseObjectList1.Location = new System.Drawing.Point(2, 21);
+            this.uC_DatabaseObjectList1.Name = "uC_DatabaseObjectList1";
+            this.uC_DatabaseObjectList1.Size = new System.Drawing.Size(233, 214);
+            this.uC_DatabaseObjectList1.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
+            this.uC_DatabaseObjectList1.TabIndex = 8;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.uC_DatabaseObjectList2);
@@ -151,6 +169,17 @@
             this.groupControl2.Size = new System.Drawing.Size(237, 480);
             this.groupControl2.TabIndex = 13;
             this.groupControl2.Text = "Procedury";
+            // 
+            // uC_DatabaseObjectList2
+            // 
+            this.uC_DatabaseObjectList2.ButtonEditVisibility = false;
+            this.uC_DatabaseObjectList2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_DatabaseObjectList2.LoadDataSource = false;
+            this.uC_DatabaseObjectList2.Location = new System.Drawing.Point(2, 21);
+            this.uC_DatabaseObjectList2.Name = "uC_DatabaseObjectList2";
+            this.uC_DatabaseObjectList2.Size = new System.Drawing.Size(233, 457);
+            this.uC_DatabaseObjectList2.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
+            this.uC_DatabaseObjectList2.TabIndex = 8;
             // 
             // groupControl3
             // 
@@ -161,6 +190,17 @@
             this.groupControl3.TabIndex = 13;
             this.groupControl3.Text = "Funkcje";
             // 
+            // uC_DatabaseObjectList3
+            // 
+            this.uC_DatabaseObjectList3.ButtonEditVisibility = false;
+            this.uC_DatabaseObjectList3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_DatabaseObjectList3.LoadDataSource = false;
+            this.uC_DatabaseObjectList3.Location = new System.Drawing.Point(2, 21);
+            this.uC_DatabaseObjectList3.Name = "uC_DatabaseObjectList3";
+            this.uC_DatabaseObjectList3.Size = new System.Drawing.Size(233, 214);
+            this.uC_DatabaseObjectList3.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
+            this.uC_DatabaseObjectList3.TabIndex = 8;
+            // 
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.uC_DatabaseObjectList4);
@@ -169,6 +209,17 @@
             this.groupControl4.Size = new System.Drawing.Size(237, 237);
             this.groupControl4.TabIndex = 13;
             this.groupControl4.Text = "Widoki";
+            // 
+            // uC_DatabaseObjectList4
+            // 
+            this.uC_DatabaseObjectList4.ButtonEditVisibility = false;
+            this.uC_DatabaseObjectList4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_DatabaseObjectList4.LoadDataSource = false;
+            this.uC_DatabaseObjectList4.Location = new System.Drawing.Point(2, 21);
+            this.uC_DatabaseObjectList4.Name = "uC_DatabaseObjectList4";
+            this.uC_DatabaseObjectList4.Size = new System.Drawing.Size(233, 214);
+            this.uC_DatabaseObjectList4.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
+            this.uC_DatabaseObjectList4.TabIndex = 8;
             // 
             // groupControl5
             // 
@@ -190,49 +241,40 @@
             this.uC_DatabaseObjectList5.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
             this.uC_DatabaseObjectList5.TabIndex = 8;
             // 
-            // uC_DatabaseObjectList4
+            // groupControl6
             // 
-            this.uC_DatabaseObjectList4.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList4.LoadDataSource = false;
-            this.uC_DatabaseObjectList4.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList4.Name = "uC_DatabaseObjectList4";
-            this.uC_DatabaseObjectList4.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList4.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
-            this.uC_DatabaseObjectList4.TabIndex = 8;
+            this.groupControl6.Controls.Add(this.btnChooseSln);
+            this.groupControl6.Controls.Add(this.frtxtSlnPath);
+            this.groupControl6.Controls.Add(this.labelControl1);
+            this.groupControl6.Location = new System.Drawing.Point(767, 81);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(636, 66);
+            this.groupControl6.TabIndex = 14;
+            this.groupControl6.Text = "Połączenie z solucją";
             // 
-            // uC_DatabaseObjectList3
+            // labelControl1
             // 
-            this.uC_DatabaseObjectList3.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList3.LoadDataSource = false;
-            this.uC_DatabaseObjectList3.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList3.Name = "uC_DatabaseObjectList3";
-            this.uC_DatabaseObjectList3.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList3.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
-            this.uC_DatabaseObjectList3.TabIndex = 8;
+            this.labelControl1.Location = new System.Drawing.Point(22, 34);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(38, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Solucja:";
             // 
-            // uC_DatabaseObjectList2
+            // frtxtSlnPath
             // 
-            this.uC_DatabaseObjectList2.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList2.LoadDataSource = false;
-            this.uC_DatabaseObjectList2.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList2.Name = "uC_DatabaseObjectList2";
-            this.uC_DatabaseObjectList2.Size = new System.Drawing.Size(233, 457);
-            this.uC_DatabaseObjectList2.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
-            this.uC_DatabaseObjectList2.TabIndex = 8;
+            this.frtxtSlnPath.Location = new System.Drawing.Point(66, 31);
+            this.frtxtSlnPath.Name = "frtxtSlnPath";
+            this.frtxtSlnPath.Size = new System.Drawing.Size(452, 20);
+            this.frtxtSlnPath.TabIndex = 1;
             // 
-            // uC_DatabaseObjectList1
+            // btnChooseSln
             // 
-            this.uC_DatabaseObjectList1.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList1.LoadDataSource = false;
-            this.uC_DatabaseObjectList1.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList1.Name = "uC_DatabaseObjectList1";
-            this.uC_DatabaseObjectList1.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList1.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
-            this.uC_DatabaseObjectList1.TabIndex = 8;
+            this.btnChooseSln.Location = new System.Drawing.Point(546, 28);
+            this.btnChooseSln.Name = "btnChooseSln";
+            this.btnChooseSln.Size = new System.Drawing.Size(75, 23);
+            this.btnChooseSln.TabIndex = 15;
+            this.btnChooseSln.Text = "Wybierz";
+            this.btnChooseSln.Click += new System.EventHandler(this.btnChooseSln_Click);
             // 
             // Frm_Skrypter
             // 
@@ -240,6 +282,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1434, 834);
+            this.Controls.Add(this.groupControl6);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl3);
@@ -268,6 +311,7 @@
             this.Controls.SetChildIndex(this.groupControl3, 0);
             this.Controls.SetChildIndex(this.groupControl4, 0);
             this.Controls.SetChildIndex(this.groupControl5, 0);
+            this.Controls.SetChildIndex(this.groupControl6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -284,6 +328,10 @@
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +357,9 @@
         private UC_DatabaseObjectList uC_DatabaseObjectList4;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private UC_DatabaseObjectList uC_DatabaseObjectList5;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private DevExpress.XtraEditors.SimpleButton btnChooseSln;
+        private DevExpress.XtraEditors.TextEdit frtxtSlnPath;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

@@ -15,6 +15,7 @@ namespace Skryper.Interface
         string ServerStatus { set; }
 
         IEnumerable<string> DatabaseList { get; set; }
-        
+
+        string SlnPath { get; set; }
     }
 }
