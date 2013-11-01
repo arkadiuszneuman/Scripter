@@ -49,11 +49,13 @@
             this.grvGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSmoObject,
             this.colSmoObject1});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Red;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
             styleFormatCondition1.Appearance.Options.UseForeColor = true;
             styleFormatCondition1.ApplyToRow = true;
             styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[SmoObject] == null";
+            styleFormatCondition1.Expression = "IsNullOrEmpty([SmoObject])";
             this.grvGridView.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
             styleFormatCondition1});
             this.grvGridView.OptionsBehavior.AllowIncrementalSearch = true;

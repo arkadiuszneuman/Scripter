@@ -124,34 +124,19 @@ namespace Skryper.Presenter
                     switch (vrlGrouppedObjects.Key)
                     {
                         case E_SmoObjectType.Table:
-                            if (database.Tables.Contains(vrlObject.Name))
-                            {
-                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
-                            }
+                            vrlObject.SmoObject = database.Tables[vrlObject.Name];
                             break;
                         case E_SmoObjectType.StoredProcedure:
-                            if (database.StoredProcedures.Contains(vrlObject.Name))
-                            {
-                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
-                            }
+                            vrlObject.SmoObject = database.StoredProcedures[vrlObject.Name];
                             break;
                         case E_SmoObjectType.Function:
-                            if (database.UserDefinedFunctions.Contains(vrlObject.Name))
-                            {
-                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
-                            }
+                            vrlObject.SmoObject = database.UserDefinedFunctions[vrlObject.Name];
                             break;
                         case E_SmoObjectType.View:
-                            if (database.Views.Contains(vrlObject.Name))
-                            {
-                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
-                            }
+                            vrlObject.SmoObject = database.Views[vrlObject.Name];
                             break;
                         case E_SmoObjectType.Trigger:
-                            if (database.Triggers.Contains(vrlObject.Name))
-                            {
-                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
-                            }
+                            vrlObject.SmoObject = database.Triggers[vrlObject.Name];
                             break;
                         default:
                             throw new Exception();
