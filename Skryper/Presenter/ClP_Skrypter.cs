@@ -85,9 +85,21 @@ namespace Skryper.Presenter
             }
         }
 
+        
+
         public void ChooseSln()
         {
-            throw new NotImplementedException();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Plik solucji (*.sln)|*.sln";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.View.SlnPath = openFileDialog.FileName;
+
+                    Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager();
+                    scriptFilesManager.IsScripterProjectExists(this.View.SlnPath);
+                }
+            }
         }
     }
 }
