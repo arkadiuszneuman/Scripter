@@ -9,5 +9,6 @@ namespace Skryper.Utilities.ScriptGen
     public class Cl_DatabaseObject
     {
         public NamedSmoObject SmoObject { get; set; }
+        public string Name { get; set; }
     }
 }

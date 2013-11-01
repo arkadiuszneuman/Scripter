@@ -77,7 +77,7 @@
             // colSmoObject
             // 
             this.colSmoObject.Caption = "Nazwa";
-            this.colSmoObject.FieldName = "SmoObject.Name";
+            this.colSmoObject.FieldName = "Name";
             this.colSmoObject.Name = "colSmoObject";
             this.colSmoObject.Visible = true;
             this.colSmoObject.VisibleIndex = 0;

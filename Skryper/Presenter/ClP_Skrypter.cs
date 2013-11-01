@@ -96,8 +96,8 @@ namespace Skryper.Presenter
                 {
                     this.View.SlnPath = openFileDialog.FileName;
 
-                    Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager();
-                    scriptFilesManager.IsScripterProjectExists(this.View.SlnPath);
+                    Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
+                    scriptFilesManager.GetTables();
                 }
             }
         }
