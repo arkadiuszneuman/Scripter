@@ -38,20 +38,19 @@
             this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
-            this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
-            this.vruTriggers = new Skryper.View.UC_DatabaseObjectList();
-            this.vruViews = new Skryper.View.UC_DatabaseObjectList();
-            this.vruFunctions = new Skryper.View.UC_DatabaseObjectList();
-            this.vruProcedures = new Skryper.View.UC_DatabaseObjectList();
             this.vruTables = new Skryper.View.UC_DatabaseObjectList();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.vruProcedures = new Skryper.View.UC_DatabaseObjectList();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.vruFunctions = new Skryper.View.UC_DatabaseObjectList();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.vruViews = new Skryper.View.UC_DatabaseObjectList();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.vruTriggers = new Skryper.View.UC_DatabaseObjectList();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
+            this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -128,7 +127,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(752, 33);
+            this.btnGenerate.Location = new System.Drawing.Point(1313, 180);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 9;
@@ -151,6 +150,17 @@
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Tabele";
             // 
+            // vruTables
+            // 
+            this.vruTables.ButtonEditVisibility = false;
+            this.vruTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTables.LoadDataSource = false;
+            this.vruTables.Location = new System.Drawing.Point(2, 21);
+            this.vruTables.Name = "vruTables";
+            this.vruTables.Size = new System.Drawing.Size(233, 214);
+            this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
+            this.vruTables.TabIndex = 8;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.vruProcedures);
@@ -159,101 +169,6 @@
             this.groupControl2.Size = new System.Drawing.Size(237, 480);
             this.groupControl2.TabIndex = 13;
             this.groupControl2.Text = "Procedury";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.vruFunctions);
-            this.groupControl3.Location = new System.Drawing.Point(498, 12);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(237, 237);
-            this.groupControl3.TabIndex = 13;
-            this.groupControl3.Text = "Funkcje";
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.vruViews);
-            this.groupControl4.Location = new System.Drawing.Point(253, 255);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(237, 237);
-            this.groupControl4.TabIndex = 13;
-            this.groupControl4.Text = "Widoki";
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.Controls.Add(this.vruTriggers);
-            this.groupControl5.Location = new System.Drawing.Point(500, 255);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(237, 237);
-            this.groupControl5.TabIndex = 13;
-            this.groupControl5.Text = "Triggery";
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.btnChooseSln);
-            this.groupControl6.Controls.Add(this.frtxtSlnPath);
-            this.groupControl6.Controls.Add(this.labelControl1);
-            this.groupControl6.Location = new System.Drawing.Point(767, 81);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(636, 66);
-            this.groupControl6.TabIndex = 14;
-            this.groupControl6.Text = "Połączenie z solucją";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 34);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(38, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Solucja:";
-            // 
-            // frtxtSlnPath
-            // 
-            this.frtxtSlnPath.Location = new System.Drawing.Point(66, 31);
-            this.frtxtSlnPath.Name = "frtxtSlnPath";
-            this.frtxtSlnPath.Size = new System.Drawing.Size(452, 20);
-            this.frtxtSlnPath.TabIndex = 1;
-            // 
-            // btnChooseSln
-            // 
-            this.btnChooseSln.Location = new System.Drawing.Point(546, 28);
-            this.btnChooseSln.Name = "btnChooseSln";
-            this.btnChooseSln.Size = new System.Drawing.Size(75, 23);
-            this.btnChooseSln.TabIndex = 15;
-            this.btnChooseSln.Text = "Wybierz";
-            this.btnChooseSln.Click += new System.EventHandler(this.btnChooseSln_Click);
-            // 
-            // vruTriggers
-            // 
-            this.vruTriggers.ButtonEditVisibility = false;
-            this.vruTriggers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruTriggers.LoadDataSource = false;
-            this.vruTriggers.Location = new System.Drawing.Point(2, 21);
-            this.vruTriggers.Name = "vruTriggers";
-            this.vruTriggers.Size = new System.Drawing.Size(233, 214);
-            this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
-            this.vruTriggers.TabIndex = 8;
-            // 
-            // vruViews
-            // 
-            this.vruViews.ButtonEditVisibility = false;
-            this.vruViews.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruViews.LoadDataSource = false;
-            this.vruViews.Location = new System.Drawing.Point(2, 21);
-            this.vruViews.Name = "vruViews";
-            this.vruViews.Size = new System.Drawing.Size(233, 214);
-            this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
-            this.vruViews.TabIndex = 8;
-            // 
-            // vruFunctions
-            // 
-            this.vruFunctions.ButtonEditVisibility = false;
-            this.vruFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruFunctions.LoadDataSource = false;
-            this.vruFunctions.Location = new System.Drawing.Point(2, 21);
-            this.vruFunctions.Name = "vruFunctions";
-            this.vruFunctions.Size = new System.Drawing.Size(233, 214);
-            this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
-            this.vruFunctions.TabIndex = 8;
             // 
             // vruProcedures
             // 
@@ -266,25 +181,100 @@
             this.vruProcedures.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
             this.vruProcedures.TabIndex = 8;
             // 
-            // vruTables
+            // groupControl3
             // 
-            this.vruTables.ButtonEditVisibility = false;
-            this.vruTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruTables.LoadDataSource = false;
-            this.vruTables.Location = new System.Drawing.Point(2, 21);
-            this.vruTables.Name = "vruTables";
-            this.vruTables.Size = new System.Drawing.Size(233, 214);
-            this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
-            this.vruTables.TabIndex = 8;
+            this.groupControl3.Controls.Add(this.vruFunctions);
+            this.groupControl3.Location = new System.Drawing.Point(498, 12);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(237, 237);
+            this.groupControl3.TabIndex = 13;
+            this.groupControl3.Text = "Funkcje";
             // 
-            // simpleButton1
+            // vruFunctions
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(789, 224);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "Zapisz config";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.vruFunctions.ButtonEditVisibility = false;
+            this.vruFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruFunctions.LoadDataSource = false;
+            this.vruFunctions.Location = new System.Drawing.Point(2, 21);
+            this.vruFunctions.Name = "vruFunctions";
+            this.vruFunctions.Size = new System.Drawing.Size(233, 214);
+            this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
+            this.vruFunctions.TabIndex = 8;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.vruViews);
+            this.groupControl4.Location = new System.Drawing.Point(253, 255);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(237, 237);
+            this.groupControl4.TabIndex = 13;
+            this.groupControl4.Text = "Widoki";
+            // 
+            // vruViews
+            // 
+            this.vruViews.ButtonEditVisibility = false;
+            this.vruViews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruViews.LoadDataSource = false;
+            this.vruViews.Location = new System.Drawing.Point(2, 21);
+            this.vruViews.Name = "vruViews";
+            this.vruViews.Size = new System.Drawing.Size(233, 214);
+            this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
+            this.vruViews.TabIndex = 8;
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.vruTriggers);
+            this.groupControl5.Location = new System.Drawing.Point(500, 255);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(237, 237);
+            this.groupControl5.TabIndex = 13;
+            this.groupControl5.Text = "Triggery";
+            // 
+            // vruTriggers
+            // 
+            this.vruTriggers.ButtonEditVisibility = false;
+            this.vruTriggers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTriggers.LoadDataSource = false;
+            this.vruTriggers.Location = new System.Drawing.Point(2, 21);
+            this.vruTriggers.Name = "vruTriggers";
+            this.vruTriggers.Size = new System.Drawing.Size(233, 214);
+            this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
+            this.vruTriggers.TabIndex = 8;
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.btnChooseSln);
+            this.groupControl6.Controls.Add(this.frtxtSlnPath);
+            this.groupControl6.Controls.Add(this.labelControl1);
+            this.groupControl6.Location = new System.Drawing.Point(767, 81);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(636, 66);
+            this.groupControl6.TabIndex = 14;
+            this.groupControl6.Text = "Połączenie z solucją";
+            // 
+            // btnChooseSln
+            // 
+            this.btnChooseSln.Location = new System.Drawing.Point(546, 28);
+            this.btnChooseSln.Name = "btnChooseSln";
+            this.btnChooseSln.Size = new System.Drawing.Size(75, 23);
+            this.btnChooseSln.TabIndex = 15;
+            this.btnChooseSln.Text = "Wybierz";
+            this.btnChooseSln.Click += new System.EventHandler(this.btnChooseSln_Click);
+            // 
+            // frtxtSlnPath
+            // 
+            this.frtxtSlnPath.Location = new System.Drawing.Point(66, 31);
+            this.frtxtSlnPath.Name = "frtxtSlnPath";
+            this.frtxtSlnPath.Size = new System.Drawing.Size(452, 20);
+            this.frtxtSlnPath.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(22, 34);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(38, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Solucja:";
             // 
             // Frm_Skrypter
             // 
@@ -292,7 +282,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1434, 834);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupControl6);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
@@ -323,7 +312,6 @@
             this.Controls.SetChildIndex(this.groupControl4, 0);
             this.Controls.SetChildIndex(this.groupControl5, 0);
             this.Controls.SetChildIndex(this.groupControl6, 0);
-            this.Controls.SetChildIndex(this.simpleButton1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -373,6 +361,5 @@
         private DevExpress.XtraEditors.SimpleButton btnChooseSln;
         private DevExpress.XtraEditors.TextEdit frtxtSlnPath;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

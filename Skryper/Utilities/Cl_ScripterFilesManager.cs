@@ -12,6 +12,7 @@ namespace Skryper.Utilities
     {
         private readonly string subdir = "\\Files\\Scripts\\";
         private readonly string slnConfigFileName = "config.scripter";
+        private readonly string sqlFileName = "Structure.sql";
         private readonly string slnFilePath;
 
         public Cl_ScripterFilesManager(string slnFilePath)
@@ -67,6 +68,16 @@ namespace Skryper.Utilities
             using (TextWriter textWriter = new StreamWriter(path))
             {
                 serializer.Serialize(textWriter, databaseObjects.ToList());
+            }
+        }
+
+        public void SaveScript(string vrpScript)
+        {
+            string directoryPath = Path.GetDirectoryName(slnFilePath);
+
+            using (StreamWriter vrlStream = new StreamWriter(directoryPath + subdir + sqlFileName))
+            {
+                vrlStream.Write(vrpScript);
             }
         }
     }

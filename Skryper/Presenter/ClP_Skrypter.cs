@@ -144,5 +144,37 @@ namespace Skryper.Presenter
                 }
             }
         }
+
+        private IEnumerable<Cl_DatabaseObject> GetAllObjects()
+        {
+            return View.Tables
+                        .Union(View.Procedures)
+                        .Union(View.Functions)
+                        .Union(View.Views)
+                        .Union(View.Triggers);
+        }
+
+        private void CheckSelectedObjects(IEnumerable<Cl_DatabaseObject> objects)
+        {
+            if (objects.Any(o => o.SmoObject == null))
+            {
+                throw new InvalidOperationException("Dodane są obiekty, które nie istnieją w bazie danych.");
+            }
+        }
+
+        public void GenerateAndSaveScript()
+        {
+            var allObjects = GetAllObjects();
+            CheckSelectedObjects(allObjects);
+
+            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
+            scriptFilesManager.SaveObjectsToConfig(allObjects);
+
+            Cl_ScriptGen gen = new Cl_ScriptGen(View.ServerName, View.SelectedDatabase);
+            string generatedSql = gen.Generate(allObjects, View as I_ScriptProgress);
+            View.GeneratedSql = generatedSql;
+
+            scriptFilesManager.SaveScript(generatedSql);
+        }
     }
 }

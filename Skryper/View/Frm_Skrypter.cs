@@ -136,31 +136,21 @@ namespace Skryper.View
 
         private Cl_Loader vrcLoader;
 
-        public IEnumerable<Cl_DatabaseObject> GetAllObjects()
-        {
-            return vruTables.DataSource
-                        .Union(vruProcedures.DataSource)
-                        .Union(vruFunctions.DataSource)
-                        .Union(vruViews.DataSource)
-                        .Union(vruTriggers.DataSource);
-        }
-
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            string vrlString = string.Empty;
-
             vrcLoader = new Cl_Loader(l =>
                 {
-                    Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
-                    IEnumerable<Cl_DatabaseObject> SmoObjects = GetAllObjects();
-
-                    vrlString = gen.Generate(SmoObjects, this);
-
+                    Presenter.GenerateAndSaveScript();
                 });
 
-            vrcLoader.Execute("Generowanie skryptu...");
-
-            memoEdit1.Text = vrlString;
+            try
+            {
+                vrcLoader.Execute("Generowanie skryptu...");
+            }
+            catch (Exception ex)
+            {
+                Cl_Messages.Messages.Warning(ex.Message);
+            }
         }
 
         public void CreateProgress(int min, int max)
@@ -190,13 +180,6 @@ namespace Skryper.View
             }
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.SlnPath);
-            scriptFilesManager.SaveObjectsToConfig(GetAllObjects());
-        }
-
-
         public IEnumerable<Cl_DatabaseObject> Tables
         {
             get { return this.vruTables.DataSource; }
@@ -225,6 +208,23 @@ namespace Skryper.View
         {
             get { return this.vruTriggers.DataSource; }
             set { this.vruTriggers.DataSource = value.ToList(); }
+        }
+
+
+        public string GeneratedSql
+        {
+            set 
+            {
+                Action vrlAction = () => this.memoEdit1.Text = value;
+                if (this.memoEdit1.InvokeRequired)
+                {
+                    this.memoEdit1.Invoke(new MethodInvoker(vrlAction));
+                }
+                else
+                {
+                    vrlAction();
+                }
+            }
         }
     }
 }
