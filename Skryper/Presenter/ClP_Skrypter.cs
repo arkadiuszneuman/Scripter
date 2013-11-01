@@ -2,6 +2,7 @@
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
 using Skryper.Utilities;
+using Skryper.Utilities.ScriptGen;
 using Skryper.View;
 using System;
 using System.Collections.Generic;
@@ -85,8 +86,6 @@ namespace Skryper.Presenter
             }
         }
 
-        
-
         public void ChooseSln()
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -97,7 +96,66 @@ namespace Skryper.Presenter
                     this.View.SlnPath = openFileDialog.FileName;
 
                     Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
-                    scriptFilesManager.GetTables();
+                    IEnumerable<Cl_DatabaseObject> loadedObjects = scriptFilesManager.LoadObjectsFromConfig();
+                    InitLoadedObjects(loadedObjects);
+                    AssignLoadedObjectsToViews(loadedObjects);
+                }
+            }
+        }
+
+        private void AssignLoadedObjectsToViews(IEnumerable<Cl_DatabaseObject> loadedObjects)
+        {
+            View.Tables = loadedObjects.Where(o => o.Type == E_SmoObjectType.Table);
+            View.Procedures = loadedObjects.Where(o => o.Type == E_SmoObjectType.StoredProcedure);
+            View.Functions = loadedObjects.Where(o => o.Type == E_SmoObjectType.Function);
+            View.Views = loadedObjects.Where(o => o.Type == E_SmoObjectType.View);
+            View.Triggers = loadedObjects.Where(o => o.Type == E_SmoObjectType.Trigger);
+        }
+
+        private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> loadedObjects)
+        {
+            var server = new Server(View.ServerName);
+            var database = server.Databases[View.SelectedDatabase];
+
+            foreach (var vrlGrouppedObjects in loadedObjects.GroupBy(o => o.Type))
+            {
+                foreach (var vrlObject in vrlGrouppedObjects)
+                {
+                    switch (vrlGrouppedObjects.Key)
+                    {
+                        case E_SmoObjectType.Table:
+                            if (database.Tables.Contains(vrlObject.Name))
+                            {
+                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            }
+                            break;
+                        case E_SmoObjectType.StoredProcedure:
+                            if (database.StoredProcedures.Contains(vrlObject.Name))
+                            {
+                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            }
+                            break;
+                        case E_SmoObjectType.Function:
+                            if (database.UserDefinedFunctions.Contains(vrlObject.Name))
+                            {
+                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            }
+                            break;
+                        case E_SmoObjectType.View:
+                            if (database.Views.Contains(vrlObject.Name))
+                            {
+                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            }
+                            break;
+                        case E_SmoObjectType.Trigger:
+                            if (database.Triggers.Contains(vrlObject.Name))
+                            {
+                                vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            }
+                            break;
+                        default:
+                            throw new Exception();
+                    }
                 }
             }
         }

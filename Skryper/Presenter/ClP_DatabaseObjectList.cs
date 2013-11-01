@@ -72,7 +72,7 @@ namespace Skryper.Presenter
             List<Cl_DatabaseObject> databaseObjects = new List<Cl_DatabaseObject>();
             foreach (NamedSmoObject smoObject in vrlObjects)
             {
-                databaseObjects.Add(new Cl_DatabaseObject() { SmoObject = smoObject, Name = smoObject.Name });
+                databaseObjects.Add(new Cl_DatabaseObject() { SmoObject = smoObject, Name = smoObject.Name, Type = View.SmoObjectType });
             }
 
             View.DataSource = databaseObjects;

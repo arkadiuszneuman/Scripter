@@ -114,11 +114,11 @@ namespace Skryper.View
         {
             Presenter.DatabaseChanged();
 
-            uC_DatabaseObjectList1.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
-            uC_DatabaseObjectList2.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
-            uC_DatabaseObjectList3.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
-            uC_DatabaseObjectList4.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
-            uC_DatabaseObjectList5.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            vruTables.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            vruProcedures.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            vruFunctions.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            vruViews.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
+            vruTriggers.SetServer(frtxtServerName.Text, Convert.ToString(frtxtDatabase.EditValue));
         }
 
 
@@ -144,11 +144,11 @@ namespace Skryper.View
                 {
                     Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
                     IEnumerable<Cl_DatabaseObject> SmoObjects =
-                        uC_DatabaseObjectList1.DataSource
-                        .Union(uC_DatabaseObjectList2.DataSource)
-                        .Union(uC_DatabaseObjectList3.DataSource)
-                        .Union(uC_DatabaseObjectList4.DataSource)
-                        .Union(uC_DatabaseObjectList5.DataSource);
+                        vruTables.DataSource
+                        .Union(vruProcedures.DataSource)
+                        .Union(vruFunctions.DataSource)
+                        .Union(vruViews.DataSource)
+                        .Union(vruTriggers.DataSource);
 
                     vrlString = gen.Generate(SmoObjects, this);
 
@@ -184,6 +184,38 @@ namespace Skryper.View
             {
                 this.frtxtSlnPath.Text = value;
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.SlnPath);
+            scriptFilesManager.SaveObjectsToConfig(vruTables.DataSource);
+        }
+
+
+        public IEnumerable<Cl_DatabaseObject> Tables
+        {
+            set { this.vruTables.DataSource = value.ToList(); }
+        }
+
+        public IEnumerable<Cl_DatabaseObject> Procedures
+        {
+            set { this.vruProcedures.DataSource = value.ToList(); }
+        }
+
+        public IEnumerable<Cl_DatabaseObject> Functions
+        {
+            set { this.vruFunctions.DataSource = value.ToList(); }
+        }
+
+        public IEnumerable<Cl_DatabaseObject> Views
+        {
+            set { this.vruViews.DataSource = value.ToList(); }
+        }
+
+        public IEnumerable<Cl_DatabaseObject> Triggers
+        {
+            set { this.vruTriggers.DataSource = value.ToList(); }
         }
     }
 }

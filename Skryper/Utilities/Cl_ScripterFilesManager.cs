@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Skryper.Utilities
 {
@@ -34,19 +35,44 @@ namespace Skryper.Utilities
             string directoryPath = Path.GetDirectoryName(slnFilePath);
             string filePath = directoryPath + subdir + slnConfigFileName;
 
-            if (!File.Exists(filePath))
+            if (!Directory.Exists(directoryPath + subdir))
             {
-                File.Create(filePath);
+                Directory.CreateDirectory(directoryPath + subdir);
             }
+
+            //if (!File.Exists(filePath))
+            //{
+            //    File.Create(filePath).Dispose();
+            //}
 
             return filePath;
         }
 
-        public IEnumerable<Cl_DatabaseObject> GetTables()
+        public IEnumerable<Cl_DatabaseObject> LoadObjectsFromConfig()
         {
             string path = GetConfigFilePath();
 
+            if (File.Exists(path))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Cl_DatabaseObject>));
+                using (TextReader textReader = new StreamReader(path))
+                {
+                    return serializer.Deserialize(textReader) as List<Cl_DatabaseObject>;
+                }
+            }
+
             return null;
+        }
+
+        public void SaveObjectsToConfig(IEnumerable<Cl_DatabaseObject> databaseObjects)
+        {
+            string path = GetConfigFilePath();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Cl_DatabaseObject>));
+            using (TextWriter textWriter = new StreamWriter(path))
+            {
+                serializer.Serialize(textWriter, databaseObjects.ToList());
+            }
         }
     }
 }

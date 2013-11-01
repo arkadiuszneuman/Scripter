@@ -38,19 +38,20 @@
             this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.uC_DatabaseObjectList1 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.uC_DatabaseObjectList2 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.uC_DatabaseObjectList3 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.uC_DatabaseObjectList4 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.uC_DatabaseObjectList5 = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
             this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
+            this.vruTriggers = new Skryper.View.UC_DatabaseObjectList();
+            this.vruViews = new Skryper.View.UC_DatabaseObjectList();
+            this.vruFunctions = new Skryper.View.UC_DatabaseObjectList();
+            this.vruProcedures = new Skryper.View.UC_DatabaseObjectList();
+            this.vruTables = new Skryper.View.UC_DatabaseObjectList();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -143,103 +144,48 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.uC_DatabaseObjectList1);
+            this.groupControl1.Controls.Add(this.vruTables);
             this.groupControl1.Location = new System.Drawing.Point(255, 12);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(237, 237);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Tabele";
             // 
-            // uC_DatabaseObjectList1
-            // 
-            this.uC_DatabaseObjectList1.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList1.LoadDataSource = false;
-            this.uC_DatabaseObjectList1.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList1.Name = "uC_DatabaseObjectList1";
-            this.uC_DatabaseObjectList1.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList1.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
-            this.uC_DatabaseObjectList1.TabIndex = 8;
-            // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.uC_DatabaseObjectList2);
+            this.groupControl2.Controls.Add(this.vruProcedures);
             this.groupControl2.Location = new System.Drawing.Point(12, 12);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(237, 480);
             this.groupControl2.TabIndex = 13;
             this.groupControl2.Text = "Procedury";
             // 
-            // uC_DatabaseObjectList2
-            // 
-            this.uC_DatabaseObjectList2.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList2.LoadDataSource = false;
-            this.uC_DatabaseObjectList2.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList2.Name = "uC_DatabaseObjectList2";
-            this.uC_DatabaseObjectList2.Size = new System.Drawing.Size(233, 457);
-            this.uC_DatabaseObjectList2.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
-            this.uC_DatabaseObjectList2.TabIndex = 8;
-            // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.uC_DatabaseObjectList3);
+            this.groupControl3.Controls.Add(this.vruFunctions);
             this.groupControl3.Location = new System.Drawing.Point(498, 12);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(237, 237);
             this.groupControl3.TabIndex = 13;
             this.groupControl3.Text = "Funkcje";
             // 
-            // uC_DatabaseObjectList3
-            // 
-            this.uC_DatabaseObjectList3.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList3.LoadDataSource = false;
-            this.uC_DatabaseObjectList3.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList3.Name = "uC_DatabaseObjectList3";
-            this.uC_DatabaseObjectList3.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList3.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
-            this.uC_DatabaseObjectList3.TabIndex = 8;
-            // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.uC_DatabaseObjectList4);
+            this.groupControl4.Controls.Add(this.vruViews);
             this.groupControl4.Location = new System.Drawing.Point(253, 255);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(237, 237);
             this.groupControl4.TabIndex = 13;
             this.groupControl4.Text = "Widoki";
             // 
-            // uC_DatabaseObjectList4
-            // 
-            this.uC_DatabaseObjectList4.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList4.LoadDataSource = false;
-            this.uC_DatabaseObjectList4.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList4.Name = "uC_DatabaseObjectList4";
-            this.uC_DatabaseObjectList4.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList4.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
-            this.uC_DatabaseObjectList4.TabIndex = 8;
-            // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.uC_DatabaseObjectList5);
+            this.groupControl5.Controls.Add(this.vruTriggers);
             this.groupControl5.Location = new System.Drawing.Point(500, 255);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(237, 237);
             this.groupControl5.TabIndex = 13;
             this.groupControl5.Text = "Triggery";
-            // 
-            // uC_DatabaseObjectList5
-            // 
-            this.uC_DatabaseObjectList5.ButtonEditVisibility = false;
-            this.uC_DatabaseObjectList5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_DatabaseObjectList5.LoadDataSource = false;
-            this.uC_DatabaseObjectList5.Location = new System.Drawing.Point(2, 21);
-            this.uC_DatabaseObjectList5.Name = "uC_DatabaseObjectList5";
-            this.uC_DatabaseObjectList5.Size = new System.Drawing.Size(233, 214);
-            this.uC_DatabaseObjectList5.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
-            this.uC_DatabaseObjectList5.TabIndex = 8;
             // 
             // groupControl6
             // 
@@ -276,12 +222,77 @@
             this.btnChooseSln.Text = "Wybierz";
             this.btnChooseSln.Click += new System.EventHandler(this.btnChooseSln_Click);
             // 
+            // vruTriggers
+            // 
+            this.vruTriggers.ButtonEditVisibility = false;
+            this.vruTriggers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTriggers.LoadDataSource = false;
+            this.vruTriggers.Location = new System.Drawing.Point(2, 21);
+            this.vruTriggers.Name = "vruTriggers";
+            this.vruTriggers.Size = new System.Drawing.Size(233, 214);
+            this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
+            this.vruTriggers.TabIndex = 8;
+            // 
+            // vruViews
+            // 
+            this.vruViews.ButtonEditVisibility = false;
+            this.vruViews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruViews.LoadDataSource = false;
+            this.vruViews.Location = new System.Drawing.Point(2, 21);
+            this.vruViews.Name = "vruViews";
+            this.vruViews.Size = new System.Drawing.Size(233, 214);
+            this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
+            this.vruViews.TabIndex = 8;
+            // 
+            // vruFunctions
+            // 
+            this.vruFunctions.ButtonEditVisibility = false;
+            this.vruFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruFunctions.LoadDataSource = false;
+            this.vruFunctions.Location = new System.Drawing.Point(2, 21);
+            this.vruFunctions.Name = "vruFunctions";
+            this.vruFunctions.Size = new System.Drawing.Size(233, 214);
+            this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
+            this.vruFunctions.TabIndex = 8;
+            // 
+            // vruProcedures
+            // 
+            this.vruProcedures.ButtonEditVisibility = false;
+            this.vruProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruProcedures.LoadDataSource = false;
+            this.vruProcedures.Location = new System.Drawing.Point(2, 21);
+            this.vruProcedures.Name = "vruProcedures";
+            this.vruProcedures.Size = new System.Drawing.Size(233, 457);
+            this.vruProcedures.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
+            this.vruProcedures.TabIndex = 8;
+            // 
+            // vruTables
+            // 
+            this.vruTables.ButtonEditVisibility = false;
+            this.vruTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTables.LoadDataSource = false;
+            this.vruTables.Location = new System.Drawing.Point(2, 21);
+            this.vruTables.Name = "vruTables";
+            this.vruTables.Size = new System.Drawing.Size(233, 214);
+            this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
+            this.vruTables.TabIndex = 8;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(789, 224);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Zapisz config";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1434, 834);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupControl6);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
@@ -312,6 +323,7 @@
             this.Controls.SetChildIndex(this.groupControl4, 0);
             this.Controls.SetChildIndex(this.groupControl5, 0);
             this.Controls.SetChildIndex(this.groupControl6, 0);
+            this.Controls.SetChildIndex(this.simpleButton1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -345,21 +357,22 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel frtxtStatus;
         private DevExpress.XtraEditors.LookUpEdit frtxtDatabase;
-        private UC_DatabaseObjectList uC_DatabaseObjectList1;
+        private UC_DatabaseObjectList vruTables;
         private DevExpress.XtraEditors.SimpleButton btnGenerate;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private UC_DatabaseObjectList uC_DatabaseObjectList2;
+        private UC_DatabaseObjectList vruProcedures;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private UC_DatabaseObjectList uC_DatabaseObjectList3;
+        private UC_DatabaseObjectList vruFunctions;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private UC_DatabaseObjectList uC_DatabaseObjectList4;
+        private UC_DatabaseObjectList vruViews;
         private DevExpress.XtraEditors.GroupControl groupControl5;
-        private UC_DatabaseObjectList uC_DatabaseObjectList5;
+        private UC_DatabaseObjectList vruTriggers;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.SimpleButton btnChooseSln;
         private DevExpress.XtraEditors.TextEdit frtxtSlnPath;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
