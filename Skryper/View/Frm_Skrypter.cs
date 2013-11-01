@@ -35,12 +35,6 @@ namespace Skryper.View
                         if (!string.IsNullOrEmpty(frtxtServerName.Text))
                         {
                             Presenter.ConnectToServer();
-
-                            //vruTables.Database = Server.Databases["nowy"];
-                            //vruStorageProcedure.Database = Server.Databases["nowy"];
-
-                            //vruTables.LoadDatasoure();
-                            //vruStorageProcedure.LoadDatasoure();
                         }
                     }
                     catch (ConnectionFailureException)
@@ -215,10 +209,10 @@ namespace Skryper.View
         {
             set 
             {
-                Action vrlAction = () => this.memoEdit1.Text = value;
-                if (this.memoEdit1.InvokeRequired)
+                Action vrlAction = () => this.frtxtGeneratedScript.Text = value;
+                if (this.frtxtGeneratedScript.InvokeRequired)
                 {
-                    this.memoEdit1.Invoke(new MethodInvoker(vrlAction));
+                    this.frtxtGeneratedScript.Invoke(new MethodInvoker(vrlAction));
                 }
                 else
                 {

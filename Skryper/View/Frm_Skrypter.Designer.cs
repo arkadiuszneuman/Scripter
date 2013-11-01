@@ -36,7 +36,7 @@
             this.frtxtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.frtxtDatabase = new DevExpress.XtraEditors.LookUpEdit();
             this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.frtxtGeneratedScript = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.vruTables = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtDatabase.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -134,12 +134,12 @@
             this.btnGenerate.Text = "Generuj";
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // memoEdit1
+            // frtxtGeneratedScript
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(13, 538);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(1013, 271);
-            this.memoEdit1.TabIndex = 10;
+            this.frtxtGeneratedScript.Location = new System.Drawing.Point(13, 538);
+            this.frtxtGeneratedScript.Name = "frtxtGeneratedScript";
+            this.frtxtGeneratedScript.Size = new System.Drawing.Size(1013, 271);
+            this.frtxtGeneratedScript.TabIndex = 10;
             // 
             // groupControl1
             // 
@@ -288,7 +288,7 @@
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.memoEdit1);
+            this.Controls.Add(this.frtxtGeneratedScript);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.frtxtDatabase);
             this.Controls.Add(this.statusStrip1);
@@ -305,7 +305,7 @@
             this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.Controls.SetChildIndex(this.frtxtDatabase, 0);
             this.Controls.SetChildIndex(this.btnGenerate, 0);
-            this.Controls.SetChildIndex(this.memoEdit1, 0);
+            this.Controls.SetChildIndex(this.frtxtGeneratedScript, 0);
             this.Controls.SetChildIndex(this.groupControl1, 0);
             this.Controls.SetChildIndex(this.groupControl2, 0);
             this.Controls.SetChildIndex(this.groupControl3, 0);
@@ -317,7 +317,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtDatabase.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -347,7 +347,7 @@
         private DevExpress.XtraEditors.LookUpEdit frtxtDatabase;
         private UC_DatabaseObjectList vruTables;
         private DevExpress.XtraEditors.SimpleButton btnGenerate;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.MemoEdit frtxtGeneratedScript;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private UC_DatabaseObjectList vruProcedures;
