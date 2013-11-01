@@ -136,6 +136,15 @@ namespace Skryper.View
 
         private Cl_Loader vrcLoader;
 
+        public IEnumerable<Cl_DatabaseObject> GetAllObjects()
+        {
+            return vruTables.DataSource
+                        .Union(vruProcedures.DataSource)
+                        .Union(vruFunctions.DataSource)
+                        .Union(vruViews.DataSource)
+                        .Union(vruTriggers.DataSource);
+        }
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             string vrlString = string.Empty;
@@ -143,12 +152,7 @@ namespace Skryper.View
             vrcLoader = new Cl_Loader(l =>
                 {
                     Cl_ScriptGen gen = new Cl_ScriptGen(this.frtxtServerName.Text, this.frtxtDatabase.Text);
-                    IEnumerable<Cl_DatabaseObject> SmoObjects =
-                        vruTables.DataSource
-                        .Union(vruProcedures.DataSource)
-                        .Union(vruFunctions.DataSource)
-                        .Union(vruViews.DataSource)
-                        .Union(vruTriggers.DataSource);
+                    IEnumerable<Cl_DatabaseObject> SmoObjects = GetAllObjects();
 
                     vrlString = gen.Generate(SmoObjects, this);
 
@@ -189,32 +193,37 @@ namespace Skryper.View
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.SlnPath);
-            scriptFilesManager.SaveObjectsToConfig(vruTables.DataSource);
+            scriptFilesManager.SaveObjectsToConfig(GetAllObjects());
         }
 
 
         public IEnumerable<Cl_DatabaseObject> Tables
         {
+            get { return this.vruTables.DataSource; }
             set { this.vruTables.DataSource = value.ToList(); }
         }
 
         public IEnumerable<Cl_DatabaseObject> Procedures
         {
+            get { return this.vruProcedures.DataSource; }
             set { this.vruProcedures.DataSource = value.ToList(); }
         }
 
         public IEnumerable<Cl_DatabaseObject> Functions
         {
+            get { return this.vruFunctions.DataSource; }
             set { this.vruFunctions.DataSource = value.ToList(); }
         }
 
         public IEnumerable<Cl_DatabaseObject> Views
         {
+            get { return this.vruViews.DataSource; }
             set { this.vruViews.DataSource = value.ToList(); }
         }
 
         public IEnumerable<Cl_DatabaseObject> Triggers
         {
+            get { return this.vruTriggers.DataSource; }
             set { this.vruTriggers.DataSource = value.ToList(); }
         }
     }

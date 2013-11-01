@@ -19,10 +19,10 @@ namespace Skryper.Interface
 
         string SlnPath { get; set; }
 
-        IEnumerable<Cl_DatabaseObject> Tables { set; }
-        IEnumerable<Cl_DatabaseObject> Procedures { set; }
-        IEnumerable<Cl_DatabaseObject> Functions { set; }
-        IEnumerable<Cl_DatabaseObject> Views { set; }
-        IEnumerable<Cl_DatabaseObject> Triggers { set; }
+        IEnumerable<Cl_DatabaseObject> Tables { get; set; }
+        IEnumerable<Cl_DatabaseObject> Procedures { get; set; }
+        IEnumerable<Cl_DatabaseObject> Functions { get; set; }
+        IEnumerable<Cl_DatabaseObject> Views { get; set; }
+        IEnumerable<Cl_DatabaseObject> Triggers { get; set; }
     }
 }

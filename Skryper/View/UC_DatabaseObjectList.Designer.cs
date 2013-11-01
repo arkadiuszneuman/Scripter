@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colSmoObject = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSmoObject1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grcGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
@@ -45,7 +47,15 @@
             this.grvGridView.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.grvGridView.Appearance.GroupRow.Options.UseFont = true;
             this.grvGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSmoObject});
+            this.colSmoObject,
+            this.colSmoObject1});
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Red;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[SmoObject] == null";
+            this.grvGridView.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.grvGridView.OptionsBehavior.AllowIncrementalSearch = true;
             this.grvGridView.OptionsBehavior.AutoExpandAllGroups = true;
             this.grvGridView.OptionsBehavior.Editable = false;
@@ -82,6 +92,11 @@
             this.colSmoObject.Visible = true;
             this.colSmoObject.VisibleIndex = 0;
             // 
+            // colSmoObject1
+            // 
+            this.colSmoObject1.FieldName = "SmoObject";
+            this.colSmoObject1.Name = "colSmoObject1";
+            // 
             // UC_DatabaseObjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +120,7 @@
         #endregion
 
         private DevExpress.XtraGrid.Columns.GridColumn colSmoObject;
+        private DevExpress.XtraGrid.Columns.GridColumn colSmoObject1;
 
     }
 }

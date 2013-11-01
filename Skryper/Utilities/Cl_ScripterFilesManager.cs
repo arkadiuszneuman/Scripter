@@ -40,11 +40,6 @@ namespace Skryper.Utilities
                 Directory.CreateDirectory(directoryPath + subdir);
             }
 
-            //if (!File.Exists(filePath))
-            //{
-            //    File.Create(filePath).Dispose();
-            //}
-
             return filePath;
         }
 
