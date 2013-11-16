@@ -87,7 +87,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.ContinueScriptingOnError = false;
             vrlOptions.IncludeDatabaseContext = false;
             vrlOptions.ScriptData = false;
-            vrlOptions.Triggers = vrcAdditionalOptions.ScriptTriggers;
+            vrlOptions.Triggers = false;
             vrlOptions.ScriptData = vrcAdditionalOptions.ScriptTableData;
             vrlOptions.TargetServerVersion = vrcAdditionalOptions.ScriptWithDatabaseVersion;
             vrlOptions.ScriptSchema = true;
@@ -98,6 +98,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.Indexes = true;
             vrlOptions.DriIndexes = true;
             vrlOptions.DriAllConstraints = true;
+            vrlOptions.AllowSystemObjects = false;
             return vrlOptions;
         }
 

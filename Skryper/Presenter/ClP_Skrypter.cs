@@ -15,67 +15,37 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
-        private readonly I_AdditlionalOptions vrcVrl;
-        private Cl_Config config;
 
-        public ClP_Skrypter(object vrpView)
+        private new readonly I_AdditlionalOptions vrcView;
+
+        public ClP_Skrypter(object vrpView,I_ConfigDb vrpConfigData)
             : base((I_Scripter)vrpView)
         {
-            vrcVrl = (I_AdditlionalOptions)vrpView;
+            ConfigData = vrpConfigData;
+            vrcView = (I_AdditlionalOptions)vrpView;
         }
 
-        public void ConnectToServer()
-        {
-
-            View.Server = new Server(View.ServerName);
-
-            View.Server.ConnectionContext.ConnectTimeout = 2;
-            View.ServerStatus = View.Server.Status.ToString();
-
-            LoadDatabases();
-        }
 
         public override void LoadDataSources()
         {
-            LoadLastDatabase();
             LoadDatabaseVersionDatasource();
+            LoadObjects();
+        }
+
+        private void LoadObjects()
+        {
+            var scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
+            var loadedObjects = scriptFilesManager.LoadObjectsFromConfig();
+
+            var databaseObjects = loadedObjects as Cl_DatabaseObject[] ?? loadedObjects.ToArray();
+
+            InitLoadedObjects(databaseObjects);
+            AssignLoadedObjectsToViews(databaseObjects);
         }
 
         private void LoadDatabaseVersionDatasource()
         {
-            this.vrcVrl.DatabaseVersion = Enumeration.GetAll<E_ServerVersion>();
-        }
-
-        private void LoadLastDatabase()
-        {
-            config = Cl_Config.LoadConfig();
-
-            if (!string.IsNullOrEmpty(config.ServerName))
-            {
-                View.ServerName = config.ServerName;
-                ConnectToServer();
-                if (View.DatabaseList.Contains(config.Database))
-                {
-                    View.SelectedDatabase = config.Database;
-                }
-            }
-        }
-
-        private void SaveLastDatabase()
-        {
-            config.ServerName = View.ServerName;
-            config.Database = View.SelectedDatabase;
-
-            config.SaveConfig();
-        }
-
-        private void LoadDatabases()
-        {
-            var server = new Server(View.ServerName);
-
-            Database[] databases = new Database[server.Databases.Count];
-            server.Databases.CopyTo(databases, 0);
-            View.DatabaseList = databases.Where(d => !d.IsSystemObject && !d.Name.ToLower().Contains("reportserver")).Select(d => d.Name);
+            vrcView.DatabaseVersion = Enumeration.GetAll<E_ServerVersion>();
         }
 
         public I_Scripter View
@@ -86,46 +56,23 @@ namespace Skryper.Presenter
             }
         }
 
-        public void DatabaseChanged()
+        private void AssignLoadedObjectsToViews(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
         {
-            if (!View.IsLoading)
-            {
-                SaveLastDatabase();
-            }
+            var databaseObjects = vrpLoadedObjects as Cl_DatabaseObject[] ?? vrpLoadedObjects.ToArray();
+
+            View.Tables = databaseObjects.Where(o => o.Type == E_SmoObjectType.Table);
+            View.Procedures = databaseObjects.Where(o => o.Type == E_SmoObjectType.StoredProcedure);
+            View.Functions = databaseObjects.Where(o => o.Type == E_SmoObjectType.Function);
+            View.Views = databaseObjects.Where(o => o.Type == E_SmoObjectType.View);
+            View.Triggers = databaseObjects.Where(o => o.Type == E_SmoObjectType.Trigger);
         }
 
-        public void ChooseSln()
+        private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Plik solucji (*.sln)|*.sln";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    this.View.SlnPath = openFileDialog.FileName;
+            var server = new Server(ConfigData.CurrentServerName);
+            var database = server.Databases[ConfigData.CurrentDatabaseName];
 
-                    Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
-                    IEnumerable<Cl_DatabaseObject> loadedObjects = scriptFilesManager.LoadObjectsFromConfig();
-                    InitLoadedObjects(loadedObjects);
-                    AssignLoadedObjectsToViews(loadedObjects);
-                }
-            }
-        }
-
-        private void AssignLoadedObjectsToViews(IEnumerable<Cl_DatabaseObject> loadedObjects)
-        {
-            View.Tables = loadedObjects.Where(o => o.Type == E_SmoObjectType.Table);
-            View.Procedures = loadedObjects.Where(o => o.Type == E_SmoObjectType.StoredProcedure);
-            View.Functions = loadedObjects.Where(o => o.Type == E_SmoObjectType.Function);
-            View.Views = loadedObjects.Where(o => o.Type == E_SmoObjectType.View);
-            View.Triggers = loadedObjects.Where(o => o.Type == E_SmoObjectType.Trigger);
-        }
-
-        private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> loadedObjects)
-        {
-            var server = new Server(View.ServerName);
-            var database = server.Databases[View.SelectedDatabase];
-
-            foreach (var vrlGrouppedObjects in loadedObjects.GroupBy(o => o.Type))
+            foreach (var vrlGrouppedObjects in vrpLoadedObjects.GroupBy(o => o.Type))
             {
                 foreach (var vrlObject in vrlGrouppedObjects)
                 {
@@ -144,7 +91,7 @@ namespace Skryper.Presenter
                             vrlObject.SmoObject = database.Views[vrlObject.Name];
                             break;
                         case E_SmoObjectType.Trigger:
-                            vrlObject.SmoObject = database.Triggers[vrlObject.Name];
+                            vrlObject.SmoObject = null;
                             break;
                         default:
                             throw new Exception();
@@ -175,14 +122,16 @@ namespace Skryper.Presenter
             var allObjects = GetAllObjects();
             CheckSelectedObjects(allObjects);
 
-            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
+           Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
             scriptFilesManager.SaveObjectsToConfig(allObjects);
 
-            Cl_ScriptGen gen = new Cl_ScriptGen(View.ServerName, View.SelectedDatabase,vrcVrl);
+            Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName,vrcView);
             string generatedSql = gen.Generate(allObjects, View as I_ScriptProgress);
             View.GeneratedSql = generatedSql;
 
             scriptFilesManager.SaveScript(generatedSql);
         }
+
+        private I_ConfigDb ConfigData { get; set; }
     }
 }

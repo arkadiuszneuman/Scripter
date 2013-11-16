@@ -86,6 +86,8 @@
     <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v12.2.Core, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="inSolutions.Controls.1.0.1.2, Version=1.0.1.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Files\Dll\inSolutions.Controls.1.0.1.2.dll</HintPath>
@@ -98,6 +100,7 @@
     <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -110,9 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\I_AdditlionalOptions.cs" />
+    <Compile Include="Interface\I_ConfigDb.cs" />
     <Compile Include="Interface\I_DatabaseObjectList.cs" />
     <Compile Include="Interface\I_Scripter.cs" />
-    <Compile Include="Interface\I_ScriptOptions.cs" />
     <Compile Include="Presenter\ClP_DatabaseObjectList.cs" />
     <Compile Include="Presenter\ClP_Skrypter.cs" />
     <Compile Include="Presenter\ClP_Smo.cs" />
@@ -124,9 +127,11 @@
     <Compile Include="Utilities\Enumeration.cs" />
     <Compile Include="Utilities\ScriptGen\Cl_DatabaseObject.cs" />
     <Compile Include="Utilities\ScriptGen\Cl_ScriptGen.cs" />
+    <Compile Include="Utilities\ScriptGen\Cl_TriggerCollection.cs" />
     <Compile Include="Utilities\ScriptGen\E_ServerVersion.cs" />
     <Compile Include="Utilities\ScriptGen\E_SmoObjectType.cs" />
     <Compile Include="Utilities\ScriptGen\I_ScriptProgress.cs" />
+    <Compile Include="StartUp\Presenter\ClP_StartUp.cs" />
     <Compile Include="View\Frm_DatabaseObjectList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +144,13 @@
     <Compile Include="View\Frm_Skrypter.Designer.cs">
       <DependentUpon>Frm_Skrypter.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartUp\View\Frm_StartUpPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUp\View\Frm_StartUpPanel.Designer.cs">
+      <DependentUpon>Frm_StartUpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartUp\Interface\I_StartUpConfiguration.cs" />
     <Compile Include="View\UC_BaseView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,9 +184,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Frm_Skrypter.resx">
       <DependentUpon>Frm_Skrypter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUp\View\Frm_StartUpPanel.resx">
+      <DependentUpon>Frm_StartUpPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UC_BaseView.resx">
       <DependentUpon>UC_BaseView.cs</DependentUpon>
@@ -188,6 +204,7 @@
     <EmbeddedResource Include="View\UC_TableView.resx">
       <DependentUpon>UC_TableView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.Database.datasource" />
     <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.DatabaseCollection.datasource" />

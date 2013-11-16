@@ -1,4 +1,6 @@
-﻿using inSolutions.Controls.Loader.Utilities;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
+using inSolutions.Controls.Loader.Utilities;
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
 using Skryper.Utilities.ScriptGen;
@@ -12,6 +14,7 @@ namespace Skryper.Presenter
 {
     public class ClP_DatabaseObjectList : inSolutions.Controls.BaseForms.Presenter.ClP_FilterableBaseList<Cl_DatabaseObject>
     {
+        private List<Trigger> vrlTriggerCollection = new List<Trigger>();
         private string serverName;
         private string databaseName;
 
@@ -89,7 +92,7 @@ namespace Skryper.Presenter
                 case E_SmoObjectType.Function:
                     return database.UserDefinedFunctions.Cast<NamedSmoObject>();
                 case E_SmoObjectType.Trigger:
-                    return database.Triggers.Cast<NamedSmoObject>();
+                    return Cl_TriggerCollection.Get(database.Tables);
                 case E_SmoObjectType.View:
                     return database.Views.Cast<NamedSmoObject>();
                 default:

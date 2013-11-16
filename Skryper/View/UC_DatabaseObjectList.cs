@@ -25,7 +25,7 @@ namespace Skryper.View
             Presenter.SetServer(server, database);
         }
 
-        public Utilities.ScriptGen.E_SmoObjectType SmoObjectType
+        public E_SmoObjectType SmoObjectType
         {
             get;
             set;

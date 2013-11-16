@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Management.Smo;
+﻿using System.Collections.Generic;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace Skryper.Presenter
 {
@@ -21,5 +22,7 @@ namespace Skryper.Presenter
             ////ScriptOption.scr
             //ScriptOption.
         }
+
+
     }
 }

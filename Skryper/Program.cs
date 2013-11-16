@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Skryper.StartUp.View;
 using Skryper.View;
 using Skryper.Utilities;
 
@@ -20,7 +21,7 @@ namespace Skryper
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Skrypter());
+            Application.Run(new Frm_StartUpPanel());
         }
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
