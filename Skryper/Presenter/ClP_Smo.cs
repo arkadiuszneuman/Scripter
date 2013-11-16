@@ -16,7 +16,10 @@ namespace Skryper.Presenter
 
         public void LoadDataSource()
         {
-
+            //SqlServerVersions.Version100
+            //Table sd = new Table();
+            ////ScriptOption.scr
+            //ScriptOption.
         }
     }
 }

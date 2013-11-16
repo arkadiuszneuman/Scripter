@@ -1,4 +1,5 @@
-﻿using inSolutions.Controls.Loader.Utilities;
+﻿using Skryper.Interface;
+using inSolutions.Controls.Loader.Utilities;
 using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,15 @@ namespace Skryper.Utilities.ScriptGen
     public class Cl_ScriptGen
     {
         private string serverName, databaseName;
+        private readonly I_AdditlionalOptions vrcAdditionalOptions;
         private int current = 0;
         private I_ScriptProgress vrcProgress;
 
-        public Cl_ScriptGen(string server, string database)
+        public Cl_ScriptGen(string server, string database, I_AdditlionalOptions vrpAdditionalOptions)
         {
             this.serverName = server;
             this.databaseName = database;
+            vrcAdditionalOptions = vrpAdditionalOptions;
         }
 
         public string Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
@@ -84,7 +87,9 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.ContinueScriptingOnError = false;
             vrlOptions.IncludeDatabaseContext = false;
             vrlOptions.ScriptData = false;
-            vrlOptions.Triggers = false;
+            vrlOptions.Triggers = vrcAdditionalOptions.ScriptTriggers;
+            vrlOptions.ScriptData = vrcAdditionalOptions.ScriptTableData;
+            vrlOptions.TargetServerVersion = vrcAdditionalOptions.ScriptWithDatabaseVersion;
             vrlOptions.ScriptSchema = true;
             vrlOptions.IncludeHeaders = false;
             vrlOptions.WithDependencies = false;

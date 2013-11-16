@@ -51,6 +51,12 @@
             this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
             this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.frintServerVersion = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsServerVersion = new System.Windows.Forms.BindingSource(this.components);
+            this.frbitScriptTableData = new DevExpress.XtraEditors.CheckEdit();
+            this.frbitScriptTrigger = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -69,6 +75,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frintServerVersion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTableData.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTrigger.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -127,7 +139,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(1313, 180);
+            this.btnGenerate.Location = new System.Drawing.Point(767, 233);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 9;
@@ -248,7 +260,7 @@
             this.groupControl6.Controls.Add(this.labelControl1);
             this.groupControl6.Location = new System.Drawing.Point(767, 81);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(636, 66);
+            this.groupControl6.Size = new System.Drawing.Size(636, 146);
             this.groupControl6.TabIndex = 14;
             this.groupControl6.Text = "Połączenie z solucją";
             // 
@@ -276,12 +288,63 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Solucja:";
             // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.labelControl2);
+            this.groupControl7.Controls.Add(this.frintServerVersion);
+            this.groupControl7.Controls.Add(this.frbitScriptTableData);
+            this.groupControl7.Controls.Add(this.frbitScriptTrigger);
+            this.groupControl7.Location = new System.Drawing.Point(883, 310);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(238, 182);
+            this.groupControl7.TabIndex = 15;
+            this.groupControl7.Text = "Dodatkowe opcje";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(20, 90);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(74, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Server version:";
+            // 
+            // frintServerVersion
+            // 
+            this.frintServerVersion.Location = new System.Drawing.Point(100, 87);
+            this.frintServerVersion.Name = "frintServerVersion";
+            this.frintServerVersion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.frintServerVersion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Key", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
+            this.frintServerVersion.Properties.DataSource = this.bsServerVersion;
+            this.frintServerVersion.Properties.NullText = "Wybierz";
+            this.frintServerVersion.Size = new System.Drawing.Size(115, 20);
+            this.frintServerVersion.TabIndex = 2;
+            // 
+            // frbitScriptTableData
+            // 
+            this.frbitScriptTableData.Location = new System.Drawing.Point(20, 60);
+            this.frbitScriptTableData.Name = "frbitScriptTableData";
+            this.frbitScriptTableData.Properties.Caption = "Script table data";
+            this.frbitScriptTableData.Size = new System.Drawing.Size(108, 19);
+            this.frbitScriptTableData.TabIndex = 1;
+            // 
+            // frbitScriptTrigger
+            // 
+            this.frbitScriptTrigger.Location = new System.Drawing.Point(20, 30);
+            this.frbitScriptTrigger.Name = "frbitScriptTrigger";
+            this.frbitScriptTrigger.Properties.Caption = "Trigger";
+            this.frbitScriptTrigger.Size = new System.Drawing.Size(75, 19);
+            this.frbitScriptTrigger.TabIndex = 0;
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1434, 834);
+            this.Controls.Add(this.groupControl7);
             this.Controls.Add(this.groupControl6);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
@@ -312,6 +375,7 @@
             this.Controls.SetChildIndex(this.groupControl4, 0);
             this.Controls.SetChildIndex(this.groupControl5, 0);
             this.Controls.SetChildIndex(this.groupControl6, 0);
+            this.Controls.SetChildIndex(this.groupControl7, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -332,6 +396,13 @@
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            this.groupControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frintServerVersion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTableData.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTrigger.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +432,11 @@
         private DevExpress.XtraEditors.SimpleButton btnChooseSln;
         private DevExpress.XtraEditors.TextEdit frtxtSlnPath;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private DevExpress.XtraEditors.CheckEdit frbitScriptTableData;
+        private DevExpress.XtraEditors.CheckEdit frbitScriptTrigger;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LookUpEdit frintServerVersion;
+        private System.Windows.Forms.BindingSource bsServerVersion;
     }
 }

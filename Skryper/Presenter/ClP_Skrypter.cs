@@ -15,11 +15,13 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
+        private readonly I_AdditlionalOptions vrcVrl;
         private Cl_Config config;
 
-        public ClP_Skrypter(I_Scripter vrpView)
-            : base(vrpView)
+        public ClP_Skrypter(object vrpView)
+            : base((I_Scripter)vrpView)
         {
+            vrcVrl = (I_AdditlionalOptions)vrpView;
         }
 
         public void ConnectToServer()
@@ -36,6 +38,12 @@ namespace Skryper.Presenter
         public override void LoadDataSources()
         {
             LoadLastDatabase();
+            LoadDatabaseVersionDatasource();
+        }
+
+        private void LoadDatabaseVersionDatasource()
+        {
+            this.vrcVrl.DatabaseVersion = Enumeration.GetAll<E_ServerVersion>();
         }
 
         private void LoadLastDatabase()
@@ -170,7 +178,7 @@ namespace Skryper.Presenter
             Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(this.View.SlnPath);
             scriptFilesManager.SaveObjectsToConfig(allObjects);
 
-            Cl_ScriptGen gen = new Cl_ScriptGen(View.ServerName, View.SelectedDatabase);
+            Cl_ScriptGen gen = new Cl_ScriptGen(View.ServerName, View.SelectedDatabase,vrcVrl);
             string generatedSql = gen.Generate(allObjects, View as I_ScriptProgress);
             View.GeneratedSql = generatedSql;
 
