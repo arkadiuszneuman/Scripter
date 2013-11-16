@@ -28,14 +28,20 @@ namespace Skryper.Utilities.ScriptGen
             Server server = new Server(serverName);
             Scripter scripter = new Scripter(server);
             scripter.ScriptingProgress += scripter_ScriptingProgress;
-            var vrlArray = vrpObject.Select(o => o.SmoObject).ToArray();
+            var databaseObjects = vrpObject as Cl_DatabaseObject[] ?? vrpObject.ToArray();
 
-            CreateProgress(vrpProgress, vrpObject.Count() * 2);
+            SqlSmoObject[] vrlArray = databaseObjects.Select(o => o.SmoObject).ToArray();
+
+            CreateProgress(vrpProgress, databaseObjects.Count() * 2);
 
             scripter.Options = GetDropOptions();
             IEnumerable<string> vrlReturn = scripter.EnumScript(vrlArray);
+
             scripter.Options = GetOptions();
-            vrlReturn = vrlReturn.Union(scripter.EnumScript(vrlArray));
+            vrlReturn = vrlReturn.Union(scripter.EnumScript(databaseObjects.Where(s => s.Type != E_SmoObjectType.Data).Select(o => o.SmoObject).ToArray()));
+
+            scripter.Options = GetDataOptions();
+            vrlReturn = vrlReturn.Union(scripter.EnumScript(databaseObjects.Where(s => s.Type == E_SmoObjectType.Data).Select(o => o.SmoObject).ToArray()));
 
             string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlReturn.ToArray());
             vrlJoinedString = RemoveDropTables(vrlJoinedString);
@@ -106,6 +112,16 @@ namespace Skryper.Utilities.ScriptGen
         {
             ScriptingOptions vrlOptions = GetOptions();
             vrlOptions.ScriptDrops = true;
+            return vrlOptions;
+        }
+
+        private ScriptingOptions GetDataOptions()
+        {
+            ScriptingOptions vrlOptions = GetOptions();
+            vrlOptions.ScriptData = true;
+            vrlOptions.ScriptSchema = false;
+            vrlOptions.NoIdentities = true;
+            
             return vrlOptions;
         }
 

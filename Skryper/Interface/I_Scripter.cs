@@ -16,5 +16,6 @@ namespace Skryper.Interface
         IEnumerable<Cl_DatabaseObject> Functions { get; set; }
         IEnumerable<Cl_DatabaseObject> Views { get; set; }
         IEnumerable<Cl_DatabaseObject> Triggers { get; set; }
+        IEnumerable<Cl_DatabaseObject> Data { get; set; }
     }
 }

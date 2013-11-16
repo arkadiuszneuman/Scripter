@@ -39,6 +39,7 @@ namespace Skryper.View
             vruFunctions.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
             vruViews.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
             vruTriggers.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
+            vruData.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
 
             base.OnLoad(e);
         }
@@ -118,6 +119,12 @@ namespace Skryper.View
         {
             get { return this.vruTriggers.DataSource; }
             set { this.vruTriggers.DataSource = value.ToList(); }
+        }
+
+        public IEnumerable<Cl_DatabaseObject> Data
+        {
+            get { return this.vruData.DataSource; }
+            set { this.vruData.DataSource = value.ToList(); }
         }
 
 

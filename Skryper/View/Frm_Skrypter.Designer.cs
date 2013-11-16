@@ -35,20 +35,22 @@
             this.btnGenerate = new DevExpress.XtraEditors.SimpleButton();
             this.frtxtGeneratedScript = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.vruTables = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.vruProcedures = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.vruFunctions = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.vruViews = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.vruTriggers = new Skryper.View.UC_DatabaseObjectList();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.frintServerVersion = new DevExpress.XtraEditors.LookUpEdit();
             this.bsServerVersion = new System.Windows.Forms.BindingSource(this.components);
             this.frbitScriptTableData = new DevExpress.XtraEditors.CheckEdit();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.vruData = new Skryper.View.UC_DatabaseObjectList();
+            this.vruTriggers = new Skryper.View.UC_DatabaseObjectList();
+            this.vruViews = new Skryper.View.UC_DatabaseObjectList();
+            this.vruFunctions = new Skryper.View.UC_DatabaseObjectList();
+            this.vruProcedures = new Skryper.View.UC_DatabaseObjectList();
+            this.vruTables = new Skryper.View.UC_DatabaseObjectList();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).BeginInit();
@@ -67,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.frintServerVersion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTableData.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
@@ -98,7 +102,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(743, 255);
+            this.btnGenerate.Location = new System.Drawing.Point(923, 467);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 9;
@@ -124,17 +128,6 @@
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Tabele";
             // 
-            // vruTables
-            // 
-            this.vruTables.ButtonEditVisibility = false;
-            this.vruTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruTables.LoadDataSource = false;
-            this.vruTables.Location = new System.Drawing.Point(2, 21);
-            this.vruTables.Name = "vruTables";
-            this.vruTables.Size = new System.Drawing.Size(233, 214);
-            this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
-            this.vruTables.TabIndex = 8;
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.vruProcedures);
@@ -143,17 +136,6 @@
             this.groupControl2.Size = new System.Drawing.Size(237, 480);
             this.groupControl2.TabIndex = 13;
             this.groupControl2.Text = "Procedury";
-            // 
-            // vruProcedures
-            // 
-            this.vruProcedures.ButtonEditVisibility = false;
-            this.vruProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruProcedures.LoadDataSource = false;
-            this.vruProcedures.Location = new System.Drawing.Point(2, 21);
-            this.vruProcedures.Name = "vruProcedures";
-            this.vruProcedures.Size = new System.Drawing.Size(233, 457);
-            this.vruProcedures.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
-            this.vruProcedures.TabIndex = 8;
             // 
             // groupControl3
             // 
@@ -164,17 +146,6 @@
             this.groupControl3.TabIndex = 13;
             this.groupControl3.Text = "Funkcje";
             // 
-            // vruFunctions
-            // 
-            this.vruFunctions.ButtonEditVisibility = false;
-            this.vruFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruFunctions.LoadDataSource = false;
-            this.vruFunctions.Location = new System.Drawing.Point(2, 21);
-            this.vruFunctions.Name = "vruFunctions";
-            this.vruFunctions.Size = new System.Drawing.Size(233, 214);
-            this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
-            this.vruFunctions.TabIndex = 8;
-            // 
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.vruViews);
@@ -183,17 +154,6 @@
             this.groupControl4.Size = new System.Drawing.Size(237, 237);
             this.groupControl4.TabIndex = 13;
             this.groupControl4.Text = "Widoki";
-            // 
-            // vruViews
-            // 
-            this.vruViews.ButtonEditVisibility = false;
-            this.vruViews.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruViews.LoadDataSource = false;
-            this.vruViews.Location = new System.Drawing.Point(2, 21);
-            this.vruViews.Name = "vruViews";
-            this.vruViews.Size = new System.Drawing.Size(233, 214);
-            this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
-            this.vruViews.TabIndex = 8;
             // 
             // groupControl5
             // 
@@ -204,17 +164,6 @@
             this.groupControl5.TabIndex = 13;
             this.groupControl5.Text = "Triggery";
             // 
-            // vruTriggers
-            // 
-            this.vruTriggers.ButtonEditVisibility = false;
-            this.vruTriggers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vruTriggers.LoadDataSource = false;
-            this.vruTriggers.Location = new System.Drawing.Point(2, 21);
-            this.vruTriggers.Name = "vruTriggers";
-            this.vruTriggers.Size = new System.Drawing.Size(233, 214);
-            this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
-            this.vruTriggers.TabIndex = 8;
-            // 
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.labelControl2);
@@ -222,7 +171,7 @@
             this.groupControl7.Controls.Add(this.frbitScriptTableData);
             this.groupControl7.Location = new System.Drawing.Point(741, 12);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(237, 237);
+            this.groupControl7.Size = new System.Drawing.Size(237, 128);
             this.groupControl7.TabIndex = 15;
             this.groupControl7.Text = "Dodatkowe opcje";
             // 
@@ -256,12 +205,88 @@
             this.frbitScriptTableData.Size = new System.Drawing.Size(108, 19);
             this.frbitScriptTableData.TabIndex = 1;
             // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.vruData);
+            this.groupControl6.Location = new System.Drawing.Point(743, 146);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(237, 237);
+            this.groupControl6.TabIndex = 16;
+            this.groupControl6.Text = "Data";
+            // 
+            // vruData
+            // 
+            this.vruData.ButtonEditVisibility = false;
+            this.vruData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruData.LoadDataSource = false;
+            this.vruData.Location = new System.Drawing.Point(2, 21);
+            this.vruData.Name = "vruData";
+            this.vruData.Size = new System.Drawing.Size(233, 214);
+            this.vruData.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Data;
+            this.vruData.TabIndex = 8;
+            // 
+            // vruTriggers
+            // 
+            this.vruTriggers.ButtonEditVisibility = false;
+            this.vruTriggers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTriggers.LoadDataSource = false;
+            this.vruTriggers.Location = new System.Drawing.Point(2, 21);
+            this.vruTriggers.Name = "vruTriggers";
+            this.vruTriggers.Size = new System.Drawing.Size(233, 214);
+            this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
+            this.vruTriggers.TabIndex = 8;
+            // 
+            // vruViews
+            // 
+            this.vruViews.ButtonEditVisibility = false;
+            this.vruViews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruViews.LoadDataSource = false;
+            this.vruViews.Location = new System.Drawing.Point(2, 21);
+            this.vruViews.Name = "vruViews";
+            this.vruViews.Size = new System.Drawing.Size(233, 214);
+            this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
+            this.vruViews.TabIndex = 8;
+            // 
+            // vruFunctions
+            // 
+            this.vruFunctions.ButtonEditVisibility = false;
+            this.vruFunctions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruFunctions.LoadDataSource = false;
+            this.vruFunctions.Location = new System.Drawing.Point(2, 21);
+            this.vruFunctions.Name = "vruFunctions";
+            this.vruFunctions.Size = new System.Drawing.Size(233, 214);
+            this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
+            this.vruFunctions.TabIndex = 8;
+            // 
+            // vruProcedures
+            // 
+            this.vruProcedures.ButtonEditVisibility = false;
+            this.vruProcedures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruProcedures.LoadDataSource = false;
+            this.vruProcedures.Location = new System.Drawing.Point(2, 21);
+            this.vruProcedures.Name = "vruProcedures";
+            this.vruProcedures.Size = new System.Drawing.Size(233, 457);
+            this.vruProcedures.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
+            this.vruProcedures.TabIndex = 8;
+            // 
+            // vruTables
+            // 
+            this.vruTables.ButtonEditVisibility = false;
+            this.vruTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vruTables.LoadDataSource = false;
+            this.vruTables.Location = new System.Drawing.Point(2, 21);
+            this.vruTables.Name = "vruTables";
+            this.vruTables.Size = new System.Drawing.Size(233, 214);
+            this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
+            this.vruTables.TabIndex = 8;
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1010, 683);
+            this.Controls.Add(this.groupControl6);
             this.Controls.Add(this.groupControl7);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
@@ -289,6 +314,7 @@
             this.Controls.SetChildIndex(this.groupControl4, 0);
             this.Controls.SetChildIndex(this.groupControl5, 0);
             this.Controls.SetChildIndex(this.groupControl7, 0);
+            this.Controls.SetChildIndex(this.groupControl6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -309,6 +335,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.frintServerVersion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frbitScriptTableData.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,5 +364,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LookUpEdit frintServerVersion;
         private System.Windows.Forms.BindingSource bsServerVersion;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private UC_DatabaseObjectList vruData;
     }
 }

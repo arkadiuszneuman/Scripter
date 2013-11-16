@@ -40,14 +40,21 @@ namespace Skryper.Presenter
             {
                 vrfForm.AddList("Obiekt bazodanowy", GetUC());
 
-                if (vrfForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (vrfForm.ShowDialog() == DialogResult.OK)
                 {
                     if (vrfForm.SelectedObjects != null)
                     {
                         foreach (var vrlObject in vrfForm.SelectedObjects)
                         {
-                            View.DataSource.Add(vrlObject as Cl_DatabaseObject);
+                            var vrlDatabaseObject = vrlObject as Cl_DatabaseObject;
+
+                            if (vrlDatabaseObject != null)
+                            {
+                                View.DataSource.Add(vrlDatabaseObject);
+                            }
+
                         }
+
                         return true;
                     }
                 }
@@ -62,6 +69,7 @@ namespace Skryper.Presenter
             ucToReturn.SmoObjectType = View.SmoObjectType;
             ucToReturn.SetServer(serverName, databaseName);
             ucToReturn.FullGrid = true;
+ 
             return ucToReturn;
         }
 
@@ -93,6 +101,8 @@ namespace Skryper.Presenter
                     return database.UserDefinedFunctions.Cast<NamedSmoObject>();
                 case E_SmoObjectType.Trigger:
                     return Cl_TriggerCollection.Get(database.Tables);
+                case E_SmoObjectType.Data:
+                    return database.Tables.Cast<NamedSmoObject>();
                 case E_SmoObjectType.View:
                     return database.Views.Cast<NamedSmoObject>();
                 default:

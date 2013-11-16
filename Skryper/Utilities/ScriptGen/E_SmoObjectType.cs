@@ -11,6 +11,7 @@ namespace Skryper.Utilities.ScriptGen
         StoredProcedure,
         Function,
         View,
-        Trigger
+        Trigger,
+        Data
     }
 }

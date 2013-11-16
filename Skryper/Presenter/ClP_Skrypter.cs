@@ -37,10 +37,13 @@ namespace Skryper.Presenter
             var scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
             var loadedObjects = scriptFilesManager.LoadObjectsFromConfig();
 
-            var databaseObjects = loadedObjects as Cl_DatabaseObject[] ?? loadedObjects.ToArray();
+            if (loadedObjects != null)
+            {
+                var databaseObjects = loadedObjects as Cl_DatabaseObject[] ?? loadedObjects.ToArray();
 
-            InitLoadedObjects(databaseObjects);
-            AssignLoadedObjectsToViews(databaseObjects);
+                InitLoadedObjects(databaseObjects);
+                AssignLoadedObjectsToViews(databaseObjects); 
+            }
         }
 
         private void LoadDatabaseVersionDatasource()
@@ -65,6 +68,7 @@ namespace Skryper.Presenter
             View.Functions = databaseObjects.Where(o => o.Type == E_SmoObjectType.Function);
             View.Views = databaseObjects.Where(o => o.Type == E_SmoObjectType.View);
             View.Triggers = databaseObjects.Where(o => o.Type == E_SmoObjectType.Trigger);
+            View.Data = databaseObjects.Where(o => o.Type == E_SmoObjectType.Data);
         }
 
         private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
@@ -93,6 +97,10 @@ namespace Skryper.Presenter
                         case E_SmoObjectType.Trigger:
                             vrlObject.SmoObject = null;
                             break;
+                            //Dane są pobierane z tabeli
+                        case E_SmoObjectType.Data:
+                            vrlObject.SmoObject = database.Tables[vrlObject.Name];
+                            break;
                         default:
                             throw new Exception();
                     }
@@ -106,7 +114,8 @@ namespace Skryper.Presenter
                         .Union(View.Procedures)
                         .Union(View.Functions)
                         .Union(View.Views)
-                        .Union(View.Triggers);
+                        .Union(View.Triggers)
+                        .Union(View.Data);
         }
 
         private void CheckSelectedObjects(IEnumerable<Cl_DatabaseObject> objects)
