@@ -18,6 +18,7 @@ namespace Skryper.View
         {
             InitializeComponent();
             this.vrcPresenter = new ClP_DatabaseObjectList(this);
+            this.GridView.OptionsBehavior.Editable = true;
         }
 
         public void SetServer(string server, string database)
@@ -50,6 +51,19 @@ namespace Skryper.View
             get
             {
                 return this.vrcPresenter as ClP_DatabaseObjectList;
+            }
+        }
+
+        public bool ViewAddionalColumns
+        {
+            get
+            {
+                return colDrop.Visible && colInsertData.Visible;
+            }
+
+            set
+            {
+                colDrop.Visible = colInsertData.Visible = value;
             }
         }
     }

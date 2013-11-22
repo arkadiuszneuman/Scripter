@@ -31,6 +31,8 @@
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colSmoObject = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSmoObject1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDrop = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInsertData = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grcGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
@@ -48,7 +50,9 @@
             this.grvGridView.Appearance.GroupRow.Options.UseFont = true;
             this.grvGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSmoObject,
-            this.colSmoObject1});
+            this.colSmoObject1,
+            this.colDrop,
+            this.colInsertData});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Red;
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
@@ -60,7 +64,6 @@
             styleFormatCondition1});
             this.grvGridView.OptionsBehavior.AllowIncrementalSearch = true;
             this.grvGridView.OptionsBehavior.AutoExpandAllGroups = true;
-            this.grvGridView.OptionsBehavior.Editable = false;
             this.grvGridView.OptionsBehavior.FocusLeaveOnTab = true;
             this.grvGridView.OptionsCustomization.AllowGroup = false;
             this.grvGridView.OptionsCustomization.AllowQuickHideColumns = false;
@@ -91,13 +94,32 @@
             this.colSmoObject.Caption = "Nazwa";
             this.colSmoObject.FieldName = "Name";
             this.colSmoObject.Name = "colSmoObject";
+            this.colSmoObject.OptionsColumn.AllowEdit = false;
+            this.colSmoObject.OptionsColumn.ReadOnly = true;
             this.colSmoObject.Visible = true;
             this.colSmoObject.VisibleIndex = 0;
+            this.colSmoObject.Width = 262;
             // 
             // colSmoObject1
             // 
             this.colSmoObject1.FieldName = "SmoObject";
             this.colSmoObject1.Name = "colSmoObject1";
+            // 
+            // colDrop
+            // 
+            this.colDrop.FieldName = "Drop";
+            this.colDrop.Name = "colDrop";
+            this.colDrop.Visible = true;
+            this.colDrop.VisibleIndex = 1;
+            this.colDrop.Width = 76;
+            // 
+            // colInsertData
+            // 
+            this.colInsertData.FieldName = "InsertData";
+            this.colInsertData.Name = "colInsertData";
+            this.colInsertData.Visible = true;
+            this.colInsertData.VisibleIndex = 2;
+            this.colInsertData.Width = 76;
             // 
             // UC_DatabaseObjectList
             // 
@@ -123,6 +145,8 @@
 
         private DevExpress.XtraGrid.Columns.GridColumn colSmoObject;
         private DevExpress.XtraGrid.Columns.GridColumn colSmoObject1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDrop;
+        private DevExpress.XtraGrid.Columns.GridColumn colInsertData;
 
     }
 }

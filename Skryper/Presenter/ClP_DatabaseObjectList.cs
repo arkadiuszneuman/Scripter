@@ -69,6 +69,7 @@ namespace Skryper.Presenter
             ucToReturn.SmoObjectType = View.SmoObjectType;
             ucToReturn.SetServer(serverName, databaseName);
             ucToReturn.FullGrid = true;
+            ucToReturn.ViewAddionalColumns = false;
  
             return ucToReturn;
         }
@@ -83,7 +84,13 @@ namespace Skryper.Presenter
             List<Cl_DatabaseObject> databaseObjects = new List<Cl_DatabaseObject>();
             foreach (NamedSmoObject smoObject in vrlObjects)
             {
-                databaseObjects.Add(new Cl_DatabaseObject() { SmoObject = smoObject, Name = smoObject.Name, Type = View.SmoObjectType });
+                var vrlObject = new Cl_DatabaseObject() { SmoObject = smoObject, Name = smoObject.Name, Type = View.SmoObjectType };
+                if (vrlObject.Type != E_SmoObjectType.Table)
+                {
+                    vrlObject.InsertData = false;
+                    vrlObject.Drop = true;
+                }
+                databaseObjects.Add(vrlObject);
             }
 
             View.DataSource = databaseObjects;
@@ -100,7 +107,7 @@ namespace Skryper.Presenter
                 case E_SmoObjectType.Function:
                     return database.UserDefinedFunctions.Cast<NamedSmoObject>();
                 case E_SmoObjectType.Trigger:
-                    return Cl_TriggerCollection.Get(database.Tables);
+                    return database.Tables.Cast<Table>().SelectMany(vrpTable => vrpTable.Triggers.Cast<Trigger>()).Where(t => !t.IsEncrypted);
                 case E_SmoObjectType.Data:
                     return database.Tables.Cast<NamedSmoObject>();
                 case E_SmoObjectType.View:

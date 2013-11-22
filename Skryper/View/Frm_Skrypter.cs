@@ -62,8 +62,6 @@ namespace Skryper.View
 
         #endregion
 
-        private Cl_Loader vrcLoader;
-
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             vrcLoader = new Cl_Loader(l =>
@@ -171,5 +169,66 @@ namespace Skryper.View
         }
 
         #endregion
+
+
+        public string TablesFileName
+        {
+            get
+            {
+                return this.frtxtTableName.Text;
+            }
+            set
+            {
+                this.frtxtTableName.Text = value;
+            }
+        }
+
+        public string StoredProceduresFileName
+        {
+            get
+            {
+                return this.frtxtProcedureName.Text;
+            }
+            set
+            {
+                this.frtxtProcedureName.Text = value;
+            }
+        }
+
+        public string ViewsFileName
+        {
+            get
+            {
+                return this.frtxtViewName.Text;
+            }
+            set
+            {
+                this.frtxtViewName.Text = value;
+            }
+        }
+
+        public string FunctionsFileName
+        {
+            get
+            {
+                return this.frtxtFunctionName.Text;
+            }
+            set
+            {
+                this.frtxtFunctionName.Text = value;
+            }
+        }
+
+        public string TriggersFileName
+        {
+            get
+            {
+                return this.frtxtTriggerName.Text;
+            }
+            set
+            {
+                this.frtxtTriggerName.Text = value;
+            }
+        }
     }
 }

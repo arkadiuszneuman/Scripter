@@ -124,10 +124,10 @@
     <Compile Include="Utilities\Cl_Config.cs" />
     <Compile Include="Utilities\Cl_Messages.cs" />
     <Compile Include="Utilities\Cl_ScripterFilesManager.cs" />
+    <Compile Include="Utilities\Cl_ScriptFilesContainer.cs" />
     <Compile Include="Utilities\Enumeration.cs" />
     <Compile Include="Utilities\ScriptGen\Cl_DatabaseObject.cs" />
     <Compile Include="Utilities\ScriptGen\Cl_ScriptGen.cs" />
-    <Compile Include="Utilities\ScriptGen\Cl_TriggerCollection.cs" />
     <Compile Include="Utilities\ScriptGen\E_ServerVersion.cs" />
     <Compile Include="Utilities\ScriptGen\E_SmoObjectType.cs" />
     <Compile Include="Utilities\ScriptGen\I_ScriptProgress.cs" />
@@ -186,6 +186,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Frm_DatabaseObjectList.resx">
+      <DependentUpon>Frm_DatabaseObjectList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_Skrypter.resx">
       <DependentUpon>Frm_Skrypter.cs</DependentUpon>
     </EmbeddedResource>

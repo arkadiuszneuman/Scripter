@@ -17,5 +17,11 @@ namespace Skryper.Interface
         IEnumerable<Cl_DatabaseObject> Views { get; set; }
         IEnumerable<Cl_DatabaseObject> Triggers { get; set; }
         IEnumerable<Cl_DatabaseObject> Data { get; set; }
+
+        string TablesFileName { get; set; }
+        string StoredProceduresFileName { get; set; }
+        string ViewsFileName { get; set; }
+        string FunctionsFileName { get; set; }
+        string TriggersFileName { get; set; }
     }
 }

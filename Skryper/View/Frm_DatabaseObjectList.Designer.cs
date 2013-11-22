@@ -28,9 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl)).BeginInit();
+            this.groupControl.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // Frm_DatabaseObjectList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Frm_DatabaseObjectList";
+            this.ClientSize = new System.Drawing.Size(551, 522);
+            this.Name = "Frm_DatabaseObjectList";
+            this.Text = "Obiekty bazodanowe";
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl)).EndInit();
+            this.groupControl.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

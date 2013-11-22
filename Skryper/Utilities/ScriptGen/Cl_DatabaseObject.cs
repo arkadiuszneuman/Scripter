@@ -13,5 +13,8 @@ namespace Skryper.Utilities.ScriptGen
         public NamedSmoObject SmoObject { get; set; }
         public string Name { get; set; }
         public E_SmoObjectType Type { get; set; }
+
+        public bool Drop { get; set; }
+        public bool InsertData { get; set; }
     }
 }

@@ -44,30 +44,30 @@ namespace Skryper.Utilities
             return filePath;
         }
 
-        public IEnumerable<Cl_DatabaseObject> LoadObjectsFromConfig()
+        public Cl_ScriptFilesContainer LoadObjectsFromConfig()
         {
             string path = GetConfigFilePath();
 
             if (File.Exists(path))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Cl_DatabaseObject>));
+                XmlSerializer serializer = new XmlSerializer(typeof(Cl_ScriptFilesContainer));
                 using (TextReader textReader = new StreamReader(path))
                 {
-                    return serializer.Deserialize(textReader) as List<Cl_DatabaseObject>;
+                    return serializer.Deserialize(textReader) as Cl_ScriptFilesContainer;
                 }
             }
 
             return null;
         }
 
-        public void SaveObjectsToConfig(IEnumerable<Cl_DatabaseObject> databaseObjects)
+        public void SaveObjectsToConfig(Cl_ScriptFilesContainer vrpContainer)
         {
             string path = GetConfigFilePath();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Cl_DatabaseObject>));
+            XmlSerializer serializer = new XmlSerializer(typeof(Cl_ScriptFilesContainer));
             using (TextWriter textWriter = new StreamWriter(path))
             {
-                serializer.Serialize(textWriter, databaseObjects.ToList());
+                serializer.Serialize(textWriter, vrpContainer);
             }
         }
 

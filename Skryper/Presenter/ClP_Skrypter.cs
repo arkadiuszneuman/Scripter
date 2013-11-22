@@ -35,15 +35,25 @@ namespace Skryper.Presenter
         private void LoadObjects()
         {
             var scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
-            var loadedObjects = scriptFilesManager.LoadObjectsFromConfig();
+            var vrlContainer = scriptFilesManager.LoadObjectsFromConfig();
 
-            if (loadedObjects != null)
+            if (vrlContainer != null)
             {
-                var databaseObjects = loadedObjects as Cl_DatabaseObject[] ?? loadedObjects.ToArray();
+                var databaseObjects = vrlContainer.DatabaseObjects.ToArray();
 
                 InitLoadedObjects(databaseObjects);
-                AssignLoadedObjectsToViews(databaseObjects); 
+                AssignLoadedObjectsToViews(databaseObjects);
+                AssignDefaultNames(vrlContainer);
             }
+        }
+
+        private void AssignDefaultNames(Cl_ScriptFilesContainer vrlContainer)
+        {
+            View.StoredProceduresFileName = vrlContainer.StoredProceduresFileName;
+            View.TablesFileName = vrlContainer.TablesFileName;
+            View.FunctionsFileName = vrlContainer.FunctionsFileName;
+            View.ViewsFileName = vrlContainer.ViewsFileName;
+            View.TriggersFileName = vrlContainer.TriggersFileName;
         }
 
         private void LoadDatabaseVersionDatasource()
@@ -131,8 +141,18 @@ namespace Skryper.Presenter
             var allObjects = GetAllObjects();
             CheckSelectedObjects(allObjects);
 
+            Cl_ScriptFilesContainer vrlContainer = new Cl_ScriptFilesContainer()
+            {
+                DatabaseObjects = allObjects.ToList(),
+                FunctionsFileName = View.FunctionsFileName,
+                StoredProceduresFileName = View.StoredProceduresFileName,
+                TablesFileName = View.TablesFileName,
+                TriggersFileName = View.TriggersFileName,
+                ViewsFileName = View.ViewsFileName
+            };
+
            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
-            scriptFilesManager.SaveObjectsToConfig(allObjects);
+           scriptFilesManager.SaveObjectsToConfig(vrlContainer);
 
             Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName,vrcView);
             string generatedSql = gen.Generate(allObjects, View as I_ScriptProgress);
