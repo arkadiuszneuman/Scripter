@@ -71,6 +71,7 @@ namespace Skryper.Presenter
             ucToReturn.SetServer(serverName, databaseName);
             ucToReturn.FullGrid = true;
             ucToReturn.ViewAddionalColumns = false;
+            ucToReturn.ViewNameColumns = false;
 
             return ucToReturn;
         }

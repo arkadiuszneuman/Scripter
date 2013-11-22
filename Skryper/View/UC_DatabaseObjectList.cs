@@ -67,6 +67,19 @@ namespace Skryper.View
             }
         }
 
+        public bool ViewNameColumns
+        {
+            get
+            {
+                return colFileName.Visible && colIsDefaultFileName.Visible;
+            }
+
+            set
+            {
+                colFileName.Visible = colIsDefaultFileName.Visible = value;
+            }
+        }
+
         private void repoDefaultFileName_CheckedChanged(object sender, EventArgs e)
         {
             if (Convert.ToBoolean(repoDefaultFileName.ValueChecked))
