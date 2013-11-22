@@ -31,15 +31,15 @@ namespace Skryper.Utilities.ScriptGen
             CreateProgress(vrpProgress, vrpObject.Count() * 2);
 
             scripter.Options = GetDropOptions();
-            IEnumerable<string> vrlWithoutDrops = scripter.EnumScript(vrpObject.Where(s => s.Drop).Select(o => o.SmoObject).ToArray());
+            IEnumerable<string> vrlWithDrops = scripter.EnumScript(vrpObject.Where(s => s.Drop).Select(o => o.SmoObject).ToArray());
 
             scripter.Options = GetOptions();
-            IEnumerable<string> vrlWithDrops = scripter.EnumScript(vrpObject.Where(s => !s.Drop).Select(o => o.SmoObject).ToArray());
+            IEnumerable<string> vrlWithoutDrops = scripter.EnumScript(vrpObject.Select(o => o.SmoObject).ToArray());
 
             scripter.Options = GetDataOptions();
             IEnumerable<string> vrlInsertData = scripter.EnumScript(vrpObject.Where(s => s.InsertData).Select(o => o.SmoObject).ToArray());
 
-            string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlWithoutDrops.Union(vrlWithDrops).Union(vrlInsertData).ToArray());
+            string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlWithDrops.Union(vrlWithoutDrops).Union(vrlInsertData).ToArray());
 
             //vrlJoinedString = RemoveDropTables(vrlJoinedString);
             vrlJoinedString = RemoveAnsiiAndQuotedIndentifier(vrlJoinedString);
@@ -91,7 +91,6 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.IncludeDatabaseContext = false;
             vrlOptions.ScriptData = false;
             vrlOptions.Triggers = false;
-            vrlOptions.ScriptData = vrcAdditionalOptions.ScriptTableData;
             vrlOptions.TargetServerVersion = vrcAdditionalOptions.ScriptWithDatabaseVersion;
             vrlOptions.ScriptSchema = true;
             vrlOptions.IncludeHeaders = false;

@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Management.Common;
+﻿using inSolutions.Controls.Loader.Utilities;
+using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
 using Skryper.Utilities;
@@ -15,11 +16,10 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
-
         private new readonly I_AdditlionalOptions vrcView;
 
-        public ClP_Skrypter(object vrpView, I_ConfigDb vrpConfigData)
-            : base((I_Scripter)vrpView)
+        public ClP_Skrypter(I_Scripter vrpView, I_ConfigDb vrpConfigData)
+            : base(vrpView)
         {
             ConfigData = vrpConfigData;
             vrcView = (I_AdditlionalOptions)vrpView;
@@ -28,6 +28,7 @@ namespace Skryper.Presenter
 
         public override void LoadDataSources()
         {
+            View.StoredProceduresFileName = View.TablesFileName = View.TriggersFileName = View.ViewsFileName = View.FunctionsFileName = "Structure.sql";
             LoadDatabaseVersionDatasource();
             LoadObjects();
         }
@@ -78,7 +79,6 @@ namespace Skryper.Presenter
             View.Functions = databaseObjects.Where(o => o.Type == E_SmoObjectType.Function);
             View.Views = databaseObjects.Where(o => o.Type == E_SmoObjectType.View);
             View.Triggers = databaseObjects.Where(o => o.Type == E_SmoObjectType.Trigger);
-            View.Data = databaseObjects.Where(o => o.Type == E_SmoObjectType.Data);
         }
 
         private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
@@ -125,7 +125,7 @@ namespace Skryper.Presenter
                         .Union(View.Functions)
                         .Union(View.Views)
                         .Union(View.Triggers)
-                        .Union(View.Data);
+                        ;
         }
 
         private void CheckSelectedObjects(IEnumerable<Cl_DatabaseObject> objects)
@@ -136,7 +136,7 @@ namespace Skryper.Presenter
             }
         }
 
-        public void GenerateAndSaveScript()
+        public void GenerateAndSaveScript(Cl_Loader loader)
         {
             var allObjects = GetAllObjects();
             CheckSelectedObjects(allObjects);
@@ -156,6 +156,8 @@ namespace Skryper.Presenter
 
             foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
             {
+                loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
+
                 Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName, vrcView);
                 string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
                 View.GeneratedSql = generatedSql;

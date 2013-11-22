@@ -14,7 +14,7 @@ using DevExpress.XtraEditors;
 
 namespace Skryper.View
 {
-    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter, I_ScriptProgress,I_AdditlionalOptions
+    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter, I_ScriptProgress, I_AdditlionalOptions
     {
         private readonly I_ConfigDb vrcConfigData;
 
@@ -40,7 +40,6 @@ namespace Skryper.View
             vruFunctions.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
             vruViews.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
             vruTriggers.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
-            vruData.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
 
             base.OnLoad(e);
         }
@@ -67,7 +66,7 @@ namespace Skryper.View
         {
             vrcLoader = new Cl_Loader(l =>
                 {
-                    Presenter.GenerateAndSaveScript();
+                    Presenter.GenerateAndSaveScript(l);
                 });
 
             try
@@ -120,16 +119,9 @@ namespace Skryper.View
             set { this.vruTriggers.DataSource = value.ToList(); }
         }
 
-        public IEnumerable<Cl_DatabaseObject> Data
-        {
-            get { return this.vruData.DataSource; }
-            set { this.vruData.DataSource = value.ToList(); }
-        }
-
-
         public string GeneratedSql
         {
-            set 
+            set
             {
                 Action vrlAction = () => this.frtxtGeneratedScript.Text = value;
                 if (this.frtxtGeneratedScript.InvokeRequired)
@@ -145,19 +137,11 @@ namespace Skryper.View
 
         #region Implementation of I_AdditlionalOptions
 
-        public bool ScriptTableData
-        {
-            get
-            {
-                return frbitScriptTableData.Checked;
-            }
-        }
-
         public SqlServerVersion ScriptWithDatabaseVersion
         {
             get
             {
-                return frintServerVersion.EditValue is SqlServerVersion ? (SqlServerVersion) frintServerVersion.EditValue : SqlServerVersion.Version90;
+                return frintServerVersion.EditValue is SqlServerVersion ? (SqlServerVersion)frintServerVersion.EditValue : SqlServerVersion.Version90;
             }
         }
 
@@ -236,7 +220,7 @@ namespace Skryper.View
         {
             foreach (var vrlObject in vrpObjects.Where(o => o.IsDefaultFileName))
             {
-                vrlObject.Name = vrpFileName;
+                vrlObject.FileName = vrpFileName;
             }
         }
 

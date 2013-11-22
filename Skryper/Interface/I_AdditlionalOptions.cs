@@ -8,7 +8,6 @@ namespace Skryper.Interface
 {
     public interface I_AdditlionalOptions
     {
-        bool ScriptTableData { get; }
         SqlServerVersion ScriptWithDatabaseVersion { get; }
         IDictionary<int, string> DatabaseVersion { set; }
     }
