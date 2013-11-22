@@ -12,15 +12,13 @@ namespace Skryper.Utilities.ScriptGen
     public class Cl_ScriptGen
     {
         private string serverName, databaseName;
-        private readonly I_AdditlionalOptions vrcAdditionalOptions;
         private int current = 0;
         private I_ScriptProgress vrcProgress;
 
-        public Cl_ScriptGen(string server, string database, I_AdditlionalOptions vrpAdditionalOptions)
+        public Cl_ScriptGen(string server, string database)
         {
             this.serverName = server;
             this.databaseName = database;
-            vrcAdditionalOptions = vrpAdditionalOptions;
         }
 
         public string Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
@@ -91,7 +89,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.IncludeDatabaseContext = false;
             vrlOptions.ScriptData = false;
             vrlOptions.Triggers = false;
-            vrlOptions.TargetServerVersion = vrcAdditionalOptions.ScriptWithDatabaseVersion;
+            vrlOptions.TargetServerVersion = SqlServerVersion.Version90;
             vrlOptions.ScriptSchema = true;
             vrlOptions.IncludeHeaders = false;
             vrlOptions.WithDependencies = false;

@@ -16,20 +16,16 @@ namespace Skryper.Presenter
 {
     public class ClP_Skrypter : inSolutions.Controls.BaseForms.Presenter.ClP_EntityBaseForm
     {
-        private new readonly I_AdditlionalOptions vrcView;
-
         public ClP_Skrypter(I_Scripter vrpView, I_ConfigDb vrpConfigData)
             : base(vrpView)
         {
             ConfigData = vrpConfigData;
-            vrcView = (I_AdditlionalOptions)vrpView;
         }
 
 
         public override void LoadDataSources()
         {
             View.StoredProceduresFileName = View.TablesFileName = View.TriggersFileName = View.ViewsFileName = View.FunctionsFileName = "Structure.sql";
-            LoadDatabaseVersionDatasource();
             LoadObjects();
         }
 
@@ -55,11 +51,6 @@ namespace Skryper.Presenter
             View.FunctionsFileName = vrlContainer.FunctionsFileName;
             View.ViewsFileName = vrlContainer.ViewsFileName;
             View.TriggersFileName = vrlContainer.TriggersFileName;
-        }
-
-        private void LoadDatabaseVersionDatasource()
-        {
-            vrcView.DatabaseVersion = Enumeration.GetAll<E_ServerVersion>();
         }
 
         public I_Scripter View
@@ -158,7 +149,7 @@ namespace Skryper.Presenter
             {
                 loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
 
-                Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName, vrcView);
+                Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName);
                 string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
                 View.GeneratedSql = generatedSql;
 

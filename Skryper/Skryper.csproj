@@ -112,7 +112,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\I_AdditlionalOptions.cs" />
     <Compile Include="Interface\I_ConfigDb.cs" />
     <Compile Include="Interface\I_DatabaseObjectList.cs" />
     <Compile Include="Interface\I_Scripter.cs" />

@@ -14,7 +14,7 @@ using DevExpress.XtraEditors;
 
 namespace Skryper.View
 {
-    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter, I_ScriptProgress, I_AdditlionalOptions
+    public partial class Frm_Skrypter : inSolutions.Controls.BaseForms.View.Frm_EntityBaseForm, I_Scripter, I_ScriptProgress
     {
         private readonly I_ConfigDb vrcConfigData;
 
@@ -134,27 +134,6 @@ namespace Skryper.View
                 }
             }
         }
-
-        #region Implementation of I_AdditlionalOptions
-
-        public SqlServerVersion ScriptWithDatabaseVersion
-        {
-            get
-            {
-                return frintServerVersion.EditValue is SqlServerVersion ? (SqlServerVersion)frintServerVersion.EditValue : SqlServerVersion.Version90;
-            }
-        }
-
-        public IDictionary<int, string> DatabaseVersion
-        {
-            set
-            {
-                this.bsServerVersion.DataSource = value;
-            }
-        }
-
-        #endregion
-
 
         public string TablesFileName
         {
