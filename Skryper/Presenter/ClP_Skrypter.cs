@@ -18,7 +18,7 @@ namespace Skryper.Presenter
 
         private new readonly I_AdditlionalOptions vrcView;
 
-        public ClP_Skrypter(object vrpView,I_ConfigDb vrpConfigData)
+        public ClP_Skrypter(object vrpView, I_ConfigDb vrpConfigData)
             : base((I_Scripter)vrpView)
         {
             ConfigData = vrpConfigData;
@@ -107,7 +107,7 @@ namespace Skryper.Presenter
                         case E_SmoObjectType.Trigger:
                             vrlObject.SmoObject = null;
                             break;
-                            //Dane są pobierane z tabeli
+                        //Dane są pobierane z tabeli
                         case E_SmoObjectType.Data:
                             vrlObject.SmoObject = database.Tables[vrlObject.Name];
                             break;
@@ -151,14 +151,17 @@ namespace Skryper.Presenter
                 ViewsFileName = View.ViewsFileName
             };
 
-           Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
-           scriptFilesManager.SaveObjectsToConfig(vrlContainer);
+            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
+            scriptFilesManager.SaveObjectsToConfig(vrlContainer);
 
-            Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName,vrcView);
-            string generatedSql = gen.Generate(allObjects, View as I_ScriptProgress);
-            View.GeneratedSql = generatedSql;
+            foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
+            {
+                Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName, vrcView);
+                string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
+                View.GeneratedSql = generatedSql;
 
-            scriptFilesManager.SaveScript(generatedSql);
+                scriptFilesManager.SaveScript(generatedSql, vrlGroupped.Key.Trim());
+            }
         }
 
         private I_ConfigDb ConfigData { get; set; }

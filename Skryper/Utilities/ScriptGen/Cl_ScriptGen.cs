@@ -28,23 +28,20 @@ namespace Skryper.Utilities.ScriptGen
             Server server = new Server(serverName);
             Scripter scripter = new Scripter(server);
             scripter.ScriptingProgress += scripter_ScriptingProgress;
-            var databaseObjects = vrpObject as Cl_DatabaseObject[] ?? vrpObject.ToArray();
-
-            SqlSmoObject[] vrlArray = databaseObjects.Select(o => o.SmoObject).ToArray();
-
-            CreateProgress(vrpProgress, databaseObjects.Count() * 2);
+            CreateProgress(vrpProgress, vrpObject.Count() * 2);
 
             scripter.Options = GetDropOptions();
-            IEnumerable<string> vrlReturn = scripter.EnumScript(vrlArray);
+            IEnumerable<string> vrlWithoutDrops = scripter.EnumScript(vrpObject.Where(s => s.Drop).Select(o => o.SmoObject).ToArray());
 
             scripter.Options = GetOptions();
-            vrlReturn = vrlReturn.Union(scripter.EnumScript(databaseObjects.Where(s => s.Type != E_SmoObjectType.Data).Select(o => o.SmoObject).ToArray()));
+            IEnumerable<string> vrlWithDrops = scripter.EnumScript(vrpObject.Where(s => !s.Drop).Select(o => o.SmoObject).ToArray());
 
             scripter.Options = GetDataOptions();
-            vrlReturn = vrlReturn.Union(scripter.EnumScript(databaseObjects.Where(s => s.Type == E_SmoObjectType.Data).Select(o => o.SmoObject).ToArray()));
+            IEnumerable<string> vrlInsertData = scripter.EnumScript(vrpObject.Where(s => s.InsertData).Select(o => o.SmoObject).ToArray());
 
-            string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlReturn.ToArray());
-            vrlJoinedString = RemoveDropTables(vrlJoinedString);
+            string vrlJoinedString = string.Join(Environment.NewLine + Environment.NewLine, vrlWithoutDrops.Union(vrlWithDrops).Union(vrlInsertData).ToArray());
+
+            //vrlJoinedString = RemoveDropTables(vrlJoinedString);
             vrlJoinedString = RemoveAnsiiAndQuotedIndentifier(vrlJoinedString);
             vrlJoinedString = RemoveToManyReturns(vrlJoinedString);
 
@@ -121,7 +118,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.ScriptData = true;
             vrlOptions.ScriptSchema = false;
             vrlOptions.NoIdentities = true;
-            
+
             return vrlOptions;
         }
 

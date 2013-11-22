@@ -12,7 +12,6 @@ namespace Skryper.Utilities
     {
         private readonly string subdir = "\\Files\\Scripts\\";
         private readonly string slnConfigFileName = "config.scripter";
-        private readonly string sqlFileName = "Structure.sql";
         private readonly string slnFilePath;
 
         public Cl_ScripterFilesManager(string slnFilePath)
@@ -71,7 +70,7 @@ namespace Skryper.Utilities
             }
         }
 
-        public void SaveScript(string vrpScript)
+        public void SaveScript(string vrpScript, string sqlFileName)
         {
             string directoryPath = Path.GetDirectoryName(slnFilePath);
 
