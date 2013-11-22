@@ -47,6 +47,7 @@ namespace Skryper.Presenter
                         foreach (var vrlObject in vrfForm.SelectedObjects)
                         {
                             var vrlDatabaseObject = vrlObject as Cl_DatabaseObject;
+                            vrlDatabaseObject.FileName = View.DefaultName;
 
                             if (vrlDatabaseObject != null)
                             {
@@ -70,7 +71,7 @@ namespace Skryper.Presenter
             ucToReturn.SetServer(serverName, databaseName);
             ucToReturn.FullGrid = true;
             ucToReturn.ViewAddionalColumns = false;
- 
+
             return ucToReturn;
         }
 
@@ -84,7 +85,15 @@ namespace Skryper.Presenter
             List<Cl_DatabaseObject> databaseObjects = new List<Cl_DatabaseObject>();
             foreach (NamedSmoObject smoObject in vrlObjects)
             {
-                var vrlObject = new Cl_DatabaseObject() { SmoObject = smoObject, Name = smoObject.Name, Type = View.SmoObjectType };
+                var vrlObject = new Cl_DatabaseObject()
+                {
+                    SmoObject = smoObject,
+                    Name = smoObject.Name,
+                    Type = View.SmoObjectType,
+                    IsDefaultFileName = true,
+                    FileName = View.DefaultName
+                };
+
                 if (vrlObject.Type != E_SmoObjectType.Table)
                 {
                     vrlObject.InsertData = false;

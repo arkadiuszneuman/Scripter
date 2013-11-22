@@ -52,14 +52,14 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.frtxtProcedureName = new DevExpress.XtraEditors.TextEdit();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.frtxtTriggerName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.frtxtViewName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.frtxtFunctionName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.frtxtTableName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.frtxtTriggerName = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -82,10 +82,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtProcedureName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtTriggerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtViewName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtFunctionName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtTableName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frtxtTriggerName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -300,6 +300,7 @@
             this.frtxtProcedureName.Name = "frtxtProcedureName";
             this.frtxtProcedureName.Size = new System.Drawing.Size(100, 20);
             this.frtxtProcedureName.TabIndex = 19;
+            this.frtxtProcedureName.EditValueChanged += new System.EventHandler(this.frtxtProcedureName_EditValueChanged);
             // 
             // groupControl8
             // 
@@ -319,6 +320,22 @@
             this.groupControl8.TabIndex = 16;
             this.groupControl8.Text = "Domyślne nazwy plików";
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(18, 140);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(44, 13);
+            this.labelControl6.TabIndex = 26;
+            this.labelControl6.Text = "Triggery:";
+            // 
+            // frtxtTriggerName
+            // 
+            this.frtxtTriggerName.Location = new System.Drawing.Point(77, 137);
+            this.frtxtTriggerName.Name = "frtxtTriggerName";
+            this.frtxtTriggerName.Size = new System.Drawing.Size(100, 20);
+            this.frtxtTriggerName.TabIndex = 27;
+            this.frtxtTriggerName.EditValueChanged += new System.EventHandler(this.frtxtTriggerName_EditValueChanged);
+            // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(18, 117);
@@ -333,6 +350,7 @@
             this.frtxtViewName.Name = "frtxtViewName";
             this.frtxtViewName.Size = new System.Drawing.Size(100, 20);
             this.frtxtViewName.TabIndex = 25;
+            this.frtxtViewName.EditValueChanged += new System.EventHandler(this.frtxtViewName_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -348,6 +366,7 @@
             this.frtxtFunctionName.Name = "frtxtFunctionName";
             this.frtxtFunctionName.Size = new System.Drawing.Size(100, 20);
             this.frtxtFunctionName.TabIndex = 23;
+            this.frtxtFunctionName.EditValueChanged += new System.EventHandler(this.frtxtFunctionName_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -363,21 +382,7 @@
             this.frtxtTableName.Name = "frtxtTableName";
             this.frtxtTableName.Size = new System.Drawing.Size(100, 20);
             this.frtxtTableName.TabIndex = 21;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(18, 140);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(44, 13);
-            this.labelControl6.TabIndex = 26;
-            this.labelControl6.Text = "Triggery:";
-            // 
-            // frtxtTriggerName
-            // 
-            this.frtxtTriggerName.Location = new System.Drawing.Point(77, 137);
-            this.frtxtTriggerName.Name = "frtxtTriggerName";
-            this.frtxtTriggerName.Size = new System.Drawing.Size(100, 20);
-            this.frtxtTriggerName.TabIndex = 27;
+            this.frtxtTableName.EditValueChanged += new System.EventHandler(this.frtxtTableName_EditValueChanged);
             // 
             // Frm_Skrypter
             // 
@@ -438,10 +443,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
             this.groupControl8.ResumeLayout(false);
             this.groupControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frtxtTriggerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtViewName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtFunctionName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtTableName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frtxtTriggerName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -10,6 +10,7 @@ using Microsoft.SqlServer.Management.Common;
 using Skryper.Utilities;
 using Skryper.Utilities.ScriptGen;
 using System.Linq;
+using DevExpress.XtraEditors;
 
 namespace Skryper.View
 {
@@ -229,6 +230,44 @@ namespace Skryper.View
             {
                 this.frtxtTriggerName.Text = value;
             }
+        }
+
+        private void ChangeDefaultFileName(IEnumerable<Cl_DatabaseObject> vrpObjects, string vrpFileName)
+        {
+            foreach (var vrlObject in vrpObjects.Where(o => o.IsDefaultFileName))
+            {
+                vrlObject.Name = vrpFileName;
+            }
+        }
+
+        private void frtxtProcedureName_EditValueChanged(object sender, EventArgs e)
+        {
+            this.vruProcedures.DefaultName = ((TextEdit)sender).Text;
+            ChangeDefaultFileName(this.vruProcedures.DataSource, ((TextEdit)sender).Text);
+        }
+
+        private void frtxtTableName_EditValueChanged(object sender, EventArgs e)
+        {
+            this.vruTables.DefaultName = ((TextEdit)sender).Text;
+            ChangeDefaultFileName(this.vruTables.DataSource, ((TextEdit)sender).Text);
+        }
+
+        private void frtxtFunctionName_EditValueChanged(object sender, EventArgs e)
+        {
+            this.vruFunctions.DefaultName = ((TextEdit)sender).Text;
+            ChangeDefaultFileName(this.vruFunctions.DataSource, ((TextEdit)sender).Text);
+        }
+
+        private void frtxtViewName_EditValueChanged(object sender, EventArgs e)
+        {
+            this.vruViews.DefaultName = ((TextEdit)sender).Text;
+            ChangeDefaultFileName(this.vruViews.DataSource, ((TextEdit)sender).Text);
+        }
+
+        private void frtxtTriggerName_EditValueChanged(object sender, EventArgs e)
+        {
+            this.vruTriggers.DefaultName = ((TextEdit)sender).Text;
+            ChangeDefaultFileName(this.vruTriggers.DataSource, ((TextEdit)sender).Text);
         }
     }
 }

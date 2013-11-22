@@ -66,5 +66,31 @@ namespace Skryper.View
                 colDrop.Visible = colInsertData.Visible = value;
             }
         }
+
+        private void repoDefaultFileName_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(repoDefaultFileName.ValueChecked))
+            {
+                Cl_DatabaseObject vrlObject = this.grvGridView.GetFocusedRow() as Cl_DatabaseObject;
+                vrlObject.IsDefaultFileName = true;
+                vrlObject.FileName = DefaultName;
+            }
+        }
+
+        public string DefaultName { get; set; }
+
+        private void repoDefaultFileName_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (!Convert.ToBoolean(e.NewValue))
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void repoDefaultNameTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            Cl_DatabaseObject vrlObject = this.grvGridView.GetFocusedRow() as Cl_DatabaseObject;
+            vrlObject.IsDefaultFileName = false;
+        }
     }
 }

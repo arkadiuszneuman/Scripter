@@ -16,5 +16,8 @@ namespace Skryper.Utilities.ScriptGen
 
         public bool Drop { get; set; }
         public bool InsertData { get; set; }
+
+        public string FileName { get; set; }
+        public bool IsDefaultFileName { get; set; }
     }
 }

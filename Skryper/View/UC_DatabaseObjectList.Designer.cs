@@ -33,6 +33,10 @@
             this.colSmoObject1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDrop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInsertData = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFileName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsDefaultFileName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoDefaultFileName = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repoDefaultNameTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grcGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
@@ -42,7 +46,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDefaultFileName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDefaultNameTextEdit)).BeginInit();
             this.SuspendLayout();
+            // 
+            // grcGridControl
+            // 
+            this.grcGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoDefaultFileName,
+            this.repoDefaultNameTextEdit});
             // 
             // grvGridView
             // 
@@ -52,7 +64,9 @@
             this.colSmoObject,
             this.colSmoObject1,
             this.colDrop,
-            this.colInsertData});
+            this.colInsertData,
+            this.colFileName,
+            this.colIsDefaultFileName});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Red;
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
@@ -64,6 +78,7 @@
             styleFormatCondition1});
             this.grvGridView.OptionsBehavior.AllowIncrementalSearch = true;
             this.grvGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.grvGridView.OptionsBehavior.Editable = false;
             this.grvGridView.OptionsBehavior.FocusLeaveOnTab = true;
             this.grvGridView.OptionsCustomization.AllowGroup = false;
             this.grvGridView.OptionsCustomization.AllowQuickHideColumns = false;
@@ -121,6 +136,35 @@
             this.colInsertData.VisibleIndex = 2;
             this.colInsertData.Width = 76;
             // 
+            // colFileName
+            // 
+            this.colFileName.ColumnEdit = this.repoDefaultNameTextEdit;
+            this.colFileName.FieldName = "FileName";
+            this.colFileName.Name = "colFileName";
+            this.colFileName.Visible = true;
+            this.colFileName.VisibleIndex = 3;
+            // 
+            // colIsDefaultFileName
+            // 
+            this.colIsDefaultFileName.ColumnEdit = this.repoDefaultFileName;
+            this.colIsDefaultFileName.FieldName = "IsDefaultFileName";
+            this.colIsDefaultFileName.Name = "colIsDefaultFileName";
+            this.colIsDefaultFileName.Visible = true;
+            this.colIsDefaultFileName.VisibleIndex = 4;
+            // 
+            // repoDefaultFileName
+            // 
+            this.repoDefaultFileName.AutoHeight = false;
+            this.repoDefaultFileName.Name = "repoDefaultFileName";
+            this.repoDefaultFileName.CheckedChanged += new System.EventHandler(this.repoDefaultFileName_CheckedChanged);
+            this.repoDefaultFileName.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.repoDefaultFileName_EditValueChanging);
+            // 
+            // repoDefaultNameTextEdit
+            // 
+            this.repoDefaultNameTextEdit.AutoHeight = false;
+            this.repoDefaultNameTextEdit.Name = "repoDefaultNameTextEdit";
+            this.repoDefaultNameTextEdit.EditValueChanged += new System.EventHandler(this.repoDefaultNameTextEdit_EditValueChanged);
+            // 
             // UC_DatabaseObjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDefaultFileName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDefaultNameTextEdit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +193,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSmoObject1;
         private DevExpress.XtraGrid.Columns.GridColumn colDrop;
         private DevExpress.XtraGrid.Columns.GridColumn colInsertData;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repoDefaultFileName;
+        private DevExpress.XtraGrid.Columns.GridColumn colFileName;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsDefaultFileName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoDefaultNameTextEdit;
 
     }
 }
