@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Skryper.Presenter
 {
@@ -96,9 +97,8 @@ namespace Skryper.Presenter
                             vrlObject.SmoObject = database.Views[vrlObject.Name];
                             break;
                         case E_SmoObjectType.Trigger:
-                            vrlObject.SmoObject = null;
+                            vrlObject.SmoObject = database.Tables.Cast<Table>().SelectMany(o => o.Triggers.Cast<Trigger>()).SingleOrDefault(o => o.Name == vrlObject.Name);
                             break;
-                        //Dane są pobierane z tabeli
                         case E_SmoObjectType.Data:
                             vrlObject.SmoObject = database.Tables[vrlObject.Name];
                             break;
