@@ -99,6 +99,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.DriIndexes = true;
             vrlOptions.DriAllConstraints = true;
             vrlOptions.AllowSystemObjects = false;
+            vrlOptions.DriAllKeys = true;
             return vrlOptions;
         }
 
