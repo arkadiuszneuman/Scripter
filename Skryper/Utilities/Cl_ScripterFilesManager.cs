@@ -1,4 +1,5 @@
-﻿using Skryper.Utilities.ScriptGen;
+﻿using Encrypter;
+using Skryper.Utilities.ScriptGen;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,7 @@ namespace Skryper.Utilities
     public class Cl_ScripterFilesManager
     {
         private readonly string subdir = "\\Files\\Scripts\\";
+        private readonly string subdirEncrypted = "\\Files\\Scripts\\Encrypted";
         private readonly string slnConfigFileName = "config.scripter";
         private readonly string slnFilePath;
 
@@ -78,6 +80,23 @@ namespace Skryper.Utilities
             {
                 vrlStream.Write(vrpScript);
             }
+        }
+
+        public void SaveEncryptedFile(string fileName)
+        {
+            string vrlToPath = String.Format("{0}\\{1}S{2}", Path.GetDirectoryName(fileName),
+                Path.GetFileNameWithoutExtension(fileName), Path.GetExtension(fileName));
+
+            string directoryPath = Path.GetDirectoryName(slnFilePath);
+            string vrlSPath = directoryPath + subdirEncrypted + vrlToPath;
+
+            if (!Directory.Exists(Path.GetDirectoryName(vrlSPath)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(vrlSPath));
+            }
+
+            Cl_Encrypter vrlEncrypter = new Cl_Encrypter();
+            vrlEncrypter.EncryptFile(directoryPath + subdir + fileName, vrlSPath);
         }
     }
 }

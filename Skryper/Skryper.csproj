@@ -88,6 +88,9 @@
     <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v12.2.Core, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Encrypter">
+      <HintPath>..\Files\Dll\Encrypter.dll</HintPath>
+    </Reference>
     <Reference Include="inSolutions.Controls.1.0.1.2, Version=1.0.1.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Files\Dll\inSolutions.Controls.1.0.1.2.dll</HintPath>

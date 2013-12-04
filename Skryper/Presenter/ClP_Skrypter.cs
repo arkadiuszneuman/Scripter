@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using Encrypter;
 
 namespace Skryper.Presenter
 {
@@ -144,7 +145,7 @@ namespace Skryper.Presenter
 
             Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
             scriptFilesManager.SaveObjectsToConfig(vrlContainer);
-
+            
             foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
             {
                 loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
@@ -154,8 +155,12 @@ namespace Skryper.Presenter
                 View.GeneratedSql = generatedSql;
 
                 scriptFilesManager.SaveScript(generatedSql, vrlGroupped.Key.Trim());
+
+                scriptFilesManager.SaveEncryptedFile(vrlGroupped.Key);
             }
         }
+
+        
 
         private I_ConfigDb ConfigData { get; set; }
     }
