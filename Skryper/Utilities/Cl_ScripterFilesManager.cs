@@ -13,7 +13,7 @@ namespace Skryper.Utilities
     {
         private readonly string subdir = "\\Files\\Scripts\\";
         private readonly string subdirEncrypted = "\\Files\\Scripts\\Encrypted";
-        private readonly string slnConfigFileName = "config.scripter";
+        public readonly string slnConfigFileName = "config.scripter";
         private readonly string slnFilePath;
 
         public Cl_ScripterFilesManager(string slnFilePath)
@@ -28,13 +28,13 @@ namespace Skryper.Utilities
 
         public bool IsScripterProjectExists()
         {
-            string directoryPath = Path.GetDirectoryName(slnFilePath);
+            string directoryPath = GetDirectoryPath();
             return File.Exists(directoryPath + subdir + slnConfigFileName);
         }
 
         public string GetConfigFilePath()
         {
-            string directoryPath = Path.GetDirectoryName(slnFilePath);
+            string directoryPath = GetDirectoryPath();
             string filePath = directoryPath + subdir + slnConfigFileName;
 
             if (!Directory.Exists(directoryPath + subdir))
@@ -74,7 +74,7 @@ namespace Skryper.Utilities
 
         public void SaveScript(string vrpScript, string sqlFileName)
         {
-            string directoryPath = Path.GetDirectoryName(slnFilePath);
+            string directoryPath = GetDirectoryPath();
 
             using (StreamWriter vrlStream = new StreamWriter(directoryPath + subdir + sqlFileName))
             {
@@ -82,21 +82,50 @@ namespace Skryper.Utilities
             }
         }
 
-        public void SaveEncryptedFile(string fileName)
+        private string GetDirectoryPath()
+        {
+            return Path.GetDirectoryName(slnFilePath);
+        }
+
+        public string GetEncryptedFilePath(string fileName)
         {
             string vrlToPath = String.Format("{0}\\{1}S{2}", Path.GetDirectoryName(fileName),
                 Path.GetFileNameWithoutExtension(fileName), Path.GetExtension(fileName));
 
-            string directoryPath = Path.GetDirectoryName(slnFilePath);
+            string directoryPath = GetDirectoryPath();
             string vrlSPath = directoryPath + subdirEncrypted + vrlToPath;
 
+            return vrlSPath;
+        }
+
+        public string GetFullFilePath(string fileName)
+        {
+            string directoryPath = GetDirectoryPath();
+            return directoryPath + subdir + fileName;
+        }
+
+        public void SaveEncryptedFile(string fileName)
+        {
+            string vrlSPath = GetEncryptedFilePath(fileName);
+            
             if (!Directory.Exists(Path.GetDirectoryName(vrlSPath)))
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(vrlSPath));
             }
 
             Cl_Encrypter vrlEncrypter = new Cl_Encrypter();
-            vrlEncrypter.EncryptFile(directoryPath + subdir + fileName, vrlSPath);
+            vrlEncrypter.EncryptFile(GetFullFilePath(fileName), vrlSPath);
+        }
+
+        private Cl_TFS GetTFSObject()
+        {
+            return new Cl_TFS(Path.GetDirectoryName(slnFilePath));
+        }
+
+        public void TFSAddOrCheckoutFile(string filePath)
+        {
+            Cl_TFS tfs = GetTFSObject();
+            tfs.CheckoutFile(filePath);
         }
     }
 }
