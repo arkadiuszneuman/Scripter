@@ -30,8 +30,14 @@ namespace Skryper.Utilities
             var versionControl = (VersionControlServer)server.GetService(typeof(VersionControlServer));
             // open a workspace.
             var workspace = versionControl.GetWorkspace(vrcWorkspace);
-
-            var result = workspace.PendEdit(fileForEdit);
+            if (versionControl.ServerItemExists(workspace.GetServerItemForLocalItem(fileForEdit), ItemType.Any))
+            {
+                var result = workspace.PendEdit(fileForEdit);
+            }
+            else
+            {
+                var result = workspace.PendAdd(fileForEdit);
+            }
         }
     }
 }

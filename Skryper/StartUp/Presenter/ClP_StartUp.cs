@@ -19,9 +19,10 @@ namespace Skryper.StartUp.Presenter
     {
         private Cl_Config vrcConfig;
 
-        public ClP_StartUp(I_StartUpConfiguration vrpView) : base(vrpView)
+        public ClP_StartUp(I_StartUpConfiguration vrpView)
+            : base(vrpView)
         {
-           
+
         }
 
         public I_StartUpConfiguration View
@@ -34,8 +35,17 @@ namespace Skryper.StartUp.Presenter
 
         public void ConnectToServer()
         {
+            ServerConnection serverConnection;
+            if (View.IsSQLAuthentication)
+            {
+                serverConnection = new ServerConnection(View.CurrentServerName, View.Login, View.Pass);
+            }
+            else
+            {
+                serverConnection = new ServerConnection(View.CurrentServerName);
+            }
 
-            View.Server = new Server(View.CurrentServerName);
+            View.Server = new Server(serverConnection);
 
             View.Server.ConnectionContext.ConnectTimeout = 2;
             View.ServerStatus = View.Server.Status.ToString();
@@ -59,7 +69,13 @@ namespace Skryper.StartUp.Presenter
             if (!string.IsNullOrEmpty(vrcConfig.ServerName))
             {
                 View.CurrentServerName = vrcConfig.ServerName;
+                View.IsSQLAuthentication = vrcConfig.IsSQLAuthentication;
+                View.Login = vrcConfig.Login;
+                View.Pass = vrcConfig.Pass;
+                View.SlnPth = vrcConfig.SlnPath;
+
                 ConnectToServer();
+
                 if (View.DatabaseList.Contains(vrcConfig.Database))
                 {
                     View.CurrentDatabaseName = vrcConfig.Database;
@@ -79,42 +95,16 @@ namespace Skryper.StartUp.Presenter
             }
         }
 
-        public void LoadSln()
-        {
-            System.Configuration.Configuration confisg = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-
-            if (!confisg.AppSettings.Settings.AllKeys.Contains("SlnPth"))
-            {
-                View.SlnPth = string.Empty;
-            }
-            else
-            {
-                View.SlnPth = confisg.AppSettings.Settings["SlnPth"].Value;
-            }
-        }
-
         private void SaveLastDatabase()
         {
             vrcConfig.ServerName = View.CurrentServerName;
             vrcConfig.Database = View.CurrentDatabaseName;
+            vrcConfig.IsSQLAuthentication = View.IsSQLAuthentication;
+            vrcConfig.Login = View.Login;
+            vrcConfig.Pass = View.Pass;
+            vrcConfig.SlnPath = View.SlnPth;
 
             vrcConfig.SaveConfig();
-        }
-
-        private void SaveLastSolution()
-        {
-            System.Configuration.Configuration confisg = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-
-            if (!confisg.AppSettings.Settings.AllKeys.Contains("SlnPth"))
-            {
-                confisg.AppSettings.Settings.Add("SlnPth", View.SlnPth);
-            }
-            else
-            {
-                confisg.AppSettings.Settings["SlnPth"].Value = View.SlnPth;
-            }
-
-            confisg.Save(ConfigurationSaveMode.Minimal);
         }
 
         public void SaveToConfig()
@@ -122,7 +112,6 @@ namespace Skryper.StartUp.Presenter
             if (!View.IsLoading)
             {
                 SaveLastDatabase();
-                SaveLastSolution();
             }
         }
 

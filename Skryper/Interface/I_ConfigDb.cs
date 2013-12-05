@@ -5,5 +5,9 @@ namespace Skryper.Interface
         string CurrentServerName { get; set; }
         string CurrentDatabaseName { get; set; }
         string SlnPth { get; set; }
+
+        bool IsSQLAuthentication { get; set; }
+        string Login { get; set; }
+        string Pass { get; set; }
     }
 }

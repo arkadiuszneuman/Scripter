@@ -20,8 +20,12 @@ namespace Skryper.StartUp.View
         public Frm_StartUpPanel()
         {
             InitializeComponent();
+
+            BlockControl(txtLogin);
+            BlockControl(txtPass);
+
             vrcPresenter = new ClP_StartUp(this);
-        } 
+        }
 
         #endregion
 
@@ -108,7 +112,15 @@ namespace Skryper.StartUp.View
             }
             set
             {
-                this.frtxtSlnPath.Text = value;
+                Action action = () => this.frtxtSlnPath.Text = value;
+                if (frtxtSlnPath.InvokeRequired)
+                {
+                    frtxtSlnPath.Invoke(new MethodInvoker(action));
+                }
+                else
+                {
+                    action();
+                }
             }
         }
 
@@ -170,9 +182,76 @@ namespace Skryper.StartUp.View
         private void Frm_StartUpPanel_Load(object sender, EventArgs e)
         {
             frtxtStatus.Text = ServerStatus;
-            Presenter.LoadSln();
         }
 
         #endregion
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BlockControl(txtLogin, Convert.ToInt32(radioGroup1.EditValue) == 0);
+            BlockControl(txtPass, Convert.ToInt32(radioGroup1.EditValue) == 0);
+        }
+
+
+        public bool IsSQLAuthentication
+        {
+            get { return radioGroup1.SelectedIndex == 1; }
+            set
+            {
+                Action action;
+
+                if (value)
+                {
+                    action = () => radioGroup1.SelectedIndex = 1;
+                }
+                else
+                {
+                    action = () => radioGroup1.SelectedIndex = 0;
+                }
+
+                if (radioGroup1.InvokeRequired)
+                {
+                    radioGroup1.Invoke(new MethodInvoker(action));
+                }
+                else
+                {
+                    action();
+                }
+            }
+        }
+
+        public string Login
+        {
+            get { return txtLogin.Text.Trim(); }
+            set 
+            { 
+                Action action = () => txtLogin.Text = value;
+                if (txtLogin.InvokeRequired)
+                {
+                    txtLogin.Invoke(new MethodInvoker(action));
+                }
+                else
+                {
+                    action();
+                }
+            }
+        }
+
+        public string Pass
+        {
+            get { return txtPass.Text.Trim(); }
+            set 
+            {
+                Action action = () => txtPass.Text = value;
+                if (txtPass.InvokeRequired)
+                {
+                    txtPass.Invoke(new MethodInvoker(action));
+                }
+                else
+                {
+                    action();
+                }
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Skryper.Utilities
         {
             using (StreamWriter vrlStream = new StreamWriter(ConfigPath))
             {
-                vrlStream.Write(ServerName + ";" + Database);
+                vrlStream.Write(ServerName + ";" + Database + ";" + IsSQLAuthentication + ";" + Login + ";" + Pass + ";" + SlnPath);
             }
         }
 
@@ -27,18 +27,30 @@ namespace Skryper.Utilities
         {
             if (File.Exists(ConfigPath))
             {
-                using (StreamReader vrlStream = new StreamReader(ConfigPath))
+                try
                 {
-                    string vrlText = vrlStream.ReadLine();
-                    string[] vrlSplitted = vrlText.Split(';');
-
-                    if (vrlSplitted.Count() != 2)
+                    using (StreamReader vrlStream = new StreamReader(ConfigPath))
                     {
-                        throw new ArgumentException("Nieprawdłowy plik config.");
-                    }
+                        string vrlText = vrlStream.ReadLine();
+                        string[] vrlSplitted = vrlText.Split(';');
 
-                    ServerName = vrlSplitted[0];
-                    Database = vrlSplitted[1];
+                        if (vrlSplitted.Count() != 6)
+                        {
+                            throw new ArgumentException("Nieprawdłowy plik config.");
+                        }
+
+                        ServerName = vrlSplitted[0];
+                        Database = vrlSplitted[1];
+                        IsSQLAuthentication = Convert.ToBoolean(vrlSplitted[2]);
+                        Login = vrlSplitted[3];
+                        Pass = vrlSplitted[4];
+                        SlnPath = vrlSplitted[5];
+                    }
+                }
+                catch (ArgumentException)
+                {
+                    File.Delete(ConfigPath);
+                    Application.Restart();
                 }
             }
         }
@@ -53,5 +65,10 @@ namespace Skryper.Utilities
 
         public string ServerName { get; set; }
         public string Database { get; set; }
+        public bool IsSQLAuthentication { get; set; }
+        public string Login { get; set; }
+        public string Pass { get; set; }
+
+        public string SlnPath { get; set; }
     }
 }
