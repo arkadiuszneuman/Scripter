@@ -63,6 +63,21 @@ namespace Skryper.Presenter
             }
         }
 
+        private ServerConnection GetConnection()
+        {
+            ServerConnection serverConnection;
+            if (ConfigData.IsSQLAuthentication)
+            {
+                serverConnection = new ServerConnection(ConfigData.CurrentServerName, ConfigData.Login, ConfigData.Pass);
+            }
+            else
+            {
+                serverConnection = new ServerConnection(ConfigData.CurrentServerName);
+            }
+
+            return serverConnection;
+        }
+
         private void AssignLoadedObjectsToViews(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
         {
             var databaseObjects = vrpLoadedObjects as Cl_DatabaseObject[] ?? vrpLoadedObjects.ToArray();
@@ -76,7 +91,7 @@ namespace Skryper.Presenter
 
         private void InitLoadedObjects(IEnumerable<Cl_DatabaseObject> vrpLoadedObjects)
         {
-            var server = new Server(ConfigData.CurrentServerName);
+            var server = new Server(GetConnection());
             var database = server.Databases[ConfigData.CurrentDatabaseName];
 
             foreach (var vrlGrouppedObjects in vrpLoadedObjects.GroupBy(o => o.Type))

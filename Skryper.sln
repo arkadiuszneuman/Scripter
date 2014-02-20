@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skryper", "Skryper\Skryper.csproj", "{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}"
 EndProject
@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{58FE0EFB
 		..\..\..\..\Ikony\VISTA\jobsicons\vista_jobsicons_nuclear_engineer_24.png = ..\..\..\..\Ikony\VISTA\jobsicons\vista_jobsicons_nuclear_engineer_24.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSelector", "DatabaseSelector\DatabaseSelector.csproj", "{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

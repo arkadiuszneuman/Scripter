@@ -50,12 +50,12 @@ namespace Skryper.StartUp.Presenter
             View.Server.ConnectionContext.ConnectTimeout = 2;
             View.ServerStatus = View.Server.Status.ToString();
 
-            LoadDatabases();
+            LoadDatabases(serverConnection);
         }
 
-        private void LoadDatabases()
+        private void LoadDatabases(ServerConnection vrpConnection)
         {
-            var server = new Server(View.CurrentServerName);
+            var server = new Server(vrpConnection);
 
             Database[] databases = new Database[server.Databases.Count];
             server.Databases.CopyTo(databases, 0);
