@@ -195,6 +195,15 @@ namespace Skryper.View
             }
         }
 
+        public bool CheckoutTFS
+        {
+            get
+            {
+                return this.frbitCheckoutTFS.Checked;
+            }
+        }
+        
+
         private void ChangeDefaultFileName(IEnumerable<Cl_DatabaseObject> vrpObjects, string vrpFileName)
         {
             foreach (var vrlObject in vrpObjects.Where(o => o.IsDefaultFileName))

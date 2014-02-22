@@ -35,8 +35,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.frtxtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -49,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
@@ -59,26 +56,27 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(680, 257);
+            this.btnSave.Location = new System.Drawing.Point(493, 191);
+            this.btnSave.Text = "Kontynuuj";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(770, 257);
+            this.btnCancel.Location = new System.Drawing.Point(604, 96);
+            this.btnCancel.Visible = false;
             // 
             // frtxtDatabase
             // 
-            this.frtxtDatabase.Location = new System.Drawing.Point(610, 38);
+            this.frtxtDatabase.Location = new System.Drawing.Point(359, 59);
             this.frtxtDatabase.Name = "frtxtDatabase";
             this.frtxtDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.frtxtDatabase.Properties.NullText = "Wybierz bazę danych";
             this.frtxtDatabase.Size = new System.Drawing.Size(200, 20);
             this.frtxtDatabase.TabIndex = 10;
-            this.frtxtDatabase.EditValueChanged += new System.EventHandler(this.frtxtDatabase_EditValueChanged);
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(394, 62);
+            this.btnConnect.Location = new System.Drawing.Point(359, 24);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 9;
@@ -96,7 +94,7 @@
             // 
             this.frtxtSlnPath.Location = new System.Drawing.Point(66, 31);
             this.frtxtSlnPath.Name = "frtxtSlnPath";
-            this.frtxtSlnPath.Size = new System.Drawing.Size(345, 20);
+            this.frtxtSlnPath.Size = new System.Drawing.Size(412, 20);
             this.frtxtSlnPath.TabIndex = 1;
             // 
             // labelControl1
@@ -112,36 +110,20 @@
             this.groupControl6.Controls.Add(this.btnChooseSln);
             this.groupControl6.Controls.Add(this.frtxtSlnPath);
             this.groupControl6.Controls.Add(this.labelControl1);
-            this.groupControl6.Location = new System.Drawing.Point(12, 118);
+            this.groupControl6.Location = new System.Drawing.Point(4, 110);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(833, 74);
+            this.groupControl6.Size = new System.Drawing.Size(570, 74);
             this.groupControl6.TabIndex = 15;
             this.groupControl6.Text = "Połączenie z solucją";
             // 
             // btnChooseSln
             // 
-            this.btnChooseSln.Location = new System.Drawing.Point(417, 28);
+            this.btnChooseSln.Location = new System.Drawing.Point(484, 28);
             this.btnChooseSln.Name = "btnChooseSln";
             this.btnChooseSln.Size = new System.Drawing.Size(75, 23);
             this.btnChooseSln.TabIndex = 15;
             this.btnChooseSln.Text = "Wybierz";
             this.btnChooseSln.Click += new System.EventHandler(this.btnChooseSln_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.frtxtStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 284);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(857, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // frtxtStatus
-            // 
-            this.frtxtStatus.Name = "frtxtStatus";
-            this.frtxtStatus.Size = new System.Drawing.Size(42, 17);
-            this.frtxtStatus.Text = "Status:";
             // 
             // groupControl1
             // 
@@ -154,9 +136,9 @@
             this.groupControl1.Controls.Add(this.frtxtServerName);
             this.groupControl1.Controls.Add(this.btnConnect);
             this.groupControl1.Controls.Add(this.frtxtDatabase);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(833, 100);
+            this.groupControl1.Size = new System.Drawing.Size(570, 100);
             this.groupControl1.TabIndex = 17;
             this.groupControl1.Text = "Połączenie";
             // 
@@ -215,26 +197,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 306);
+            this.ClientSize = new System.Drawing.Size(580, 220);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupControl6);
             this.Name = "Frm_StartUpPanel";
-            this.Text = "Start";
-            this.Load += new System.EventHandler(this.Frm_StartUpPanel_Load);
+            this.ShowInTaskbar = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Skrypter";
+            this.Controls.SetChildIndex(this.btnSave, 0);
             this.Controls.SetChildIndex(this.groupControl6, 0);
-            this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.Controls.SetChildIndex(this.groupControl1, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.btnSave, 0);
             ((System.ComponentModel.ISupportInitialize)(this.frtxtDatabase.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtServerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -242,7 +221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -255,8 +233,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.SimpleButton btnChooseSln;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel frtxtStatus;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraEditors.LabelControl labelControl2;

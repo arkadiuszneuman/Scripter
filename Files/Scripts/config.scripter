@@ -7,49 +7,9 @@
   <TriggersFileName>Structure.sql</TriggersFileName>
   <DatabaseObjects>
     <Cl_DatabaseObject>
-      <Name>tb_roc_Car</Name>
-      <Type>Table</Type>
-      <Drop>true</Drop>
-      <InsertData>true</InsertData>
-      <FileName>Structure.sql</FileName>
-      <IsDefaultFileName>true</IsDefaultFileName>
-    </Cl_DatabaseObject>
-    <Cl_DatabaseObject>
-      <Name>tb_roc_Driver</Name>
+      <Name>Table_1</Name>
       <Type>Table</Type>
       <Drop>false</Drop>
-      <InsertData>false</InsertData>
-      <FileName>Structure.sql</FileName>
-      <IsDefaultFileName>true</IsDefaultFileName>
-    </Cl_DatabaseObject>
-    <Cl_DatabaseObject>
-      <Name>tb_roc_Route</Name>
-      <Type>Table</Type>
-      <Drop>false</Drop>
-      <InsertData>true</InsertData>
-      <FileName>Structure.sql</FileName>
-      <IsDefaultFileName>true</IsDefaultFileName>
-    </Cl_DatabaseObject>
-    <Cl_DatabaseObject>
-      <Name>adr_Email</Name>
-      <Type>Table</Type>
-      <Drop>false</Drop>
-      <InsertData>false</InsertData>
-      <FileName>Structure.sql</FileName>
-      <IsDefaultFileName>true</IsDefaultFileName>
-    </Cl_DatabaseObject>
-    <Cl_DatabaseObject>
-      <Name>sp_roc_CarDelete</Name>
-      <Type>StoredProcedure</Type>
-      <Drop>true</Drop>
-      <InsertData>false</InsertData>
-      <FileName>Structure.sql</FileName>
-      <IsDefaultFileName>true</IsDefaultFileName>
-    </Cl_DatabaseObject>
-    <Cl_DatabaseObject>
-      <Name>sp_roc_CarLoad</Name>
-      <Type>StoredProcedure</Type>
-      <Drop>true</Drop>
       <InsertData>false</InsertData>
       <FileName>Structure.sql</FileName>
       <IsDefaultFileName>true</IsDefaultFileName>

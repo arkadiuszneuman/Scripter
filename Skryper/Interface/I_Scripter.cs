@@ -22,5 +22,7 @@ namespace Skryper.Interface
         string ViewsFileName { get; set; }
         string FunctionsFileName { get; set; }
         string TriggersFileName { get; set; }
+
+        bool CheckoutTFS { get; }
     }
 }

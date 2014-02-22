@@ -159,7 +159,10 @@ namespace Skryper.Presenter
             };
 
             Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
-            scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetConfigFilePath());
+            if (View.CheckoutTFS)
+            {
+                scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetConfigFilePath());
+            }
             scriptFilesManager.SaveObjectsToConfig(vrlContainer);
             
             foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
@@ -178,9 +181,15 @@ namespace Skryper.Presenter
                 string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
                 View.GeneratedSql = generatedSql;
 
-                scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetFullFilePath(vrlGroupped.Key));
+                if (View.CheckoutTFS)
+                {
+                    scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetFullFilePath(vrlGroupped.Key));
+                }
                 scriptFilesManager.SaveScript(generatedSql, vrlGroupped.Key.Trim());
-                scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetEncryptedFilePath(vrlGroupped.Key));
+                if (View.CheckoutTFS)
+                {
+                    scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetEncryptedFilePath(vrlGroupped.Key));
+                }
                 scriptFilesManager.SaveEncryptedFile(vrlGroupped.Key);
                 
             }

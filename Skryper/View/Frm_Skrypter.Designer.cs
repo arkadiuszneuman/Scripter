@@ -55,6 +55,7 @@
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.frbitCheckoutTFS = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).BeginInit();
@@ -72,6 +73,7 @@
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frbitCheckoutTFS.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -117,6 +119,7 @@
             this.vruTables.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Table;
             this.vruTables.TabIndex = 8;
             this.vruTables.ViewAddionalColumns = true;
+            this.vruTables.ViewNameColumns = true;
             // 
             // vruProcedures
             // 
@@ -130,6 +133,7 @@
             this.vruProcedures.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.StoredProcedure;
             this.vruProcedures.TabIndex = 8;
             this.vruProcedures.ViewAddionalColumns = false;
+            this.vruProcedures.ViewNameColumns = true;
             // 
             // vruFunctions
             // 
@@ -143,6 +147,7 @@
             this.vruFunctions.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Function;
             this.vruFunctions.TabIndex = 8;
             this.vruFunctions.ViewAddionalColumns = false;
+            this.vruFunctions.ViewNameColumns = true;
             // 
             // vruViews
             // 
@@ -156,6 +161,7 @@
             this.vruViews.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.View;
             this.vruViews.TabIndex = 8;
             this.vruViews.ViewAddionalColumns = false;
+            this.vruViews.ViewNameColumns = true;
             // 
             // vruTriggers
             // 
@@ -169,6 +175,7 @@
             this.vruTriggers.SmoObjectType = Skryper.Utilities.ScriptGen.E_SmoObjectType.Trigger;
             this.vruTriggers.TabIndex = 8;
             this.vruTriggers.ViewAddionalColumns = false;
+            this.vruTriggers.ViewNameColumns = true;
             // 
             // labelControl1
             // 
@@ -327,12 +334,23 @@
             this.xtraTabPage5.Size = new System.Drawing.Size(717, 450);
             this.xtraTabPage5.Text = "Triggery";
             // 
+            // frbitCheckoutTFS
+            // 
+            this.frbitCheckoutTFS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.frbitCheckoutTFS.EditValue = true;
+            this.frbitCheckoutTFS.Location = new System.Drawing.Point(752, 238);
+            this.frbitCheckoutTFS.Name = "frbitCheckoutTFS";
+            this.frbitCheckoutTFS.Properties.Caption = "Checkout plików w TFS";
+            this.frbitCheckoutTFS.Size = new System.Drawing.Size(139, 19);
+            this.frbitCheckoutTFS.TabIndex = 17;
+            // 
             // Frm_Skrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1010, 683);
+            this.Controls.Add(this.frbitCheckoutTFS);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.groupControl8);
             this.Controls.Add(this.frtxtGeneratedScript);
@@ -350,6 +368,7 @@
             this.Controls.SetChildIndex(this.frtxtGeneratedScript, 0);
             this.Controls.SetChildIndex(this.groupControl8, 0);
             this.Controls.SetChildIndex(this.xtraTabControl1, 0);
+            this.Controls.SetChildIndex(this.frbitCheckoutTFS, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frtxtGeneratedScript.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServerVersion)).EndInit();
@@ -368,6 +387,7 @@
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage4.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.frbitCheckoutTFS.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +420,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraEditors.CheckEdit frbitCheckoutTFS;
     }
 }

@@ -48,7 +48,6 @@ namespace Skryper.StartUp.Presenter
             View.Server = new Server(serverConnection);
 
             View.Server.ConnectionContext.ConnectTimeout = 2;
-            View.ServerStatus = View.Server.Status.ToString();
 
             LoadDatabases(serverConnection);
         }

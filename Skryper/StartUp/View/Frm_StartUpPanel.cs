@@ -33,19 +33,6 @@ namespace Skryper.StartUp.View
 
         public Server Server { get; set; }
 
-        public string ServerStatus
-        {
-            set
-            {
-                if (value == null) throw new ArgumentNullException("value");
-                this.frtxtStatus.Text = Server != null ? Server.Status.ToString() : Resources.StatusNotConnected;
-            }
-            get
-            {
-                return Server != null ? Server.Status.ToString() : Resources.StatusNotConnected;
-            }
-        }
-
         public IEnumerable<string> DatabaseList
         {
             get
@@ -162,11 +149,6 @@ namespace Skryper.StartUp.View
 
         #region Events
 
-        private void frtxtDatabase_EditValueChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnConnect_Click(object sender, EventArgs e)
         {
             Presenter.Connect();
@@ -177,11 +159,6 @@ namespace Skryper.StartUp.View
         private void btnChooseSln_Click(object sender, EventArgs e)
         {
             Presenter.ChooseSln();
-        }
-
-        private void Frm_StartUpPanel_Load(object sender, EventArgs e)
-        {
-            frtxtStatus.Text = ServerStatus;
         }
 
         #endregion
