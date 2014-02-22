@@ -6,24 +6,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.SqlServer.Management.Common;
 
 namespace Skryper.Utilities.ScriptGen
 {
     public class Cl_ScriptGen
     {
-        private string serverName, databaseName;
+        private string serverName, databaseName, login, pass;
         private int current = 0;
         private I_ScriptProgress vrcProgress;
 
-        public Cl_ScriptGen(string server, string database)
+        public Cl_ScriptGen(string server, string database, string login = null, string pass = null)
         {
             this.serverName = server;
             this.databaseName = database;
+            this.login = login;
+            this.pass = pass;
+        }
+
+        private ServerConnection GetConnection()
+        {
+            ServerConnection serverConnection;
+            if (login != null && pass != null)
+            {
+                serverConnection = new ServerConnection(serverName, login, pass);
+            }
+            else
+            {
+                serverConnection = new ServerConnection(serverName);
+            }
+
+            return serverConnection;
         }
 
         public string Generate(IEnumerable<Cl_DatabaseObject> vrpObject, I_ScriptProgress vrpProgress)
         {
-            Server server = new Server(serverName);
+            Server server = new Server(GetConnection());
             Scripter scripter = new Scripter(server);
             scripter.ScriptingProgress += scripter_ScriptingProgress;
             CreateProgress(vrpProgress, vrpObject.Count() * 2);

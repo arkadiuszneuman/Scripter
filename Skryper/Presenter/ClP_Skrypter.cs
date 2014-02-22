@@ -166,7 +166,15 @@ namespace Skryper.Presenter
             {
                 loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
 
-                Cl_ScriptGen gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName);
+                Cl_ScriptGen gen;
+                if (ConfigData.IsSQLAuthentication)
+                {
+                    gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName,ConfigData.Login, ConfigData.Pass);
+                }
+                else
+                {
+                    gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName);
+                }
                 string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
                 View.GeneratedSql = generatedSql;
 
