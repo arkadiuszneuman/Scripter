@@ -13,7 +13,7 @@ namespace Skryper.Utilities
     {
         private readonly string subdir = "\\Files\\Scripts\\";
         private readonly string subdirEncrypted = "\\Files\\Scripts\\Encrypted";
-        public readonly string slnConfigFileName = "config.scripter";
+        private readonly string slnConfigFileName = "config.scripter";
         private readonly string slnFilePath;
 
         public Cl_ScripterFilesManager(string slnFilePath)
