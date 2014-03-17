@@ -10,6 +10,7 @@ using Skryper.StartUp.Presenter;
 using Skryper.Utilities;
 using Skryper.View;
 using inSolutions.Controls.Loader.Utilities;
+using Skryper.StartUp.Utilities;
 
 namespace Skryper.StartUp.View
 {
@@ -223,6 +224,32 @@ namespace Skryper.StartUp.View
                 if (txtPass.InvokeRequired)
                 {
                     txtPass.Invoke(new MethodInvoker(action));
+                }
+                else
+                {
+                    action();
+                }
+            }
+        }
+
+        private void radioSolutionConfig_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.frtxtSlnPath.Text = string.Empty;
+        }
+
+
+        public E_SlnConfig SlnConfig
+        {
+            get
+            {
+                return (E_SlnConfig)radioSolutionConfig.EditValue;
+            }
+            set
+            {
+                Action action = () => radioSolutionConfig.EditValue = (int)value;
+                if (radioSolutionConfig.InvokeRequired)
+                {
+                    radioSolutionConfig.Invoke(new MethodInvoker(action));
                 }
                 else
                 {

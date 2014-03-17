@@ -1,3 +1,4 @@
+using Skryper.StartUp.Utilities;
 namespace Skryper.Interface
 {
     public interface I_ConfigDb
@@ -5,6 +6,7 @@ namespace Skryper.Interface
         string CurrentServerName { get; set; }
         string CurrentDatabaseName { get; set; }
         string SlnPth { get; set; }
+        E_SlnConfig SlnConfig { get; set; }
 
         bool IsSQLAuthentication { get; set; }
         string Login { get; set; }

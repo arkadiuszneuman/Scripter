@@ -33,7 +33,7 @@ namespace Skryper.Presenter
 
         private void LoadObjects()
         {
-            var scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
+            var scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth, ConfigData.SlnConfig);
             var vrlContainer = scriptFilesManager.LoadObjectsFromConfig();
 
             if (vrlContainer != null)
@@ -158,13 +158,13 @@ namespace Skryper.Presenter
                 ViewsFileName = View.ViewsFileName
             };
 
-            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth);
+            Cl_ScripterFilesManager scriptFilesManager = new Cl_ScripterFilesManager(ConfigData.SlnPth, ConfigData.SlnConfig);
             if (View.CheckoutTFS)
             {
                 scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetConfigFilePath());
             }
             scriptFilesManager.SaveObjectsToConfig(vrlContainer);
-            
+
             foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
             {
                 loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
@@ -172,14 +172,16 @@ namespace Skryper.Presenter
                 Cl_ScriptGen gen;
                 if (ConfigData.IsSQLAuthentication)
                 {
-                    gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName,ConfigData.Login, ConfigData.Pass);
+                    gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName, ConfigData.Login, ConfigData.Pass);
                 }
                 else
                 {
                     gen = new Cl_ScriptGen(ConfigData.CurrentServerName, ConfigData.CurrentDatabaseName);
                 }
                 string generatedSql = gen.Generate(vrlGroupped, View as I_ScriptProgress);
-                View.GeneratedSql = generatedSql;
+                View.GeneratedSql += Environment.NewLine + "--==========================================================";
+                View.GeneratedSql += Environment.NewLine + "--" + vrlGroupped.Key + Environment.NewLine;
+                View.GeneratedSql += generatedSql;
 
                 if (View.CheckoutTFS)
                 {
@@ -191,11 +193,11 @@ namespace Skryper.Presenter
                     scriptFilesManager.TFSAddOrCheckoutFile(scriptFilesManager.GetEncryptedFilePath(vrlGroupped.Key));
                 }
                 scriptFilesManager.SaveEncryptedFile(vrlGroupped.Key);
-                
+
             }
         }
 
-        
+
 
         private I_ConfigDb ConfigData { get; set; }
     }

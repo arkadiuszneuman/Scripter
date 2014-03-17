@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Skryper.StartUp.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Skryper.Utilities
         {
             using (StreamWriter vrlStream = new StreamWriter(ConfigPath))
             {
-                vrlStream.Write(ServerName + ";" + Database + ";" + IsSQLAuthentication + ";" + Login + ";" + Pass + ";" + SlnPath);
+                vrlStream.Write(ServerName + ";" + Database + ";" + IsSQLAuthentication + ";" + Login + ";" + Pass + ";" + SlnPath + ";" + (int)SlnConfig);
             }
         }
 
@@ -34,7 +35,7 @@ namespace Skryper.Utilities
                         string vrlText = vrlStream.ReadLine();
                         string[] vrlSplitted = vrlText.Split(';');
 
-                        if (vrlSplitted.Count() != 6)
+                        if (vrlSplitted.Count() != 7)
                         {
                             throw new ArgumentException("Nieprawdłowy plik config.");
                         }
@@ -45,9 +46,10 @@ namespace Skryper.Utilities
                         Login = vrlSplitted[3];
                         Pass = vrlSplitted[4];
                         SlnPath = vrlSplitted[5];
+                        SlnConfig = (E_SlnConfig)Convert.ToInt32(vrlSplitted[6]);
                     }
                 }
-                catch (ArgumentException)
+                catch (Exception)
                 {
                     File.Delete(ConfigPath);
                     Application.Restart();
@@ -70,5 +72,6 @@ namespace Skryper.Utilities
         public string Pass { get; set; }
 
         public string SlnPath { get; set; }
+        public E_SlnConfig SlnConfig { get; set; }
     }
 }

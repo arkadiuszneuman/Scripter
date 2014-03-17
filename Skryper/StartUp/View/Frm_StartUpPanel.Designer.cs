@@ -32,8 +32,8 @@
             this.btnConnect = new DevExpress.XtraEditors.SimpleButton();
             this.frtxtServerName = new DevExpress.XtraEditors.TextEdit();
             this.frtxtSlnPath = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.radioSolutionConfig = new DevExpress.XtraEditors.RadioGroup();
             this.btnChooseSln = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
@@ -47,6 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioSolutionConfig.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
@@ -56,12 +57,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(493, 191);
+            this.btnSave.Location = new System.Drawing.Point(493, 209);
             this.btnSave.Text = "Kontynuuj";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(604, 96);
+            this.btnCancel.Location = new System.Drawing.Point(604, 114);
             this.btnCancel.Visible = false;
             // 
             // frtxtDatabase
@@ -92,33 +93,37 @@
             // 
             // frtxtSlnPath
             // 
-            this.frtxtSlnPath.Location = new System.Drawing.Point(66, 31);
+            this.frtxtSlnPath.Location = new System.Drawing.Point(81, 30);
             this.frtxtSlnPath.Name = "frtxtSlnPath";
-            this.frtxtSlnPath.Size = new System.Drawing.Size(412, 20);
+            this.frtxtSlnPath.Size = new System.Drawing.Size(478, 20);
             this.frtxtSlnPath.TabIndex = 1;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 34);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(38, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Solucja:";
             // 
             // groupControl6
             // 
+            this.groupControl6.Controls.Add(this.radioSolutionConfig);
             this.groupControl6.Controls.Add(this.btnChooseSln);
             this.groupControl6.Controls.Add(this.frtxtSlnPath);
-            this.groupControl6.Controls.Add(this.labelControl1);
             this.groupControl6.Location = new System.Drawing.Point(4, 110);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(570, 74);
+            this.groupControl6.Size = new System.Drawing.Size(570, 90);
             this.groupControl6.TabIndex = 15;
             this.groupControl6.Text = "Połączenie z solucją";
             // 
+            // radioSolutionConfig
+            // 
+            this.radioSolutionConfig.EditValue = 1;
+            this.radioSolutionConfig.Location = new System.Drawing.Point(8, 24);
+            this.radioSolutionConfig.Name = "radioSolutionConfig";
+            this.radioSolutionConfig.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Solucja"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Config")});
+            this.radioSolutionConfig.Size = new System.Drawing.Size(67, 57);
+            this.radioSolutionConfig.TabIndex = 17;
+            this.radioSolutionConfig.SelectedIndexChanged += new System.EventHandler(this.radioSolutionConfig_SelectedIndexChanged);
+            // 
             // btnChooseSln
             // 
-            this.btnChooseSln.Location = new System.Drawing.Point(484, 28);
+            this.btnChooseSln.Location = new System.Drawing.Point(484, 56);
             this.btnChooseSln.Name = "btnChooseSln";
             this.btnChooseSln.Size = new System.Drawing.Size(75, 23);
             this.btnChooseSln.TabIndex = 15;
@@ -197,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 220);
+            this.ClientSize = new System.Drawing.Size(580, 238);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl6);
             this.Name = "Frm_StartUpPanel";
@@ -213,7 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.frtxtSlnPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
-            this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioSolutionConfig.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -230,7 +235,6 @@
         private DevExpress.XtraEditors.SimpleButton btnConnect;
         private DevExpress.XtraEditors.TextEdit frtxtServerName;
         private DevExpress.XtraEditors.TextEdit frtxtSlnPath;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.SimpleButton btnChooseSln;
         private DevExpress.XtraEditors.GroupControl groupControl1;
@@ -240,5 +244,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtLogin;
+        private DevExpress.XtraEditors.RadioGroup radioSolutionConfig;
     }
 }

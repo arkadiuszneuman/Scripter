@@ -121,6 +121,11 @@ namespace Skryper.View
 
         public string GeneratedSql
         {
+            get
+            {
+                return this.frtxtGeneratedScript.Text;
+            }
+
             set
             {
                 Action vrlAction = () => this.frtxtGeneratedScript.Text = value;

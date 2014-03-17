@@ -12,6 +12,7 @@ using Skryper.Utilities.ScriptGen;
 using Skryper.View;
 using inSolutions.Controls.Loader.Utilities;
 using Configuration = Microsoft.SqlServer.Management.Smo.Configuration;
+using Skryper.StartUp.Utilities;
 
 namespace Skryper.StartUp.Presenter
 {
@@ -71,6 +72,7 @@ namespace Skryper.StartUp.Presenter
                 View.IsSQLAuthentication = vrcConfig.IsSQLAuthentication;
                 View.Login = vrcConfig.Login;
                 View.Pass = vrcConfig.Pass;
+                View.SlnConfig = vrcConfig.SlnConfig;
                 View.SlnPth = vrcConfig.SlnPath;
 
                 ConnectToServer();
@@ -86,7 +88,11 @@ namespace Skryper.StartUp.Presenter
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Plik solucji (*.sln)|*.sln";
+                if (View.SlnConfig == E_SlnConfig.SlnFile)
+                    openFileDialog.Filter = "Plik solucji (*.sln)|*.sln";
+                else
+                    openFileDialog.Filter = "Plik config (*.scripter)|*.scripter";
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     this.View.SlnPth = openFileDialog.FileName;
@@ -102,6 +108,7 @@ namespace Skryper.StartUp.Presenter
             vrcConfig.Login = View.Login;
             vrcConfig.Pass = View.Pass;
             vrcConfig.SlnPath = View.SlnPth;
+            vrcConfig.SlnConfig = View.SlnConfig;
 
             vrcConfig.SaveConfig();
         }

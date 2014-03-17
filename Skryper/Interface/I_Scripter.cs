@@ -9,7 +9,7 @@ namespace Skryper.Interface
 {
     public interface I_Scripter : inSolutions.Controls.BaseForms.Interface.I_EntityBaseForm
     {
-        string GeneratedSql { set; }
+        string GeneratedSql { get; set; }
 
         IEnumerable<Cl_DatabaseObject> Tables { get; set; }
         IEnumerable<Cl_DatabaseObject> Procedures { get; set; }
