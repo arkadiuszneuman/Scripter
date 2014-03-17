@@ -165,6 +165,8 @@ namespace Skryper.Presenter
             }
             scriptFilesManager.SaveObjectsToConfig(vrlContainer);
 
+            View.GeneratedSql = string.Empty;
+
             foreach (var vrlGroupped in allObjects.GroupBy(o => o.FileName))
             {
                 loader.SetText(String.Format("Generowanie skryptu dla pliku: {0}...", vrlGroupped.Key));
