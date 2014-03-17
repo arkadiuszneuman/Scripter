@@ -133,7 +133,9 @@ namespace Skryper.Utilities.ScriptGen
             ScriptingOptions vrlOptions = GetOptions();
             vrlOptions.ScriptData = true;
             vrlOptions.ScriptSchema = false;
-            vrlOptions.NoIdentities = true;
+            //vrlOptions.ClusteredIndexes = true;
+            //vrlOptions.Default = true;
+            vrlOptions.NoIdentities = false;
 
             return vrlOptions;
         }

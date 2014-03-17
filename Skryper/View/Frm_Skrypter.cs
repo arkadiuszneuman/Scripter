@@ -35,11 +35,11 @@ namespace Skryper.View
 
         protected override void OnLoad(EventArgs e)
         {
-            vruTables.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
-            vruProcedures.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
-            vruFunctions.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
-            vruViews.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
-            vruTriggers.SetServer(vrcConfigData.CurrentServerName, (vrcConfigData.CurrentDatabaseName));
+            vruTables.SetServer(vrcConfigData);
+            vruProcedures.SetServer(vrcConfigData);
+            vruFunctions.SetServer(vrcConfigData);
+            vruViews.SetServer(vrcConfigData);
+            vruTriggers.SetServer(vrcConfigData);
 
             base.OnLoad(e);
         }

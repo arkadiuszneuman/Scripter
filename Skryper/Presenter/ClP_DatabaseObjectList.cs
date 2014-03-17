@@ -9,14 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.SqlServer.Management.Common;
 
 namespace Skryper.Presenter
 {
     public class ClP_DatabaseObjectList : inSolutions.Controls.BaseForms.Presenter.ClP_FilterableBaseList<Cl_DatabaseObject>
     {
-        private List<Trigger> vrlTriggerCollection = new List<Trigger>();
-        private string serverName;
-        private string databaseName;
+        private I_ConfigDb vrcConfigData;
 
         public ClP_DatabaseObjectList(I_DatabaseObjectList vrpView)
             : base(vrpView)
@@ -68,7 +67,7 @@ namespace Skryper.Presenter
         {
             UC_DatabaseObjectList ucToReturn = new UC_DatabaseObjectList();
             ucToReturn.SmoObjectType = View.SmoObjectType;
-            ucToReturn.SetServer(serverName, databaseName);
+            ucToReturn.SetServer(vrcConfigData);
             ucToReturn.FullGrid = true;
             ucToReturn.ViewAddionalColumns = false;
             ucToReturn.ViewNameColumns = false;
@@ -76,10 +75,25 @@ namespace Skryper.Presenter
             return ucToReturn;
         }
 
+        private ServerConnection GetConnection()
+        {
+            ServerConnection serverConnection;
+            if (vrcConfigData.IsSQLAuthentication)
+            {
+                serverConnection = new ServerConnection(vrcConfigData.CurrentServerName, vrcConfigData.Login, vrcConfigData.Pass);
+            }
+            else
+            {
+                serverConnection = new ServerConnection(vrcConfigData.CurrentServerName);
+            }
+
+            return serverConnection;
+        }
+
         protected override void LoadDataSource()
         {
-            Server server = new Server(serverName);
-            Database database = server.Databases[databaseName];
+            Server server = new Server(GetConnection());
+            Database database = server.Databases[vrcConfigData.CurrentDatabaseName];
 
             IEnumerable<NamedSmoObject> vrlObjects = GetObjects(database);
 
@@ -127,10 +141,10 @@ namespace Skryper.Presenter
             }
         }
 
-        public void SetServer(string serverName, string database)
+
+        public void SetServer(I_ConfigDb vrpConfigData)
         {
-            this.serverName = serverName;
-            this.databaseName = database;
+            vrcConfigData = vrpConfigData;
         }
 
         protected I_DatabaseObjectList View

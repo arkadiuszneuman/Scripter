@@ -21,9 +21,9 @@ namespace Skryper.View
             this.GridView.OptionsBehavior.Editable = true;
         }
 
-        public void SetServer(string server, string database)
+        public void SetServer(I_ConfigDb vrpConfigDb)
         {
-            Presenter.SetServer(server, database);
+            Presenter.SetServer(vrpConfigDb);
         }
 
         public E_SmoObjectType SmoObjectType
