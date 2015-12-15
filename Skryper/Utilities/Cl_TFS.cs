@@ -1,16 +1,16 @@
-﻿using Microsoft.TeamFoundation.Client;
-using Microsoft.TeamFoundation.VersionControl.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.TeamFoundation.Client;
+using Microsoft.TeamFoundation.VersionControl.Client;
 
 namespace Skryper.Utilities
 {
     public class Cl_TFS
     {
-        private string vrcServer = "http://192.168.255.52:8080/tfs/";
-        private string vrcWorkspace;
+        private const string vrcServer = "http://192.168.255.52:8080/tfs/";
+        private readonly string vrcWorkspace;
 
         /// <summary>
         /// Konstruktor klasy Cl_TFS

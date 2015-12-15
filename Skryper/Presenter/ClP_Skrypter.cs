@@ -1,4 +1,5 @@
 ﻿using inSolutions.Controls.Loader.Utilities;
+using inSolutions.Utilities;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
@@ -29,6 +30,11 @@ namespace Skryper.Presenter
         {
             View.StoredProceduresFileName = View.TablesFileName = View.TriggersFileName = View.ViewsFileName = View.FunctionsFileName = "Structure.sql";
             LoadObjects();
+        }
+
+        protected override I_Common GetCommon()
+        {
+            return null;
         }
 
         private void LoadObjects()

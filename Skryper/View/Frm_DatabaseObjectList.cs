@@ -12,8 +12,8 @@ namespace Skryper.View
 {
     public partial class Frm_DatabaseObjectList : inSolutions.Controls.BaseForms.View.Frm_BaseList
     {
-        public Frm_DatabaseObjectList(bool vrpChoose)
-            : base(new Dictionary<string, UC_BaseList>(), vrpChoose, true)
+        public Frm_DatabaseObjectList(UC_BaseList vrpBaseList, bool vrpChoose)
+            : base(vrpBaseList, vrpChoose, true)
         {
             InitializeComponent();
         }

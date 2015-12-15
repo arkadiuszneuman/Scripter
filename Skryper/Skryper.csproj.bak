@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FB1E9BA-24D9-4A26-BA6E-480156AC6A94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skryper</RootNamespace>
+    <AssemblyName>Skryper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>F:\Dropbox\Dropbox\Aga i ja\test\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://www.dropbox.com/home/Aga%2520i%2520ja/save/</InstallUrl>
+    <UpdateUrl>https://www.dropbox.com/home/Aga%2520i%2520ja/test/</UpdateUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.html</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0263AC76560B89AC56DE8CF86D533C98B8AE4141</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v12.2, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v12.2.Core, Version=12.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Encrypter">
+      <HintPath>..\Files\Dll\Encrypter.dll</HintPath>
+    </Reference>
+    <Reference Include="inSolutions.Controls.1.0.1.2, Version=1.0.1.2, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\Dll\inSolutions.Controls.1.0.1.2.dll</HintPath>
+    </Reference>
+    <Reference Include="inSolutions.Utilities.1.0.1.2">
+      <HintPath>..\Files\Dll\inSolutions.Utilities.1.0.1.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\I_ConfigDb.cs" />
+    <Compile Include="Interface\I_DatabaseObjectList.cs" />
+    <Compile Include="Interface\I_Scripter.cs" />
+    <Compile Include="Presenter\ClP_DatabaseObjectList.cs" />
+    <Compile Include="Presenter\ClP_Skrypter.cs" />
+    <Compile Include="Presenter\ClP_Smo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp\Utilities\E_SlnConfig.cs" />
+    <Compile Include="Utilities\Cl_Config.cs" />
+    <Compile Include="Utilities\Cl_Messages.cs" />
+    <Compile Include="Utilities\Cl_ScripterFilesManager.cs" />
+    <Compile Include="Utilities\Cl_ScriptFilesContainer.cs" />
+    <Compile Include="Utilities\Cl_TFS.cs" />
+    <Compile Include="Utilities\ScriptGen\Cl_DatabaseObject.cs" />
+    <Compile Include="Utilities\ScriptGen\Cl_ScriptGen.cs" />
+    <Compile Include="Utilities\ScriptGen\E_ServerVersion.cs" />
+    <Compile Include="Utilities\ScriptGen\E_SmoObjectType.cs" />
+    <Compile Include="Utilities\ScriptGen\I_ScriptProgress.cs" />
+    <Compile Include="StartUp\Presenter\ClP_StartUp.cs" />
+    <Compile Include="View\Frm_DatabaseObjectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_DatabaseObjectList.Designer.cs">
+      <DependentUpon>Frm_DatabaseObjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_Skrypter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_Skrypter.Designer.cs">
+      <DependentUpon>Frm_Skrypter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartUp\View\Frm_StartUpPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUp\View\Frm_StartUpPanel.Designer.cs">
+      <DependentUpon>Frm_StartUpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartUp\Interface\I_StartUpConfiguration.cs" />
+    <Compile Include="View\UC_BaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_BaseView.Designer.cs">
+      <DependentUpon>UC_BaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_DatabaseObjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_DatabaseObjectList.Designer.cs">
+      <DependentUpon>UC_DatabaseObjectList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Frm_DatabaseObjectList.resx">
+      <DependentUpon>Frm_DatabaseObjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_Skrypter.resx">
+      <DependentUpon>Frm_Skrypter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUp\View\Frm_StartUpPanel.resx">
+      <DependentUpon>Frm_StartUpPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_BaseView.resx">
+      <DependentUpon>UC_BaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_DatabaseObjectList.resx">
+      <DependentUpon>UC_DatabaseObjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.Database.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.DatabaseCollection.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.ScriptingOptions.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.ScriptOption.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.StoredProcedure.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.StoredProcedureCollection.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.Table.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Management.Smo.TableCollection.datasource" />
+    <None Include="Properties\DataSources\Skryper.Utilities.ScriptGen.Cl_DatabaseObject.datasource" />
+    <None Include="Properties\DataSources\Skryper.View.I_ScriptOptions.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseSelector\DatabaseSelector.csproj">
+      <Project>{2ABF0AE1-5BF1-4834-9FCA-6BA1722A3922}</Project>
+      <Name>DatabaseSelector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -49,6 +49,7 @@ namespace DatabaseSelector.Presenter
                 serverConnection = new ServerConnection(View.CurrentServerName);
             }
 
+            serverConnection.ConnectTimeout = 20;
             return serverConnection;
         }
 

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using inSolutions.Controls.BaseForms.Presenter;
 using Skryper.Interface;
 using Skryper.Utilities.ScriptGen;
 using Skryper.Presenter;
@@ -17,8 +18,12 @@ namespace Skryper.View
         public UC_DatabaseObjectList()
         {
             InitializeComponent();
-            this.vrcPresenter = new ClP_DatabaseObjectList(this);
             this.GridView.OptionsBehavior.Editable = true;
+        }
+
+        protected override ClP_BaseList CreatePresenter()
+        {
+            return new ClP_DatabaseObjectList(this);
         }
 
         public void SetServer(I_ConfigDb vrpConfigDb)
@@ -50,7 +55,7 @@ namespace Skryper.View
         {
             get
             {
-                return this.vrcPresenter as ClP_DatabaseObjectList;
+                return this.PresenterBase as ClP_DatabaseObjectList;
             }
         }
 

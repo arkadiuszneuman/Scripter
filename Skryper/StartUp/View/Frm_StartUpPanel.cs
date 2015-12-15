@@ -140,7 +140,7 @@ namespace Skryper.StartUp.View
 
         #region Private methods
 
-        protected override void OnSaved()
+        protected override void Save()
         {
             Presenter.SaveToConfig();
             Presenter.ShowMain();

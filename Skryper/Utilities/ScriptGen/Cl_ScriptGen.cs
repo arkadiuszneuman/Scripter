@@ -134,7 +134,7 @@ namespace Skryper.Utilities.ScriptGen
             vrlOptions.ScriptData = true;
             vrlOptions.ScriptSchema = false;
             //vrlOptions.ClusteredIndexes = true;
-            //vrlOptions.Default = true;
+            vrlOptions.Default = true;
             vrlOptions.NoIdentities = false;
             vrlOptions.DriAll = true;
 

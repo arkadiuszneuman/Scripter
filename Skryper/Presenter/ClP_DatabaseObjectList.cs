@@ -35,9 +35,9 @@ namespace Skryper.Presenter
 
         public override bool Add()
         {
-            using (Frm_DatabaseObjectList vrfForm = new Frm_DatabaseObjectList(true))
+            using (Frm_DatabaseObjectList vrfForm = new Frm_DatabaseObjectList(GetUC(), true))
             {
-                vrfForm.AddList("Obiekt bazodanowy", GetUC());
+                //vrfForm.AddList("Obiekt bazodanowy", );
 
                 if (vrfForm.ShowDialog() == DialogResult.OK)
                 {

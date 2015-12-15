@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
+using inSolutions.Utilities;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Skryper.Interface;
@@ -13,6 +14,7 @@ using Skryper.View;
 using inSolutions.Controls.Loader.Utilities;
 using Configuration = Microsoft.SqlServer.Management.Smo.Configuration;
 using Skryper.StartUp.Utilities;
+using Cl_Messages = Skryper.Utilities.Cl_Messages;
 
 namespace Skryper.StartUp.Presenter
 {
@@ -126,6 +128,11 @@ namespace Skryper.StartUp.Presenter
         public override void LoadDataSources()
         {
             LoadLastDatabase();
+        }
+
+        protected override I_Common GetCommon()
+        {
+            return null;
         }
 
         #endregion
